@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area Personale</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/script.js"></script>
+</head>
+<body asp-controller="PersonalArea" asp-action="GetAllWorks" onload="loadWorks()">
+    <h1 class="title">BENVENUTO NELLA TUA AREA PERSONALE</h1>
+    <h3 class="subTitle">Qui potrai consultare il lavoro che hai da fare e mandare messaggi ai tuoi colleghi</h3>
+    <h4 id="tableMainTitle">Prossimi lavori in consegna</h4>
+    <div class="container">
+        <table class="boxWorks">
+            <thead>
+                <tr id="header">
+                <th class="tableTitle">Titolo</th>
+                <th class="tableDesc">Descrizione</th>
+                <th class="tableDate">Data scadenza</th>
+                <th class="tableHour">Ora scadenza</th>
+                </tr>
+            </thead>
+            <tbody id="tableBodyProj">
+
+            </tbody>
+        </table>
+    </div>
+    <button id="btnMsg" type="button" onclick="">Invia messaggi</button>
+</body>
+</html>

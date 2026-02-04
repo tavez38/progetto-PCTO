@@ -3087,11 +3087,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\PCTO\\WebApp\\WebApp\\WebApp.csproj",
+      "projectUniqueName": "C:\\progetto-PCTO\\WebApp\\WebApp\\WebApp.csproj",
       "projectName": "WebApp",
-      "projectPath": "C:\\PCTO\\WebApp\\WebApp\\WebApp.csproj",
+      "projectPath": "C:\\progetto-PCTO\\WebApp\\WebApp\\WebApp.csproj",
       "packagesPath": "C:\\Users\\HEW16A0020NL\\.nuget\\packages\\",
-      "outputPath": "C:\\PCTO\\WebApp\\WebApp\\obj\\",
+      "outputPath": "C:\\progetto-PCTO\\WebApp\\WebApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -133,3 +133,17 @@ async function richiestaIscrizione() {
         console.log(error);
     }
 }
+
+function loadWorks(){
+    fetch("/login/personalArea")
+    .then(response => response.json())
+    .then(lista => lista.forEach(element => {
+        document.getElementById("tableBodyProj").innerHTML+=`<tr class="rows">
+                <td class="tableTitle">${element.title}</td>
+                <td class="tableDesc">${element.description}</td>
+                <td class="tableDate">${element.scadenza}</td>
+                <td class="tableHour">${element.orarioScadenza}</td>
+                </tr>`;
+    }));
+
+}
