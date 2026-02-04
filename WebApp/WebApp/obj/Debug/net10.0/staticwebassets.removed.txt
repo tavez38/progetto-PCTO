@@ -1,0 +1,4 @@
+C:\PCTO\WebApp\WebApp\wwwroot\css\style.css
+C:\PCTO\WebApp\WebApp\wwwroot\html\Index.html
+C:\PCTO\WebApp\WebApp\wwwroot\html\Registrazione.html
+C:\PCTO\WebApp\WebApp\wwwroot\js\script.js
