@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "ContainingType": "WebApp.Controllers.PersonalAreaController",
+    "Method": "GetAllWorks",
+    "RelativePath": "login/personalArea",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

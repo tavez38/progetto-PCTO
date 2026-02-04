@@ -341,10 +341,6 @@ C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\rjimswa.dswa.cache.json
 C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
 C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
 C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\scopedcss\bundle\WebApp.styles.css
-C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\dx8wh36wkn-{0}-i2wtq7ul19-i2wtq7ul19.gz
-C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\4mnknta2f9-{0}-pyyhd0wqkb-pyyhd0wqkb.gz
-C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\rsxbyhsisf-{0}-uoq2g36sdp-uoq2g36sdp.gz
-C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\empuesvxn7-{0}-uaf33utiw8-uaf33utiw8.gz
 C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\staticwebassets.build.json
 C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\staticwebassets.build.json.cache
 C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\staticwebassets.development.json
@@ -356,3 +352,9 @@ C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\refint\WebApp.dll
 C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\WebApp.pdb
 C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\WebApp.genruntimeconfig.cache
 C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\ref\WebApp.dll
+C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\rsxbyhsisf-{0}-4mvnn6wa65-4mvnn6wa65.gz
+C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\dx8wh36wkn-{0}-jxbyh3k5uq-jxbyh3k5uq.gz
+C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\7bfgkygcp7-{0}-5j6k1mtdzz-5j6k1mtdzz.gz
+C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
+C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\empuesvxn7-{0}-5vr4keght7-5vr4keght7.gz
+C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\4mnknta2f9-{0}-16hj4sn3gp-16hj4sn3gp.gz

@@ -1,12 +1,12 @@
 ﻿const listaCharSpec = ["!", "@", "#", "$", "%", "^", "&", "*", "-", "_", "+", "=", "?"];
-
+var idUtenteLoggato = null;
 function iscrizione() {
     if (!checkEmail() || !checkPsw()) {
         console.log("false");
     }
     else {
         richiestaIscrizione();
-        window.location.href = '/html/Index.html'; 
+        window.location.href = '.. /html/Index.html'; 
 
     }
     
@@ -74,8 +74,7 @@ function checkPsw() {
 function checkCharSpec(c) {
     return listaCharSpec.includes(c);
 }
-
-async function onClickLogin(){ 
+function onClickLogin(){ 
 
     const usMail = document.getElementById("inputUsername").value;
     const psw = document.getElementById("inputPassword").value;
@@ -86,20 +85,21 @@ async function onClickLogin(){
     };
 
     try{
-        const res = await fetch("/index",{
+        fetch("/index",{
             method:'POST',
             headers : {
                 'Content-Type' : 'application/json' 
             },
             body : JSON.stringify(utente)
-        });
-
-        if (!res.ok) {
-            alert(res.json())
-        }
-        else {
-            alert(res.json())
-        }
+        })
+            .then(response => response.json())
+            .then(id => {
+                idUtenteLoggato = id;
+                if (idUtenteLoggato == -1) {
+                    alert("Password errata o Credenziali non valide");
+                }
+            })
+            .then(() => { window.location.href = '../html/PersonalArea.html'; })
     }
     catch(error){
         alert(error);
@@ -146,4 +146,14 @@ function loadWorks(){
                 </tr>`;
     }));
 
+}
+
+function uploadWork() {
+    fetch("/login/personalArea/uploadWork", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify()
+    });
 }

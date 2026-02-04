@@ -7,6 +7,8 @@ namespace WebApp.data
     {
         public DbSet<Utente> dipendenti { get; set; }
 
+        public DbSet<Progetto> progetti { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=DipendentiDatabase;Trusted_Connection=True;");

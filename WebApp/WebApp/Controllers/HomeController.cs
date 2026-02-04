@@ -32,14 +32,14 @@ namespace WebApp.Controllers
             {
                 if ((userLog.username == u.name || userLog.username == u.email) && userLog.password == u.password)
                 {
-                    return Ok("utente loggato");
+                    return Ok(new { id = u.id});
                 }
                 else if (userLog.username == u.name || userLog.username == u.email)
                 {
-                    return Unauthorized("password errata");
+                    return Unauthorized(new { id = -1 });
                 }
             }
-            return NotFound("Utente inesistente");
+            return NotFound(new { id = -1 });
         }
 
 
