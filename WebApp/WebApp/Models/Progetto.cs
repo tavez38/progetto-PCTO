@@ -2,8 +2,8 @@
 {
     public class Progetto
     {
-        public string IdProprietario { get; private set; }
         public string id { get; private set; }
+        public string IdProprietario { get;  set; }
         public string title { get; set; }
         public string description { get; set; }
         public DateOnly scadenza { get; set; }

@@ -1,10 +1,12 @@
 wwwroot\css\style.css
+wwwroot\html\Index.html
 wwwroot\html\PersonalArea.html
 wwwroot\html\Registrazione.html
+wwwroot\html\uploadWork.html
 wwwroot\js\script.js
-wwwroot\html\Index.html
 C:\progetto-PCTO\WebApp\WebApp\wwwroot\css\style.css
+C:\progetto-PCTO\WebApp\WebApp\wwwroot\html\Index.html
 C:\progetto-PCTO\WebApp\WebApp\wwwroot\html\PersonalArea.html
 C:\progetto-PCTO\WebApp\WebApp\wwwroot\html\Registrazione.html
+C:\progetto-PCTO\WebApp\WebApp\wwwroot\html\uploadWork.html
 C:\progetto-PCTO\WebApp\WebApp\wwwroot\js\script.js
-C:\progetto-PCTO\WebApp\WebApp\wwwroot\html\Index.html

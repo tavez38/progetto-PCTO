@@ -5,7 +5,7 @@ using WebApp.Models;
 
 namespace WebApp.Controllers
 {
-    [Route("/login/personalArea")]
+    [Route("/html/personalArea")]
     [ApiController]
     public class PersonalAreaController : ControllerBase
     {
@@ -13,11 +13,15 @@ namespace WebApp.Controllers
         public IActionResult GetAllWorks()
         {
             var progetti = ProgettiUtente.progetti;
+            if (progetti == null || progetti.Count == 0)
+            {
+                return NotFound("Nessun progetto trovato.");
+            }
             return Ok(progetti);
         }
 
         [HttpPost]
-        [Route("uploadWork")]
+        [Route("/html/uploadWork")]
         public IActionResult AddWork([FromBody] Progetto nuovoProgetto)
         {
             ProgettiUtente.progetti.Add(nuovoProgetto);
@@ -27,7 +31,7 @@ namespace WebApp.Controllers
                 db.SaveChanges();
             }
             
-            return CreatedAtAction(nameof(GetAllWorks), nuovoProgetto);
+            return Ok();
         }
     }
 

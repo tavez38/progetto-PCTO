@@ -95,6 +95,7 @@ function onClickLogin(){
             .then(response => response.json())
             .then(id => {
                 idUtenteLoggato = id;
+                console.log(idUtenteLoggato);
                 if (idUtenteLoggato == -1) {
                     alert("Password errata o Credenziali non valide");
                 }
@@ -122,7 +123,7 @@ async function richiestaIscrizione() {
             body : JSON.stringify(utente)
         });
         if (!res.ok) {
-            console.log(res.json());
+            console.log(res.status);
         }
         else {
             console.log(res.json());
@@ -148,12 +149,32 @@ function loadWorks(){
 
 }
 
-function uploadWork() {
-    fetch("/login/personalArea/uploadWork", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify()
-    });
+async function uploadWork() {
+    let progetto ={
+        IdProprietario:idUtenteLoggato,
+        title : document.getElementById("inputTitle").value,
+        description : document.getElementById("inputDesc").value,
+        scadenza : document.getElementById("inputData").value,
+        orarioScadenza : document.getElementById("inputOra").value
+    }
+    try{
+        const res = await fetch("/html/uploadWork", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(progetto)
+        });
+        
+        if(!res.ok){
+            console.log(res.status);
+        }
+    }
+    catch (error){
+        console.log(error)
+    }
+}
+
+function goToUploadWorkPage(){
+    window.location.href = '../html/uploadWork.html';
 }

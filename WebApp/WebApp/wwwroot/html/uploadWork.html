@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="../css/style.css" rel="stylesheet" />
+    <script src="../js/script.js"></script>
 </head>
 <body>
-    <form action="/login/personalArea/uploadWork">
+    <form action="/login/personalArea/uploadWork" method="post">
         <label for="title" class="label"></label>
         <input type="text" name="title" id="inputTitle">
         <label for="desc" class="label"></label>
@@ -15,6 +17,7 @@
         <input type="date" name="data" id="inputData">
         <label for="ora" class="label"></label>
         <input type="time" name="ora" id="inputOra">
+        <button type="button" class="btnSubmit" asp-controller="PersonalArea" asp-action="AddWork" onclick="uploadWork()">Invia</button>
     </form>
 </body>
 </html>
