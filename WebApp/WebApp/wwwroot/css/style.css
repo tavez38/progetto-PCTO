@@ -71,7 +71,6 @@ body{
 }
 
 .container{
-    display: flex;
     width: 1500px;
     height: fit-content;
     border: 1px solid black;
@@ -80,7 +79,6 @@ body{
     border-radius: 10px;
 }
 .boxWorks{
-    display: flex;
     width: 1500px;
     height: fit-content;
     border: 1px solid red;
@@ -135,7 +133,11 @@ body{
     margin-top: 100px;
     margin-left: 1750px;
 }
-
+#btnAddWork{
+    margin-left: 1400px;
+    width: 100px;
+    height: 50px;
+}
 
 
 
