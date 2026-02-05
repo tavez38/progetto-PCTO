@@ -9,6 +9,8 @@ namespace WebApp.data
 
         public DbSet<Progetto> progetti { get; set; }
 
+        public DbSet<Messaggio> messaggi { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=DipendentiDatabase;Trusted_Connection=True;");

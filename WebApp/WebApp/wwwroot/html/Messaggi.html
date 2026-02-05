@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="../css/style.css" />
     <script src="../js/script.js"></script>
 </head>
-<body>
-    <h1 id="casellaDiPosta">Casella di posta</h1>
-    <div id="barra">
-        <a class="return" href="PersonalArea.html">&larr;</a>
+<body asp-controller="Messaggi" asp-action="GetMsg" onload="loadMessages()">
+    <h1 id="casellaDiPosta">casella di posta</h1>
+    <div id="menuOpzioni">
+        <button id="cestino">&#9773;</button>
         <button id="segna come letta">segna come già letto</button>
     </div>
     <button id="send">&#9998; Scrivi</button>
@@ -33,6 +33,9 @@
             <th id="tableMsgOggetto">Oggetto</th>
             <th id="tablemsgData">Data/Ora</th>
         </tr>
+        <tbody id="tableBodyMsg">
+
+        </tbody>
     </table>
     <form method="post" id="scriviMail">
         <label for="destinatario"></label><br>
