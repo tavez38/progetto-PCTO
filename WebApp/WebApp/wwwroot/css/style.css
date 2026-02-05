@@ -240,9 +240,42 @@ a{
 #menuOpzioni .cestino{
     width: 30px;
     height: 30px;
+    margin-right: 10px;
 }
 #scriviMail{
     position: absolute;
-    margin-left: 43%;
+    margin-left: 33%;
+    border: 3px solid #010A26;
+    background-color: #113859;
+    width: 500px;
+    height: 300px;
+    padding-top: 10px;
+    border-radius: 10px;
 }
+#scriviMail input, textarea{
+    margin-left: 100px;
+    width: 300px;
+    height: 30px;
+}
+#scriviMail label{
+    margin-left: 100px;
+    font-size: large;
+    color: #0D0000;
+}
+#inputMsgContent{
+    height: 100px !important;
+}
+#scriviMail button{
+    margin-left: 100px;
+    margin-top: 10px;
+    width: 70px;
+    height: 40px;
+    font-size: large;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-style: outset;
+    border-width: 3px;
+    cursor: pointer;
+}
+
 
