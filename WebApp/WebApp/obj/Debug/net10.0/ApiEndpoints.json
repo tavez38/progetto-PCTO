@@ -2,11 +2,17 @@
   {
     "ContainingType": "WebApp.Controllers.PersonalAreaController",
     "Method": "GetAllWorks",
-    "RelativePath": "api/personalArea",
+    "RelativePath": "api/personalArea/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {

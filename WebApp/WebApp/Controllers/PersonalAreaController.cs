@@ -10,10 +10,10 @@ namespace WebApp.Controllers
     public class PersonalAreaController : ControllerBase
     {
         [HttpGet]
-        [Route("/api/personalArea")]
-        public IActionResult GetAllWorks()
+        [Route("/api/personalArea/{id}")]
+        public IActionResult GetAllWorks(string id)
         {
-            var progetti = ProgramManager.progetti ?? new List<Progetto>();
+            var progetti = ProgramManager.progetti.Where(p => p.IdProprietario==id).ToList()?? new List<Progetto>();
             return Ok(progetti);
         }
 

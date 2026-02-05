@@ -5,7 +5,7 @@ function iscrizione() {
     }
     else {
         richiestaIscrizione();
-        window.location.href = '.. /html/Index.html'; 
+        window.location.href = '../html/Index.html'; 
 
     }
     
@@ -138,7 +138,7 @@ async function richiestaIscrizione() {
 
 async function loadWorks() {
     try {
-        const response = await fetch("/api/personalArea")
+        const response = await fetch(`/api/personalArea/${localStorage.getItem("idUtenteLoggato")}`)
         if (!response.ok) {
             console.log(response.status);
             return;
