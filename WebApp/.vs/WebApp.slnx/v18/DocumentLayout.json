@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\progetto-PCTO\\WebApp\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|c:\\progetto-pcto\\webapp\\webapp\\wwwroot\\html\\uploadwork.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|solutionrelative:webapp\\wwwroot\\html\\uploadwork.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|c:\\progetto-pcto\\webapp\\webapp\\controllers\\personalareacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|solutionrelative:webapp\\controllers\\personalareacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -40,7 +44,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -48,7 +52,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
+              "Title": "uploadWork.html",
+              "DocumentMoniker": "C:\\progetto-PCTO\\WebApp\\WebApp\\wwwroot\\html\\uploadWork.html",
+              "RelativeDocumentMoniker": "WebApp\\wwwroot\\html\\uploadWork.html",
+              "ToolTip": "C:\\progetto-PCTO\\WebApp\\WebApp\\wwwroot\\html\\uploadWork.html",
+              "RelativeToolTip": "WebApp\\wwwroot\\html\\uploadWork.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2026-02-05T10:29:35.192Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Utente.cs",
               "DocumentMoniker": "C:\\progetto-PCTO\\WebApp\\WebApp\\Models\\Utente.cs",
               "RelativeDocumentMoniker": "WebApp\\Models\\Utente.cs",
@@ -56,32 +73,29 @@
               "RelativeToolTip": "WebApp\\Models\\Utente.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-05T10:11:54.325Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-05T10:11:54.325Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "dbo.dipendenti.sql",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/DipendentiDatabase/True/SqlTable/dbo.dipendenti.sql",
+              "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/DipendentiDatabase/True/SqlTable/dbo.dipendenti.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2026-02-05T10:09:02.99Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "dbo.dipendenti [Dati]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/DipendentiDatabase/True/SqlTable/dbo.dipendenti.sql",
-              "ToolTip": "dbo.dipendenti [Dati]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2026-02-05T10:09:02.99Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "dbo.progetti [Dati]",
+              "Title": "dbo.progetti.sql",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/DipendentiDatabase/True/SqlTable/dbo.progetti.sql",
-              "ToolTip": "dbo.progetti [Dati]",
+              "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/DipendentiDatabase/True/SqlTable/dbo.progetti.sql",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2026-02-05T10:06:32.512Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-05T10:06:32.512Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\progetto-PCTO\\WebApp\\WebApp\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "WebApp\\Controllers\\HomeController.cs",
@@ -89,12 +103,11 @@
               "RelativeToolTip": "WebApp\\Controllers\\HomeController.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAgwCgAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-05T09:31:57.417Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-05T09:31:57.417Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "AccountController.cs",
               "DocumentMoniker": "C:\\progetto-PCTO\\WebApp\\WebApp\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "WebApp\\Controllers\\AccountController.cs",
@@ -102,12 +115,11 @@
               "RelativeToolTip": "WebApp\\Controllers\\AccountController.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-05T09:24:39.763Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-05T09:24:39.763Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Progetto.cs",
               "DocumentMoniker": "C:\\progetto-PCTO\\WebApp\\WebApp\\Models\\Progetto.cs",
               "RelativeDocumentMoniker": "WebApp\\Models\\Progetto.cs",
@@ -115,12 +127,11 @@
               "RelativeToolTip": "WebApp\\Models\\Progetto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-05T09:02:44.336Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-05T09:02:44.336Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "script.js",
               "DocumentMoniker": "C:\\progetto-PCTO\\WebApp\\WebApp\\wwwroot\\js\\script.js",
               "RelativeDocumentMoniker": "WebApp\\wwwroot\\js\\script.js",
@@ -128,12 +139,11 @@
               "RelativeToolTip": "WebApp\\wwwroot\\js\\script.js",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-02-04T13:14:14.941Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-04T13:14:14.941Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "PersonalAreaController.cs",
               "DocumentMoniker": "C:\\progetto-PCTO\\WebApp\\WebApp\\Controllers\\PersonalAreaController.cs",
               "RelativeDocumentMoniker": "WebApp\\Controllers\\PersonalAreaController.cs",
