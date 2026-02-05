@@ -8,28 +8,40 @@
     <script src="../js/script.js"></script>
 </head>
 <body>
-    <h1 id="casellaDiPosta">casella di posta</h1>
-    <div id="menuOpzioni">
-        <button id="cestino">&#9773;</button>
+    <h1 id="casellaDiPosta">Casella di posta</h1>
+    <div id="barra">
+        <a class="return" href="PersonalArea.html">&larr;</a>
         <button id="segna come letta">segna come già letto</button>
+    </div>
+    <button id="send">&#9998; Scrivi</button>
+    <div id="menuOpzioni">
         <button id="ordina">ordina per:
             <div id="dropDownMenu">
-                <a>Alfabetico: A-Z</a>
-                <a>Alfabetico: Z-A</a>
-                <a>Più recente</a>
-                <a>Più vecchio</a>
-                <a>Da leggere</a>
-                <a>Letti</a>
+                <p>Alfabetico: A-Z</p>
+                <p>Alfabetico: Z-A</p>
+                <p>Più recente</p>
+                <p>Più vecchio</p>
+                <p>Da leggere</p>
+                <p>Letti</p>
             </div>
         </button>
+        <button class="cestino">&#9773;</button>
     </div>
     <table id="messaggi">
         <tr>
-            <th id="mittente">Mittente</th>
-            <th id="oggetto">Oggetto</th>
-            <th id="data">Data/Ora</th>
+            <th id="tableMsgMittente">Mittente</th>
+            <th id="tableMsgOggetto">Oggetto</th>
+            <th id="tablemsgData">Data/Ora</th>
         </tr>
     </table>
-    <button id="send">Scrivi</button>
+    <form method="post" id="scriviMail">
+        <label for="destinatario"></label><br>
+        <input type="email" name="destinatario" id="inputMsgDest"><br>
+        <label for="titolo"></label><br>
+        <input type="text" name="titolo" id="inputMsgTitle"><br>
+        <label for="corpo"></label><br>
+        <input type="text" name="corpo" id="inputMsgContent">
+        <button type="button" asp-controller="Messaggi" asp-action="SendMsg" aria-placeholder="Invia">
+    </form>
 </body>
 </html>

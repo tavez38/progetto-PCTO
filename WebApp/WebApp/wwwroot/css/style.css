@@ -85,13 +85,13 @@ body{
     margin-left: auto;
     margin-right: auto;
     border-radius: 10px;
+    border-collapse: collapse;
 }
 th, tr, td{
     height: max-content;
     border: 3px solid #4F5957;
     font-size: 25px;
     color: #6c7a89;
-    border-collapse: collapse;
 }
 #header{
     width: 1500px;
@@ -169,28 +169,80 @@ input{
 }
 #casellaDiPosta{
     position: absolute;
+    color: #6c7a89;
+    font-size: 80px;
+    font-family:'Times New Roman', Times, serif;
 }
-#menuOpzioni{
-    width: 20%;
-    margin-left: auto;
+#barra{
+    height: 30px;
+    padding-left: 80%;
+    padding-top: 5px;
+    background-color: rgb(3, 67, 3);
 }
 #dropDownMenu{
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 200px;
+  min-width: 150px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  right: 0;
 }
-#dropDownMenu a{
-    color: black;
-  padding: 12px 16px;
+#dropDownMenu p{
+  color: black;
   text-decoration: none;
   display: block;
 }
 #messaggi{
     margin-left: auto;
     margin-right: auto;
-    width: 400px;
+    width: 700px;
+    margin-top: 250px;
+    border-collapse: collapse;
+}
+#tableMsgData{
+    width: 170px;
+}
+#send{
+    border-radius: 5px;
+    background-color: #9199a1;
+    border: inset;
+    width: 115px;
+    height: 60px;
+    font-size: larger;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    position: absolute;
+    margin-top: 120px;
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+#ordina{
+    cursor: pointer;
+    background-color: gainsboro;
+    border-color: gray;
+    height: 30px;
+    margin-right: 10px;
+}
+#ordina:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#ordina:hover #dropDownMenu{
+    display: block;
+}
+#menuOpzioni{
+    position: absolute;
+    margin-left: 420px;
     margin-top: 200px;
+}
+#menuOpzioni .cestino{
+    width: 30px;
+    height: 30px;
+}
+#scriviMail{
+    position: absolute;
+    margin-left: 43%;
 }
 
