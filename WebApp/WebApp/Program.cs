@@ -24,6 +24,7 @@ namespace WebApp
             {
                 ProgramManager.dipendenti = db.dipendenti.ToList();
                 ProgramManager.progetti = db.progetti.ToList();
+                ProgramManager.messaggi = db.messaggi.ToList();
             }
             
         }

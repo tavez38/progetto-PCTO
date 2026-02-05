@@ -161,10 +161,10 @@ th, tr, td{
 input{
     background-color:#818887;
 }
-.rowNoProject{
+.rowNoProject, .rowNoMsg {
     height: 100px;
 }
-#colNoProject{
+#colNoProject, #colNoMsg {
     text-align: center;
 }
 #casellaDiPosta{

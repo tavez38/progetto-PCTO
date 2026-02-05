@@ -1,5 +1,53 @@
 [
   {
+    "ContainingType": "WebApp.Controllers.MessaggiController",
+    "Method": "SendMsg",
+    "RelativePath": "api/messages/api/messages/sendMsg",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "msg",
+        "Type": "WebApp.Models.Messaggio",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApp.Controllers.MessaggiController",
+    "Method": "getMailMit",
+    "RelativePath": "api/messages/getMailMit/{idMit}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idMit",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApp.Controllers.MessaggiController",
+    "Method": "GetMsg",
+    "RelativePath": "api/messages/getMsg/{idUtente}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idUtente",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "WebApp.Controllers.PersonalAreaController",
     "Method": "GetAllWorks",
     "RelativePath": "api/personalArea/{id}",

@@ -1,4 +1,5 @@
 ﻿const listaCharSpec = ["!", "@", "#", "$", "%", "^", "&", "*", "-", "_", "+", "=", "?"];
+
 function iscrizione() {
     if (!checkEmail() || !checkPsw()) {
         console.log("false");
@@ -192,6 +193,73 @@ async function uploadWork() {
     catch (error){
         console.log(error)
     }
+}
+
+async function loadMessages() {
+    const response = await fetch(`/api/messages/getMsg/${localStorage.getItem("idUtenteLoggato")}`);
+    if (!response.ok) {
+        console.log(response.status);
+        return;
+    }
+    const data = await response.json();
+    if (data.length == 0) {
+        document.getElementById("tableBodyMsg").innerHTML = `<tr class="rowNoMsg"><td colspan="3" id="colNoMsg">Nessun messaggio ricevuto</td></tr>`;
+        return;
+    }
+    data.forEach(element => {
+        document.getElementById("tableBodyMsg").innerHTML += `<tr class="rows">
+        <td class="tableMsgMit">${element.mittente}</td>
+        <td class="tableMsgTitle">${element.titolo}</td>
+        <td class="tableMsgData">${element.dataInvio}</td>
+        </tr>`
+    });
+    return;
+}
+
+/*async function sendMessage() {
+    const currentDate = new Date();
+    let messaggio = {
+        titolo: document.getElementById("inputMsgTitle").value,
+        contenuto: document.getElementById("inputMsgContent").value,
+        dataInvio: currentDate.toISOString(),
+        mittente: getMailMittente(),
+        destinatario: document.getElementById("inputMsgDest").value
+    }
+    try {
+        fetch("/api/messages/sendMsg", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(messaggio)
+        })
+        .then(res => {
+            if (!res.ok) {
+                console.log(res.status);
+            }
+            else {
+                console.log("Messaggio inviato con successo"+res.status);
+            }
+        });
+    }
+    catch(err) {
+        console.log(err);
+    }
+
+}
+da testare*/
+
+async function getMailMittente() {
+    const response = await fetch(`api/messages/getMailMit/${localStorage.getItem("idUtenteLoggato")}`);
+    if (!response.ok) {
+        console.log(response.status);
+        return;
+    }
+    if (response.mail == "") {
+        console.log("Nessun utente trovato");
+        return;
+    }
+    return response.mail;
 }
 
 function goToUploadWorkPage(){

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/style.css" />
     <script src="../js/script.js"></script>
 </head>
-<body>
+<body asp-controller="Messaggi" asp-action="GetMsg" onload="loadMessages()">
     <h1 id="casellaDiPosta">casella di posta</h1>
     <div id="menuOpzioni">
         <button id="cestino">&#9773;</button>
@@ -29,6 +29,9 @@
             <th id="oggetto">Oggetto</th>
             <th id="data">Data/Ora</th>
         </tr>
+        <tbody id="tableBodyMsg">
+
+        </tbody>
     </table>
     <button id="send">Scrivi</button>
 </body>
