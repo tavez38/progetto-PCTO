@@ -1,5 +1,4 @@
 ﻿const listaCharSpec = ["!", "@", "#", "$", "%", "^", "&", "*", "-", "_", "+", "=", "?"];
-var idUtenteLoggato = null;
 function iscrizione() {
     if (!checkEmail() || !checkPsw()) {
         console.log("false");
@@ -85,22 +84,24 @@ function onClickLogin(){
     };
 
     try{
-        fetch("/index",{
-            method:'POST',
-            headers : {
-                'Content-Type' : 'application/json' 
+        fetch("/index", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
             },
-            body : JSON.stringify(utente)
+            body: JSON.stringify(utente)
         })
             .then(response => response.json())
             .then(id => {
-                idUtenteLoggato = id;
-                console.log(idUtenteLoggato);
-                if (idUtenteLoggato == -1) {
+                if (id.id == -1) {
                     alert("Password errata o Credenziali non valide");
                 }
-            })
-            .then(() => { window.location.href = '../html/PersonalArea.html'; })
+                else {
+                    localStorage.setItem("idUtenteLoggato", id.id);
+                    window.location.href = '../html/PersonalArea.html';
+                }
+            });
+            
     }
     catch(error){
         alert(error);
@@ -135,21 +136,35 @@ async function richiestaIscrizione() {
     }
 }
 
-function loadWorks(){
-    fetch("/login/personalArea")
-    .then(response => response.json())
-    .then(lista => lista.forEach(element => {
-        document.getElementById("tableBodyProj").innerHTML+=`<tr class="rows">
+async function loadWorks() {
+    try {
+        const response = await fetch("/api/personalArea")
+        if (!response.ok) {
+            console.log(response.status);
+            return;
+        }
+        const data = await response.json();
+        if (data.length == 0) {
+            document.getElementById("tableBodyProj").innerHTML = `<tr class="rowNoProject"><td colspan="4" id="colNoProject">Nessun progetto caricato</td></tr>`;
+        }
+        else {
+            data.forEach(element => {
+                document.getElementById("tableBodyProj").innerHTML += `<tr class="rows">
                 <td class="tableTitle">${element.title}</td>
                 <td class="tableDesc">${element.description}</td>
                 <td class="tableDate">${element.scadenza}</td>
                 <td class="tableHour">${element.orarioScadenza}</td>
                 </tr>`;
-    }));
-
+            });
+        } 
+    }
+    catch (error) {
+        console.log(error);
+    }
 }
 
 async function uploadWork() {
+    const idUtenteLoggato = localStorage.getItem("idUtenteLoggato");
     let progetto ={
         IdProprietario:idUtenteLoggato,
         title : document.getElementById("inputTitle").value,
@@ -158,17 +173,21 @@ async function uploadWork() {
         orarioScadenza : document.getElementById("inputOra").value
     }
     try{
-        const res = await fetch("/html/uploadWork", {
+        fetch("/api/uploadWork", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(progetto)
-        });
-        
-        if(!res.ok){
-            console.log(res.status);
-        }
+        })
+            .then(res => {
+                if (!res.ok) {
+                    console.log(res.status);
+                }
+                else {
+                    console.log(res.status);
+                }
+            });
     }
     catch (error){
         console.log(error)

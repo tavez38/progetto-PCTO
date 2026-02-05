@@ -28,7 +28,7 @@ namespace WebApp.Controllers
                return BadRequest("Dati non validi");
            }
 
-            foreach (Utente u in Dipendenti.dipendenti)
+            foreach (Utente u in ProgramManager.dipendenti)
             {
                 if ((userLog.username == u.name || userLog.username == u.email) && userLog.password == u.password)
                 {

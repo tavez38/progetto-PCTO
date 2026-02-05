@@ -2,7 +2,7 @@
   {
     "ContainingType": "WebApp.Controllers.PersonalAreaController",
     "Method": "GetAllWorks",
-    "RelativePath": "html/personalArea",
+    "RelativePath": "api/personalArea",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -12,7 +12,7 @@
   {
     "ContainingType": "WebApp.Controllers.PersonalAreaController",
     "Method": "AddWork",
-    "RelativePath": "html/uploadWork",
+    "RelativePath": "api/uploadWork",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
