@@ -352,11 +352,11 @@ C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\refint\WebApp.dll
 C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\WebApp.pdb
 C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\WebApp.genruntimeconfig.cache
 C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\ref\WebApp.dll
-C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\rsxbyhsisf-{0}-4mvnn6wa65-4mvnn6wa65.gz
 C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
 C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\4mnknta2f9-{0}-16hj4sn3gp-16hj4sn3gp.gz
-C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\0tw0t2udrs-{0}-upatod3yfb-upatod3yfb.gz
-C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\7bfgkygcp7-{0}-41odf8vc1m-41odf8vc1m.gz
-C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\dx8wh36wkn-{0}-w7q2xb5083-w7q2xb5083.gz
-C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\xy5h35qe0c-{0}-sa355r34q2-sa355r34q2.gz
-C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\empuesvxn7-{0}-ld93v94vme-ld93v94vme.gz
+C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\dx8wh36wkn-{0}-pisdnbnzwd-pisdnbnzwd.gz
+C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\xy5h35qe0c-{0}-b7z2vm2xqo-b7z2vm2xqo.gz
+C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\7bfgkygcp7-{0}-6rvyc0z14e-6rvyc0z14e.gz
+C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\rsxbyhsisf-{0}-t1xwbdxeq2-t1xwbdxeq2.gz
+C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\0tw0t2udrs-{0}-9a8f8u19ht-9a8f8u19ht.gz
+C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\empuesvxn7-{0}-vsdfzapxmo-vsdfzapxmo.gz

@@ -7,12 +7,24 @@
       "RelativeMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|solutionrelative:webapp\\controllers\\messaggicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|c:\\progetto-pcto\\webapp\\webapp\\models\\messaggio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|solutionrelative:webapp\\models\\messaggio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|c:\\progetto-pcto\\webapp\\webapp\\models\\progetto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|solutionrelative:webapp\\models\\progetto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|c:\\progetto-pcto\\webapp\\webapp\\wwwroot\\js\\script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|solutionrelative:webapp\\wwwroot\\js\\script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|c:\\progetto-pcto\\webapp\\webapp\\models\\messaggio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|solutionrelative:webapp\\models\\messaggio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|c:\\progetto-pcto\\webapp\\webapp\\wwwroot\\html\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|solutionrelative:webapp\\wwwroot\\html\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|c:\\progetto-pcto\\webapp\\webapp\\models\\programmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|solutionrelative:webapp\\models\\programmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,11 +34,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{65ddf8c3-8f89-4077-a6c6-dbb8853aab13}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Progetto.cs",
+              "DocumentMoniker": "C:\\progetto-PCTO\\WebApp\\WebApp\\Models\\Progetto.cs",
+              "RelativeDocumentMoniker": "WebApp\\Models\\Progetto.cs",
+              "ToolTip": "C:\\progetto-PCTO\\WebApp\\WebApp\\Models\\Progetto.cs",
+              "RelativeToolTip": "WebApp\\Models\\Progetto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-05T16:20:31.482Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.html",
+              "DocumentMoniker": "C:\\progetto-PCTO\\WebApp\\WebApp\\wwwroot\\html\\Index.html",
+              "RelativeDocumentMoniker": "WebApp\\wwwroot\\html\\Index.html",
+              "ToolTip": "C:\\progetto-PCTO\\WebApp\\WebApp\\wwwroot\\html\\Index.html",
+              "RelativeToolTip": "WebApp\\wwwroot\\html\\Index.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAABXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2026-02-05T16:03:38.781Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "script.js",
+              "DocumentMoniker": "C:\\progetto-PCTO\\WebApp\\WebApp\\wwwroot\\js\\script.js",
+              "RelativeDocumentMoniker": "WebApp\\wwwroot\\js\\script.js",
+              "ToolTip": "C:\\progetto-PCTO\\WebApp\\WebApp\\wwwroot\\js\\script.js",
+              "RelativeToolTip": "WebApp\\wwwroot\\js\\script.js",
+              "ViewState": "AgIAAG0AAAAAAAAAAAAAANoAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-02-05T12:49:40.97Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -36,35 +87,35 @@
               "RelativeDocumentMoniker": "WebApp\\Controllers\\MessaggiController.cs",
               "ToolTip": "C:\\progetto-PCTO\\WebApp\\WebApp\\Controllers\\MessaggiController.cs",
               "RelativeToolTip": "WebApp\\Controllers\\MessaggiController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-05T14:22:28.162Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "script.js",
-              "DocumentMoniker": "C:\\progetto-PCTO\\WebApp\\WebApp\\wwwroot\\js\\script.js",
-              "RelativeDocumentMoniker": "WebApp\\wwwroot\\js\\script.js",
-              "ToolTip": "C:\\progetto-PCTO\\WebApp\\WebApp\\wwwroot\\js\\script.js",
-              "RelativeToolTip": "WebApp\\wwwroot\\js\\script.js",
-              "ViewState": "AgIAAK0AAAAAAAAAAAAYwNoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-02-05T12:49:40.97Z",
+              "DocumentIndex": 5,
+              "Title": "ProgramManager.cs",
+              "DocumentMoniker": "C:\\progetto-PCTO\\WebApp\\WebApp\\Models\\ProgramManager.cs",
+              "RelativeDocumentMoniker": "WebApp\\Models\\ProgramManager.cs",
+              "ToolTip": "C:\\progetto-PCTO\\WebApp\\WebApp\\Models\\ProgramManager.cs",
+              "RelativeToolTip": "WebApp\\Models\\ProgramManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-05T15:45:38.82Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Messaggio.cs",
               "DocumentMoniker": "C:\\progetto-PCTO\\WebApp\\WebApp\\Models\\Messaggio.cs",
               "RelativeDocumentMoniker": "WebApp\\Models\\Messaggio.cs",
-              "ToolTip": "C:\\progetto-PCTO\\WebApp\\WebApp\\Models\\Messaggio.cs",
-              "RelativeToolTip": "WebApp\\Models\\Messaggio.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA3AAAAAAAAAA==",
+              "ToolTip": "C:\\progetto-PCTO\\WebApp\\WebApp\\Models\\Messaggio.cs*",
+              "RelativeToolTip": "WebApp\\Models\\Messaggio.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-05T12:43:30.264Z",
+              "WhenOpened": "2026-02-05T15:52:44.108Z",
               "EditorCaption": ""
             }
           ]

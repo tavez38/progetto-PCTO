@@ -216,13 +216,14 @@ async function loadMessages() {
     return;
 }
 
-/*async function sendMessage() {
+async function sendMessage() {
     const currentDate = new Date();
+    const mailMit = await getMailMittente();
     let messaggio = {
         titolo: document.getElementById("inputMsgTitle").value,
         contenuto: document.getElementById("inputMsgContent").value,
         dataInvio: currentDate.toISOString(),
-        mittente: getMailMittente(),
+        mittente: mailMit,
         destinatario: document.getElementById("inputMsgDest").value
     }
     try {
@@ -245,21 +246,20 @@ async function loadMessages() {
     catch(err) {
         console.log(err);
     }
-
 }
-da testare*/
 
 async function getMailMittente() {
-    const response = await fetch(`api/messages/getMailMit/${localStorage.getItem("idUtenteLoggato")}`);
+    const response = await fetch(`/api/messages/getMailMit/${localStorage.getItem("idUtenteLoggato")}`);
     if (!response.ok) {
         console.log(response.status);
         return;
     }
-    if (response.mail == "") {
+    const responseData = await response.json();
+    if (responseData.mail == "") {
         console.log("Nessun utente trovato");
         return;
     }
-    return response.mail;
+    return responseData.mail;
 }
 
 function goToUploadWorkPage(){

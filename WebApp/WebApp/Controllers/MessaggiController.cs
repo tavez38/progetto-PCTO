@@ -22,18 +22,15 @@ namespace WebApp.Controllers
         [Route("/api/messages/getMailMit/{idMit}")]
         public IActionResult getMailMit(string idMit)
         {
-            try
-            {
-                var mit = ProgramManager.dipendenti.First(d => idMit == d.id);
-                var mailMit = mit.email;
-                return Ok(new { mail = mailMit });
-            } catch(Exception e) {
+            var mit = ProgramManager.dipendenti.FirstOrDefault(d=> idMit == d.id);
+            if(mit == default) 
                 return NotFound();
-            }
+            var mailMit = mit.email;
+            return Ok(new { mail = mailMit });
         }
 
         [HttpPost]
-        [Route("api/messages/sendMsg")]
+        [Route("/api/messages/sendMsg")]
         public IActionResult SendMsg([FromBody] Messaggio msg)
         {
             if (msg == null || string.IsNullOrEmpty(msg.titolo) || string.IsNullOrEmpty(msg.contenuto) || string.IsNullOrEmpty(msg.mittente) || string.IsNullOrEmpty(msg.destinatario))
@@ -41,12 +38,13 @@ namespace WebApp.Controllers
                 return BadRequest("Dati del messaggio non validi");
             }
             msg.dataInvio = DateTime.Now;
-            ProgramManager.messaggi.Add(msg);
+            
             using(var db = new UtentiDb())
             {
                 db.messaggi.Add(msg);
                 db.SaveChanges();
             }
+            ProgramManager.messaggi.Add(msg);
             return Ok();
         }
     }
