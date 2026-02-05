@@ -22,7 +22,8 @@ namespace WebApp
         {
             using (var db = new UtentiDb())
             {
-                Dipendenti.dipendenti = db.dipendenti.ToList();
+                ProgramManager.dipendenti = db.dipendenti.ToList();
+                ProgramManager.progetti = db.progetti.ToList();
             }
             
         }

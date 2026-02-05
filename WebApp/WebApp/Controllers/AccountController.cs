@@ -26,7 +26,7 @@ namespace WebApp.Controllers
                 return BadRequest("Tutti i campi sono obbligatori.");
             }
 
-            Dipendenti.dipendenti.Add(u);
+            ProgramManager.dipendenti.Add(u);
             try
             {
                 using var db = new UtentiDb();

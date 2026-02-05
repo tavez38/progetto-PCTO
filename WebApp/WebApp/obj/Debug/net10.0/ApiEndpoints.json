@@ -2,11 +2,33 @@
   {
     "ContainingType": "WebApp.Controllers.PersonalAreaController",
     "Method": "GetAllWorks",
-    "RelativePath": "login/personalArea",
+    "RelativePath": "api/personalArea/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApp.Controllers.PersonalAreaController",
+    "Method": "AddWork",
+    "RelativePath": "api/uploadWork",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nuovoProgetto",
+        "Type": "WebApp.Models.Progetto",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   }
 ]

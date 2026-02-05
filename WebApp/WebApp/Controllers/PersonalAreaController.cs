@@ -5,29 +5,30 @@ using WebApp.Models;
 
 namespace WebApp.Controllers
 {
-    [Route("/login/personalArea")]
+    [Route("/html")]
     [ApiController]
     public class PersonalAreaController : ControllerBase
     {
         [HttpGet]
-        public IActionResult GetAllWorks()
+        [Route("/api/personalArea/{id}")]
+        public IActionResult GetAllWorks(string id)
         {
-            var progetti = ProgettiUtente.progetti;
+            var progetti = ProgramManager.progetti.Where(p => p.IdProprietario==id).ToList()?? new List<Progetto>();
             return Ok(progetti);
         }
 
         [HttpPost]
-        [Route("uploadWork")]
+        [Route("/api/uploadWork")]
         public IActionResult AddWork([FromBody] Progetto nuovoProgetto)
         {
-            ProgettiUtente.progetti.Add(nuovoProgetto);
+            ProgramManager.progetti.Add(nuovoProgetto);
             using (var db = new UtentiDb())
             {
                 db.progetti.Add(nuovoProgetto);
                 db.SaveChanges();
             }
             
-            return CreatedAtAction(nameof(GetAllWorks), nuovoProgetto);
+            return Ok();
         }
     }
 
