@@ -7,18 +7,18 @@
     <link rel="stylesheet" href="../css/style.css"/>
     <script src="../js/script.js"></script>
 </head>
-</head>
+ 
 <body>
-    <h1 id="creaProgetto">CREA PROGETTO</h1>
-    <form action="/login/personalArea/uploadWork" id="progect">
-        <label for="title" class="label"></label><br>
-        <input type="text" name="title" id="inputTitle" required placeholder="nome progetto">
-        <label for="desc" class="label"></label><br>
-        <input type="text" name="desc" id="inputDesc" required placeholder="breve descrizione del progetto">
-        <label for="data" class="label"></label><br>
+<h1 id="creaProgetto">CREA PROGETTO</h1>
+    <form action="/login/personalArea/uploadWork" method="post" id="progect">
+        <label for="title" class="label"></label>
+        <input type="text" name="title" id="inputTitle">
+        <label for="desc" class="label"></label>
+        <input type="text" name="desc" id="inputDesc">
+        <label for="data" class="label"></label>
         <input type="date" name="data" id="inputData">
         <label for="ora" class="label"></label>
-        <input type="time" name="ora" id="inputOra"><br>
-    </form>
+        <input type="time" name="ora" id="inputOra">
+        <button type="button" class="btnSubmit" asp-controller="PersonalArea" asp-action="AddWork" onclick="uploadWork()">Invia</button>
 </body>
 </html>
