@@ -24,13 +24,15 @@ body{
 .divFormLogin{
     width: 400px;
     height: 300px;
-    border: 5px solid black;
+    border: 5px solid #03ffff;
     border-radius: 15px;
     border-style:groove;
     margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
-    background-color: #159A9C;
+    background-image: radial-gradient(farthest-side at 50% 100%, rgb(0, 240, 255)-30%, black);
+    background-repeat: no-repeat;
+    box-shadow: 0px 0px 15px #00f0ff;
 }
 .divFormRegister {
     width: 400px;
@@ -216,10 +218,6 @@ input{
     margin-top: 120px;
     cursor: pointer;
 }
-a{
-    text-decoration: none;
-    color: black;
-}
 #ordina{
     cursor: pointer;
     background-color: gainsboro;
@@ -302,4 +300,43 @@ a{
 }
 #scriviMail span{
     margin-left: 100px;
+}
+#inputMsgContent{
+    resize: none;
+}
+#light-dotLeft{
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background-color: #cffdff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #fff,
+    -5px 0 15px 2px #17effe, 
+    -20px 0 20px #00f0ff;
+    offset-path: path("M 567,23 L 940,23 Q 955,23 955,38 L 955,313 Q 955,328 940,328 L 566,325 Q 551,325 551,310 L 552,38 Q 552,23 567,23");
+    animation: moveAlongPath 6s infinite linear, flicker 0.8s infinite alternate;
+}
+@keyframes flicker {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0.9; transform: scale(0.9); }
+}
+@keyframes moveAlongPath {
+  from {
+    offset-distance: 0%;
+  }
+  to {
+    offset-distance: 100%;
+  }
+}
+#light-dotRight{
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background-color: #cffdff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #fff,
+    -5px 0 15px 2px #17effe, 
+    -20px 0 20px #00f0ff;
+    offset-path: path("M 940,23 L 567,23 Q 552,23 552,38 L 552,313 Q 552,328 567,328 L 941,325 Q 956,325 956,310 L 955,38 Q 955,23 940,23");
+    animation: moveAlongPath 6s infinite linear, flicker 0.8s infinite alternate;
 }
