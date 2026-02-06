@@ -8,11 +8,11 @@ body{
     color: #159A9C;
 }
 .title{
-    margin-top: 100px;
+    margin-top: 10px;
     font-size: 50px;
 }
 .subTitle{
-    margin-top: 50px;
+    margin-top: 40px;
     font-size: 30px;
 }
 #tableMainTitle{
@@ -27,7 +27,7 @@ body{
     border: 5px solid black;
     border-radius: 15px;
     border-style:groove;
-    margin-top: 100px;
+    margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
     background-color: #159A9C;
@@ -38,7 +38,7 @@ body{
     border: 5px solid black;
     border-radius: 15px;
     border-style: groove;
-    margin-top: 100px;
+    margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
     background-color: #159A9C;
@@ -58,7 +58,7 @@ body{
     margin-left: 300px;
 }
 .formLogin{
-    margin-top: 60px;
+    margin-top: 30px;
 }
 .formRegister {
     margin-top: 60px;
@@ -68,8 +68,8 @@ body{
     margin-top: 20px;
     margin-bottom: 10px;
 }
-#errEmailReg, #errPswReg{
-    color: black;
+.error{
+    color: red;
 }
 
 .container{
@@ -286,4 +286,3 @@ a{
     font-size: 20px;
     font-family:Arial, Helvetica, sans-serif;
 }
-

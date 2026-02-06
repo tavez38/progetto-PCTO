@@ -8,6 +8,7 @@
         <script src="../js/script.js"></script>
     </head>
     <body>
+        <a class="return" href="Index.html">Logout</a>
         <a class="return" href="Index.html">&larr;</a>
         <h1 class="title">Registrati</h1>
         <h3 class="subTitle">Compila questo form per registrarti</h3>
@@ -25,7 +26,7 @@
                 </label><br>
                 <input type="email" id="inputEmail" name="email" required placeholder="Email" /><br>
 
-            <span id="errEmailReg"></span>
+            <span id="errEmailReg" class="error"></span>
               
 
                 <label class="label" for="password">
@@ -33,7 +34,7 @@
                 </label><br>
                 <input type="password" id="inputPassword" name="password" required placeholder="Password" /><br>
 
-            <span id="errPswReg"></span>
+            <span id="errPswReg" class="error"></span>
 
                 <button class="btnSubmit" type="button" onclick="iscrizione()">Invia</button>
             </form>

@@ -82,6 +82,8 @@ function onClickLogin(){
 
     const usMail = document.getElementById("inputUsername").value;
     const psw = document.getElementById("inputPassword").value;
+    const pswError = document.getElementById("pswError");
+    const userError = document.getElementById("userError");
     if (!IsEmptyPswLogin(psw, usMail)) {
         return;
     }
@@ -101,13 +103,13 @@ function onClickLogin(){
             .then(response => response.json())
             .then(id => {
                 if (id.id == -1) {
-                    alert("Password errata");
+                    pswError.innerHTML = "inserire password";
                 }
                 else if (id.id == -2) {
-                    alert("Non è stato trovato nessun utente con questa mail/username");
+                    userError.innerHTML = "Non è stato trovato nessun utente con questa mail/username";
                 }
                 else if (id.id == -3) {
-                    alert("Utente nullo");
+                    userError.innerHTML = "inserire utente";
                 }
                 else {
                     localStorage.setItem("idUtenteLoggato", id.id);
@@ -246,9 +248,15 @@ async function loadMessages() {
 async function sendMessage(){
     const currentDate = new Date();
     const mailMit = await getMailMittente();
-    checkEmail(m)
+    if(!checkEmail(m)){
+        return;
+    }
+    const titoloInput = document.getElementById("inputMsgTitle").value;
+    if(titoloInput == null || titoloInput == "") {
+        titoloInput = "[nessun oggetto]";
+    }
     let messaggio = {
-        titolo: document.getElementById("inputMsgTitle").value,
+        titolo: titoloInput,
         contenuto: document.getElementById("inputMsgContent").value,
         dataInvio: currentDate.toISOString(),
         mittente: mailMit,
@@ -297,10 +305,20 @@ function goToUploadWorkPage(){
 }
 
 function revalSendForm(){
-    document.getElementById("container").style.opacity = "0.4";
-    document.getElementById("scriviMail").style.display = "block";
+    let opacityBox = document.getElementById("opacityBox");
+    let scriviMail = document.getElementById("scriviMail");
+
+   scriviMail.style.display = "block";
+   opacityBox.style.opacity = "0.4";
+   document.body.style.overflow = "hidden";
+   opacityBox.style.pointerEvents = "none";
 }
 function hideSendForm(){
-    document.getElementById("scriviMail").style.display = "none";
-    document.getElementById("container").style.opacity = "1";
+    let opacityBox = document.getElementById("opacityBox");
+    let scriviMail = document.getElementById("scriviMail");
+
+    scriviMail.style.display = "none";
+    opacityBox.style.opacity = "1";
+    document.body.style.overflow = "scroll";
+    opacityBox.style.pointerEvents = "all";
 }

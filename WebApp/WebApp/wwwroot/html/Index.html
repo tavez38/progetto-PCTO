@@ -17,15 +17,17 @@
             Username/Email:
         </label><br>
         <input type="text" id="inputUsername" name="username" required placeholder="Username/mail" /><br>
+        <span id="userError" class="error"></span><br>
 
         <label class="label" for="password">
             Password:
         </label><br>
         <input type="password" id="inputPassword" name="password" required placeholder="Password" /><br>
+        <span id="pswError" class="error"></span><br>
 
         <button class="btnSubmit" type="button" onclick="onClickLogin()">Invia</button>
     </form>
-    <p class="linkRegister">Non hai ancora un account?<a class="linkRegister" href="/register" asp-controller="Account" asp-action="ShowPageRegister"> Registrati qui</a></p>
+    <p class="linkRegister">Non hai ancora un account?<a class="linkRegister" href="Registrazione.html" asp-controller="Account" asp-action="ShowPageRegister"> Registrati qui</a></p>
 </div>
 </body>
 </html>
