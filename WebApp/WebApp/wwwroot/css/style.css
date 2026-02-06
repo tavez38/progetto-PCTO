@@ -1,4 +1,4 @@
-body{
+.bodyPag{
     height: 1000px;
     background-image: radial-gradient(farthest-side at 50% 100%, rgb(85, 85, 85), black);
     background-repeat: no-repeat;
@@ -218,6 +218,9 @@ input{
     margin-top: 120px;
     cursor: pointer;
 }
+a{
+    text-decoration: none;
+}
 #ordina{
     cursor: pointer;
     background-color: gainsboro;
@@ -339,4 +342,28 @@ input{
     -20px 0 20px #00f0ff;
     offset-path: path("M 940,23 L 567,23 Q 552,23 552,38 L 552,313 Q 552,328 567,328 L 941,325 Q 956,325 956,310 L 955,38 Q 955,23 940,23");
     animation: moveAlongPath 6s infinite linear, flicker 0.8s infinite alternate;
+}
+.bodyAccNeg{
+    background-color: gray;
+}
+
+#statusCodeAccNeg{
+    font-size: 300%;
+    margin-top: 5%;
+    margin-left: 15%;
+}
+
+#lineaAccNeg{
+    margin-left: 15%;
+    border-color: black;
+    height: 3px;
+    background-color: black;
+}
+#descAccNeg,#msgAccNeg{
+    margin-top: 3%;
+    margin-left: 15%;
+}
+#linkToLogin{
+    margin-top: 5%;
+    margin-left: 70%;
 }

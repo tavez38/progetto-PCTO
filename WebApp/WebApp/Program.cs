@@ -27,6 +27,7 @@ namespace WebApp
                 });
 
             var app = builder.Build();
+           
             app.UseAuthentication(); // Chi sei?
             app.UseAuthorization();  // Cosa puoi fare?
             app.UseDefaultFiles();

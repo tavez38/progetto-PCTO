@@ -26,6 +26,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "WebApp.Controllers.OllamaChatController",
+    "Method": "SendOllamaReq",
+    "RelativePath": "api/ollama/sendOllamaReq",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "WebApp.Controllers.PersonalAreaController",
     "Method": "GetAllWorks",
     "RelativePath": "api/personalArea",

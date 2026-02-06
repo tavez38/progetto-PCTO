@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self';">
+
     <title>Document</title>
     <link href="../css/style.css" rel="stylesheet" />
     <script src="../js/script.js"></script>
 </head>
  
-<body>
-    <a class="return" href="Index.html">Logout</a>
+<body class="bodyPag">
+    <a class="return" onclick="logout()">Logout</a>
     <a class="return" href="PersonalArea.html">&larr;</a>
 <h1 id="creaProgetto">CREA PROGETTO</h1>
     <form action="/login/personalArea/uploadWork" method="post" id="progect">

@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self';">
+
     <title>Area Personale</title>
     <link rel="stylesheet" href="../css/style.css" />
     <script src="../js/script.js"></script>
 </head>
-<body asp-controller="PersonalArea" asp-action="GetAllWorks" onload="loadWorks()">
-    <a class="return" href="Index.html">Logout</a>
+<body class="bodyPag" asp-controller="PersonalArea" asp-action="GetAllWorks" onload="loadWorks()">
+    <a class="return" onclick="logout()">Logout</a>
     <button class="cestino">&#9773;</button>
     <h1 class="title">BENVENUTO NELLA TUA AREA PERSONALE</h1>
     <h3 class="subTitle">Qui potrai consultare il lavoro che hai da fare e mandare messaggi ai tuoi colleghi</h3>

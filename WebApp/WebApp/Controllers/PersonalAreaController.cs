@@ -33,7 +33,5 @@ namespace WebApp.Controllers
             
             return Ok();
         }
-    }
-
-    
+    } 
 }
