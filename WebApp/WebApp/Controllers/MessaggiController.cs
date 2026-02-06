@@ -15,8 +15,9 @@ namespace WebApp.Controllers
         [Route("/api/messages/getMsg")]
         public IActionResult GetMsg()
         {
-            var idUtente = User.FindFirst("NameIdentifier")?.Value;
-            var mailUtente = ProgramManager.dipendenti.FirstOrDefault(u => u.id == idUtente)?.email;
+            var mailUtente = User.FindFirst(System.Security.Claims.ClaimTypes.Email)?.Value
+                              ?? User.FindFirst("email")?.Value
+                              ?? User.FindFirst("Email")?.Value;
             var msgUtente = ProgramManager.messaggi.Where(m => m.destinatario == mailUtente).ToList() ?? new List<Messaggio>();
             return Ok(msgUtente);
         }

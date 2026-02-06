@@ -8,8 +8,8 @@ namespace WebApp.Models
         [JsonIgnore]
         public string? id { get;  set; }
 
-
-        public string IdProprietario { get;  set; }
+        [JsonIgnore]
+        public string? IdProprietario { get;  set; }
         public string title { get; set; }
         public string description { get; set; }
         public DateOnly scadenza { get; set; }
