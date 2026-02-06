@@ -12,9 +12,11 @@ namespace WebApp.Models
         public string titolo { get; set; }
         public string contenuto { get; set; }
         public DateTime dataInvio { get; set; }
-        public string mittente { get; set; } //mail
+        
         public string destinatario { get; set; } //mail
 
+        [JsonIgnore]
+        public string? mittente { get; set; } //mail
         public Messaggio()
         {
             
