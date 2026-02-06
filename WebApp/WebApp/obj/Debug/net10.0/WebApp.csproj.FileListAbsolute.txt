@@ -354,9 +354,10 @@ C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\WebApp.genruntimeconfig.cache
 C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\ref\WebApp.dll
 C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
 C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\4mnknta2f9-{0}-16hj4sn3gp-16hj4sn3gp.gz
-C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\dx8wh36wkn-{0}-pisdnbnzwd-pisdnbnzwd.gz
-C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\xy5h35qe0c-{0}-b7z2vm2xqo-b7z2vm2xqo.gz
 C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\7bfgkygcp7-{0}-6rvyc0z14e-6rvyc0z14e.gz
 C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\rsxbyhsisf-{0}-t1xwbdxeq2-t1xwbdxeq2.gz
 C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\0tw0t2udrs-{0}-9a8f8u19ht-9a8f8u19ht.gz
-C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\empuesvxn7-{0}-vsdfzapxmo-vsdfzapxmo.gz
+C:\progetto-PCTO\WebApp\WebApp\bin\Debug\net10.0\BCrypt.Net-Next.dll
+C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\xy5h35qe0c-{0}-0rd82i7ynf-0rd82i7ynf.gz
+C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\dx8wh36wkn-{0}-qoao4lkvk6-qoao4lkvk6.gz
+C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\empuesvxn7-{0}-401gmvpeog-401gmvpeog.gz

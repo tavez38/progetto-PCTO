@@ -30,7 +30,7 @@ namespace WebApp.Controllers
 
             foreach (Utente u in ProgramManager.dipendenti)
             {
-                if ((userLog.username == u.name || userLog.username == u.email) && userLog.password == u.password)
+                if ((userLog.username == u.name || userLog.username == u.email) && BCrypt.Net.BCrypt.Verify(userLog.password, u.password))
                 {
                     return Ok(new { id = u.id});
                 }
@@ -39,7 +39,7 @@ namespace WebApp.Controllers
                     return Unauthorized(new { id = -1 });
                 }
             }
-            return NotFound(new { id = -1 });
+            return NotFound(new { id = -2 });
         }
 
 
