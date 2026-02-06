@@ -32,5 +32,11 @@
         <button id="btnAddWork" type="button" onclick="goToUploadWorkPage()">Aggiungi un nuovo lavoro</button>
     </div>
     <button id="btnMsg" type="button" onclick="goToMessaggiPage()">Invia messaggi</button>
+    <form>
+        <label for="prompt">richiesta</label><br>
+        <textarea name="prompt" id="requestChatOllama"></textarea>
+        <label for="risposta">risposta</label>
+        <textarea name="risposta" id="responseChatOllama" readonly></textarea>
+    </form>
 </body>
 </html>
