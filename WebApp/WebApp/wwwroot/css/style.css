@@ -249,8 +249,9 @@ a{
     background-color: #113859;
     width: 500px;
     height: 300px;
-    padding-top: 10px;
+    margin-top: -110px;
     border-radius: 10px;
+    display: none;
 }
 #scriviMail input, textarea{
     margin-left: 100px;
@@ -277,5 +278,12 @@ a{
     border-width: 3px;
     cursor: pointer;
 }
-
+#exit{
+    margin-left: 484px;
+    margin-bottom: 10px;
+    margin-top: -2px;
+    cursor: pointer;
+    font-size: 20px;
+    font-family:Arial, Helvetica, sans-serif;
+}
 

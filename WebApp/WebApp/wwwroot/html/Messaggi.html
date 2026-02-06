@@ -8,10 +8,11 @@
     <script src="../js/script.js"></script>
 </head>
 <body asp-controller="Messaggi" asp-action="GetMsg" onload="loadMessages()">
+    <div id="container">
     <h1 id="casellaDiPosta">casella di posta</h1>
     <div id="barra">
     </div>
-    <button id="send">&#9998; Scrivi</button>
+    <button id="send" onclick="revalSendForm()">&#9998; Scrivi</button>
     <div id="menuOpzioni">
         <button id="ordina">ordina per:
             <div id="dropDownMenu">
@@ -36,12 +37,16 @@
 
         </tbody>
     </table>
+    </div>
     <form method="post" id="scriviMail">
+        <p id="exit" onclick="hideSendForm()">x</p>
         <input type="email" name="destinatario" id="inputMsgDest" placeholder="Email destinatario"><br>
         <input type="text" name="titolo" id="inputMsgTitle" placeholder="Oggetto"><br>
         <label for="corpo">Messaggio</label><br>
         <textarea name="corpo" id="inputMsgContent"></textarea><br>
         <button type="button" asp-controller="Messaggi" asp-action="SendMsg" onclick="sendMessage()">Invia</button>
+        <span id="mailError"></span>
+        <span id="objectAllert"></span>
     </form>
-</body>
+</body>s
 </html>

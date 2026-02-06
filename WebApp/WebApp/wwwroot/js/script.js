@@ -1,7 +1,7 @@
 ﻿const listaCharSpec = ["!", "@", "#", "$", "%", "^", "&", "*", "-", "_", "+", "=", "?"];
 
 function iscrizione() {
-    if (!checkEmail() || !checkPsw()) {
+    if (!checkEmail(r) || !checkPsw()) {
         console.log("false");
     }
     else {
@@ -12,9 +12,15 @@ function iscrizione() {
     
 }
 
-function checkEmail() {
+function checkEmail(use) {
+    if(use == r){
     const email = document.getElementById("inputEmail");
     const errSpanEmail = document.getElementById("errEmailReg");
+    }
+    else{
+    const email = document.getElementById("inputMsgDest");
+    const errSpanEmail = document.getElementById("mailError");
+    }
 
     const parts = email.value.split("@");
 
@@ -216,9 +222,10 @@ async function loadMessages() {
     return;
 }
 
-async function sendMessage() {
+async function sendMessage(){
     const currentDate = new Date();
     const mailMit = await getMailMittente();
+    checkEmail(m)
     let messaggio = {
         titolo: document.getElementById("inputMsgTitle").value,
         contenuto: document.getElementById("inputMsgContent").value,
@@ -242,10 +249,12 @@ async function sendMessage() {
                 console.log("Messaggio inviato con successo"+res.status);
             }
         });
+
     }
     catch(err) {
         console.log(err);
     }
+    hideSendForm();
 }
 
 async function getMailMittente() {
@@ -264,4 +273,13 @@ async function getMailMittente() {
 
 function goToUploadWorkPage(){
     window.location.href = '../html/uploadWork.html';
+}
+
+function revalSendForm(){
+    document.getElementById("container").style.opacity = "0.4";
+    document.getElementById("scriviMail").style.display = "block";
+}
+function hideSendForm(){
+    document.getElementById("scriviMail").style.display = "none";
+    document.getElementById("container").style.opacity = "1";
 }
