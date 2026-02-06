@@ -2,9 +2,11 @@
 using Microsoft.AspNetCore.Mvc;
 using WebApp.Models;
 using WebApp.data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WebApp.Controllers
 {
+    [Authorize]
     [Route("/api/messages")]
     [ApiController]
     public class MessaggiController : ControllerBase

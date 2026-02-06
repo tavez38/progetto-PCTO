@@ -358,6 +358,8 @@ C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\7bfgkygcp7-{0}-6rvyc
 C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\rsxbyhsisf-{0}-t1xwbdxeq2-t1xwbdxeq2.gz
 C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\0tw0t2udrs-{0}-9a8f8u19ht-9a8f8u19ht.gz
 C:\progetto-PCTO\WebApp\WebApp\bin\Debug\net10.0\BCrypt.Net-Next.dll
-C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\xy5h35qe0c-{0}-0rd82i7ynf-0rd82i7ynf.gz
-C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\dx8wh36wkn-{0}-qoao4lkvk6-qoao4lkvk6.gz
-C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\empuesvxn7-{0}-ovlkspi1xd-ovlkspi1xd.gz
+C:\progetto-PCTO\WebApp\WebApp\bin\Debug\net10.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\progetto-PCTO\WebApp\WebApp\bin\Debug\net10.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\xy5h35qe0c-{0}-w5m0g5cx8h-w5m0g5cx8h.gz
+C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\dx8wh36wkn-{0}-in2oj1szm7-in2oj1szm7.gz
+C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\empuesvxn7-{0}-m3n8z66om3-m3n8z66om3.gz

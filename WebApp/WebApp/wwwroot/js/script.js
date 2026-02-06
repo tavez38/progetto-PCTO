@@ -99,18 +99,20 @@ function onClickLogin(){
             body: JSON.stringify(utente)
         })
             .then(response => response.json())
-            .then(id => {
-                if (id.id == -1) {
+            .then(data => {
+                if (data.id == -1) {
                     alert("Password errata");
                 }
-                else if (id.id == -2) {
+                else if (data.id == -2) {
                     alert("Non è stato trovato nessun utente con questa mail/username");
                 }
-                else if (id.id == -3) {
+                else if (data.id == -3) {
                     alert("Utente nullo");
                 }
                 else {
-                    localStorage.setItem("idUtenteLoggato", id.id);
+                    localStorage.setItem("idUtenteLoggato", data.id);
+                    localStorage.setItem("token", data.token);
+                    console.log(localStorage.getItem("token"));
                     window.location.href = '../html/PersonalArea.html';
                 }
             });  
@@ -165,8 +167,15 @@ async function richiestaIscrizione() {
 }
 
 async function loadWorks() {
+    const token = localStorage.getItem("token");
     try {
-        const response = await fetch(`/api/personalArea/${localStorage.getItem("idUtenteLoggato")}`)
+        const response = await fetch(`/api/personalArea/${localStorage.getItem("idUtenteLoggato")}`, {
+            method: "GET",
+            headers: {
+                "authorization": `Bearer ${token}`,
+                "Content-Type": "application/json"
+                }
+        });
         if (!response.ok) {
             console.log(response.status);
             return;
@@ -223,7 +232,14 @@ async function uploadWork() {
 }
 
 async function loadMessages() {
-    const response = await fetch(`/api/messages/getMsg/${localStorage.getItem("idUtenteLoggato")}`);
+    const token = localStorage.getItem("token");
+    const response = await fetch(`/api/messages/getMsg/${localStorage.getItem("idUtenteLoggato")}`, {
+        method: "GET",
+        headers: {
+            "Authorization": `Bearer ${token}`,
+            "Content-Type": "application/json"
+        }
+    });
     if (!response.ok) {
         console.log(response.status);
         return;
