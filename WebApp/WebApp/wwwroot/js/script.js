@@ -76,7 +76,7 @@ function onClickLogin(){
 
     const usMail = document.getElementById("inputUsername").value;
     const psw = document.getElementById("inputPassword").value;
-    if (!IsEmptyPswLogin(psw)) {
+    if (!IsEmptyPswLogin(psw, usMail)) {
         return;
     }
     let utente = {
@@ -114,9 +114,13 @@ function onClickLogin(){
     }
 }
 
-function IsEmptyPswLogin(psw) {
+function IsEmptyPswLogin(psw, usMail) {
     if (psw == "") {
         alert("Inserire una password");
+        return false;
+    }
+    else if (usMail = "") {
+        alert("Inserire una mail o username");
         return false;
     }
     return true;
