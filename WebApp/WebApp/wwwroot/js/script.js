@@ -259,6 +259,7 @@ async function loadMessages() {
         return;
     }
     const data = await response.json();
+    document.getElementById("tableBodyMsg").innerHTML = "";
     if (data.length == 0) {
         document.getElementById("tableBodyMsg").innerHTML = `<tr class="rowNoMsg"><td colspan="3" id="colNoMsg">Nessun messaggio ricevuto</td></tr>`;
         return;
@@ -347,3 +348,36 @@ function logout() {
     localStorage.removeItem("token");
     window.location.href = '../html/Index.html';
 }
+
+/*function sendOllamaRequest() {
+    const domanda = document.getElementById("requestChatOllama").innerText;
+    try {
+        fetch("/api/ollama/sendOllamaReq", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${localStorage.getItem("token")}`
+            },
+            body: JSON.stringify(domanda)
+        })
+            .then(res => {
+                if (res.status == 401) {
+                    localStorage.removeItem("idUtenteLoggato");
+                    localStorage.removeItem("token");
+                    window.location.href = '../html/AccessoNegato.html';
+                    return;
+                }
+                else if (!res.ok) {
+                    console.log(res.status);
+                    return;
+                }
+                res.json()
+            })
+            .then(data => {
+                document.getElementById("responseChatOllama").innerText = data.response;
+            });
+}
+    catch (error) {
+        console.log(error);
+    }
+}*/
