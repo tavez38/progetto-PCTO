@@ -76,7 +76,9 @@ function onClickLogin(){
 
     const usMail = document.getElementById("inputUsername").value;
     const psw = document.getElementById("inputPassword").value;
-
+    if (!IsEmptyPswLogin(psw)) {
+        return;
+    }
     let utente = {
         username : usMail,
         password: psw
@@ -98,6 +100,9 @@ function onClickLogin(){
                 else if (id.id == -2) {
                     alert("Non è stato trovato nessun utente con questa mail/username");
                 }
+                else if (id.id == -3) {
+                    alert("Utente nullo");
+                }
                 else {
                     localStorage.setItem("idUtenteLoggato", id.id);
                     window.location.href = '../html/PersonalArea.html';
@@ -107,6 +112,14 @@ function onClickLogin(){
     catch(error){
         alert(error);
     }
+}
+
+function IsEmptyPswLogin(psw) {
+    if (psw == "") {
+        alert("Inserire una password");
+        return false;
+    }
+    return true;
 }
 
 async function richiestaIscrizione() {

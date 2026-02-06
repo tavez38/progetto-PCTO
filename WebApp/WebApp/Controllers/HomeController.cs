@@ -25,7 +25,7 @@ namespace WebApp.Controllers
         {
            if(userLog == null)
            {
-               return BadRequest("Dati non validi");
+               return BadRequest(new {id = -3});
            }
 
             foreach (Utente u in ProgramManager.dipendenti)
