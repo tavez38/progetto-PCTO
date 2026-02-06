@@ -393,8 +393,8 @@ function logout() {
     window.location.href = '../html/Index.html';
 }
 
-/*function sendOllamaRequest() {
-    const domanda = document.getElementById("requestChatOllama").innerText;
+function sendOllamaRequest() {
+    const domanda = document.getElementById("requestChatOllama").value;
     try {
         fetch("/api/ollama/sendOllamaReq", {
             method: "POST",
@@ -415,13 +415,11 @@ function logout() {
                     console.log(res.status);
                     return;
                 }
-                res.json()
-            })
-            .then(data => {
-                document.getElementById("responseChatOllama").innerText = data.response;
-            });
+                let data = res.json();
+                document.getElementById("responseChatOllama").value = data.response;
+            });        
 }
     catch (error) {
         console.log(error);
     }
-}*/
+}

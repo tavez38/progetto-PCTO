@@ -24,7 +24,7 @@ namespace WebApp.Controllers
             var rispostaCompleta = "";
             await foreach (var risposta in _ollama.GenerateAsync(request))
             {
-                rispostaCompleta += risposta;
+                rispostaCompleta += risposta.Response;
             }
             return Ok(new {response = rispostaCompleta});
         }
