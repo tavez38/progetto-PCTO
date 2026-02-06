@@ -181,7 +181,7 @@ async function loadWorks() {
         if (response.status == 401) {
             localStorage.removeItem("idUtenteLoggato");
             localStorage.removeItem("token");
-            window.location.href = '../html/login.html';
+            window.location.href = '../html/AccessoNegato.html';
             return;
         }
         else if (!response.ok) {
@@ -251,7 +251,7 @@ async function loadMessages() {
     if (response.status == 401) {
         localStorage.removeItem("idUtenteLoggato");
         localStorage.removeItem("token");
-        window.location.href = '../html/login.html';
+        window.location.href = '../html/AccessoNegato.html';
         return;
     }
     else if (!response.ok) {
@@ -340,4 +340,10 @@ function deleteInput(){
 }
 function goToMessaggiPage(){
     window.location.href = '../html/Messaggi.html';
+}
+
+function logout() {
+    localStorage.removeItem("idUtenteLoggato");
+    localStorage.removeItem("token");
+    window.location.href = '../html/Index.html';
 }

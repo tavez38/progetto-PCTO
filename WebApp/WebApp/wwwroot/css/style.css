@@ -1,4 +1,4 @@
-body{
+.bodyPag{
     height: 1000px;
     background-image: radial-gradient(farthest-side at 50% 100%, rgb(85, 85, 85), black);
     background-repeat: no-repeat;
@@ -218,7 +218,6 @@ input{
 }
 a{
     text-decoration: none;
-    color: black;
 }
 #ordina{
     cursor: pointer;
@@ -302,4 +301,29 @@ a{
 }
 #scriviMail span{
     margin-left: 100px;
+}
+
+.bodyAccNeg{
+    background-color: gray;
+}
+
+#statusCodeAccNeg{
+    font-size: 300%;
+    margin-top: 5%;
+    margin-left: 15%;
+}
+
+#lineaAccNeg{
+    margin-left: 15%;
+    border-color: black;
+    height: 3px;
+    background-color: black;
+}
+#descAccNeg,#msgAccNeg{
+    margin-top: 3%;
+    margin-left: 15%;
+}
+#linkToLogin{
+    margin-top: 5%;
+    margin-left: 70%;
 }
