@@ -6,10 +6,7 @@ function iscrizione() {
     }
     else {
         richiestaIscrizione();
-        window.location.href = '../html/Index.html'; 
-
-    }
-    
+    }  
 }
 
 function checkEmail(use) {
@@ -80,11 +77,14 @@ function checkPsw() {
 function checkCharSpec(c) {
     return listaCharSpec.includes(c);
 }
+
 function onClickLogin(){ 
 
     const usMail = document.getElementById("inputUsername").value;
     const psw = document.getElementById("inputPassword").value;
-
+    if (!IsEmptyPswLogin(psw, usMail)) {
+        return;
+    }
     let utente = {
         username : usMail,
         password: psw
@@ -101,18 +101,35 @@ function onClickLogin(){
             .then(response => response.json())
             .then(id => {
                 if (id.id == -1) {
-                    alert("Password errata o Credenziali non valide");
+                    alert("Password errata");
+                }
+                else if (id.id == -2) {
+                    alert("Non è stato trovato nessun utente con questa mail/username");
+                }
+                else if (id.id == -3) {
+                    alert("Utente nullo");
                 }
                 else {
                     localStorage.setItem("idUtenteLoggato", id.id);
                     window.location.href = '../html/PersonalArea.html';
                 }
-            });
-            
+            });  
     }
     catch(error){
         alert(error);
     }
+}
+
+function IsEmptyPswLogin(psw, usMail) {
+    if (psw == "") {
+        alert("Inserire una password");
+        return false;
+    }
+    else if (usMail = "") {
+        alert("Inserire una mail o username");
+        return false;
+    }
+    return true;
 }
 
 async function richiestaIscrizione() {
@@ -131,15 +148,19 @@ async function richiestaIscrizione() {
             body : JSON.stringify(utente)
         });
         if (!res.ok) {
-            console.log(res.status);
+            const resDesc = await res.json();
+            alert(resDesc.desc);
+            return;
         }
         else {
-            console.log(res.json());
+            console.log("Registrazione avvenuta con successo");
+            window.location.href = '../html/login.html';
+            return;
         }
     }
     catch (error) {
-         
         console.log(error);
+        return;
     }
 }
 
