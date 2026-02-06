@@ -1,5 +1,8 @@
-using WebApp.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 using WebApp.data;
+using WebApp.Models;
 
 namespace WebApp
 {
@@ -9,8 +12,23 @@ namespace WebApp
         {
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddControllersWithViews();
-            var app = builder.Build();
+            builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options => {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                        {
+                            ValidateIssuer = true,
+                            ValidateAudience = true,
+                            ValidateLifetime = true, // Scadenza automatica del token
+                            ValidateIssuerSigningKey = true,
+                            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+                            ValidAudience = builder.Configuration["Jwt:Audience"],
+                            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+                        };
+                });
 
+            var app = builder.Build();
+            app.UseAuthentication(); // Chi sei?
+            app.UseAuthorization();  // Cosa puoi fare?
             app.UseDefaultFiles();
             app.UseStaticFiles();
             app.MapControllers();

@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebApp.data;
 using WebApp.Models;
 
 namespace WebApp.Controllers
 {
+    [Authorize]
     [Route("/html")]
     [ApiController]
     public class PersonalAreaController : ControllerBase

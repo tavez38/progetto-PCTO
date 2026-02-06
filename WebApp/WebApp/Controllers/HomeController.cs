@@ -1,4 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration; // aggiunto
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 using WebApp.Models;
 
 namespace WebApp.Controllers
@@ -6,6 +11,13 @@ namespace WebApp.Controllers
     [Route("/")]
     public class HomeController : Controller
     {
+        private readonly IConfiguration _config; // aggiunto
+
+        public HomeController(IConfiguration config) // aggiunto
+        {
+            _config = config;
+        }
+
         [Route("/")]
         public IActionResult Index()
         {
@@ -23,7 +35,7 @@ namespace WebApp.Controllers
         [Route("/index")]
         public IActionResult Login([FromBody] LoginRequest userLog)
         {
-           if(userLog == null)
+           if(userLog == null)  
            {
                return BadRequest(new {id = -3});
            }
@@ -32,7 +44,26 @@ namespace WebApp.Controllers
             {
                 if ((userLog.username == u.name || userLog.username == u.email) && BCrypt.Net.BCrypt.Verify(userLog.password, u.password))
                 {
-                    return Ok(new { id = u.id});
+                    var infoSaveToken= new[]
+                    {
+                        new Claim(ClaimTypes.NameIdentifier , u.id),
+                        new Claim(ClaimTypes.Email , u.email)
+
+                    };
+                    var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["JWT:Key"]));
+                    var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+                    var token = new JwtSecurityToken(
+                        issuer: _config["JWT:Issuer"],
+                        audience: _config["JWT:Audience"],
+                        claims: infoSaveToken,
+                        expires: DateTime.Now.AddDays(1),
+                        signingCredentials: creds
+                        );
+
+                    return Ok(new { 
+                        id = u.id,
+                        token = new JwtSecurityTokenHandler().WriteToken(token)
+                    });
                 }
                 else if (userLog.username == u.name || userLog.username == u.email)
                 {

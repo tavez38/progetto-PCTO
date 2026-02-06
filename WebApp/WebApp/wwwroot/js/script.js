@@ -112,7 +112,9 @@ function onClickLogin(){
                     userError.innerHTML = "inserire utente";
                 }
                 else {
-                    localStorage.setItem("idUtenteLoggato", id.id);
+                    localStorage.setItem("idUtenteLoggato", data.id);
+                    localStorage.setItem("token", data.token);
+                    console.log(localStorage.getItem("token"));
                     window.location.href = '../html/PersonalArea.html';
                 }
             });  
@@ -167,8 +169,15 @@ async function richiestaIscrizione() {
 }
 
 async function loadWorks() {
+    const token = localStorage.getItem("token");
     try {
-        const response = await fetch(`/api/personalArea/${localStorage.getItem("idUtenteLoggato")}`)
+        const response = await fetch(`/api/personalArea/${localStorage.getItem("idUtenteLoggato")}`, {
+            method: "GET",
+            headers: {
+                "authorization": `Bearer ${token}`,
+                "Content-Type": "application/json"
+                }
+        });
         if (!response.ok) {
             console.log(response.status);
             return;
@@ -225,7 +234,14 @@ async function uploadWork() {
 }
 
 async function loadMessages() {
-    const response = await fetch(`/api/messages/getMsg/${localStorage.getItem("idUtenteLoggato")}`);
+    const token = localStorage.getItem("token");
+    const response = await fetch(`/api/messages/getMsg/${localStorage.getItem("idUtenteLoggato")}`, {
+        method: "GET",
+        headers: {
+            "Authorization": `Bearer ${token}`,
+            "Content-Type": "application/json"
+        }
+    });
     if (!response.ok) {
         console.log(response.status);
         return;
