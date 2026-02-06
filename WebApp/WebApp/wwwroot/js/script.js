@@ -337,4 +337,12 @@ function hideSendForm(){
     opacityBox.style.opacity = "1";
     document.body.style.overflow = "scroll";
     opacityBox.style.pointerEvents = "all";
+
+    deleteInput();
+}
+function deleteInput(){
+    document.getElementsByTagName("input").value = "";
+}
+function goToMessaggiPage(){
+    window.location.href = '../html/Messaggi.html';
 }
