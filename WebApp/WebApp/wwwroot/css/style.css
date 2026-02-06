@@ -309,14 +309,14 @@ a{
 }
 #light-dotLeft{
     position: absolute;
-    width: 14px;
-    height: 14px;
+    width: 10px;
+    height: 10px;
     background-color: #cffdff;
     border-radius: 50%;
     box-shadow: 0 0 10px #fff,
     -5px 0 15px 2px #17effe, 
     -20px 0 20px #00f0ff;
-    offset-path: path("M 567,23 L 940,23 Q 955,23 955,38 L 955,313 Q 955,328 940,328 L 566,325 Q 551,325 551,310 L 552,38 Q 552,23 567,23");
+    offset-path: path("M 567,23 L 940,23 Q 955,23 955,38 L 955,313 Q 955,328 940,328 L 566,325 Q 551,325 551,313 L 552,38 Q 552,23 567,23");
     animation: moveAlongPath 6s infinite linear, flicker 0.8s infinite alternate;
 }
 @keyframes flicker {
@@ -333,14 +333,14 @@ a{
 }
 #light-dotRight{
     position: absolute;
-    width: 14px;
-    height: 14px;
+    width: 10px;
+    height: 10px;
     background-color: #cffdff;
     border-radius: 50%;
     box-shadow: 0 0 10px #fff,
     -5px 0 15px 2px #17effe, 
     -20px 0 20px #00f0ff;
-    offset-path: path("M 940,23 L 567,23 Q 552,23 552,38 L 552,313 Q 552,328 567,328 L 941,325 Q 956,325 956,310 L 955,38 Q 955,23 940,23");
+    offset-path: path("M 940,23 L 567,23 Q 552,23 552,38 L 552,313 Q 552,328 567,328 L 941,325 Q 956,325 956,313 L 955,38 Q 955,23 940,23");
     animation: moveAlongPath 6s infinite linear, flicker 0.8s infinite alternate;
 }
 .bodyAccNeg{

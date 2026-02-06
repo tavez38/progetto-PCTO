@@ -381,3 +381,6 @@ function logout() {
         console.log(error);
     }
 }*/
+function changeLightColor(){
+    
+}
