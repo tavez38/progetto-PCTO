@@ -12,9 +12,10 @@ namespace WebApp.Controllers
     public class PersonalAreaController : ControllerBase
     {
         [HttpGet]
-        [Route("/api/personalArea/{id}")]
-        public IActionResult GetAllWorks(string id)
+        [Route("/api/personalArea")]
+        public IActionResult GetAllWorks()
         {
+            var id = User.FindFirst("NameIdentifier")?.Value;
             var progetti = ProgramManager.progetti.Where(p => p.IdProprietario==id).ToList()?? new List<Progetto>();
             return Ok(progetti);
         }

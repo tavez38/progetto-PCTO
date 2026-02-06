@@ -101,14 +101,14 @@ function onClickLogin(){
             body: JSON.stringify(utente)
         })
             .then(response => response.json())
-            .then(id => {
-                if (id.id == -1) {
+            .then(data => {
+                if (data.id == -1) {
                     pswError.innerHTML = "inserire password";
                 }
-                else if (id.id == -2) {
+                else if (data.id == -2) {
                     userError.innerHTML = "Non è stato trovato nessun utente con questa mail/username";
                 }
-                else if (id.id == -3) {
+                else if (data.id == -3) {
                     userError.innerHTML = "inserire utente";
                 }
                 else {
@@ -171,14 +171,20 @@ async function richiestaIscrizione() {
 async function loadWorks() {
     const token = localStorage.getItem("token");
     try {
-        const response = await fetch(`/api/personalArea/${localStorage.getItem("idUtenteLoggato")}`, {
+        const response = await fetch(`/api/personalArea`, {
             method: "GET",
             headers: {
                 "authorization": `Bearer ${token}`,
                 "Content-Type": "application/json"
                 }
         });
-        if (!response.ok) {
+        if (response.status == 401) {
+            localStorage.removeItem("idUtenteLoggato");
+            localStorage.removeItem("token");
+            window.location.href = '../html/login.html';
+            return;
+        }
+        else if (!response.ok) {
             console.log(response.status);
             return;
         }
@@ -235,14 +241,20 @@ async function uploadWork() {
 
 async function loadMessages() {
     const token = localStorage.getItem("token");
-    const response = await fetch(`/api/messages/getMsg/${localStorage.getItem("idUtenteLoggato")}`, {
+    const response = await fetch(`/api/messages/getMsg`, {
         method: "GET",
         headers: {
             "Authorization": `Bearer ${token}`,
             "Content-Type": "application/json"
         }
     });
-    if (!response.ok) {
+    if (response.status == 401) {
+        localStorage.removeItem("idUtenteLoggato");
+        localStorage.removeItem("token");
+        window.location.href = '../html/login.html';
+        return;
+    }
+    else if (!response.ok) {
         console.log(response.status);
         return;
     }
@@ -263,11 +275,8 @@ async function loadMessages() {
 
 async function sendMessage(){
     const currentDate = new Date();
-    const mailMit = await getMailMittente();
-    if(!checkEmail(m)){
-        return;
-    }
-    const titoloInput = document.getElementById("inputMsgTitle").value;
+   
+    let titoloInput = document.getElementById("inputMsgTitle").value;
     if(titoloInput == null || titoloInput == "") {
         titoloInput = "[nessun oggetto]";
     }
@@ -275,14 +284,14 @@ async function sendMessage(){
         titolo: titoloInput,
         contenuto: document.getElementById("inputMsgContent").value,
         dataInvio: currentDate.toISOString(),
-        mittente: mailMit,
         destinatario: document.getElementById("inputMsgDest").value
     }
     try {
         fetch("/api/messages/sendMsg", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${localStorage.getItem("token")}`
             },
             body: JSON.stringify(messaggio)
         })
@@ -300,20 +309,6 @@ async function sendMessage(){
         console.log(err);
     }
     hideSendForm();
-}
-
-async function getMailMittente() {
-    const response = await fetch(`/api/messages/getMailMit/${localStorage.getItem("idUtenteLoggato")}`);
-    if (!response.ok) {
-        console.log(response.status);
-        return;
-    }
-    const responseData = await response.json();
-    if (responseData.mail == "") {
-        console.log("Nessun utente trovato");
-        return;
-    }
-    return responseData.mail;
 }
 
 function goToUploadWorkPage(){
