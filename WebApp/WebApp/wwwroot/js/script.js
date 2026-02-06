@@ -170,6 +170,7 @@ async function richiestaIscrizione() {
 
 async function loadWorks() {
     const token = localStorage.getItem("token");
+    const tableBody = document.getElementById("tableBodyProj");
     try {
         const response = await fetch(`/api/personalArea`, {
             method: "GET",
@@ -189,19 +190,43 @@ async function loadWorks() {
             return;
         }
         const data = await response.json();
+
+        tableBody.innerHTML = "";
         if (data.length == 0) {
             document.getElementById("tableBodyProj").innerHTML = `<tr class="rowNoProject"><td colspan="4" id="colNoProject">Nessun progetto caricato</td></tr>`;
+            return;
         }
-        else {
-            data.forEach(element => {
-                document.getElementById("tableBodyProj").innerHTML += `<tr class="rows">
-                <td class="tableTitle">${element.title}</td>
-                <td class="tableDesc">${element.description}</td>
-                <td class="tableDate">${element.scadenza}</td>
-                <td class="tableHour">${element.orarioScadenza}</td>
-                </tr>`;
-            });
-        } 
+        const fragment = document.createDocumentFragment();
+
+        data.forEach(element => {
+            const tr = document.createElement("tr");
+            tr.className = "rows";
+
+            // Creazione manuale sicura delle celle
+            const tdTitle = document.createElement("td");
+            tdTitle.className = "tableTitle";
+            tdTitle.textContent = element.title;
+            tr.appendChild(tdTitle);
+
+            const tdDesc = document.createElement("td");
+            tdDesc.className = "tableDesc";
+            tdDesc.textContent = element.description;
+            tr.appendChild(tdDesc);
+
+            const tdDate = document.createElement("td");
+            tdDate.className = "tableDate";
+            tdDate.textContent = element.scadenza;
+            tr.appendChild(tdDate);
+
+            const tdHour = document.createElement("td");
+            tdHour.className = "tableHour";
+            tdHour.textContent = element.orarioScadenza;
+            tr.appendChild(tdHour);
+
+            fragment.appendChild(tr);
+        });
+
+        tableBody.appendChild(fragment);
     }
     catch (error) {
         console.log(error);
@@ -211,7 +236,7 @@ async function loadWorks() {
 async function uploadWork() {
     const idUtenteLoggato = localStorage.getItem("idUtenteLoggato");
     let progetto ={
-        IdProprietario:idUtenteLoggato,
+        
         title : document.getElementById("inputTitle").value,
         description : document.getElementById("inputDesc").value,
         scadenza : document.getElementById("inputData").value,
@@ -221,7 +246,8 @@ async function uploadWork() {
         fetch("/api/uploadWork", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${localStorage.getItem("token")}`
             },
             body: JSON.stringify(progetto)
         })
@@ -259,18 +285,36 @@ async function loadMessages() {
         return;
     }
     const data = await response.json();
-    document.getElementById("tableBodyMsg").innerHTML = "";
+    const tableBody = document.getElementById("tableBodyMsg");
+    tableBody.innerHTML = "";
     if (data.length == 0) {
         document.getElementById("tableBodyMsg").innerHTML = `<tr class="rowNoMsg"><td colspan="3" id="colNoMsg">Nessun messaggio ricevuto</td></tr>`;
         return;
     }
+    const fragment = document.createDocumentFragment();
     data.forEach(element => {
-        document.getElementById("tableBodyMsg").innerHTML += `<tr class="rows">
-        <td class="tableMsgMit">${element.mittente}</td>
-        <td class="tableMsgTitle">${element.titolo}</td>
-        <td class="tableMsgData">${element.dataInvio}</td>
-        </tr>`
+        const tr = document.createElement("tr");
+        tr.className = "rows";
+
+        // Creiamo le celle e usiamo textContent (SICUREZZA XSS)
+        const tdMit = document.createElement("td");
+        tdMit.className = "tableMsgMit";
+        tdMit.textContent = element.mittente; // <--- Qui neutralizziamo l'hacker
+
+        const tdTitle = document.createElement("td");
+        tdTitle.className = "tableMsgTitle";
+        tdTitle.textContent = element.titolo; // <--- Sicuro
+
+        const tdData = document.createElement("td");
+        tdData.className = "tableMsgData";
+        tdData.textContent = element.dataInvio; // <--- Sicuro
+
+        tr.appendChild(tdMit);
+        tr.appendChild(tdTitle);
+        tr.appendChild(tdData);
+        fragment.appendChild(tr);
     });
+    tableBody.appendChild(fragment);
     return;
 }
 
