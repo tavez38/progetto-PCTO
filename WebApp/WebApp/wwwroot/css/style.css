@@ -376,7 +376,7 @@ a{
     border-radius: 10px;
     display: none;
 }
-#scriviMail input, textarea{
+#scriviMail input, #scriviMail textarea{
     margin-left: 100px;
     width: 300px;
     height: 30px;
@@ -492,6 +492,13 @@ a{
     color: white;
     font-size: xx-large;
 }
+#chatBot{
+    display: flex;
+    flex-direction: column;
+}
+#chatBot input{
+    margin-top: 15px;
+}
 .navBar{
     background-color: rgb(0, 162, 151);
     position: relative;
@@ -514,6 +521,9 @@ a{
 }
 .navBar button:hover{
     background-color: rgb(0, 123, 115);;
+}
+.navBar a{
+    color: black;
 }
 .logout{
     font-size: 20px;

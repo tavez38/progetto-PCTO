@@ -1,4 +1,4 @@
-﻿const listaCharSpec = ["!", "@", "#", "$", "%", "^", "&", "*", "-", "_", "+", "=", "?"];
+﻿export const listaCharSpec = ["!", "@", "#", "$", "%", "^", "&", "*", "-", "_", "+", "=", "?"];
 
 export function checkEmail(use) {
     if(use == "r"){
