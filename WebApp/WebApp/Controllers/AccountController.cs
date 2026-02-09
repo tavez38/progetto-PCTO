@@ -8,6 +8,12 @@ namespace WebApp.Controllers
     [Route("/register")]
     public class AccountController : Controller
     {
+        private readonly UtentiDb db;
+        public AccountController(UtentiDb ctx)
+        {
+            this.db = ctx;
+        }
+
         [Route("/register")]
         public IActionResult ShowPageRegister()
         {
@@ -41,7 +47,6 @@ namespace WebApp.Controllers
 
             try
             {
-                using var db = new UtentiDb();
                 db.dipendenti.Add(u);
                 db.SaveChanges();
             }
