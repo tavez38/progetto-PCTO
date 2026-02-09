@@ -19,6 +19,14 @@ namespace WebApp
             builder.Services.AddDbContext<UtentiDb>(options =>
                 options.UseSqlServer(connectionString));
 
+            // Configurazione Ollama
+            builder.Services.AddSingleton<OllamaSharp.OllamaApiClient>(sp =>
+            {
+                var client = new OllamaSharp.OllamaApiClient("http://localhost:11434");
+                client.SelectedModel = "llama3";
+                return client;
+            });
+
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options => {
                     options.TokenValidationParameters = new TokenValidationParameters

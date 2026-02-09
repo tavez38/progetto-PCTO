@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|solutionrelative:webapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|c:\\progetto-pcto\\webapp\\webapp\\controllers\\personalareacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|solutionrelative:webapp\\controllers\\personalareacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|c:\\progetto-pcto\\webapp\\webapp\\controllers\\ollamachatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|solutionrelative:webapp\\controllers\\ollamachatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|c:\\progetto-pcto\\webapp\\webapp\\controllers\\personalareacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|solutionrelative:webapp\\controllers\\personalareacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|c:\\progetto-pcto\\webapp\\webapp\\controllers\\modifycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -80,14 +80,18 @@
               "RelativeDocumentMoniker": "WebApp\\Program.cs",
               "ToolTip": "C:\\progetto-PCTO\\WebApp\\WebApp\\Program.cs",
               "RelativeToolTip": "WebApp\\Program.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAACMAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T16:10:28.673Z",
+              "WhenOpened": "2026-02-09T16:17:00.123Z",
               "EditorCaption": ""
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{65ddf8c3-8f89-4077-a6c6-dbb8853aab13}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "PersonalAreaController.cs",
               "DocumentMoniker": "C:\\progetto-PCTO\\WebApp\\WebApp\\Controllers\\PersonalAreaController.cs",
               "RelativeDocumentMoniker": "WebApp\\Controllers\\PersonalAreaController.cs",
@@ -100,7 +104,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "OllamaChatController.cs",
               "DocumentMoniker": "C:\\progetto-PCTO\\WebApp\\WebApp\\Controllers\\OllamaChatController.cs",
               "RelativeDocumentMoniker": "WebApp\\Controllers\\OllamaChatController.cs",
@@ -121,8 +125,7 @@
               "RelativeToolTip": "WebApp\\Controllers\\MessaggiController.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAgwDQAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T16:07:44.813Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-09T16:07:44.813Z"
             },
             {
               "$type": "Document",
@@ -134,8 +137,7 @@
               "RelativeToolTip": "WebApp\\Controllers\\HomeController.cs",
               "ViewState": "AgIAABsAAAAAAAAAAAAowC0AAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T16:07:09.18Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-09T16:07:09.18Z"
             },
             {
               "$type": "Document",
@@ -147,12 +149,7 @@
               "RelativeToolTip": "WebApp\\Controllers\\AccountController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADgAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T16:06:24.26Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{65ddf8c3-8f89-4077-a6c6-dbb8853aab13}"
+              "WhenOpened": "2026-02-09T16:06:24.26Z"
             },
             {
               "$type": "Document",
@@ -176,8 +173,7 @@
               "RelativeToolTip": "WebApp\\Controllers\\ModifyController.cs",
               "ViewState": "AgIAAGIAAAAAAAAAAADwv3oAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T15:47:52.905Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-09T15:47:52.905Z"
             },
             {
               "$type": "Document",
