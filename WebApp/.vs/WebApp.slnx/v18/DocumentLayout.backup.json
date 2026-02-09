@@ -7,16 +7,8 @@
       "RelativeMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|solutionrelative:webapp\\controllers\\modifycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|c:\\progetto-pcto\\webapp\\webapp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|solutionrelative:webapp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|c:\\progetto-pcto\\webapp\\webapp\\data\\utentidb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|solutionrelative:webapp\\data\\utentidb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|c:\\progetto-pcto\\webapp\\webapp\\controllers\\personalareacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|solutionrelative:webapp\\controllers\\personalareacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -35,19 +27,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\progetto-PCTO\\WebApp\\WebApp\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "WebApp\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\progetto-PCTO\\WebApp\\WebApp\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "WebApp\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAwwC8AAABtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T12:54:18.566Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "UtentiDb.cs",
               "DocumentMoniker": "C:\\progetto-PCTO\\WebApp\\WebApp\\data\\UtentiDb.cs",
               "RelativeDocumentMoniker": "WebApp\\data\\UtentiDb.cs",
@@ -60,26 +39,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PersonalAreaController.cs",
-              "DocumentMoniker": "C:\\progetto-PCTO\\WebApp\\WebApp\\Controllers\\PersonalAreaController.cs",
-              "RelativeDocumentMoniker": "WebApp\\Controllers\\PersonalAreaController.cs",
-              "ToolTip": "C:\\progetto-PCTO\\WebApp\\WebApp\\Controllers\\PersonalAreaController.cs",
-              "RelativeToolTip": "WebApp\\Controllers\\PersonalAreaController.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAACMAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T11:29:58.191Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "ModifyController.cs",
               "DocumentMoniker": "C:\\progetto-PCTO\\WebApp\\WebApp\\Controllers\\ModifyController.cs",
               "RelativeDocumentMoniker": "WebApp\\Controllers\\ModifyController.cs",
               "ToolTip": "C:\\progetto-PCTO\\WebApp\\WebApp\\Controllers\\ModifyController.cs",
               "RelativeToolTip": "WebApp\\Controllers\\ModifyController.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAA4wBsAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAACAAAAAAAAAAAAAAwDMAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-09T11:25:11.305Z",
               "EditorCaption": ""
