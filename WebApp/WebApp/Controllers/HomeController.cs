@@ -1,9 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration; // aggiunto
+using Microsoft.Extensions.Configuration; 
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using WebApp.data;
 using WebApp.Models;
 
 namespace WebApp.Controllers
@@ -11,11 +12,13 @@ namespace WebApp.Controllers
     [Route("/")]
     public class HomeController : Controller
     {
-        private readonly IConfiguration _config; // aggiunto
+        private readonly UtentiDb db;
+        private readonly IConfiguration _config; 
 
-        public HomeController(IConfiguration config) // aggiunto
+        public HomeController(IConfiguration config, UtentiDb ctx) 
         {
             _config = config;
+            this.db = ctx;
         }
 
         [Route("/")]

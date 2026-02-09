@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using WebApp.data;
@@ -12,6 +13,12 @@ namespace WebApp
         {
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddControllersWithViews();
+            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+            // Iniezione della dipendenza
+            builder.Services.AddDbContext<UtentiDb>(options =>
+                options.UseSqlServer(connectionString));
+
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options => {
                     options.TokenValidationParameters = new TokenValidationParameters
@@ -33,19 +40,11 @@ namespace WebApp
             app.UseDefaultFiles();
             app.UseStaticFiles();
             app.MapControllers();
-            config();
+            ProgramManager manager = new ProgramManager(app.Services.CreateScope().ServiceProvider.GetRequiredService<UtentiDb>());
+            manager.Config();
             app.Run();
         }
 
-        static void config()
-        {
-            using (var db = new UtentiDb())
-            {
-                ProgramManager.dipendenti = db.dipendenti.ToList();
-                ProgramManager.progetti = db.progetti.ToList();
-                ProgramManager.messaggi = db.messaggi.ToList();
-            }
-            
-        }
+       
     }
 }

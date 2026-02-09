@@ -12,6 +12,12 @@ namespace WebApp.Controllers
     [ApiController]
     public class PersonalAreaController : ControllerBase
     {
+        private readonly UtentiDb db;
+        public PersonalAreaController(UtentiDb db)
+        {
+            this.db = db;
+        }
+
         [HttpGet]
         [Route("/api/personalArea")]
         public IActionResult GetAllWorks()
@@ -34,11 +40,10 @@ namespace WebApp.Controllers
                 return Unauthorized();
             nuovoProgetto.IdProprietario = idProprietario;
             ProgramManager.progetti.Add(nuovoProgetto);
-            using (var db = new UtentiDb())
-            {
+            
                 db.progetti.Add(nuovoProgetto);
                 db.SaveChanges();
-            }
+            
             
             return Ok();
         }

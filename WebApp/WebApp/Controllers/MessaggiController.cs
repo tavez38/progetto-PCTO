@@ -11,6 +11,11 @@ namespace WebApp.Controllers
     [ApiController]
     public class MessaggiController : ControllerBase
     {
+        private readonly UtentiDb db;
+        public MessaggiController(UtentiDb db)
+        {
+            this.db = db;
+        }
         [HttpGet]
         [Route("/api/messages/getMsg")]
         public IActionResult GetMsg()
@@ -44,11 +49,11 @@ namespace WebApp.Controllers
 
             msg.mittente = mailMittente;
 
-            using (var db = new UtentiDb())
-            {
+           
+            
                 db.messaggi.Add(msg);
                 db.SaveChanges();
-            }
+            
             ProgramManager.messaggi.Add(msg);
             return Ok();
         }
