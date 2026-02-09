@@ -141,8 +141,6 @@ export function generateOpzionForm(){
     prompt.placeholder = "prompt richiesta";
     form.appendChild(prompt);
 }
-function myFunction() {
-document.body.style.backgroundImage ="none";
-document.getElementsByClassName("menuButton")[0].classList.toggle("change");
+function menuFigo(x) {
+  x.classList.toggle("change");
 }
-document.getElementsByClassName("menuButton")[0].addEventListener("click", myFunction());
