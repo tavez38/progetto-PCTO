@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
 
     <title>Document</title>
     <link href="../css/style.css" rel="stylesheet" />
-    <script src="../js/utilities.js" defer></script>
-    <script src="../js/scriptUploadWork.js" defer></script>
+    
+    <script type="module" src="../js/scriptUploadWork.js" defer></script>
 </head>
 <body class= "flex">
     <div class="home">
-    <a class="logout" href="Index.html" onclick="logout()">Logout</a>
+    <a class="return" id="linkLogOutUpWork">Logout</a>
     <a class="return" href="PersonalArea.html">&larr;</a>
 <h1 id="creaProgetto">CREA PROGETTO</h1>
     <form action="/login/personalArea/uploadWork" method="post" id="progect">
@@ -24,7 +24,7 @@
         <input type="date" name="data" id="inputData">
         <label for="ora" class="label"></label>
         <input type="time" name="ora" id="inputOra">
-        <button type="button" class="btnSubmit" asp-controller="PersonalArea" asp-action="AddWork" onclick="uploadWork()">Invia</button>
+        <button type="button" id="btnUploadWork" class="btnSubmit" asp-controller="PersonalArea" asp-action="AddWork">Invia</button>
     </form>
     </div>
 </body>
