@@ -23,7 +23,7 @@ namespace WebApp.Controllers
             var mailUtente = User.FindFirst(System.Security.Claims.ClaimTypes.Email)?.Value
                               ?? User.FindFirst("email")?.Value
                               ?? User.FindFirst("Email")?.Value;
-            var msgUtente = ProgramManager.messaggi.Where(m => m.destinatario == mailUtente).ToList() ?? new List<Messaggio>();
+            var msgUtente = db.messaggi.Where(m => m.destinatario == mailUtente).ToList() ?? new List<Messaggio>();
             return Ok(msgUtente);
         }
 

@@ -48,18 +48,17 @@ async function loadMessages() {
         const tr = document.createElement("tr");
         tr.className = "rows";
 
-        // Creiamo le celle e usiamo textContent (SICUREZZA XSS)
         const tdMit = document.createElement("td");
         tdMit.className = "tableMsgMit";
-        tdMit.textContent = element.mittente; // <--- Qui neutralizziamo l'hacker
+        tdMit.textContent = element.mittente; 
 
         const tdTitle = document.createElement("td");
         tdTitle.className = "tableMsgTitle";
-        tdTitle.textContent = element.titolo; // <--- Sicuro
+        tdTitle.textContent = element.titolo; 
 
         const tdData = document.createElement("td");
         tdData.className = "tableMsgData";
-        tdData.textContent = element.dataInvio; // <--- Sicuro
+        tdData.textContent = element.dataInvio; 
 
         tr.appendChild(tdMit);
         tr.appendChild(tdTitle);
