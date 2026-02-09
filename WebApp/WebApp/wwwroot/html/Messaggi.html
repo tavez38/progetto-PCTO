@@ -7,9 +7,10 @@
 
     <title>Messaggi</title>
     <link rel="stylesheet" href="../css/style.css" />
-    <script src="../js/script.js"></script>
+    <script src="../js/scriptMessaggi.js"></script>
 </head>
-<body class="bodyPag" asp-controller="Messaggi" asp-action="GetMsg" onload="loadMessages()">
+<body class= "flex" asp-controller="Messaggi" asp-action="GetMsg" onload="loadMessages()">
+    <div class="home">
     <div id="opacityBox">
     <h1 id="casellaDiPosta">casella di posta</h1>
     <div id="barra">
@@ -53,5 +54,7 @@
         <span id="mailError"  class="error"></span><br>
         <span id="objectAllert" class="error"></span>
     </form>
+    <button onclick="generateOpzionForm()">ttrtr</button>
+    </div>
 </body>
 </html>

@@ -7,10 +7,10 @@
 
     <title>Document</title>
     <link href="../css/style.css" rel="stylesheet" />
-    <script src="../js/script.js"></script>
+    <script src="../js/scriptUploadWork.js"></script>
 </head>
- 
-<body class="bodyPag">
+<body class= "flex">
+    <div class="home">
     <a class="return" onclick="logout()">Logout</a>
     <a class="return" href="PersonalArea.html">&larr;</a>
 <h1 id="creaProgetto">CREA PROGETTO</h1>
@@ -25,5 +25,6 @@
         <input type="time" name="ora" id="inputOra">
         <button type="button" class="btnSubmit" asp-controller="PersonalArea" asp-action="AddWork" onclick="uploadWork()">Invia</button>
     </form>
+    </div>
 </body>
 </html>
