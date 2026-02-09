@@ -32,11 +32,11 @@ namespace WebApp.Controllers
             if (string.IsNullOrEmpty(u.name) || string.IsNullOrEmpty(u.password) || string.IsNullOrEmpty(u.email)) {
                 return BadRequest(new { desc = "campi vuoti" });
             }
-            if (ProgramManager.dipendenti.Any(p => u.name == p.name) )
+            if (db.dipendenti.Any(p => u.name == p.name) )
             {
                 return BadRequest(new { desc = "username già in uso" });
             }
-            if (ProgramManager.dipendenti.Any(d => d.email == u.email))
+            if (db.dipendenti.Any(d => d.email == u.email))
             {
                 return BadRequest(new { desc = "email già in uso" });
             }
@@ -54,7 +54,7 @@ namespace WebApp.Controllers
             {
                 return BadRequest(new {desc= $"errore durante la registrazione: {ex.Message}" });
             }
-            ProgramManager.dipendenti.Add(u);
+            
 
             return Ok(new {desc = "registrazione avvenuta con successo"});
         }

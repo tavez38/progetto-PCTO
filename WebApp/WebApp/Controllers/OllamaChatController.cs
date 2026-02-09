@@ -11,10 +11,9 @@ namespace WebApp.Controllers
     public class OllamaChatController : ControllerBase
     {
         private readonly OllamaApiClient _ollama;
-        public OllamaChatController()
+        public OllamaChatController(OllamaApiClient ollama)
         {
-            _ollama = new OllamaApiClient("http://localhost:11434");
-            _ollama.SelectedModel= "llama3";
+            _ollama = ollama;
         }
 
         [HttpPost]

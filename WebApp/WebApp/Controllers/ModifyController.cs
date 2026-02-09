@@ -1,4 +1,5 @@
 ﻿using Azure.Core;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
@@ -23,8 +24,8 @@ namespace WebApp.Controllers
         public PswModifyRequest() { }
     }
 
-    
 
+    [Authorize]
     [Route("/api/modifyAccount")]
     [ApiController]
     public class ModifyController : ControllerBase
@@ -44,13 +45,13 @@ namespace WebApp.Controllers
                 ?? User.Identity?.Name;
 
             var userDb = db.dipendenti.FirstOrDefault(u=> u.id == idUser);
-            var user = ProgramManager.dipendenti.FirstOrDefault(u => u.id == idUser);
+           
 
-            if (user == null || userDb==null)
+            if (userDb==null)
                 return NotFound(new { res= "Utente non trovato" });
 
             userDb.name = request;
-            user.name = request;
+            
             db.SaveChanges();
             
             return Ok(new {res ="utente modificato"});
@@ -65,20 +66,18 @@ namespace WebApp.Controllers
                 ?? User.Identity?.Name;
 
             var userDb = db.dipendenti.FirstOrDefault(u => u.id == idUser);
-            var userList = ProgramManager.dipendenti.FirstOrDefault(u => u.id == idUser);
+            
 
-            if (userDb==null && userList==null) return NotFound(new { res = "user non trovato" } );
+            if (userDb==null) return NotFound(new { res = "user non trovato" } );
 
             if (!BCrypt.Net.BCrypt.Verify(request.pswConf, userDb.password))
             {
                 return BadRequest(new { res = "password errata" });
             }
             userDb.email = request.emailNew;
-            userList.email = request.emailNew;
+           
             db.SaveChanges();
             return Ok(new { res = "credenziali aggiornate" });
-            
-            
         }
 
         [HttpPut]
@@ -90,16 +89,16 @@ namespace WebApp.Controllers
                ?? User.Identity?.Name;
 
             var userDb = db.dipendenti.FirstOrDefault(u => u.id == idUser);
-            var userList = ProgramManager.dipendenti.FirstOrDefault(u => u.id == idUser);
+           
 
-            if (userDb == null && userList == null) return NotFound(new { res = "user non trovato" });
+            if (userDb == null) return NotFound(new { res = "user non trovato" });
 
             if (!BCrypt.Net.BCrypt.Verify(request.pswConf, userDb.password))
             {
                 return BadRequest(new { res = "password errata" });
             }
             userDb.password = request.pswNew;
-            userList.password = request.pswNew;
+         
             db.SaveChanges();
             return Ok(new { res = "credenziali aggiornate" });
         }
@@ -113,15 +112,15 @@ namespace WebApp.Controllers
                ?? User.Identity?.Name;
 
             var userDb = db.dipendenti.FirstOrDefault(u => u.id == idUser);
-            var userList = ProgramManager.dipendenti.FirstOrDefault(u => u.id == idUser);
+           
 
-            if (userDb == null && userList == null) return NotFound(new { res = "user non trovato" });
+            if (userDb == null ) return NotFound(new { res = "user non trovato" });
 
             if (!BCrypt.Net.BCrypt.Verify(pswConf, userDb.password))
             {
                 return BadRequest(new { res = "password errata" });
             }
-            ProgramManager.dipendenti.Remove(userList);
+           
             db.dipendenti.Remove(userDb);
             db.SaveChanges();
             return Ok(new {res="utente eliminato"});

@@ -19,6 +19,14 @@ namespace WebApp
             builder.Services.AddDbContext<UtentiDb>(options =>
                 options.UseSqlServer(connectionString));
 
+            // Configurazione Ollama
+            builder.Services.AddSingleton<OllamaSharp.OllamaApiClient>(sp =>
+            {
+                var client = new OllamaSharp.OllamaApiClient("http://localhost:11434");
+                client.SelectedModel = "llama3";
+                return client;
+            });
+
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options => {
                     options.TokenValidationParameters = new TokenValidationParameters
@@ -34,14 +42,11 @@ namespace WebApp
                 });
 
             var app = builder.Build();
-           
             app.UseAuthentication(); // Chi sei?
             app.UseAuthorization();  // Cosa puoi fare?
             app.UseDefaultFiles();
             app.UseStaticFiles();
             app.MapControllers();
-            ProgramManager manager = new ProgramManager(app.Services.CreateScope().ServiceProvider.GetRequiredService<UtentiDb>());
-            manager.Config();
             app.Run();
         }
 
