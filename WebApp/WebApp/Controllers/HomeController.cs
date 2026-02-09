@@ -43,7 +43,7 @@ namespace WebApp.Controllers
                return BadRequest(new {id = -3});
            }
 
-            foreach (Utente u in ProgramManager.dipendenti)
+            foreach (Utente u in db.dipendenti)
             {
                 if ((userLog.username == u.name || userLog.username == u.email) && BCrypt.Net.BCrypt.Verify(userLog.password, u.password))
                 {

@@ -34,14 +34,11 @@ namespace WebApp
                 });
 
             var app = builder.Build();
-           
             app.UseAuthentication(); // Chi sei?
             app.UseAuthorization();  // Cosa puoi fare?
             app.UseDefaultFiles();
             app.UseStaticFiles();
             app.MapControllers();
-            ProgramManager manager = new ProgramManager(app.Services.CreateScope().ServiceProvider.GetRequiredService<UtentiDb>());
-            manager.Config();
             app.Run();
         }
 

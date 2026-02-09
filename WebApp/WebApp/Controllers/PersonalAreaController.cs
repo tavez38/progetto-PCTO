@@ -25,7 +25,7 @@ namespace WebApp.Controllers
             var id = User.FindFirst(ClaimTypes.NameIdentifier)?.Value
                 ?? User.FindFirst("sub")?.Value
                 ?? User.Identity?.Name;
-            var progetti = ProgramManager.progetti.Where(p => p.IdProprietario==id).ToList()?? new List<Progetto>();
+            var progetti = db.progetti.Where(p => p.IdProprietario==id).ToList()?? new List<Progetto>();
             return Ok(progetti);
         }
 
@@ -39,7 +39,7 @@ namespace WebApp.Controllers
             if (string.IsNullOrEmpty(idProprietario))
                 return Unauthorized();
             nuovoProgetto.IdProprietario = idProprietario;
-            ProgramManager.progetti.Add(nuovoProgetto);
+            
             
                 db.progetti.Add(nuovoProgetto);
                 db.SaveChanges();

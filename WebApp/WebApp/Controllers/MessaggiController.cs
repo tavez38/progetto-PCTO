@@ -48,13 +48,8 @@ namespace WebApp.Controllers
             }
 
             msg.mittente = mailMittente;
-
-           
-            
-                db.messaggi.Add(msg);
-                db.SaveChanges();
-            
-            ProgramManager.messaggi.Add(msg);
+            db.messaggi.Add(msg);
+            db.SaveChanges();
             return Ok();
         }
     }
