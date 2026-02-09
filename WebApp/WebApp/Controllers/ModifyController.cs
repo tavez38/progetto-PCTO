@@ -1,4 +1,5 @@
 ﻿using Azure.Core;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
@@ -23,8 +24,8 @@ namespace WebApp.Controllers
         public PswModifyRequest() { }
     }
 
-    
 
+    [Authorize]
     [Route("/api/modifyAccount")]
     [ApiController]
     public class ModifyController : ControllerBase
@@ -77,8 +78,6 @@ namespace WebApp.Controllers
             userList.email = request.emailNew;
             db.SaveChanges();
             return Ok(new { res = "credenziali aggiornate" });
-            
-            
         }
 
         [HttpPut]
