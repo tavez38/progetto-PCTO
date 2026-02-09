@@ -7,11 +7,16 @@
 
     <title>Area Personale</title>
     <link rel="stylesheet" href="../css/style.css" />
-    <script src="../js/script.js" defer></script>
+    <script type="module" src="../js/scriptPersonalArea.js" defer></script>
 </head>
-<body class="bodyPag" asp-controller="PersonalArea" asp-action="GetAllWorks" onload="loadWorks()">
-    <a class="return" onclick="logout()">Logout</a>
-    <button class="cestino">&#9773;</button>
+<body class= "flex" asp-controller="PersonalArea" asp-action="GetAllWorks">
+    <div class="navBar">
+        <button id="toHome"></button>
+        <button id="toImpostazioni"></button>
+        <button id="toChatBot"></button>
+        <a class="return" id="linkLogOutPA">Logout</a>
+    </div>
+    <div class="home">
     <h1 class="title">BENVENUTO NELLA TUA AREA PERSONALE</h1>
     <h3 class="subTitle">Qui potrai consultare il lavoro che hai da fare e mandare messaggi ai tuoi colleghi</h3>
     <h4 id="tableMainTitle">Prossimi lavori in consegna</h4>
@@ -29,15 +34,16 @@
                 
             </tbody>
         </table><br>
-        <button id="btnAddWork" type="button" onclick="goToUploadWorkPage()">Aggiungi un nuovo lavoro</button>
+        <button id="btnAddWork" type="button">Aggiungi un nuovo lavoro</button>
     </div>
-    <button id="btnMsg" type="button" onclick="goToMessaggiPage()">Invia messaggi</button>
+    <button id="btnMsg" type="button">Invia messaggi</button>
     <form>
         <label for="prompt">richiesta</label><br>
         <textarea name="prompt" id="requestChatOllama"></textarea>
         <label for="risposta">risposta</label>
         <textarea name="risposta" id="responseChatOllama"></textarea>
-        <button type="button" onclick="sendOllamaRequest()">invia</button>
+        <button type="button" id="sendReqChatbot">invia</button>
     </form>
+    </div>
 </body>
 </html>

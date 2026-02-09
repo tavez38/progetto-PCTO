@@ -7,16 +7,17 @@
 
     <title>Messaggi</title>
     <link rel="stylesheet" href="../css/style.css" />
-    <script src="../js/script.js" defer></script>
+    <script type="module" src="../js/scriptMessaggi.js" defer></script>
 </head>
-<body class="bodyPag" asp-controller="Messaggi" asp-action="GetMsg" onload="loadMessages()">
+<body class= "flex" asp-controller="Messaggi" asp-action="GetMsg">
+    <div class="home">
     <div id="opacityBox">
     <h1 id="casellaDiPosta">casella di posta</h1>
     <div id="barra">
-        <a class="return" onclick="logout()">Logout</a>
+        <a class="return" id="linkLogOutMsg">Logout</a>
         <a class="return" href="PersonalArea.html">&larr;</a>
     </div>
-    <button id="write" onclick="revalSendForm()">&#9998; Scrivi</button>
+    <button id="write">&#9998; Scrivi</button>
     <div id="menuOpzioni">
         <button id="ordina">ordina per:
             <div id="dropDownMenu">
@@ -43,15 +44,17 @@
     </table>
     </div>
     <form method="post" id="scriviMail">
-        <p id="exit" onclick="hideSendForm()">&times</p>
+        <p id="exit">&times</p>
         <input type="email" name="destinatario" id="inputMsgDest" placeholder="Email destinatario"><br>
         <input type="text" name="titolo" id="inputMsgTitle" placeholder="Oggetto"><br>
         <label for="corpo">Messaggio</label><br>
         <textarea name="corpo" id="inputMsgContent"></textarea><br>
-        <button type="button" id="send" asp-controller="Messaggi" asp-action="SendMsg" onclick="sendMessage()">Invia</button>
-        <button id="cancell" onclick="deleteInput()" type="button">cancella</button><br>
+        <button type="button" id="send" asp-controller="Messaggi" asp-action="SendMsg">Invia</button>
+        <button id="cancell" type="button">cancella</button><br>
         <span id="mailError"  class="error"></span><br>
         <span id="objectAllert" class="error"></span>
     </form>
+    <button onclick="generateOpzionForm()">ttrtr</button>
+    </div>
 </body>
 </html>

@@ -3,24 +3,23 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    
-
     <title>Login - Gestionale</title>
     <link rel="stylesheet" href="../css/style.css" />
-    <script src="../js/script.js" defer></script>
+    <script type = "module" src="../js/scriptIndex.js" defer></script>
 </head>
 <body class="bodyPag">
-<h1 class="title">Benvenuto nel gestionale</h1>
+<h1 class="title">BENVENUTI NEL GESTIONALE</h1>
 <h3 class="subTitle">Effettuare il login per vedere i vostri lavori</h3>
-<div id="light-dotLeft"></div>
-<div id="light-dotRight"></div>
+
+    <div id="lightDotLeft" class="light"></div>
+    <div id="lightDotRight" class="light"></div>
 <div class="divFormLogin">
     <form class="formLogin" action="/index" method="post">
 
         <h2>Accedi</h2>
         <label class="label" for="username">
         </label><br>
-        <input type="text" id="inputUsername" name="username" required placeholder="Username/mail" /><br>
+        <input type="text" id="inputUsername" name="username" required placeholder="Username/mail"/><br>
         <span id="userError" class="error"></span><br>
 
         <label class="label" for="password">
@@ -28,7 +27,7 @@
         <input type="password" id="inputPassword" name="password" required placeholder="Password" /><br>
         <span id="pswError" class="error"></span><br>
 
-        <button class="btnSubmit" type="button" onclick="onClickLogin()">ENTRA</button>
+        <button class="btnSubmit" type="button" onclick="onClickLogin()">Invia</button>
     </form>
     <p class="linkRegister">Non hai ancora un account?<a class="linkRegister" href="Registrazione.html" asp-controller="Account" asp-action="ShowPageRegister"><br> Registrati qui</a></p>
 </div>

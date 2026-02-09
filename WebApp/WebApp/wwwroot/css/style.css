@@ -1,8 +1,18 @@
 body{
     height: 1000px;
-    background: linear-gradient(45deg, #93adae 0%, #353535 100%);
+    background-image: radial-gradient(farthest-side at 50% 100%, rgb(85, 85, 85), black);
     background-repeat: no-repeat;
 
+}
+.flex{
+    display: flex;
+}
+.bodyAccNeg{
+    background-image: none;
+    background-color: gray !important;
+}
+.home{
+    width: 80%;
 }
 .title,.subTitle{
     font-family: Tahoma, Verdana, sans-serif;
@@ -378,6 +388,7 @@ a{
 }
 #inputMsgContent{
     height: 100px !important;
+    resize: none;
 }
 #send{
     margin-left: 100px;
@@ -415,10 +426,7 @@ a{
 #scriviMail span{
     margin-left: 100px;
 }
-#inputMsgContent{
-    resize: none;
-}
-#light-dotLeft{
+#lightDotLeft{
     position: absolute;
     display: none;
     width: 10px;
@@ -443,7 +451,7 @@ a{
     offset-distance: 100%;
   }
 }
-#light-dotRight{
+#lightDotRight{
     position: absolute;
     display: none;
     width: 10px;
@@ -455,9 +463,6 @@ a{
     -20px 0 20px #00f0ff;
     offset-path: path("M 940,23 L 567,23 Q 552,23 552,38 L 552,313 Q 552,328 567,328 L 941,325 Q 956,325 956,313 L 955,38 Q 955,23 940,23");
     animation: moveAlongPath 6s infinite linear, flicker 0.8s infinite alternate;
-}
-.bodyAccNeg{
-    background-color: gray;
 }
 
 #statusCodeAccNeg{
@@ -479,4 +484,65 @@ a{
 #linkToLogin{
     margin-top: 5%;
     margin-left: 70%;
+}
+#divChatBot{
+    width: 20%;
+}
+#divChatName{
+    color: white;
+    font-size: xx-large;
+}
+.navBar{
+    background-color: rgb(0, 162, 151);
+    position: absolute;
+    width: 100%;
+    margin-left: -10px;
+    height: 60px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+.navBar button{
+    height: 50px;
+    width: 50px;
+    margin-right: 15px;
+    background: none;
+    border-radius: 5px;
+    border: none;
+    font-size: 40PX;
+    cursor: pointer;
+}
+.navBar button:hover{
+    background-color: rgb(0, 123, 115);;
+}
+.logout{
+    font-size: 20px;
+    margin-left: 10px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+}
+#toHome{
+    margin-right: auto;
+}
+.menuButton {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  transform: translate(0, 11px) rotate(-45deg);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+  transform: translate(0, -11px) rotate(45deg);
 }

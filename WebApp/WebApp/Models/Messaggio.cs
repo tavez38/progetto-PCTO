@@ -15,7 +15,6 @@ namespace WebApp.Models
         
         public string destinatario { get; set; } //mail
 
-        [JsonIgnore]
         public string? mittente { get; set; } //mail
         public Messaggio()
         {
