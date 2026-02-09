@@ -1,6 +1,5 @@
 import { 
-    listaCharSpec, 
-    iscrizione, 
+    listaCharSpec,  
     checkEmail, 
     checkPsw, 
     checkCharSpec, 
@@ -8,10 +7,19 @@ import {
     deleteInput,
     goToMessaggiPage, 
     logout, 
-    sendOllamaRequest, 
     generateOpzionForm 
-} from "../js/utilities";
+} from "../js/utilities.js";
 
+document.getElementById("sendRegisterForm").addEventListener("click", iscrizione);
+
+function iscrizione() {
+    if (!checkEmail(r) || !checkPsw()) {
+        console.log("false");
+    }
+    else {
+        richiestaIscrizione();
+    }
+}
 async function richiestaIscrizione() {
     let utente = {
         name : document.getElementById("inputUsername").value,

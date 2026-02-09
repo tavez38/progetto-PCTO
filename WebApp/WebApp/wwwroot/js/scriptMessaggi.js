@@ -1,6 +1,5 @@
 import { 
     listaCharSpec, 
-    iscrizione, 
     checkEmail, 
     checkPsw, 
     checkCharSpec, 
@@ -8,9 +7,15 @@ import {
     deleteInput, 
     goToMessaggiPage, 
     logout, 
-    sendOllamaRequest, 
     generateOpzionForm 
-} from "../js/utilities";
+} from "../js/utilities.js";
+
+document.addEventListener("DOMContentLoaded", loadMessages);
+document.getElementById("linkLogOutMsg").addEventListener("click", logout);
+document.getElementById("write").addEventListener("click", revalSendForm);
+document.getElementById("exit").addEventListener("click", hideSendForm);
+document.getElementById("send").addEventListener("click", sendMessage);
+document.getElementById("cancell").addEventListener("click", deleteInput);
 
 async function loadMessages() {
     const token = localStorage.getItem("token");

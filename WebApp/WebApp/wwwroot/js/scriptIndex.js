@@ -1,6 +1,5 @@
 import { 
     listaCharSpec, 
-    iscrizione, 
     checkEmail, 
     checkPsw, 
     checkCharSpec, 
@@ -8,13 +7,17 @@ import {
     deleteInput, 
     goToMessaggiPage, 
     logout, 
-    sendOllamaRequest, 
-    generateOpzionForm 
-} from "../js/utilities";
+    generateOpzionForm,
+    wrongAnswordEffect,
+    changeFormColor,
+    changeLightColor
+} from "../js/utilities.js";
+
+document.getElementById("btnLogin").addEventListener("click", onClickLogin);
 
 function onClickLogin(){ 
 
-    wrongAnswordEffect();
+    
     const usMail = document.getElementById("inputUsername").value;
     const psw = document.getElementById("inputPassword").value;
     const pswError = document.getElementById("pswError");
@@ -39,12 +42,15 @@ function onClickLogin(){
             .then(data => {
                 if (data.id == -1) {
                     pswError.innerHTML = "inserire password";
+                    wrongAnswordEffect();
                 }
                 else if (data.id == -2) {
                     userError.innerHTML = "Non è stato trovato nessun utente con questa mail/username";
+                    wrongAnswordEffect();
                 }
                 else if (data.id == -3) {
                     userError.innerHTML = "inserire utente";
+                    wrongAnswordEffect();
                 }
                 else {
                     localStorage.setItem("idUtenteLoggato", data.id);

@@ -1,14 +1,5 @@
 ﻿export const listaCharSpec = ["!", "@", "#", "$", "%", "^", "&", "*", "-", "_", "+", "=", "?"];
 
-export function iscrizione() {
-    if (!checkEmail(r) || !checkPsw()) {
-        console.log("false");
-    }
-    else {
-        richiestaIscrizione();
-    }  
-}
-
 export function checkEmail(use) {
     if(use == "r"){
     const email = document.getElementById("inputEmail");
@@ -94,49 +85,20 @@ export function logout() {
     window.location.href = '../html/Index.html';
 }
 
-export function sendOllamaRequest() {
-    const domanda = document.getElementById("requestChatOllama").value;
-    try {
-        fetch("/api/ollama/sendOllamaReq", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "Authorization": `Bearer ${localStorage.getItem("token")}`
-            },
-            body: JSON.stringify(domanda)
-        })
-            .then(res => {
-                if (res.status == 401) {
-                    localStorage.removeItem("idUtenteLoggato");
-                    localStorage.removeItem("token");
-                    window.location.href = '../html/AccessoNegato.html';
-                    return;
-                }
-                else if (!res.ok) {
-                    console.log(res.status);
-                    return;
-                }
-                let data = res.json();
-                document.getElementById("responseChatOllama").value = data.response;
-            });        
-    }
-    catch (error) {
-        console.log(error);
-    }
-}
-function changeLightColor(){
+
+export function changeLightColor(){
     const light = document.getElementsByClassName("light");
     for(let i = 0; i < light.length; i++){
     light[i].style.backgroundColor = "#f60404";
     light[i].style.boxShadow ="0 0 10px #ff2525,-5px 0 15px 2px #a40000, -20px 0 20px #cc0303";
     }
 }
-function changeFormColor(){
+export function changeFormColor(){
     const form = document.getElementsByClassName("divFormLogin")[0];
     form.style.borderColor = "#f60404";
     form.style.boxShadow = "0px 0px 15px #f60404";
 }
-function wrongAnswordEffect(){
+export function wrongAnswordEffect(){
     const form = document.getElementsByClassName("divFormLogin")[0];
 
     const animazione = [

@@ -3,11 +3,9 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    
-
     <title>Login - Gestionale</title>
     <link rel="stylesheet" href="../css/style.css" />
-    <script src="../js/scriptIndex.js" defer></script>
+    <script type="module" src="../js/scriptIndex.js" defer></script>
 </head>
 <body>
 <h1 class="title">BENVENUTI NEL GESTIONALE</h1>
@@ -30,7 +28,7 @@
         <input type="password" id="inputPassword" name="password" required placeholder="Password" /><br>
         <span id="pswError" class="error"></span><br>
 
-        <button class="btnSubmit" type="button" onclick="onClickLogin()">Invia</button>
+        <button class="btnSubmit" id="btnLogin" type="button">Invia</button>
     </form>
     <p class="linkRegister">Non hai ancora un account?<a class="linkRegister" href="Registrazione.html" asp-controller="Account" asp-action="ShowPageRegister"> Registrati qui</a></p>
 </div>
