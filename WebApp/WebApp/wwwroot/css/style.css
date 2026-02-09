@@ -453,4 +453,43 @@ a{
     height: 50px;
     width: 50px;
     margin-right: 15px;
+    background: none;
+    border-radius: 5px;
+    border: none;
+    font-size: 40PX;
+    cursor: pointer;
+}
+.navBar button:hover{
+    background-color: rgb(0, 123, 115);;
+}
+.logout{
+    font-size: 20px;
+    margin-left: 10px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+}
+#toHome{
+    margin-right: auto;
+}
+.menuButton {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  transform: translate(0, 11px) rotate(-45deg);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+  transform: translate(0, -11px) rotate(45deg);
 }

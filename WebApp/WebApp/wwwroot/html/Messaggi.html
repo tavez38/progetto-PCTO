@@ -7,14 +7,15 @@
 
     <title>Messaggi</title>
     <link rel="stylesheet" href="../css/style.css" />
-    <script src="../js/script.js" defer></script>
+    <script src="../js/utilities.js" defer></script>
+    <script src="../js/scriptMessaggi.js" defer></script>
 </head>
 <body class= "flex" asp-controller="Messaggi" asp-action="GetMsg" onload="loadMessages()">
     <div class="home">
     <div id="opacityBox">
     <h1 id="casellaDiPosta">casella di posta</h1>
     <div id="barra">
-        <a class="return" onclick="logout()">Logout</a>
+        <a class="logout" href="Index.html" onclick="logout()">Logout</a>
         <a class="return" href="PersonalArea.html">&larr;</a>
     </div>
     <button id="write" onclick="revalSendForm()">&#9998; Scrivi</button>
