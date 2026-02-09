@@ -1,4 +1,4 @@
-﻿export const listaCharSpec = ["!", "@", "#", "$", "%", "^", "&", "*", "-", "_", "+", "=", "?"];
+﻿const listaCharSpec = ["!", "@", "#", "$", "%", "^", "&", "*", "-", "_", "+", "=", "?"];
 
 export function checkEmail(use) {
     if(use == "r"){
@@ -141,3 +141,8 @@ export function generateOpzionForm(){
     prompt.placeholder = "prompt richiesta";
     form.appendChild(prompt);
 }
+function myFunction() {
+document.body.style.backgroundImage ="none";
+document.getElementsByClassName("menuButton")[0].classList.toggle("change");
+}
+document.getElementsByClassName("menuButton")[0].addEventListener("click", myFunction());
