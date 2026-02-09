@@ -10,28 +10,27 @@
     <script src="../js/script.js" defer></script>
 </head>
 <body class="bodyPag">
-<h1 class="title">BENVENUTI NEL GESTIONALE</h1>
+<h1 class="title">Benvenuto nel gestionale</h1>
 <h3 class="subTitle">Effettuare il login per vedere i vostri lavori</h3>
 <div id="light-dotLeft"></div>
 <div id="light-dotRight"></div>
 <div class="divFormLogin">
     <form class="formLogin" action="/index" method="post">
 
+        <h2>Accedi</h2>
         <label class="label" for="username">
-            Username/Email:
         </label><br>
         <input type="text" id="inputUsername" name="username" required placeholder="Username/mail" /><br>
         <span id="userError" class="error"></span><br>
 
         <label class="label" for="password">
-            Password:
         </label><br>
         <input type="password" id="inputPassword" name="password" required placeholder="Password" /><br>
         <span id="pswError" class="error"></span><br>
 
-        <button class="btnSubmit" type="button" onclick="onClickLogin()">Invia</button>
+        <button class="btnSubmit" type="button" onclick="onClickLogin()">ENTRA</button>
     </form>
-    <p class="linkRegister">Non hai ancora un account?<a class="linkRegister" href="Registrazione.html" asp-controller="Account" asp-action="ShowPageRegister"> Registrati qui</a></p>
+    <p class="linkRegister">Non hai ancora un account?<a class="linkRegister" href="Registrazione.html" asp-controller="Account" asp-action="ShowPageRegister"><br> Registrati qui</a></p>
 </div>
 </body>
 </html>

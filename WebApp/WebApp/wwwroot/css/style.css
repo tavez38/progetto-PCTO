@@ -1,20 +1,23 @@
 body{
     height: 1000px;
-    background-image: radial-gradient(farthest-side at 50% 100%, rgb(85, 85, 85), black);
+    background: linear-gradient(45deg, #93adae 0%, #353535 100%);
     background-repeat: no-repeat;
+
 }
 .title,.subTitle{
     font-family: Tahoma, Verdana, sans-serif;
     text-align: center;
-    color: #159A9C;
+    
 }
 .title{
     margin-top: 10px;
     font-size: 50px;
+    color: #d9d9d9;
 }
 .subTitle{
-    margin-top: 40px;
+    margin-top: 20px;
     font-size: 30px;
+    color: #353535;
 }
 #tableMainTitle{
     margin-top: 20px;
@@ -23,31 +26,17 @@ body{
     margin-left: 50px;
 }
 .divFormLogin{
-    width: 400px;
-    height: 300px;
-    border: 5px solid #03ffff;
-    border-radius: 15px;
-    border-style:groove;
-    margin-top: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    background-image: radial-gradient(farthest-side at 50% 100%, rgb(0, 240, 255)-30%, black);
-    background-repeat: no-repeat;
-    box-shadow: 0px 0px 15px #00f0ff;
-}
-.divFormRegister {
+
     width: 400px;
     height: 350px;
-    
+    background-repeat: no-repeat;
     border-radius: 20px;
     border-style: groove;
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
-    background-color: #159A9C;
     font-size: 20px;
     font-family: Tahoma, Verdana, sans-serif;
-    background: linear-gradient(45deg, #159A9C 0%, #ffffff 100%);
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(15px);
     box-shadow: 0 8px 32px rgba(0,0,0,0.3);
@@ -55,8 +44,30 @@ body{
     
     padding: 40px;
     text-align: center;
-}
+    line-height: 20%;
 
+
+}
+.divFormRegister {
+    width: 400px;
+    height: 300spx;
+    
+    border-radius: 20px;
+    border-style: groove;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    font-family: Tahoma, Verdana, sans-serif;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.1);
+    
+    padding: 40px;
+    text-align: center;
+    line-height: 60%;
+}
 .divFormMod {
     width: 500px;
     height: 400px;
@@ -66,7 +77,6 @@ body{
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
-    background-color: #159A9C;
     font-size: 20px;
     font-family: Tahoma, Verdana, sans-serif;
     background: linear-gradient(45deg, #159A9C 0%, #ffffff 100%);
@@ -93,6 +103,7 @@ body{
     color: white;
     outline: none;
     box-sizing: border-box;
+    
 }
 
 
@@ -106,27 +117,53 @@ input::placeholder {
     border: none;
     border-radius: 8px;
     background: #ffffff;
-    color: #0d5859;
+    color: #3f5767;
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
     margin-top: 20px;
+    font-style: bold;
+    margin-top: 15%;
 }
+
+button:hover {
+transform: scale(1.02);
+background: #e0e0e0;
+}
+
 .formLogin{
     margin-top: 30px;
+    font-size: 15px;
+    color: #d9d9d9;
 }
 .formRegister {
     margin-top: 10px;
+    font-size: 15px;
+    color: #d9d9d9;
 }
 
 .formMod {
-    margin-top: 60px;
+    margin-top: 10px;
+    font-size: 15px;
+    color: #d9d9d9;
 }
 
 .linkRegister {
     margin-left: 20px;
     margin-top: 20px;
     margin-bottom: 10px;
+    line-height: normal;
+    font-size: 15px;
+    font-family: Tahoma, Verdana, sans-serif;
+    color: #d9d9d9;
+}
+
+.linkRegister a:hover {
+  color: #3f5767;
+}
+
+.linkRegister a{ 
+    color: #353535;
 }
 .error{
     color: red;
@@ -139,13 +176,29 @@ input::placeholder {
     margin-right: auto;
 }
 .boxWorks{
-    width: 1200px;
-    height: fit-content;
+    /*
     border: 1px solid black;
     margin-left: auto;
     margin-right: auto;
     border-radius: 10px;
-    border-collapse: collapse;
+    border-collapse: collapse;*/
+
+    width: 1200px;
+    height: fit-content;
+    border-radius: 20px;
+    border-style: groove;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    font-family: Tahoma, Verdana, sans-serif;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.1);
+    
+    padding: 40px;
+    text-align: center;
 }
 th, tr, td{
     height: max-content;
