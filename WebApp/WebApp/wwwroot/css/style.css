@@ -1,6 +1,6 @@
 body{
     height: 1000px;
-    background-image: radial-gradient(farthest-side at 50% 100%, rgb(85, 85, 85), black);
+    background: linear-gradient(45deg, #93adae 0%, #353535 100%);
     background-repeat: no-repeat;
 
 }
@@ -212,9 +212,9 @@ background: #e0e0e0;
 }
 th, tr, td{
     height: max-content;
-    border: 3px solid #4F5957;
+    /*border: 3px solid #4F5957;*/
     font-size: 25px;
-    color: #6c7a89;
+    color: #d9d9d9;
 }
 #header{
     width: 1500px;
@@ -248,9 +248,20 @@ th, tr, td{
     cursor: pointer;
 }
 #btnAddWork{
-    margin-left: 1000px;
+    /*margin-left: 1000px;*/
     width: 100px;
     height: 50px;
+
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #3f5767;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 20px;
 }
 #creaProgetto{
     text-align: center;
@@ -494,7 +505,7 @@ a{
 }
 .navBar{
     background-color: rgb(0, 162, 151);
-    position: absolute;
+    position: relative;
     width: 100%;
     margin-left: -10px;
     height: 60px;

@@ -112,3 +112,7 @@ function sendOllamaRequest() {
         console.log(error);
     }
 }
+function myFunction() {
+document.body.style.backgroundImage ="none";
+document.getElementsByClassName("menuButton")[0].classList.toggle("change");
+}
