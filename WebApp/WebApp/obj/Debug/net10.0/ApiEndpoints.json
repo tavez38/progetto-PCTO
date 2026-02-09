@@ -26,6 +26,70 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "WebApp.Controllers.ModifyController",
+    "Method": "deleteAccount",
+    "RelativePath": "api/modifyAccount/deleteAccount",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pswConf",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApp.Controllers.ModifyController",
+    "Method": "modifyMail",
+    "RelativePath": "api/modifyAccount/email",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "WebApp.Controllers.MailModifyRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApp.Controllers.ModifyController",
+    "Method": "modifyPsw",
+    "RelativePath": "api/modifyAccount/psw",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "WebApp.Controllers.PswModifyRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApp.Controllers.ModifyController",
+    "Method": "ModifyUsername",
+    "RelativePath": "api/modifyAccount/username",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "WebApp.Controllers.OllamaChatController",
     "Method": "SendOllamaReq",
     "RelativePath": "api/ollama/sendOllamaReq",

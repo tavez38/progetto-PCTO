@@ -21,12 +21,19 @@ namespace WebApp.Controllers
         [Route("/api/ollama/sendOllamaReq")]
         public async Task<IActionResult> SendOllamaReq([FromBody] string request)
         {
-            var rispostaCompleta = "";
-            await foreach (var risposta in _ollama.GenerateAsync(request))
+            try
             {
-                rispostaCompleta += risposta.Response;
+                var rispostaCompleta = "";
+                await foreach (var risposta in _ollama.GenerateAsync(request))
+                {
+                    rispostaCompleta += risposta.Response;
+                }
+                return Ok(new { response = rispostaCompleta });
             }
-            return Ok(new {response = rispostaCompleta});
+            catch (System.Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, new { error = ex.Message });
+            }
         }
     }
 }

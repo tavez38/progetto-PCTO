@@ -11,9 +11,8 @@ namespace WebApp.data
 
         public DbSet<Messaggio> messaggi { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public UtentiDb(DbContextOptions<UtentiDb> options) : base(options)
         {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=DipendentiDatabase;Trusted_Connection=True;");
         }
     }
 }
