@@ -393,33 +393,42 @@ function logout() {
     window.location.href = '../html/Index.html';
 }
 
-function sendOllamaRequest() {
+async function sendOllamaRequest() {
     const domanda = document.getElementById("requestChatOllama").value;
+    const textAreaRisposta = document.getElementById("responseChatOllama");
+    textAreaRisposta.removeAttribute("readonly");
+    textAreaRisposta.value = "Caricamento in corso...";
+
     try {
-        fetch("/api/ollama/sendOllamaReq", {
+        const res = await fetch("/api/ollama/sendOllamaReq", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
                 "Authorization": `Bearer ${localStorage.getItem("token")}`
             },
             body: JSON.stringify(domanda)
-        })
-            .then(res => {
-                if (res.status == 401) {
-                    localStorage.removeItem("idUtenteLoggato");
-                    localStorage.removeItem("token");
-                    window.location.href = '../html/AccessoNegato.html';
-                    return;
-                }
-                else if (!res.ok) {
-                    console.log(res.status);
-                    return;
-                }
-                let data = res.json();
-                document.getElementById("responseChatOllama").value = data.response;
-            });        
-}
+        });
+
+        if (res.status == 401) {
+            localStorage.removeItem("idUtenteLoggato");
+            localStorage.removeItem("token");
+            window.location.href = '../html/AccessoNegato.html';
+            return;
+        }
+
+        if (!res.ok) {
+            console.log("HTTP error", res.status);
+            textAreaRisposta.value = `Errore server: ${res.status}`;
+            textAreaRisposta.setAttribute("readonly", "readonly");
+            return;
+        }
+        let data = await res.json();
+        textAreaRisposta.value = data.response;
+        textAreaRisposta.setAttribute("readonly", "readonly");
+    }
     catch (error) {
-        console.log(error);
+        console.error("Fetch error:", error);
+        textAreaRisposta.value = "Errore nella richiesta";
+        textAreaRisposta.setAttribute("readonly", "readonly");
     }
 }
