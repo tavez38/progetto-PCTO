@@ -9,7 +9,8 @@ import {
     logout, 
     generateOpzionForm,
     sendOllamaRequest,
-    menuFigo
+    menuFigo,
+    iconBarGenerator
 } from "../js/utilities.js";
 let vMsg = [];
 document.addEventListener("DOMContentLoaded", loadMessages);
@@ -18,6 +19,8 @@ document.getElementById("write").addEventListener("click", revalSendForm);
 document.getElementById("exit").addEventListener("click", hideSendForm);
 document.getElementById("send").addEventListener("click", sendMessage);
 document.getElementById("cancell").addEventListener("click", deleteInput);
+document.getElementById("toChatBot").addEventListener("click", generateOpzionForm);
+document.getElementById("btnNavBar").addEventListener("click", iconBarGenerator);
 
 async function loadMessages() {
     const token = localStorage.getItem("token");

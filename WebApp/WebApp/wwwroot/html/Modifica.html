@@ -1,68 +1,71 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8" />
-    <title>
-        Modifica account
-    </title>
-    <link href="../css/style.css" rel="stylesheet" />
-    <script type="module" src="../js/scriptModify.js" defer></script>
-</head>
-<body>
-    <div class="navBar">
-        <button id="toImpostazioni"><a href="Modifica.html">E</a></button>
-        <button id="toChatBot" onclick="generateOpzionForm()">E</button>
-        <a class="logout" href="Index.html" id="linkLogOutPA">Logout</a>
-        <div class="menuButton" onclick="iconBarGenerator()">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            Modifica account
+        </title>
+        <link href="../css/style.css" rel="stylesheet" />
+        <script type="module" src="../js/scriptModify.js" defer></script>
+    </head>
+    <body>
+        <div class="navBar">
+            <button id="toImpostazioni"><a href="Modifica.html">E</a></button>
+            <button id="toChatBot">E</button>
+            <a class="logout" href="Index.html" id="linkLogOutPA">Logout</a>
+            <div class="menuButton" id="btnNavBar">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
         </div>
-    </div>
-    <div class="flex">
-    <div class="home">
-<h1 class="title">Modifica il tuo profilo</h1>
-<h3 class="subTitle">gestisci le tue informazioni</h3>
-<div class="divFormMod">
-    <form class="formMod" asp-controller="Account" action="/account/registrazione" method="post">
+        <div class="flex">
+            <div class="home">
+                <h1 class="title">Modifica il tuo profilo</h1>
+                <h3 class="subTitle">gestisci le tue informazioni</h3>
+                <div class="divFormMod">
+                    <div class="formMod">
 
-        <div class="divFormMod">
-            <p id="usernameUser">Username: </p><br>
-            <p id="emailUser">Email: </p>
+                        <div class="divFormMod">
+                            <p id="usernameUser">Username: </p><br>
+                            <p id="emailUser">Email: </p>
+                        </div>
+
+                        <form class="formModUsername">
+                            <label class="label" for="username">Inserisci nuovo username:</label><br>
+                            <input type="text" id="inputUsernameMod" name="username" required placeholder="Username" maxlength="15" minlength="1" /><br>
+
+                            <button class="btnSubmit" id="btnModUsername" type="button">salva</button>
+                        </form>
+
+
+                        <form class="formModEmail">
+                            <label class="label" for="email">Inserisci il nuovo indirizzo Email:</label><br>
+                            <input type="email" id="inputEmail" name="email" required placeholder="Email" /><br>
+
+                            <label class="label" for="password">Inserisci la tua password per confermare:</label><br>
+                            <input type="password" id="inputPswConfirmMail" name="password" required placeholder="Password" /><br>
+
+                            <button class="btnSubmit" id="btnModEmail" type="button">salva</button>
+                        </form>
+
+                        <form class="formModPassword">
+
+                            <label class="label" for="password">Inserisci la vecchia password:</label><br>
+                            <input type="password" id="inputPasswordOld" name="password" required placeholder="Password" /><br>
+
+                            <label class="label" for="password">Inserisci la nuova password:</label><br>
+                            <input type="password" id="inputPasswordNew" name="password" required placeholder="Password" /><br>
+
+                            <label class="label" for="password">Conferma la nuova password:</label><br>
+                            <input type="password" id="inputPasswordNewConf" name="password" required placeholder="Password" /><br>
+
+                            <button class="btnSubmit" id="btnModPsw" type="button">salva</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <form class="formModUsername">
-            <label class="label" for="username">Inserisci nuovo username:</label><br>
-            <input type="text" id="inputUsernameMod" name="username" required placeholder="Username" maxlength="15" minlength="1" /><br>
-
-            <button class="btnSubmit" id="btnModUsername" type="button" >salva</button>
-        </form>
-
-
-        <form class="formModEmail">
-            <label class="label" for="email">Inserisci il nuovo indirizzo Email:</label><br>
-            <input type="email" id="inputEmail" name="email" required placeholder="Email" /><br>
-
-            <label class="label" for="password">Inserisci la tua password per confermare:</label><br>
-            <input type="password" id="inputPswConfirmMail" name="password" required placeholder="Password" /><br>
-
-            <button class="btnSubmit"id="btnModEmail" type="button" >salva</button>
-        </form>
-
-        <form class="formModPassword">
-
-            <label class="label" for="password">Inserisci la vecchia password:</label><br>
-            <input type="password" id="inputPasswordOld" name="password" required placeholder="Password" /><br>
-
-            <label class="label" for="password">Inserisci la nuova password:</label><br>
-            <input type="password" id="inputPasswordNew" name="password" required placeholder="Password" /><br>
-
-            <label class="label" for="password">Conferma la nuova password:</label><br>
-            <input type="password" id="inputPasswordNewConf" name="password" required placeholder="Password" /><br>
-
-            <button class="btnSubmit" id="btnModPsw" type="button">salva</button>
-
-        </form>
-
     </body>
 </html>
