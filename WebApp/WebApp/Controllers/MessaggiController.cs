@@ -6,6 +6,14 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace WebApp.Controllers
 {
+    public class SignedAsRead
+    {
+        public int id { get; set; }
+        public bool letto { get; set; }
+
+        public SignedAsRead(){}
+
+    }
     [Authorize]
     [Route("/api/messages")]
     [ApiController]
@@ -51,6 +59,21 @@ namespace WebApp.Controllers
             db.messaggi.Add(msg);
             db.SaveChanges();
             return Ok();
+        }
+
+        [HttpPut]
+        [Route("/api/messages/markAsRead")]
+        public IActionResult MarkAsRead([FromBody] SignedAsRead request)
+        {
+            var msg = db.messaggi.FirstOrDefault(m => m.Id == request.id);
+            if (msg == null)
+            {
+                return NotFound(new { res = "Messaggio non trovato" });
+            }
+            
+            msg.letto = request.letto;
+            db.SaveChanges();
+            return Ok(new { res = "Messaggio segnato come letto" });
         }
     }
 }

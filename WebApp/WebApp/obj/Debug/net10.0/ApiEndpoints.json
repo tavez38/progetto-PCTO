@@ -11,6 +11,22 @@
   },
   {
     "ContainingType": "WebApp.Controllers.MessaggiController",
+    "Method": "MarkAsRead",
+    "RelativePath": "api/messages/markAsRead",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "WebApp.Controllers.SignedAsRead",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApp.Controllers.MessaggiController",
     "Method": "SendMsg",
     "RelativePath": "api/messages/sendMsg",
     "HttpMethod": "POST",

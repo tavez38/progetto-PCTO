@@ -71,10 +71,23 @@ function createMsgTable() {
         const tr = document.createElement("tr");
         tr.className = "rows";
 
+        const tdLetto = document.createElement("td");
+        tdLetto.className = "tableLetto";
+        const checkBox = document.createElement("input");
+        checkBox.type = "checkbox";
+        checkBox.checked = element.letto;
+        checkBox.id = element.id;
+        checkBox.addEventListener("change", () => {
+            var msg = vMsg.find(m => m.id == element.id);
+            segnaLetto(msg, checkBox.checked)
+        });
+        tdLetto.appendChild(checkBox);
+
+
         const tdMit = document.createElement("td");
         tdMit.className = "tableMsgMit";
         tdMit.textContent = element.mittente;
-        tdMit.id = element.id;
+        
 
         const tdTitle = document.createElement("td");
         tdTitle.className = "tableMsgTitle";
@@ -84,6 +97,7 @@ function createMsgTable() {
         tdData.className = "tableMsgData";
         tdData.textContent = element.dataInvio;
 
+        tr.appendChild(tdLetto);
         tr.appendChild(tdMit);
         tr.appendChild(tdTitle);
         tr.appendChild(tdData);
@@ -131,7 +145,7 @@ async function sendMessage(){
     hideSendForm();
 }
 
-function revalSendForm(){
+/*function revalSendForm(){
     let opacityBox = document.getElementById("opacityBox");
     let scriviMail = document.getElementById("scriviMail");
 
@@ -139,7 +153,7 @@ function revalSendForm(){
    opacityBox.style.opacity = "0.4";
    document.body.style.overflow = "hidden";
    opacityBox.style.pointerEvents = "none";
-}
+}*/
 
 function hideSendForm(){
     let opacityBox = document.getElementById("opacityBox");
@@ -163,10 +177,10 @@ function ordinamento() {
         case "Alfabetico: Z-A":
             ordinaPerAlfabetico("Z-A");
             break;
-        case "Pi� recente":
+        case "Piu recente":
             ordinaPerData("recente"); 
             break;
-        case "Pi� vecchio":
+        case "Piu vecchio":
             ordinaPerData("vecchio");
             break;
         case "Da leggere":
@@ -176,6 +190,7 @@ function ordinamento() {
             ordinamentoLetto("letti");
             break;
         default:
+            createMsgTable();
             break;
     }
 }
@@ -220,4 +235,27 @@ function ordinamentoLetto(verso) {
         }
     });
     createMsgTable();
+}
+
+async function segnaLetto(msg, lettoMsg) {
+    const request = {
+        id: msg.id,
+        letto: lettoMsg
+    }
+    const res = await fetch("/api/messages/markAsRead", {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${localStorage.getItem("token")}`
+        },
+        body: JSON.stringify(request)
+    });
+    if (!res.ok) {
+        console.log(res.status);
+        return;
+    }
+    const data = await res.json();
+    console.log(data.res);
+
+    
 }

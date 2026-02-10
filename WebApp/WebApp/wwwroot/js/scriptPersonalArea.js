@@ -72,10 +72,7 @@ function createWorksTable() {
         const tr = document.createElement("tr");
         tr.className = "rows";
 
-        const tdLetto = document.createElement("td");
-        tdLetto.className = "tableLetto";
-        const checkBox = document.createElement("input");
-        checkBox.type = "checkbox"
+        
         const tdTitle = document.createElement("td");
         tdTitle.className = "tableTitle";
         tdTitle.textContent = element.title;
