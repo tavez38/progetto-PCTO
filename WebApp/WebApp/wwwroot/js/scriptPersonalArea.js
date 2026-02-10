@@ -93,12 +93,53 @@ function createWorksTable() {
         tdHour.textContent = element.orarioScadenza;
         tr.appendChild(tdHour);
 
+        const tdElimina = document.createElement("td");
+        tdElimina.className = "tableDel";
+        const btnElimina = document.createElement("button");
+        btnElimina.className = "btnElimina";
+        btnElimina.textContent = "Elimina";
+        btnElimina.type = "button";
+        btnElimina.addEventListener("click", async () => {
+            var conferma = confirm("Sei sicuro di voler eliminare questo progetto?");
+            if (conferma) {
+                console.log(element.id);
+                eliminaProgetto(element);
+            }
+        });
+        tdElimina.appendChild(btnElimina);
+        tr.appendChild(tdElimina);
+
         fragment.appendChild(tr);
     });
     tableBody.appendChild(fragment);
 }
-
-function myFunction() {
+async function eliminaProgetto(prog) {
+    const request = {
+        idProg: prog.id
+    }
+    const res = await fetch("/api/deleteWork", {
+        method: "POST",
+        headers: {
+            "authorization": `Bearer ${localStorage.getItem("token")}`,
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(request)
+    });
+    if (res.status == 401) {
+        localStorage.removeItem("idUtenteLoggato");
+        localStorage.removeItem("token");
+        window.location.href = '../html/AccessoNegato.html';
+        return;
+    }
+    else if (!res.ok) {
+        console.log(res.status);
+        return;
+    }
+    const data = await res.json();
+    console.log(data.res);
+    return;
+}
+/*function myFunction() {
 document.body.style.backgroundImage ="none";
 document.getElementsByClassName("menuButton")[0].classList.toggle("change");
-}
+}*/

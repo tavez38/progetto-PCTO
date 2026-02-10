@@ -7,8 +7,13 @@ using WebApp.Models;
 
 namespace WebApp.Controllers
 {
+    public class RequestDelProgetto
+    {
+        public string idProg { get; set; }
+        public RequestDelProgetto() { }
+    }
     [Authorize]
-    [Route("/html")]
+    [Route("/api")]
     [ApiController]
     public class PersonalAreaController : ControllerBase
     {
@@ -38,14 +43,28 @@ namespace WebApp.Controllers
                 ?? User.Identity?.Name;
             if (string.IsNullOrEmpty(idProprietario))
                 return Unauthorized();
-            nuovoProgetto.IdProprietario = idProprietario;
-            
-            
-                db.progetti.Add(nuovoProgetto);
-                db.SaveChanges();
-            
+            nuovoProgetto.IdProprietario = idProprietario;           
+            db.progetti.Add(nuovoProgetto);
+            db.SaveChanges();
             
             return Ok();
+        }
+
+        [HttpPost]
+        [Route("/api/deleteWork")]
+        public IActionResult DeleteWork([FromBody] RequestDelProgetto request)
+        {
+            var idProprietario = User.FindFirst(ClaimTypes.NameIdentifier)?.Value
+                ?? User.FindFirst("sub")?.Value
+                ?? User.Identity?.Name;
+            if (string.IsNullOrEmpty(idProprietario))
+                return Unauthorized();
+            var progetto = db.progetti.FirstOrDefault(p => p.id == request.idProg && p.IdProprietario == idProprietario);
+            if (progetto == null)
+                return NotFound();
+            db.progetti.Remove(progetto);
+            db.SaveChanges();
+            return Ok(new {res="progetto eliminato"});
         }
     } 
 }

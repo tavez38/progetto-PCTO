@@ -17,10 +17,10 @@ import {
 let vMsg = [];
 document.addEventListener("DOMContentLoaded", loadMessages);
 document.getElementById("linkLogOutMsg").addEventListener("click", logout);
-document.getElementById("write").addEventListener("click", function(idFormale) {
-  revalForm(idFormale)});
-document.getElementById("exit").addEventListener("click", function(idFormale) {
-  revalForm(idFormale)});
+document.getElementById("write").addEventListener("click", function() {
+  revalForm("write")});
+document.getElementById("exit").addEventListener("click", function() {
+  revalForm("exit")});
 document.getElementById("send").addEventListener("click", sendMessage);
 document.getElementById("cancell").addEventListener("click", deleteInput);
 document.getElementById("toChatBot").addEventListener("click", generateOpzionForm);
