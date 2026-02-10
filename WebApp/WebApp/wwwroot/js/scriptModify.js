@@ -1,12 +1,16 @@
 ﻿import {
     checkEmail,
-    checkPsw
+    checkPsw,
+    generateOpzionForm,
+    iconBarGenerator
 } from "../js/utilities.js";
 
 document.addEventListener("DOMContentLoaded", getUserInfo);
 document.getElementById("btnModUsername").addEventListener("click", modifyUsername);
 document.getElementById("btnModEmail").addEventListener("click", modifyEmail);
 document.getElementById("btnModPsw").addEventListener("click", modifyPassword);
+document.getElementById("toChatBot").addEventListener("click", generateOpzionForm);
+document.getElementById("btnNavBar").addEventListener("click", iconBarGenerator);
 
 async function getUserInfo() {
     const res = await fetch("/api/modifyAccount/getUserInfo", {

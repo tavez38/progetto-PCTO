@@ -10,7 +10,8 @@ import {
     generateOpzionForm,
     sendOllamaRequest,
     menuFigo,
-    goToPersonalArea
+    goToPersonalArea,
+    iconBarGenerator
 } from "../js/utilities.js";
 
 
@@ -19,8 +20,8 @@ document.getElementById("linkLogOutPA").addEventListener("click", logout);
 document.getElementById("btnAddWork").addEventListener("click", goToUploadWorkPage);
 document.getElementById("btnMsg").addEventListener("click", goToMessaggiPage);
 document.getElementById("toChatBot").addEventListener("click", generateOpzionForm);
-document.getElementById("toHome").addEventListener("click", goToPersonalArea);
-
+//document.getElementById("toHome").addEventListener("click", goToPersonalArea);
+document.getElementById("btnNavBar").addEventListener("click", iconBarGenerator);
 
 var vWorks = [];
 
