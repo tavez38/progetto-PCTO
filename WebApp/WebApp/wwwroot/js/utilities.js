@@ -155,27 +155,62 @@ export function wrongAnswordEffect(){
     changeFormColor();
 }
 export function generateOpzionForm(){
-    const div = document.createElement("div");
-    div.id = "divChatBot";
-    document.getElementsByClassName("flex")[0].appendChild(div);
-    const chatName = document.createElement("h2");
-    chatName.id = "divChatName";
-    chatName.textContent = "ciaoooo";
-    div.appendChild(chatName);
-    const form = document.createElement("form");
-    form.id = "chatBot";
-    div.appendChild(form);
-    const response = document.createElement("textarea");
-    response.id = "responseChatOllama";
-    form.appendChild(response);
-    const prompt = document.createElement("input");
-    prompt.id = "requestChatOllama";
-    prompt.placeholder = "prompt richiesta";
-    form.appendChild(prompt);
-    const invio = document.createElement("button");
-    invio.id="sendReqChatbot";
-    form.appendChild(invio);
-}
+        if(document.getElementById("divChatBot") == null){
+            document.getElementsByClassName("home")[0].style.width = "80%";
+            const div = document.createElement("div");
+            div.id = "divChatBot";
+            div.style.width = "20%";
+            document.getElementsByClassName("flex")[0].appendChild(div);
+            const chatName = document.createElement("h2");
+            chatName.id = "divChatName";
+            chatName.textContent = "ciaoooo";
+            div.appendChild(chatName);
+            const form = document.createElement("form");
+            form.id = "chatBot";
+            div.appendChild(form);
+            const response = document.createElement("textarea");
+            response.id = "responseChatOllama";
+            form.appendChild(response);
+            const prompt = document.createElement("input");
+            prompt.id = "requestChatOllama";
+            prompt.placeholder = "prompt richiesta";
+            form.appendChild(prompt);
+            const invio = document.createElement("button");
+            invio.type = "button";
+            invio.id="sendReqChatbot";
+            invio.innerHTML = "invia";
+            form.appendChild(invio);
+        }
+        else{
+            document.getElementById("divChatBot").remove();
+            document.getElementsByClassName("home")[index].style.width = "100%";
+        }
+    }
+export function iconBarGenerator(){
+            if(document.getElementById("iconBar") == null){
+                const div = document.createElement("div");
+                div.id ="iconBar";
+                document.body.insertBefore(div, document.body.children[0]);
+                const icona1 = document.createElement("a");
+                icona1.id ="homeIcon";
+                icona1.href = "PersonalArea.html";
+                icona1.innerHTML = "E";
+                div.appendChild(icona1);
+                const icona2 = document.createElement("a");
+                icona2.id ="uploadIcon";
+                icona2.href ="uploadWork.html";
+                icona2.innerHTML = "E";
+                div.appendChild(icona2);
+                const icona3 = document.createElement("a");
+                icona3.id ="messaggiIcon";
+                icona3.href = "Messaggi.html";
+                icona3.innerHTML = "E";
+                div.appendChild(icona3);
+            }
+            else{
+            document.getElementById("iconBar").remove();
+            }
+        }
 export function menuFigo(x) {
   x.classList.toggle("change");
 }

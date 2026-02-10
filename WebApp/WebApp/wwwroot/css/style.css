@@ -12,7 +12,7 @@ body{
     background-color: gray !important;
 }
 .home{
-    width: 80%;
+    width: 100%;
 }
 .title,.subTitle{
     font-family: Tahoma, Verdana, sans-serif;
@@ -376,6 +376,9 @@ a{
     height: 30px;
     margin-right: 10px;
 }
+#opacityBox{
+    width: 100%;
+}
 #scriviMail{
     position: absolute;
     margin-left: 33%;
@@ -510,15 +513,18 @@ a{
 #chatBot input{
     margin-top: 15px;
 }
+#sendReqChatbot{
+    width: 100px;
+    height: 30px;
+}
 .navBar{
     background-color: rgb(0, 162, 151);
-    position: relative;
     width: 100%;
-    margin-left: -10px;
     height: 60px;
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
+    z-index: 0.8;
 }
 .navBar button{
     height: 50px;
@@ -538,16 +544,16 @@ a{
 }
 .logout{
     font-size: 20px;
-    margin-left: 10px;
+    margin-right: 10px;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
 }
-#toHome{
-    margin-right: auto;
-}
 .menuButton {
+  margin-right: auto;
   display: inline-block;
   cursor: pointer;
+  z-index: 1;
+  margin-left: 11px;
 }
 
 .bar1, .bar2, .bar3 {
@@ -566,4 +572,24 @@ a{
 
 .change .bar3 {
   transform: translate(0, -11px) rotate(45deg);
+}
+#iconBar{
+    position: absolute;
+    display: flex;
+    flex-direction: column-reverse;
+    z-index: 0.9;
+    background-color: black;
+    height: 242px;
+    width: 56px;
+
+}
+#iconBar a{
+    font-size: 36px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: green;
+    text-align: center;
+}
+#iconBar a:hover{
+    background-color: rgb(0, 55, 0);
 }
