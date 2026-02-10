@@ -16,6 +16,7 @@ body{
 }
 .title,.subTitle{
     font-family: Tahoma, Verdana, sans-serif;
+    color: #353535;
     text-align: center;
     
 }
@@ -30,10 +31,13 @@ body{
     color: #353535;
 }
 #tableMainTitle{
+
     margin-top: 20px;
     margin-bottom: 20px;
     font-size: 20px;
     margin-left: 50px;
+    font-family: Tahoma, Verdana, sans-serif;
+    color: #353535;
 }
 .divFormLogin{
 
@@ -89,7 +93,6 @@ body{
     margin-right: auto;
     font-size: 20px;
     font-family: Tahoma, Verdana, sans-serif;
-    background: linear-gradient(45deg, #159A9C 0%, #ffffff 100%);
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(15px);
     box-shadow: 0 8px 32px rgba(0,0,0,0.3);
@@ -206,8 +209,9 @@ background: #e0e0e0;
     backdrop-filter: blur(15px);
     box-shadow: 0 8px 32px rgba(0,0,0,0.3);
     border: 1px solid rgba(255,255,255,0.1);
+
     
-    padding: 40px;
+    padding: 30px;
     text-align: center;
 }
 th, tr, td{
@@ -237,22 +241,28 @@ th, tr, td{
     width: 175px;
 }
 #btnMsg{
-    border-color: rgb(126, 126, 126);
-    border-radius: 10px;
-    background-color:#11b2b4 ;
-    color: white;
-    width: 75px;
-    height: 45px;
-    margin-top: 100px;
-    margin-left: 1000px;
+    border: none;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #3f5767;
+    font-weight: bold;
     cursor: pointer;
-}
-#btnAddWork{
-    /*margin-left: 1000px;*/
-    width: 100px;
+    transition: 0.3s;
+    margin-top: 20px;
     height: 50px;
+    width: 20%;
+    padding: 12px;
+    
+}
 
-    width: 100%;
+#tableBodyProj{
+    font-family: Tahoma, Verdana, sans-serif;
+    color: #353535;
+}
+
+#btnAddWork{
+    height: 50px;
+    width: 20%;
     padding: 12px;
     border: none;
     border-radius: 8px;
@@ -262,7 +272,9 @@ th, tr, td{
     cursor: pointer;
     transition: 0.3s;
     margin-top: 20px;
+    float: right;
 }
+
 #creaProgetto{
     text-align: center;
     color:  #6c7a89;
@@ -511,14 +523,20 @@ a{
     margin-top: 15px;
 }
 .navBar{
-    background-color: rgb(0, 162, 151);
     position: relative;
-    width: 100%;
     margin-left: -10px;
-    height: 60px;
+    height: 15px;
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
+
+    border-style: groove;
+    font-family: Tahoma, Verdana, sans-serif;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 40px;
 }
 .navBar button{
     height: 50px;
@@ -531,23 +549,31 @@ a{
     cursor: pointer;
 }
 .navBar button:hover{
-    background-color: rgb(0, 123, 115);;
+    background-color: #3f5767;
 }
 .navBar a{
-    color: black;
+    color: #d9d9d9;
 }
 .logout{
     font-size: 20px;
     margin-left: 10px;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
+    color: #d9d9d9;
 }
 #toHome{
     margin-right: auto;
+    color: #d9d9d9;
 }
+
+#toChatBot{
+    color: #d9d9d9;
+}
+
 .menuButton {
   display: inline-block;
   cursor: pointer;
+  color: #d9d9d9;
 }
 
 .bar1, .bar2, .bar3 {
