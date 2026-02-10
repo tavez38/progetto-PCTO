@@ -39,10 +39,17 @@ body{
 
     /*text-shadow: 1px 0 #d9d9d9, -1px 0 #d9d9d9, 0 1px #d9d9d9, 0 -1px #d9d9d9,
     1px 1px #d9d9d9, -1px -1px #d9d9d9, 1px -1px #d9d9d9, -1px 1px #d9d9d9;*/
-
-
-
 }
+
+#casellaDiPosta{
+    margin-top: 10px;
+    font-size: 50px !important;
+    color: #d9d9d9 !important;
+    font-family: Tahoma, Verdana, sans-serif !important;
+    text-align: left;
+}
+
+
 #tableMainTitle{
     margin-top: 20px;
     margin-bottom: 0px;
@@ -449,41 +456,74 @@ input{
     background-color: rgb(3, 67, 3);
 }
 #dropDownMenu{
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 150px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  right: 0;
-}
+    display: none;
+    position: absolute;
+    min-width: 150px;
+    right: 0;
+    border-style: groove;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.651);
+    z-index: 1;
+    }
 #dropDownMenu p{
-  color: black;
-  text-decoration: none;
-  display: block;
+    color: black;
+    text-decoration: none;
+    display: block;
+    font-family: Tahoma, Verdana, sans-serif;
+    
+   
 }
 #messaggi{
-    margin-left: auto;
+    margin-top: 10px;
+    position: relative;
+    width: 1212px;
+    height: 0px;
+    border-radius: 20px;
+    border-style: groove;
+    margin-left: 250px;
     margin-right: auto;
-    width: 700px;
-    margin-top: 250px;
-    border-collapse: collapse;
+    font-size: 20px;
+    font-family: Tahoma, Verdana, sans-serif;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 30px;
+    text-align: left;
+    z-index: -1;
+
+
 }
 #tableMsgData{
     width: 170px;
 }
+
 #write{
-    border-radius: 5px;
-    background-color: #9199a1;
-    border: inset;
-    width: 115px;
-    height: 60px;
-    font-size: larger;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    width: 200px;
+    height: 80px;
+    font-family: Tahoma, Verdana, sans-serif;
+    border: none;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #3f5767;
     font-weight: bold;
-    position: absolute;
-    margin-top: 120px;
     cursor: pointer;
+    transition: 0.3s;
+    margin-top: 120px;
+    font-style: bold;
+    font-size: larger;
+    font-size: 200%;
 }
+
+button:hover {
+    transform: scale(1.02);
+    background: #e0e0e0;
+}
+
+
+
 a{
     text-decoration: none;
 }
@@ -501,15 +541,54 @@ a{
     display: block;
 }
 #menuOpzioni{
-    position: absolute;
-    margin-left: 420px;
-    margin-top: 200px;
+    margin-top: -100px;
+
+    width: 1150px;
+    height: 0px;
+    border-radius: 20px;
+    border-style: groove;
+    margin-left: 250px;
+    margin-right: auto;
+    font-size: 20px;
+    font-family: Tahoma, Verdana, sans-serif;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 30px;
+    text-align: left;
 }
 #menuOpzioni .cestino{
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
+    width: 50px;
+    border-radius: 50px;
+    border-style: groove;
+    margin-top: -105px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    font-family: Tahoma, Verdana, sans-serif;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.1);
+
 }
+
+#ordina{
+    width: 150px;
+    border-radius: 50px;
+    border-style: groove;
+    margin-top: -105px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 80%;
+    font-family: Tahoma, Verdana, sans-serif;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
 #opacityBox{
     width: 100%;
 }
