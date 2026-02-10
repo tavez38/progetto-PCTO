@@ -10,7 +10,7 @@
 <body asp-controller="PersonalArea" asp-action="GetAllWorks">
     <div class="navBar">
         <button id="toImpostazioni"><a href="Modifica.html">E</a></button>
-        <button id="toChatBot" onclick="generateOpzionForm()">E</button>
+        <button id="toChatBot">E</button>
         <a class="logout" href="Index.html" id="linkLogOutPA">Logout</a>
         <div class="menuButton" onclick="iconBarGenerator()">
             <div class="bar1"></div>
@@ -20,9 +20,11 @@
     </div>
     <div class="flex">
     <div class="home">
-    <h1 class="title">BENVENUTO NELLA TUA AREA PERSONALE</h1>
+    <h1 class="title">Benvenuto nella tua area personale</h1>
     <h3 class="subTitle">Qui potrai consultare il lavoro che hai da fare e mandare messaggi ai tuoi colleghi</h3>
     <h4 id="tableMainTitle">Prossimi lavori in consegna</h4>
+
+<div class="boxGenitore">
     <div class="container">
         <table class="boxWorks">
             <thead>
@@ -37,9 +39,22 @@
                 
             </tbody>
         </table><br>
+        
+    </div>
+
+    <div class="boxBtn">
+
+    <div class="boxAggiungiLavoro">
         <button id="btnAddWork" type="button">Aggiungi un nuovo lavoro</button>
     </div>
-    <button id="btnMsg" type="button">Invia messaggi</button>
+    
+    <div class="boxInviaMessaggi">
+        <button id="btnMsg" type="button">Invia messaggi</button>
+    </div>
+
+    </div>
+</div>
+
     </div>
     </div>
     <script>

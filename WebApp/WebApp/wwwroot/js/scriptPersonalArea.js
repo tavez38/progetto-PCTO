@@ -9,7 +9,8 @@ import {
     logout,
     generateOpzionForm,
     sendOllamaRequest,
-    menuFigo
+    menuFigo,
+    goToPersonalArea
 } from "../js/utilities.js";
 
 
@@ -17,6 +18,9 @@ document.addEventListener("DOMContentLoaded", loadWorks);
 document.getElementById("linkLogOutPA").addEventListener("click", logout);
 document.getElementById("btnAddWork").addEventListener("click", goToUploadWorkPage);
 document.getElementById("btnMsg").addEventListener("click", goToMessaggiPage);
+document.getElementById("toChatBot").addEventListener("click", generateOpzionForm);
+document.getElementById("toHome").addEventListener("click", goToPersonalArea);
+
 
 var vWorks = [];
 
@@ -92,36 +96,6 @@ function createWorksTable() {
     tableBody.appendChild(fragment);
 }
 
-function sendOllamaRequest() {
-    const domanda = document.getElementById("requestChatOllama").value;
-    try {
-        fetch("/api/ollama/sendOllamaReq", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "Authorization": `Bearer ${localStorage.getItem("token")}`
-            },
-            body: JSON.stringify(domanda)
-        })
-            .then(res => {
-                if (res.status == 401) {
-                    localStorage.removeItem("idUtenteLoggato");
-                    localStorage.removeItem("token");
-                    window.location.href = '../html/AccessoNegato.html';
-                    return;
-                }
-                else if (!res.ok) {
-                    console.log(res.status);
-                    return;
-                }
-                let data = res.json();
-                document.getElementById("responseChatOllama").value = data.response;
-            });
-    }
-    catch (error) {
-        console.log(error);
-    }
-}
 function myFunction() {
 document.body.style.backgroundImage ="none";
 document.getElementsByClassName("menuButton")[0].classList.toggle("change");

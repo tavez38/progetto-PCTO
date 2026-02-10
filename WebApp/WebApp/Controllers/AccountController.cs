@@ -14,6 +14,7 @@ namespace WebApp.Controllers
             this.db = ctx;
         }
 
+        [HttpGet]
         [Route("/register")]
         public IActionResult ShowPageRegister()
         {

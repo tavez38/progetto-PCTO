@@ -1,16 +1,7 @@
 ﻿export const listaCharSpec = ["!", "@", "#", "$", "%", "^", "&", "*", "-", "_", "+", "=", "?"];
 
-document.getElementById("sendReqChatbot").addEventListener("click", sendOllamaRequest);
 
-export function checkEmail(use) {
-    if(use == "r"){
-    const email = document.getElementById("inputEmail");
-    const errSpanEmail = document.getElementById("errEmailReg");
-    }
-    else{
-    const email = document.getElementById("inputMsgDest");
-    const errSpanEmail = document.getElementById("mailError");
-    }
+export function checkEmail(email, errSpanEmail) {
 
     const parts = email.value.split("@");
 
@@ -25,14 +16,13 @@ export function checkEmail(use) {
     return false;
 }
 
-export function checkPsw() {
+export function checkPsw(psw, errSpanPsw) {
 
     let number = 0;
     let charSpec = 0;
     let char = 0;
 
-    const psw = document.getElementById("inputPassword");
-    const errSpanPsw = document.getElementById("errPswReg");
+
     if (psw.value.length < 5 || psw.value.length > 10) {
         psw.style.borderColor = "red";
         errSpanPsw.innerHTML = "Lunghezza password non valida: (5-10 caratteri)";
@@ -67,34 +57,41 @@ export function checkPsw() {
    
 }
 
-export function sendOllamaRequest() {
+export async function sendOllamaRequest() {
     const domanda = document.getElementById("requestChatOllama").value;
+    const textAreaResponse = document.getElementById("responseChatOllama");
+    textAreaResponse.removeAttribute("readonly"); 
+    textAreaResponse.setAttribute("placeholder", "Caricamento...");
+    
     try {
-        fetch("/api/ollama/sendOllamaReq", {
+        const res = await fetch("/api/ollama/sendOllamaReq", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
                 "Authorization": `Bearer ${localStorage.getItem("token")}`
             },
             body: JSON.stringify(domanda)
-        })
-            .then(res => {
-                if (res.status == 401) {
-                    localStorage.removeItem("idUtenteLoggato");
-                    localStorage.removeItem("token");
-                    window.location.href = '../html/AccessoNegato.html';
-                    return;
-                }
-                else if (!res.ok) {
-                    console.log(res.status);
-                    return;
-                }
-                let data = res.json();
-                document.getElementById("responseChatOllama").value = data.response;
-            });
+        });
+            
+        if (res.status == 401) {
+            localStorage.removeItem("idUtenteLoggato");
+            localStorage.removeItem("token");
+            window.location.href = '../html/AccessoNegato.html';
+            return;
+        }
+        else if (!res.ok) {
+            console.log(res.status);
+            return;
+        }
+        const data = await res.json();
+        document.getElementById("responseChatOllama").value = data.response;
+        textAreaResponse.setAttribute("readonly", "readonly");
+           
     }
     catch (error) {
-        console.log(error);
+        console.error("Fetch error:", error);
+        textAreaRisposta.value = "Errore nella richiesta";
+        textAreaRisposta.setAttribute("readonly", "readonly");
     }
 }
 export function checkCharSpec(c) {
@@ -170,6 +167,7 @@ export function generateOpzionForm(){
             div.appendChild(form);
             const response = document.createElement("textarea");
             response.id = "responseChatOllama";
+            response.readOnly=true;
             form.appendChild(response);
             const prompt = document.createElement("input");
             prompt.id = "requestChatOllama";
@@ -180,6 +178,7 @@ export function generateOpzionForm(){
             invio.id="sendReqChatbot";
             invio.innerHTML = "invia";
             form.appendChild(invio);
+            document.getElementById("sendReqChatbot").addEventListener("click", sendOllamaRequest);
         }
         else{
             document.getElementById("divChatBot").remove();
@@ -213,4 +212,8 @@ export function iconBarGenerator(){
         }
 export function menuFigo(x) {
   x.classList.toggle("change");
+}
+
+export function goToPersonalArea() {
+    window.location.href = '../html/PersonalArea.html';
 }

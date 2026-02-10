@@ -26,78 +26,43 @@
 <div class="divFormMod">
     <form class="formMod" asp-controller="Account" action="/account/registrazione" method="post">
 
-        <label class="label" for="username">
-            Username
-        </label><br>
-        <input type="text" id="inputUsername" name="username" required placeholder="Username" maxlength="15" minlength="1" /><br>
+        <div class="divFormMod">
+            <p id="usernameUser">Username: </p><br>
+            <p id="emailUser">Email: </p>
+        </div>
+
+        <form class="formModUsername">
+            <label class="label" for="username">Inserisci nuovo username:</label><br>
+            <input type="text" id="inputUsernameMod" name="username" required placeholder="Username" maxlength="15" minlength="1" /><br>
+
+            <button class="btnSubmit" id="btnModUsername" type="button" >salva</button>
+        </form>
 
 
-        <label class="label" for="email">
-            Email
-        </label><br>
-        <input type="email" id="inputEmail" name="email" required placeholder="Email" /><br>
+        <form class="formModEmail">
+            <label class="label" for="email">Inserisci il nuovo indirizzo Email:</label><br>
+            <input type="email" id="inputEmail" name="email" required placeholder="Email" /><br>
 
-        <span id="errEmailReg" class="error"></span>
+            <label class="label" for="password">Inserisci la tua password per confermare:</label><br>
+            <input type="password" id="inputPswConfirmMail" name="password" required placeholder="Password" /><br>
 
+            <button class="btnSubmit"id="btnModEmail" type="button" >salva</button>
+        </form>
 
-        <label class="label" for="password">
-            Password
-        </label><br>
-        <input type="password" id="inputPassword" name="password" required placeholder="Password" /><br>
+        <form class="formModPassword">
 
+            <label class="label" for="password">Inserisci la vecchia password:</label><br>
+            <input type="password" id="inputPasswordOld" name="password" required placeholder="Password" /><br>
 
-        <span id="errPswReg" class="error"></span>
+            <label class="label" for="password">Inserisci la nuova password:</label><br>
+            <input type="password" id="inputPasswordNew" name="password" required placeholder="Password" /><br>
 
+            <label class="label" for="password">Conferma la nuova password:</label><br>
+            <input type="password" id="inputPasswordNewConf" name="password" required placeholder="Password" /><br>
 
-    </form>
-</div>
+            <button class="btnSubmit" id="btnModPsw" type="button">salva</button>
 
-<form class="formModUsername" asp-controller="" action="" method="post">
+        </form>
 
-    <label class="label" for="username">
-        Inserisci nuovo username:
-    </label><br>
-    <input type="text" id="inputUsername" name="username" required placeholder="Username" maxlength="15" minlength="1" /><br>
-
-
-    <button class="btnSubmit" id="btnModUsername" type="button" >salva</button>
-</form>
-
-
-<form class="formModEmail" asp-controller="" action="" method="post">
-
-    <label class="label" for="email">
-        Inserisci il nuovo indirizzo Email:
-    </label><br>
-    <input type="email" id="inputEmail" name="email" required placeholder="Email" /><br>
-    <label class="label" for="password">
-        Inserisci la password:
-    </label><br>
-    <input type="password" id="inputPswConfirmMail" name="password" required placeholder="Password" /><br>
-
-    <button class="btnSubmit"id="btnModEmail" type="button" >salva</button>
-</form>
-
-<form class="formModPassword" asp-controller="" action="" method="post">
-
-    <label class="label" for="password">
-        Inserisci la vecchia password:
-    </label><br>
-    <input type="password" id="inputPasswordOld" name="password" required placeholder="Password" /><br>
-
-    <label class="label" for="password">
-        Inserisci la nuova password:
-    </label><br>
-    <input type="password" id="inputPasswordNew" name="password" required placeholder="Password" /><br>
-
-    <label class="label" for="password">
-        Conferma la nuova password:
-    </label><br>
-    <input type="password" id="inputPasswordNewConf" name="password" required placeholder="Password" /><br>
-
-    <button class="btnSubmit" id="btnModPsw" type="button">salva</button>
-</form>
-    </div>
-    </div>
-</body>
+    </body>
 </html>

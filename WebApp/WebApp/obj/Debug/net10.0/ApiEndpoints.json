@@ -59,6 +59,16 @@
   },
   {
     "ContainingType": "WebApp.Controllers.ModifyController",
+    "Method": "getUserInfo",
+    "RelativePath": "api/modifyAccount/getUserInfo",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApp.Controllers.ModifyController",
     "Method": "modifyPsw",
     "RelativePath": "api/modifyAccount/psw",
     "HttpMethod": "PUT",
@@ -83,7 +93,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "System.String",
+        "Type": "WebApp.Controllers.UsernameModifyRequest",
         "IsRequired": true
       }
     ],

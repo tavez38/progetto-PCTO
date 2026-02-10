@@ -14,8 +14,10 @@ body{
 .home{
     width: 100%;
 }
+
 .title,.subTitle{
     font-family: Tahoma, Verdana, sans-serif;
+    color: #353535;
     text-align: center;
     
 }
@@ -23,17 +25,30 @@ body{
     margin-top: 10px;
     font-size: 50px;
     color: #d9d9d9;
+    /*text-shadow: 1px 0 #353535, -1px 0 #353535, 0 1px #353535, 0 -1px #353535,
+    1px 1px #353535, -1px -1px #353535, 1px -1px #353535, -1px 1px #353535;*/
+    
 }
 .subTitle{
     margin-top: 20px;
     font-size: 30px;
     color: #353535;
+    text-shadow: 1px 0 #93adae, -1px 0 #93adae, 0 1px #93adae, 0 -1px #93adae,
+    1px 1px #93adae, -1px -1px #93adae, 1px -1px #93adae, -1px 1px #93adae;
+
+    /*text-shadow: 1px 0 #d9d9d9, -1px 0 #d9d9d9, 0 1px #d9d9d9, 0 -1px #d9d9d9,
+    1px 1px #d9d9d9, -1px -1px #d9d9d9, 1px -1px #d9d9d9, -1px 1px #d9d9d9;*/
+
+
+
 }
 #tableMainTitle{
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     font-size: 20px;
     margin-left: 50px;
+    font-family: Tahoma, Verdana, sans-serif;
+    color: #353535;
 }
 .divFormLogin{
 
@@ -89,7 +104,6 @@ body{
     margin-right: auto;
     font-size: 20px;
     font-family: Tahoma, Verdana, sans-serif;
-    background: linear-gradient(45deg, #159A9C 0%, #ffffff 100%);
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(15px);
     box-shadow: 0 8px 32px rgba(0,0,0,0.3);
@@ -179,20 +193,43 @@ background: #e0e0e0;
     color: red;
 }
 
+
+.boxGenitore{
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    grid-gap: 50px; 
+}
 .container{
-    width: 1200px;
+    width: 100%;
     height: fit-content;
     margin-left: auto;
     margin-right: auto;
 }
-.boxWorks{
-    /*
-    border: 1px solid black;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 10px;
-    border-collapse: collapse;*/
 
+.boxBtn{
+    display: grid; 
+    grid-template-rows: 1fr 1fr; 
+    grid-gap: 0px;
+    width: 300%;
+}
+
+.boxAggiungiLavoro{
+    float:left;
+    position:relative;
+    display:inline;
+    margin-top: 10px;
+}
+
+.boxInviaMessaggi{
+    float:left;
+    margin-top: 0px;
+    position:relative;
+    display:inline;
+    
+
+}
+
+.boxWorks{
     width: 1200px;
     height: fit-content;
     border-radius: 20px;
@@ -206,13 +243,12 @@ background: #e0e0e0;
     backdrop-filter: blur(15px);
     box-shadow: 0 8px 32px rgba(0,0,0,0.3);
     border: 1px solid rgba(255,255,255,0.1);
-    
-    padding: 40px;
+    padding: 30px;
     text-align: center;
 }
+
 th, tr, td{
     height: max-content;
-    /*border: 3px solid #4F5957;*/
     font-size: 25px;
     color: #d9d9d9;
 }
@@ -237,21 +273,27 @@ th, tr, td{
     width: 175px;
 }
 #btnMsg{
-    border-color: rgb(126, 126, 126);
-    border-radius: 10px;
-    background-color:#11b2b4 ;
-    color: white;
-    width: 75px;
-    height: 45px;
-    margin-top: 100px;
-    margin-left: 1000px;
+    border: none;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #3f5767;
+    font-weight: bold;
     cursor: pointer;
-}
-#btnAddWork{
-    /*margin-left: 1000px;*/
-    width: 100px;
+    transition: 0.3s;
+    margin-top: 20px;
     height: 50px;
+    width: 100%;
+    padding: 12px;
+    
+}
 
+#tableBodyProj{
+    font-family: Tahoma, Verdana, sans-serif;
+    color: #353535;
+}
+
+#btnAddWork{
+    height: 50px;
     width: 100%;
     padding: 12px;
     border: none;
@@ -263,6 +305,7 @@ th, tr, td{
     transition: 0.3s;
     margin-top: 20px;
 }
+
 #creaProgetto{
     text-align: center;
     color:  #6c7a89;
@@ -518,13 +561,20 @@ a{
     height: 30px;
 }
 .navBar{
-    background-color: rgb(0, 162, 151);
-    width: 100%;
-    height: 60px;
+    position: relative;
+    margin-left: -10px;
+    height: 15px;
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
-    z-index: 0.8;
+
+    border-style: groove;
+    font-family: Tahoma, Verdana, sans-serif;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 40px;
 }
 .navBar button{
     height: 50px;
@@ -537,16 +587,17 @@ a{
     cursor: pointer;
 }
 .navBar button:hover{
-    background-color: rgb(0, 123, 115);;
+    background-color: #93adae;
 }
 .navBar a{
-    color: black;
+    color: #d9d9d9;
 }
 .logout{
     font-size: 20px;
     margin-right: 10px;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
+    color: #d9d9d9;
 }
 .menuButton {
   margin-right: auto;

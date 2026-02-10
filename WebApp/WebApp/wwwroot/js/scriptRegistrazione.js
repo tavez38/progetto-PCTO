@@ -14,19 +14,25 @@ import {
 
 document.getElementById("sendRegisterForm").addEventListener("click", iscrizione);
 
-function iscrizione() {
-    if (!checkEmail(r) || !checkPsw()) {
+function iscrizione() { 
+
+    const email = document.getElementById("inputEmail");
+    const errSpanEmail = document.getElementById("errEmailReg");
+    const psw = document.getElementById("inputPassword");
+    const errSpanPsw = document.getElementById("errPswReg");
+
+    if (!checkEmail(email,errSpanEmail) || !checkPsw(psw,errSpanPsw)) {
         console.log("false");
     }
     else {
-        richiestaIscrizione();
+        richiestaIscrizione(psw,email);
     }
 }
-async function richiestaIscrizione() {
+async function richiestaIscrizione(psw,email) {
     let utente = {
         name : document.getElementById("inputUsername").value,
-        password: document.getElementById("inputPassword").value,
-        email: document.getElementById("inputEmail").value
+        password: psw.value,
+        email: email.value
     }
 
     try{
@@ -44,7 +50,7 @@ async function richiestaIscrizione() {
         }
         else {
             console.log("Registrazione avvenuta con successo");
-            window.location.href = '../html/login.html';
+            window.location.href = '../html/Index.html';
             return;
         }
     }
