@@ -7,9 +7,11 @@ import {
     deleteInput, 
     goToMessaggiPage, 
     logout, 
-    generateOpzionForm 
+    generateOpzionForm,
+    sendOllamaRequest,
+    menuFigo
 } from "../js/utilities.js";
-
+let vMsg = [];
 document.addEventListener("DOMContentLoaded", loadMessages);
 document.getElementById("linkLogOutMsg").addEventListener("click", logout);
 document.getElementById("write").addEventListener("click", revalSendForm);
@@ -43,22 +45,36 @@ async function loadMessages() {
         document.getElementById("tableBodyMsg").innerHTML = `<tr class="rowNoMsg"><td colspan="3" id="colNoMsg">Nessun messaggio ricevuto</td></tr>`;
         return;
     }
-    const fragment = document.createDocumentFragment();
+   
     data.forEach(element => {
+        vMsg.push(element);
+    });
+    createMsgTable();
+
+    
+
+    return;
+}
+
+function createMsgTable() {
+    const tableBody = document.getElementById("tableBodyMsg");
+    const fragment = document.createDocumentFragment();
+    vMsg.forEach(element => {
         const tr = document.createElement("tr");
         tr.className = "rows";
 
         const tdMit = document.createElement("td");
         tdMit.className = "tableMsgMit";
-        tdMit.textContent = element.mittente; 
+        tdMit.textContent = element.mittente;
+        tdMit.id = element.id;
 
         const tdTitle = document.createElement("td");
         tdTitle.className = "tableMsgTitle";
-        tdTitle.textContent = element.titolo; 
+        tdTitle.textContent = element.titolo;
 
         const tdData = document.createElement("td");
         tdData.className = "tableMsgData";
-        tdData.textContent = element.dataInvio; 
+        tdData.textContent = element.dataInvio;
 
         tr.appendChild(tdMit);
         tr.appendChild(tdTitle);
@@ -66,8 +82,8 @@ async function loadMessages() {
         fragment.appendChild(tr);
     });
     tableBody.appendChild(fragment);
-    return;
 }
+
 async function sendMessage(){
     const currentDate = new Date();
    

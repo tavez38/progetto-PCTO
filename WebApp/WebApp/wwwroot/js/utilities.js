@@ -1,5 +1,6 @@
 ﻿export const listaCharSpec = ["!", "@", "#", "$", "%", "^", "&", "*", "-", "_", "+", "=", "?"];
 
+
 export function checkEmail(use) {
     if(use == "r"){
     const email = document.getElementById("inputEmail");
@@ -65,6 +66,43 @@ export function checkPsw() {
    
 }
 
+export async function sendOllamaRequest() {
+    const domanda = document.getElementById("requestChatOllama").value;
+    const textAreaResponse = document.getElementById("responseChatOllama");
+    textAreaResponse.removeAttribute("readonly"); 
+    textAreaResponse.setAttribute("placeholder", "Caricamento...");
+    
+    try {
+        const res = await fetch("/api/ollama/sendOllamaReq", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${localStorage.getItem("token")}`
+            },
+            body: JSON.stringify(domanda)
+        });
+            
+        if (res.status == 401) {
+            localStorage.removeItem("idUtenteLoggato");
+            localStorage.removeItem("token");
+            window.location.href = '../html/AccessoNegato.html';
+            return;
+        }
+        else if (!res.ok) {
+            console.log(res.status);
+            return;
+        }
+        const data = await res.json();
+        document.getElementById("responseChatOllama").value = data.response;
+        textAreaResponse.setAttribute("readonly", "readonly");
+           
+    }
+    catch (error) {
+        console.error("Fetch error:", error);
+        textAreaRisposta.value = "Errore nella richiesta";
+        textAreaRisposta.setAttribute("readonly", "readonly");
+    }
+}
 export function checkCharSpec(c) {
     return listaCharSpec.includes(c);
 }
@@ -125,22 +163,34 @@ export function wrongAnswordEffect(){
 export function generateOpzionForm(){
     const div = document.createElement("div");
     div.id = "divChatBot";
-    document.body.appendChild(div);
+    document.getElementsByClassName("flex")[0].appendChild(div);
     const chatName = document.createElement("h2");
     chatName.id = "divChatName";
-    chatName.textContent = "ciaoooo";
+    chatName.textContent = "Chatta con Ollama";
     div.appendChild(chatName);
     const form = document.createElement("form");
     form.id = "chatBot";
     div.appendChild(form);
     const response = document.createElement("textarea");
     response.id = "responseChatOllama";
+    response.readOnly = true;
     form.appendChild(response);
     const prompt = document.createElement("input");
     prompt.id = "requestChatOllama";
     prompt.placeholder = "prompt richiesta";
     form.appendChild(prompt);
+    const invio = document.createElement("button");
+    invio.id = "sendReqChatbot";
+    invio.textContent = "Invia";
+    invio.type = "button";
+    form.appendChild(invio);
+    document.getElementById("sendReqChatbot").addEventListener("click", sendOllamaRequest);
+
 }
-function menuFigo(x) {
+export function menuFigo(x) {
   x.classList.toggle("change");
+}
+
+export function goToPersonalArea() {
+    window.location.href = '../html/PersonalArea.html';
 }

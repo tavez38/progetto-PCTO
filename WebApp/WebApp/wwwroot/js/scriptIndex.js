@@ -10,7 +10,9 @@ import {
     generateOpzionForm,
     wrongAnswordEffect,
     changeFormColor,
-    changeLightColor
+    changeLightColor,
+    sendOllamaRequest,
+    menuFigo
 } from "../js/utilities.js";
 
 document.getElementById("btnLogin").addEventListener("click", onClickLogin);
