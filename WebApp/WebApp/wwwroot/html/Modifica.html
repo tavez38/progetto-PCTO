@@ -26,52 +26,54 @@
                 <div class="divFormMod">
                     <div class="formMod">
 
-        <div class="menuMod">
-            <p id="usernameUser">Username: <br>*user* </p>
-            <p id="emailUser">Email: <br>*email* </p><br>
-            <p id="passwordUser">Password<br>**********</p>
-        </div>
+                        <div class="menuMod">
+                            <p>Username:</p>
+                            <p id="usernameUser"></p>
+                            <p>Email:</p>
+                            <p id="emailUser"></p><br />
+                            <p id="passwordUser">Password<br>**********</p>
+                        </div>
+                    </div>
+                </div>
     
+                <div class="divModUsername">
+                    <form class="formModUsername">
+                        <label class="label" for="username">Inserisci il nuovo username:</label><br>
+                        <input type="text" id="inputUsernameMod" name="username" required placeholder="Username" maxlength="15" minlength="1" /><br>
+
+                        <button class="btnSubmit" id="btnModUsername" type="button" >salva</button>
+                    </form>
+                </div>
+
+                <div class="divModEmail">
+                    <form class="formModEmail">
+                        <label class="label" for="email">Inserisci il nuovo indirizzo Email:</label><br>
+                        <input type="email" id="inputEmail" name="email" required placeholder="Email" /><br>
+
+                        <label class="label" for="password">Inserisci la tua password per confermare:</label><br>
+                        <input type="password" id="inputPswConfirmMail" name="password" required placeholder="Password" /><br>
+
+                        <button class="btnSubmit"id="btnModEmail" type="button" >salva</button>
+                    </form>
+                </div>
 
 
-    <div class="divModUsername">
-        <form class="formModUsername">
-            <label class="label" for="username">Inserisci il nuovo username:</label><br>
-            <input type="text" id="inputUsernameMod" name="username" required placeholder="Username" maxlength="15" minlength="1" /><br>
+                <div class="divModPassword">
+                    <form class="formModPassword">
 
-            <button class="btnSubmit" id="btnModUsername" type="button" >salva</button>
-        </form>
-    </div>
+                        <label class="label" for="password">Inserisci la vecchia password:</label><br>
+                        <input type="password" id="inputPasswordOld" name="password" required placeholder="Password" /><br>
 
+                        <label class="label" for="password">Inserisci la nuova password:</label><br>
+                        <input type="password" id="inputPasswordNew" name="password" required placeholder="Password" /><br>
 
-    <div class="divModEmail">
-        <form class="formModEmail">
-            <label class="label" for="email">Inserisci il nuovo indirizzo Email:</label><br>
-            <input type="email" id="inputEmail" name="email" required placeholder="Email" /><br>
+                        <label class="label" for="password">Conferma la nuova password:</label><br>
+                        <input type="password" id="inputPasswordNewConf" name="password" required placeholder="Password" /><br>
 
-            <label class="label" for="password">Inserisci la tua password per confermare:</label><br>
-            <input type="password" id="inputPswConfirmMail" name="password" required placeholder="Password" /><br>
-
-            <button class="btnSubmit"id="btnModEmail" type="button" >salva</button>
-        </form>
-    </div>
-
-
-    <div class="divModPassword">
-        <form class="formModPassword">
-
-            <label class="label" for="password">Inserisci la vecchia password:</label><br>
-            <input type="password" id="inputPasswordOld" name="password" required placeholder="Password" /><br>
-
-            <label class="label" for="password">Inserisci la nuova password:</label><br>
-            <input type="password" id="inputPasswordNew" name="password" required placeholder="Password" /><br>
-
-            <label class="label" for="password">Conferma la nuova password:</label><br>
-            <input type="password" id="inputPasswordNewConf" name="password" required placeholder="Password" /><br>
-
-            <button class="btnSubmit" id="btnModPsw" type="button">salva</button>
-      </form>
-</div>  
-
+                        <button class="btnSubmit" id="btnModPsw" type="button">salva</button>
+                    </form>
+                </div>  
+            </div>
+        </div>
     </body>
 </html>
