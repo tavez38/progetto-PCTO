@@ -114,10 +114,73 @@ body{
     text-align: center;
 }
 
+.divModUsername{
+    width: 400px;
+    height: 350px;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    border-style: groove;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    font-family: Tahoma, Verdana, sans-serif;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.1);
+    
+    padding: 40px;
+    text-align: center;
+    line-height: 20%;
+}
+
+.divModEmail{
+    width: 400px;
+    height: 350px;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    border-style: groove;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    font-family: Tahoma, Verdana, sans-serif;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.1);
+    
+    padding: 40px;
+    text-align: center;
+    line-height: 20%;
+}
+
+.divModPassword{
+    width: 400px;
+    height: 350px;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    border-style: groove;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    font-family: Tahoma, Verdana, sans-serif;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.1);
+    
+    padding: 40px;
+    text-align: center;
+    line-height: 20%;
+}
+
 .label{
     margin-left: 20px;
 }
-#inputPassword, #inputUsername, #inputEmail {
+#inputPassword, #inputUsername, #inputUsernameMod, #inputEmail, #inputPswConfirmMail, #inputPasswordOld, #inputPasswordNew, #inputPasswordNewConf {
 
     width: 100%;
     padding: 12px;
@@ -128,13 +191,12 @@ body{
     color: white;
     outline: none;
     box-sizing: border-box;
-    
 }
-
 
 input::placeholder {
     color: #eee;
 }
+
 
 .btnSubmit{
     width: 100%;
@@ -167,11 +229,31 @@ background: #e0e0e0;
     color: #d9d9d9;
 }
 
-.formMod {
+.formMod{
     margin-top: 10px;
     font-size: 15px;
     color: #d9d9d9;
 }
+
+.formModUsername{
+    margin-top: 10px;
+    font-size: 15px;
+    color: #d9d9d9;
+}
+
+.formModEmail{
+    margin-top: 10px;
+    font-size: 15px;
+    color: #d9d9d9;
+}
+
+.formModPassword{
+    margin-top: 10px;
+    font-size: 15px;
+    color: #d9d9d9;
+}
+
+
 
 .linkRegister {
     margin-left: 20px;
@@ -211,7 +293,7 @@ background: #e0e0e0;
     display: grid; 
     grid-template-rows: 1fr 1fr; 
     grid-gap: 0px;
-    width: 300%;
+    width: 250px;
 }
 
 .boxAggiungiLavoro{

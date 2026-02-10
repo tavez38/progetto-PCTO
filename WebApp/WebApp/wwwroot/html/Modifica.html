@@ -31,15 +31,20 @@
             <p id="emailUser">Email: <br>*email* </p><br>
             <p id="passwordUser">Password<br>**********</p>
         </div>
+    
 
+
+    <div class="divModUsername">
         <form class="formModUsername">
-            <label class="label" for="username">Inserisci nuovo username:</label><br>
+            <label class="label" for="username">Inserisci il nuovo username:</label><br>
             <input type="text" id="inputUsernameMod" name="username" required placeholder="Username" maxlength="15" minlength="1" /><br>
 
             <button class="btnSubmit" id="btnModUsername" type="button" >salva</button>
         </form>
+    </div>
 
 
+    <div class="divModEmail">
         <form class="formModEmail">
             <label class="label" for="email">Inserisci il nuovo indirizzo Email:</label><br>
             <input type="email" id="inputEmail" name="email" required placeholder="Email" /><br>
@@ -49,7 +54,10 @@
 
             <button class="btnSubmit"id="btnModEmail" type="button" >salva</button>
         </form>
+    </div>
 
+
+    <div class="divModPassword">
         <form class="formModPassword">
 
             <label class="label" for="password">Inserisci la vecchia password:</label><br>
@@ -62,8 +70,8 @@
             <input type="password" id="inputPasswordNewConf" name="password" required placeholder="Password" /><br>
 
             <button class="btnSubmit" id="btnModPsw" type="button">salva</button>
-
-        </form>
+      </form>
+</div>  
 
     </body>
 </html>
