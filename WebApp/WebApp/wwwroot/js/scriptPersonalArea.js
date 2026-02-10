@@ -11,7 +11,9 @@ import {
     sendOllamaRequest,
     menuFigo,
     goToPersonalArea,
-    iconBarGenerator
+    iconBarGenerator,
+    revalForm,
+    hideForm
 } from "../js/utilities.js";
 
 
@@ -70,7 +72,7 @@ function createWorksTable() {
         const tr = document.createElement("tr");
         tr.className = "rows";
 
-
+        
         const tdTitle = document.createElement("td");
         tdTitle.className = "tableTitle";
         tdTitle.textContent = element.title;

@@ -10,7 +10,9 @@ import {
     generateOpzionForm,
     sendOllamaRequest,
     menuFigo,
-    iconBarGenerator
+    iconBarGenerator,
+    revalForm,
+    hideForm
 } from "../js/utilities.js";
 
 document.getElementById("linkLogOutUpWork").addEventListener("click", logout);

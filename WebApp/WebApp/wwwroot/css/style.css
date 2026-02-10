@@ -1,7 +1,7 @@
 body{
-    height: 1000px;
+    background-size: auto ;
     background: linear-gradient(45deg, #93adae 0%, #353535 100%);
-    background-repeat: no-repeat;
+    background-attachment: fixed;
 
 }
 .flex{
@@ -102,7 +102,9 @@ body{
     line-height: 60%;
 }
 
-.menuMod{
+#menuMod{
+    display: grid;
+    grid-template-columns: auto auto;
     width: 500px;
     height: 300px;
     
@@ -144,6 +146,7 @@ body{
 }
 
 .divModUsername{
+    display: none;
     width: 400px;
     height: 350px;
     background-repeat: no-repeat;
@@ -165,6 +168,7 @@ body{
 }
 
 .divModEmail{
+    display: none;
     width: 400px;
     height: 350px;
     background-repeat: no-repeat;
@@ -186,6 +190,7 @@ body{
 }
 
 .divModPassword{
+    display: none;
     width: 400px;
     height: 350px;
     background-repeat: no-repeat;
@@ -337,7 +342,6 @@ background: #e0e0e0;
 .boxAggiungiLavoro{
     float:left;
     position:relative;
-    display:inline;
     margin-top: 10px;
 }
 
@@ -345,9 +349,6 @@ background: #e0e0e0;
     float:left;
     margin-top: 0px;
     position:relative;
-    display:inline;
-    
-
 }
 
 .boxWorks{
@@ -403,7 +404,7 @@ th, tr, td{
     transition: 0.3s;
     margin-top: 20px;
     height: 50px;
-    width: 500px;
+    width: 80%;
     padding: 12px;
     
 }
@@ -415,7 +416,7 @@ th, tr, td{
 
 #btnAddWork{
     height: 50px;
-    width: 500px;
+    width: 80%;
     padding: 12px;
     border: none;
     border-radius: 8px;
@@ -798,11 +799,11 @@ a{
     position: absolute;
     display: flex;
     flex-direction: column-reverse;
+    row-gap: 20px;
     z-index: 0.9;
     background-color: black;
     height: 242px;
     width: 56px;
-
 }
 #iconBar a{
     font-size: 36px;
@@ -813,4 +814,18 @@ a{
 }
 #iconBar a:hover{
     background-color: rgb(0, 55, 0);
+}
+.openForm{
+    border: none;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #3f5767;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 40%;
+    height: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
 }
