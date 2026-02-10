@@ -12,7 +12,10 @@ import {
     changeFormColor,
     changeLightColor,
     sendOllamaRequest,
-    menuFigo
+    menuFigo,
+    iconBarGenerator,
+    revalForm,
+    hideForm
 } from "../js/utilities.js";
 
 document.getElementById("btnLogin").addEventListener("click", onClickLogin);

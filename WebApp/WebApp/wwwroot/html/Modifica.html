@@ -26,12 +26,19 @@
 <div class="divFormMod">
     <form class="formMod" asp-controller="Account" action="/account/registrazione" method="post">
 
-                        <div class="menuMod">
+                        <div id="menuMod">
+                            <div id="idUser">
                             <p>Username:</p>
                             <p id="usernameUser"></p>
+                            </div>
+                            <button class="openForm"></button>
+                            <div id="idEmail">
                             <p>Email:</p>
-                            <p id="emailUser"></p><br />
+                            <p id="emailUser"></p>
+                            </div>
+                            <button class="openForm"></button>
                             <p id="passwordUser">Password<br>**********</p>
+                            <button class="openForm"></button>
                         </div>
                     </div>
                 </div>
@@ -73,7 +80,7 @@
                         <button class="btnSubmit" id="btnModPsw" type="button">salva</button>
                     </form>
                 </div>  
-            </div>
+            </form>
         </div>
     </body>
 </html>

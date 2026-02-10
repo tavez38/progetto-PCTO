@@ -10,13 +10,17 @@ import {
     generateOpzionForm,
     sendOllamaRequest,
     menuFigo,
-    iconBarGenerator
+    iconBarGenerator,
+    revalForm,
+    hideForm
 } from "../js/utilities.js";
 let vMsg = [];
 document.addEventListener("DOMContentLoaded", loadMessages);
 document.getElementById("linkLogOutMsg").addEventListener("click", logout);
-document.getElementById("write").addEventListener("click", revalSendForm);
-document.getElementById("exit").addEventListener("click", hideSendForm);
+document.getElementById("write").addEventListener("click", function(idFormale) {
+  revalForm(idFormale)});
+document.getElementById("exit").addEventListener("click", function(idFormale) {
+  revalForm(idFormale)});
 document.getElementById("send").addEventListener("click", sendMessage);
 document.getElementById("cancell").addEventListener("click", deleteInput);
 document.getElementById("toChatBot").addEventListener("click", generateOpzionForm);
@@ -122,25 +126,5 @@ async function sendMessage(){
     catch(err) {
         console.log(err);
     }
-    hideSendForm();
-}
-function revalSendForm(){
-    let opacityBox = document.getElementById("opacityBox");
-    let scriviMail = document.getElementById("scriviMail");
-
-   scriviMail.style.display = "block";
-   opacityBox.style.opacity = "0.4";
-   document.body.style.overflow = "hidden";
-   opacityBox.style.pointerEvents = "none";
-}
-function hideSendForm(){
-    let opacityBox = document.getElementById("opacityBox");
-    let scriviMail = document.getElementById("scriviMail");
-
-    scriviMail.style.display = "none";
-    opacityBox.style.opacity = "1";
-    document.body.style.overflow = "auto";
-    opacityBox.style.pointerEvents = "all";
-
-    deleteInput();
+    hideForm(document.getElementById("scriviMail"));
 }

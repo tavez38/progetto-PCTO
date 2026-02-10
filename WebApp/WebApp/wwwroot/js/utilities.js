@@ -217,3 +217,23 @@ export function menuFigo(x) {
 export function goToPersonalArea() {
     window.location.href = '../html/PersonalArea.html';
 }
+export function revalForm(idFormale){
+    let opacityBox = document.getElementsByClassName("opacityBox")[0];
+    let scriviMail = document.getElementById(idFormale);
+
+   scriviMail.style.display = "block";
+   opacityBox.style.opacity = "0.4";
+   document.body.style.overflow = "hidden";
+   opacityBox.style.pointerEvents = "none";
+}
+export function hideForm(idFormale){
+    let opacityBox = document.getElementsByClassName("opacityBox")[0];
+    let scriviMail = document.getElementById(idFormale);
+
+    scriviMail.style.display = "none";
+    opacityBox.style.opacity = "1";
+    document.body.style.overflow = "auto";
+    opacityBox.style.pointerEvents = "all";
+
+    deleteInput();
+}

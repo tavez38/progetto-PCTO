@@ -9,7 +9,10 @@ import {
     logout, 
     generateOpzionForm,
     sendOllamaRequest,
-    menuFigo
+    menuFigo,
+    iconBarGenerator,
+    revalForm,
+    hideForm
 } from "../js/utilities.js";
 
 document.getElementById("sendRegisterForm").addEventListener("click", iscrizione);
