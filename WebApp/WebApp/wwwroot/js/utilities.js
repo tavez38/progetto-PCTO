@@ -160,7 +160,7 @@ export function generateOpzionForm(){
             document.getElementsByClassName("flex")[0].appendChild(div);
             const chatName = document.createElement("h2");
             chatName.id = "divChatName";
-            chatName.textContent = "ciaoooo";
+            chatName.textContent = "Chiedi qualsiasi cosa, sono qui per aiutarti";
             div.appendChild(chatName);
             const form = document.createElement("form");
             form.id = "chatBot";
