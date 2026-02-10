@@ -7,7 +7,7 @@
     <link href="../css/style.css" rel="stylesheet" />
     <script type="module" src="../js/scriptMessaggi.js" defer></script>
 </head>
-<body class= "flex" asp-controller="Messaggi" asp-action="GetMsg">
+<body asp-controller="Messaggi" asp-action="GetMsg">
     <div id="opacityBox">
     <div class="navBar">
         <button id="toImpostazioni"><a href="Modifica.html">E</a></button>
@@ -62,38 +62,6 @@
     </div>
     </div>
     <script>
-        function generateOpzionForm(){
-        if(document.getElementById("divChatBot") == null){
-            document.getElementsByClassName("home")[0].style.width = "80%";
-            const div = document.createElement("div");
-            div.id = "divChatBot";
-            div.style.width = "20%";
-            document.getElementsByClassName("flex")[0].appendChild(div);
-            const chatName = document.createElement("h2");
-            chatName.id = "divChatName";
-            chatName.textContent = "ciaoooo";
-            div.appendChild(chatName);
-            const form = document.createElement("form");
-            form.id = "chatBot";
-            div.appendChild(form);
-            const response = document.createElement("textarea");
-            response.id = "responseChatOllama";
-            form.appendChild(response);
-            const prompt = document.createElement("input");
-            prompt.id = "requestChatOllama";
-            prompt.placeholder = "prompt richiesta";
-            form.appendChild(prompt);
-            const invio = document.createElement("button");
-            invio.type = "button";
-            invio.id="sendReqChatbot";
-            invio.innerHTML = "invia";
-            form.appendChild(invio);
-        }
-        else{
-            document.getElementById("divChatBot").remove();
-            document.getElementsByClassName("home")[index].style.width = "100%";
-        }
-    }
     </script>
 </body>
 </html>
