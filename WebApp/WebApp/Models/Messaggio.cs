@@ -16,6 +16,8 @@ namespace WebApp.Models
         public string destinatario { get; set; } //mail
 
         public string? mittente { get; set; } //mail
+
+        public bool letto { get; set; } = false;
         public Messaggio()
         {
             

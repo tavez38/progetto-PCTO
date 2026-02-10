@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Messaggi</title>
+        <title>Posta</title>
         <link href="../css/style.css" rel="stylesheet" />
         <script type="module" src="../js/scriptMessaggi.js" defer></script>
     </head>
@@ -24,21 +24,21 @@
                     <h1 id="casellaDiPosta">casella di posta</h1>
                     <button id="write">&#9998; Scrivi</button>
                     <div id="menuOpzioni">
-                        <button id="ordina">ordina per:
-                            <div id="dropDownMenu">
-                                <p>Alfabetico: A-Z</p>
-                                <p>Alfabetico: Z-A</p>
-                                <p>Più recente</p>
-                                <p>Più vecchio</p>
-                                <p>Da leggere</p>
-                                <p>Letti</p>
-                            </div>
-                        </button>
+                        <label for="ordinamento">ordina per:</label>
+                        <input list="ordinamenti" name="ordinamento" id="ordina" placeholder="Selezionare una opzione">
+                        <datalist id="ordinamenti">
+                            <option value="Alfabetico: A-Z">
+                            <option value="Alfabetico: Z-A">
+                            <option value="Piu recente">
+                            <option value="Piu vecchio">
+                            <option value="Da leggere">
+                            <option value="Letti">
+                        </datalist>
                         <button class="cestino">&#9773;</button>
-                        <button id="segna come letta">segna come già letto</button>
                     </div>
                     <table id="messaggi">
                         <tr>
+                            <th class="tableLetto">letto</th>
                             <th id="tableMsgMittente">Mittente</th>
                             <th id="tableMsgOggetto">Oggetto</th>
                             <th id="tableMsgData">Data/Ora</th>
