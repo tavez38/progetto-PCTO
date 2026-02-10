@@ -23,8 +23,8 @@ async function getUserInfo() {
         return;
     }
     const data = await res.json();
-    document.getElementById("usernameUser").value = data.username;
-    document.getElementById("emailUser").value = data.email;
+    document.getElementById("usernameUser").textContent += data.username;
+    document.getElementById("emailUser").textContent += data.email;
     return;
 }
 
