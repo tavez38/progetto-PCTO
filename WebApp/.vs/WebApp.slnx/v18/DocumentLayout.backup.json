@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\progetto-PCTO\\WebApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|c:\\progetto-pcto\\webapp\\webapp\\wwwroot\\js\\scriptpersonalarea.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|solutionrelative:webapp\\wwwroot\\js\\scriptpersonalarea.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|c:\\progetto-pcto\\webapp\\webapp\\wwwroot\\js\\utilities.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|solutionrelative:webapp\\wwwroot\\js\\utilities.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|c:\\progetto-pcto\\webapp\\webapp\\wwwroot\\js\\scriptmessaggi.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|solutionrelative:webapp\\wwwroot\\js\\scriptmessaggi.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|c:\\progetto-pcto\\webapp\\webapp\\wwwroot\\js\\scriptpersonalarea.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|solutionrelative:webapp\\wwwroot\\js\\scriptpersonalarea.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|c:\\progetto-pcto\\webapp\\webapp\\wwwroot\\html\\personalarea.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -17,6 +17,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|c:\\progetto-pcto\\webapp\\webapp\\wwwroot\\html\\messaggi.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|solutionrelative:webapp\\wwwroot\\html\\messaggi.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|c:\\progetto-pcto\\webapp\\webapp\\wwwroot\\js\\scriptmessaggi.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|solutionrelative:webapp\\wwwroot\\js\\scriptmessaggi.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,14 +39,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "scriptPersonalArea.js",
-              "DocumentMoniker": "C:\\progetto-PCTO\\WebApp\\WebApp\\wwwroot\\js\\scriptPersonalArea.js",
-              "RelativeDocumentMoniker": "WebApp\\wwwroot\\js\\scriptPersonalArea.js",
-              "ToolTip": "C:\\progetto-PCTO\\WebApp\\WebApp\\wwwroot\\js\\scriptPersonalArea.js",
-              "RelativeToolTip": "WebApp\\wwwroot\\js\\scriptPersonalArea.js",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAwBEAAAACAAAAAAAAAA==",
+              "Title": "utilities.js",
+              "DocumentMoniker": "C:\\progetto-PCTO\\WebApp\\WebApp\\wwwroot\\js\\utilities.js",
+              "RelativeDocumentMoniker": "WebApp\\wwwroot\\js\\utilities.js",
+              "ToolTip": "C:\\progetto-PCTO\\WebApp\\WebApp\\wwwroot\\js\\utilities.js",
+              "RelativeToolTip": "WebApp\\wwwroot\\js\\utilities.js",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAgwFgAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-02-10T08:23:34.55Z",
+              "WhenOpened": "2026-02-10T08:40:30.932Z",
               "EditorCaption": ""
             },
             {
@@ -53,9 +57,22 @@
               "RelativeDocumentMoniker": "WebApp\\wwwroot\\html\\PersonalArea.html",
               "ToolTip": "C:\\progetto-PCTO\\WebApp\\WebApp\\wwwroot\\html\\PersonalArea.html",
               "RelativeToolTip": "WebApp\\wwwroot\\html\\PersonalArea.html",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAADMAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2026-02-10T08:22:28.738Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "scriptPersonalArea.js",
+              "DocumentMoniker": "C:\\progetto-PCTO\\WebApp\\WebApp\\wwwroot\\js\\scriptPersonalArea.js",
+              "RelativeDocumentMoniker": "WebApp\\wwwroot\\js\\scriptPersonalArea.js",
+              "ToolTip": "C:\\progetto-PCTO\\WebApp\\WebApp\\wwwroot\\js\\scriptPersonalArea.js",
+              "RelativeToolTip": "WebApp\\wwwroot\\js\\scriptPersonalArea.js",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABQAAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-02-10T08:23:34.55Z",
               "EditorCaption": ""
             },
             {
@@ -73,13 +90,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "scriptMessaggi.js",
               "DocumentMoniker": "C:\\progetto-PCTO\\WebApp\\WebApp\\wwwroot\\js\\scriptMessaggi.js",
               "RelativeDocumentMoniker": "WebApp\\wwwroot\\js\\scriptMessaggi.js",
               "ToolTip": "C:\\progetto-PCTO\\WebApp\\WebApp\\wwwroot\\js\\scriptMessaggi.js",
               "RelativeToolTip": "WebApp\\wwwroot\\js\\scriptMessaggi.js",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAAA0AAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAA0AAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2026-02-10T07:49:24.436Z",
               "EditorCaption": ""

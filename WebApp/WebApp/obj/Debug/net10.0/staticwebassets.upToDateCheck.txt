@@ -10,10 +10,10 @@ wwwroot\js\scriptImpostazioni.js
 wwwroot\js\scriptIndex.js
 wwwroot\js\scriptMessaggi.js
 wwwroot\js\scriptModify.js
+wwwroot\js\scriptPersonalArea.js
 wwwroot\js\scriptRegistrazione.js
 wwwroot\js\scriptUploadWork.js
 wwwroot\js\utilities.js
-wwwroot\js\scriptPersonalArea.js
 C:\progetto-PCTO\WebApp\WebApp\wwwroot\css\style.css
 C:\progetto-PCTO\WebApp\WebApp\wwwroot\html\AccessoNegato.html
 C:\progetto-PCTO\WebApp\WebApp\wwwroot\html\Index.html
@@ -26,7 +26,7 @@ C:\progetto-PCTO\WebApp\WebApp\wwwroot\js\scriptImpostazioni.js
 C:\progetto-PCTO\WebApp\WebApp\wwwroot\js\scriptIndex.js
 C:\progetto-PCTO\WebApp\WebApp\wwwroot\js\scriptMessaggi.js
 C:\progetto-PCTO\WebApp\WebApp\wwwroot\js\scriptModify.js
+C:\progetto-PCTO\WebApp\WebApp\wwwroot\js\scriptPersonalArea.js
 C:\progetto-PCTO\WebApp\WebApp\wwwroot\js\scriptRegistrazione.js
 C:\progetto-PCTO\WebApp\WebApp\wwwroot\js\scriptUploadWork.js
 C:\progetto-PCTO\WebApp\WebApp\wwwroot\js\utilities.js
-C:\progetto-PCTO\WebApp\WebApp\wwwroot\js\scriptPersonalArea.js
