@@ -7,7 +7,9 @@ import {
     deleteInput, 
     goToMessaggiPage, 
     logout, 
-    generateOpzionForm 
+    generateOpzionForm,
+    sendOllamaRequest,
+    menuFigo
 } from "../js/utilities.js";
 
 document.getElementById("linkLogOutUpWork").addEventListener("click", logout);

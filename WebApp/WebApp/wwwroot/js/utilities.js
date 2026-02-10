@@ -1,5 +1,7 @@
 ﻿export const listaCharSpec = ["!", "@", "#", "$", "%", "^", "&", "*", "-", "_", "+", "=", "?"];
 
+document.getElementById("sendReqChatbot").addEventListener("click", sendOllamaRequest);
+
 export function checkEmail(use) {
     if(use == "r"){
     const email = document.getElementById("inputEmail");
@@ -65,6 +67,36 @@ export function checkPsw() {
    
 }
 
+export function sendOllamaRequest() {
+    const domanda = document.getElementById("requestChatOllama").value;
+    try {
+        fetch("/api/ollama/sendOllamaReq", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${localStorage.getItem("token")}`
+            },
+            body: JSON.stringify(domanda)
+        })
+            .then(res => {
+                if (res.status == 401) {
+                    localStorage.removeItem("idUtenteLoggato");
+                    localStorage.removeItem("token");
+                    window.location.href = '../html/AccessoNegato.html';
+                    return;
+                }
+                else if (!res.ok) {
+                    console.log(res.status);
+                    return;
+                }
+                let data = res.json();
+                document.getElementById("responseChatOllama").value = data.response;
+            });
+    }
+    catch (error) {
+        console.log(error);
+    }
+}
 export function checkCharSpec(c) {
     return listaCharSpec.includes(c);
 }
@@ -125,7 +157,7 @@ export function wrongAnswordEffect(){
 export function generateOpzionForm(){
     const div = document.createElement("div");
     div.id = "divChatBot";
-    document.body.appendChild(div);
+    document.getElementsByClassName("flex")[0].appendChild(div);
     const chatName = document.createElement("h2");
     chatName.id = "divChatName";
     chatName.textContent = "ciaoooo";
@@ -140,7 +172,10 @@ export function generateOpzionForm(){
     prompt.id = "requestChatOllama";
     prompt.placeholder = "prompt richiesta";
     form.appendChild(prompt);
+    const invio = document.createElement("button");
+    invio.id="sendReqChatbot";
+    form.appendChild(invio);
 }
-function menuFigo(x) {
+export function menuFigo(x) {
   x.classList.toggle("change");
 }
