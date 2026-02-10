@@ -1,40 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="../css/style.css" rel="stylesheet" />
-    <script type="module" src="../js/scriptUploadWork.js" defer></script>
-</head>
-<body>
-    <div class="navBar">
-        <button id="toImpostazioni"><a href="Modifica.html">E</a></button>
-        <button id="toChatBot">E</button>
-        <a class="logout" href="Index.html" id="linkLogOutPA">Logout</a>
-        <div class="menuButton" id="btnNavBar">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link href="../css/style.css" rel="stylesheet" />
+        <script type="module" src="../js/scriptUploadWork.js" defer></script>
+    </head>
+    <body>
+        <div class="navBar">
+            <button id="toImpostazioni"><a href="Modifica.html">E</a></button>
+            <button id="toChatBot">E</button>
+            <a class="logout" href="Index.html" id="linkLogOutPA">Logout</a>
+            <div class="menuButton" id="btnNavBar">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
         </div>
-    </div>
-    <div class="flex">
-    <div class="home">
-    <a class="return" id="linkLogOutUpWork">Logout</a>
-    <a class="return" href="PersonalArea.html">&larr;</a>
-<h1 id="creaProgetto">CREA PROGETTO</h1>
-    <form action="/login/personalArea/uploadWork" method="post" id="progect">
-        <label for="title" class="label"></label>
-        <input type="text" name="title" id="inputTitle" placeholder="titolo progetto">
-        <label for="desc" class="label"></label>
-        <input type="text" name="desc" id="inputDesc" placeholder="breve descrizione del progetto">
-        <label for="data" class="label"></label>
-        <input type="date" name="data" id="inputData">
-        <label for="ora" class="label"></label>
-        <input type="time" name="ora" id="inputOra">
-        <button type="button" id="btnUploadWork" class="btnSubmit" asp-controller="PersonalArea" asp-action="AddWork">Invia</button>
-    </form>
-    </div>
-    </div>
-</body>
+        <div class="flex">
+            <div class="home">
+                <a class="return" id="linkLogOutUpWork">Logout</a>
+                <a class="return" href="PersonalArea.html">&larr;</a>
+                <h1 id="creaProgetto">CREA PROGETTO</h1>
+                <form action="/login/personalArea/uploadWork" method="post" id="progect">
+                    <label for="title" class="label"></label>
+                    <input type="text" name="title" id="inputTitle" placeholder="titolo progetto">
+                    <label for="desc" class="label"></label>
+                    <input type="text" name="desc" id="inputDesc" placeholder="breve descrizione del progetto">
+                    <label for="data" class="label"></label>
+                    <input type="date" name="data" id="inputData">
+                    <label for="ora" class="label"></label>
+                    <input type="time" name="ora" id="inputOra">
+                    <button type="button" id="btnUploadWork" class="btnSubmit" asp-controller="PersonalArea" asp-action="AddWork">Invia</button>
+                </form>
+            </div>
+        </div>
+    </body>
 </html>

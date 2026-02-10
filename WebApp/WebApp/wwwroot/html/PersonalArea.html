@@ -1,63 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Area Personale</title>
-    <link href="../css/style.css" rel="stylesheet" />
-    <script type="module" src="../js/scriptPersonalArea.js" defer></script>
-</head>
-<body asp-controller="PersonalArea" asp-action="GetAllWorks">
-    <div class="navBar">
-        <button id="toImpostazioni"><a href="Modifica.html">E</a></button>
-        <button id="toChatBot">E</button>
-        <a class="logout" href="Index.html" id="linkLogOutPA">Logout</a>
-        <div class="menuButton" id="btnNavBar">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Area Personale</title>
+        <link href="../css/style.css" rel="stylesheet" />
+        <script type="module" src="../js/scriptPersonalArea.js" defer></script>
+    </head>
+    <body asp-controller="PersonalArea" asp-action="GetAllWorks">
+        <div class="navBar">
+            <button id="toImpostazioni"><a href="Modifica.html">E</a></button>
+            <button id="toChatBot">E</button>
+            <a class="logout" href="Index.html" id="linkLogOutPA">Logout</a>
+            <div class="menuButton" id="btnNavBar">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
         </div>
-    </div>
-    <div class="flex">
-    <div class="home">
-    <h1 class="title">Benvenuto nella tua area personale</h1>
-    <h3 class="subTitle">Qui potrai consultare il lavoro che hai da fare e mandare messaggi ai tuoi colleghi</h3>
-    <h4 id="tableMainTitle">Prossimi lavori in consegna</h4>
+        <div class="flex">
+            <div class="home">
+                <h1 class="title">Benvenuto nella tua area personale</h1>
+                <h3 class="subTitle">Qui potrai consultare il lavoro che hai da fare e mandare messaggi ai tuoi colleghi</h3>
+                <h4 id="tableMainTitle">Prossimi lavori in consegna</h4>
 
-<div class="boxGenitore">
-    <div class="container">
-        <table class="boxWorks">
-            <thead>
-                <tr id="header">
-                <th class="tableTitle">Titolo</th>
-                <th class="tableDesc">Descrizione</th>
-                <th class="tableDate">Data scadenza</th>
-                <th class="tableHour">Ora scadenza</th>
-                </tr>
-            </thead>
-            <tbody id="tableBodyProj">
+                <div class="boxGenitore">
+                    <div class="container">
+                        <table class="boxWorks">
+                            <thead>
+                                <tr id="header">
+                                <th class="tableTitle">Titolo</th>
+                                <th class="tableDesc">Descrizione</th>
+                                <th class="tableDate">Data scadenza</th>
+                                <th class="tableHour">Ora scadenza</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableBodyProj">
                 
-            </tbody>
-        </table><br>
-        
-    </div>
+                            </tbody>
+                        </table><br>
+                    </div>
 
-    <div class="boxBtn">
+                    <div class="boxBtn">
 
-    <div class="boxAggiungiLavoro">
-        <button id="btnAddWork" type="button">Aggiungi un nuovo lavoro</button>
-    </div>
+                        <div class="boxAggiungiLavoro">
+                            <button id="btnAddWork" type="button">Aggiungi un nuovo lavoro</button>
+                        </div>
     
-    <div class="boxInviaMessaggi">
-        <button id="btnMsg" type="button">Invia messaggi</button>
-    </div>
-
-    </div>
-</div>
-
-    </div>
-    </div>
-    <script>
-    </script>
-</body>
+                        <div class="boxInviaMessaggi">
+                            <button id="btnMsg" type="button">Invia messaggi</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </body> 
 </html>
