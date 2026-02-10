@@ -182,7 +182,7 @@ export function generateOpzionForm(){
         }
         else{
             document.getElementById("divChatBot").remove();
-            document.getElementsByClassName("home")[index].style.width = "100%";
+            document.getElementsByClassName("home")[0].style.width = "100%";
         }
     }
 export function iconBarGenerator(){

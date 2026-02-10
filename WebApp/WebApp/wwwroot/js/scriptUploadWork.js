@@ -9,11 +9,14 @@ import {
     logout, 
     generateOpzionForm,
     sendOllamaRequest,
-    menuFigo
+    menuFigo,
+    iconBarGenerator
 } from "../js/utilities.js";
 
 document.getElementById("linkLogOutUpWork").addEventListener("click", logout);
 document.getElementById("btnUploadWork").addEventListener("click", uploadWork);
+document.getElementById("toChatBot").addEventListener("click", generateOpzionForm);
+document.getElementById("btnNavBar").addEventListener("click", iconBarGenerator);
 
 async function uploadWork() {
     const idUtenteLoggato = localStorage.getItem("idUtenteLoggato");
