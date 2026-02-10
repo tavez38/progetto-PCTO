@@ -9,7 +9,45 @@
     <script type="module" src="../js/scriptModify.js" defer></script>
 </head>
 <body>
-    <div class="navBar">
+        <div id="divModUsername">
+                <form class="formModUsername">
+                <label class="label" for="username">Inserisci il nuovo username:</label><br>
+                <input type="text" id="inputUsernameMod" name="username" required placeholder="Username" maxlength="15" minlength="1" /><br>
+
+                <button class="btnSubmit" id="btnModUsername" type="button" >salva</button>
+                </form>
+            </div>
+
+    <div id="divModEmail">
+        <form class="formModEmail">
+            <label class="label" for="email">Inserisci il nuovo indirizzo Email:</label><br>
+            <input type="email" id="inputEmail" name="email" required placeholder="Email" /><br>
+
+            <label class="label" for="password">Inserisci la tua password per confermare:</label><br>
+            <input type="password" id="inputPswConfirmMail" name="password" required placeholder="Password" /><br>
+
+            <button class="btnSubmit"id="btnModEmail" type="button" >salva</button>
+        </form>
+    </div>
+
+
+    <div id="divModPassword">
+        <form class="formModPassword">
+
+            <label class="label" for="password">Inserisci la vecchia password:</label><br>
+            <input type="password" id="inputPasswordOld" name="password" required placeholder="Password" /><br>
+
+            <label class="label" for="password">Inserisci la nuova password:</label><br>
+            <input type="password" id="inputPasswordNew" name="password" required placeholder="Password" /><br>
+
+            <label class="label" for="password">Conferma la nuova password:</label><br>
+            <input type="password" id="inputPasswordNewConf" name="password" required placeholder="Password" /><br>
+
+            <button class="btnSubmit" id="btnModPsw" type="button">salva</button>
+        </form>
+    </div>
+     <div class="opacityBox">
+        <div class="navBar">
         <button id="toImpostazioni"><a href="Modifica.html">E</a></button>
         <button id="toChatBot">E</button>
         <a class="logout" href="Index.html" id="linkLogOutPA">Logout</a>
@@ -18,70 +56,37 @@
             <div class="bar2"></div>
             <div class="bar3"></div>
         </div>
-    </div>
+        </div>
     <div class="flex">
     <div class="home">
-<h1 class="title">Modifica il tuo profilo</h1>
-<h3 class="subTitle">gestisci le tue informazioni</h3>
-<div class="divFormMod">
-    <form class="formMod" asp-controller="Account" action="/account/registrazione" method="post">
-
-                        <div id="menuMod">
-                            <div id="idUser">
-                            <p>Username:</p>
-                            <p id="usernameUser"></p>
-                            </div>
-                            <button class="openForm"></button>
-                            <div id="idEmail">
-                            <p>Email:</p>
-                            <p id="emailUser"></p>
-                            </div>
-                            <button class="openForm"></button>
-                            <p id="passwordUser">Password<br>**********</p>
-                            <button class="openForm"></button>
-                        </div>
-                        </form>
-                    </div>
-                
-    
-                <div class="divModUsername">
-                    <form class="formModUsername">
-                        <label class="label" for="username">Inserisci il nuovo username:</label><br>
-                        <input type="text" id="inputUsernameMod" name="username" required placeholder="Username" maxlength="15" minlength="1" /><br>
-
-                        <button class="btnSubmit" id="btnModUsername" type="button" >salva</button>
-                    </form>
+    <h1 class="title">Modifica il tuo profilo</h1>
+    <h3 class="subTitle">gestisci le tue informazioni</h3>
+            <div id="menuMod">
+                <div id="idUser">
+                <p>Username:</p>
+                <p id="usernameUser"></p>
                 </div>
-
-                <div class="divModEmail">
-                    <form class="formModEmail">
-                        <label class="label" for="email">Inserisci il nuovo indirizzo Email:</label><br>
-                        <input type="email" id="inputEmail" name="email" required placeholder="Email" /><br>
-
-                        <label class="label" for="password">Inserisci la tua password per confermare:</label><br>
-                        <input type="password" id="inputPswConfirmMail" name="password" required placeholder="Password" /><br>
-
-                        <button class="btnSubmit"id="btnModEmail" type="button" >salva</button>
-                    </form>
+                <button class="openForm" onclick="revalForm('divModUsername')">Modifca</button>
+                <div id="idEmail">
+                <p>Email:</p>
+                <p id="emailUser"></p>
                 </div>
-
-
-                <div class="divModPassword">
-                    <form class="formModPassword">
-
-                        <label class="label" for="password">Inserisci la vecchia password:</label><br>
-                        <input type="password" id="inputPasswordOld" name="password" required placeholder="Password" /><br>
-
-                        <label class="label" for="password">Inserisci la nuova password:</label><br>
-                        <input type="password" id="inputPasswordNew" name="password" required placeholder="Password" /><br>
-
-                        <label class="label" for="password">Conferma la nuova password:</label><br>
-                        <input type="password" id="inputPasswordNewConf" name="password" required placeholder="Password" /><br>
-
-                        <button class="btnSubmit" id="btnModPsw" type="button">salva</button>
-                    </form>
-                </div>  
-            </form>
+                <button class="openForm" onclick="revalForm('divModEmail')">Modifica</button>
+                <p id="passwordUser">Password<br>**********</p>
+                <button class="openForm" onclick="revalForm('divModPassword')">Modifica</button>
+            </div>
         </div>
+        </div>
+    </div>
+     <script>
+        function revalForm(idFormale){
+    let opacityBox = document.getElementsByClassName("opacityBox")[0];
+    let scriviMail = document.getElementById(idFormale);
+
+   scriviMail.style.display = "block";
+   opacityBox.style.opacity = "0.4";
+   document.body.style.overflow = "hidden";
+   opacityBox.style.pointerEvents = "none";}
+     </script>
     </body>
 </html>

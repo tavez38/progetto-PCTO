@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Messaggi</title>
+        <title>Posta</title>
         <link href="../css/style.css" rel="stylesheet" />
         <script type="module" src="../js/scriptMessaggi.js" defer></script>
     </head>
@@ -35,7 +35,6 @@
                             <option value="Letti">
                         </datalist>
                         <button class="cestino">&#9773;</button>
-                        <button id="segna come letta">segna come già letto</button>
                     </div>
                     <table id="messaggi">
                         <tr>
@@ -62,5 +61,16 @@
                 </form>
             </div>
         </div>
+        <form method="post" id="scriviMail">
+                    <p id="exit">&times</p>
+                    <input type="email" name="destinatario" id="inputMsgDest" placeholder="Email destinatario"><br>
+                    <input type="text" name="titolo" id="inputMsgTitle" placeholder="Oggetto"><br>
+                    <label for="corpo">Messaggio</label><br>
+                    <textarea name="corpo" id="inputMsgContent"></textarea><br>
+                    <button type="button" id="send" asp-controller="Messaggi" asp-action="SendMsg">Invia</button>
+                    <button id="cancell" type="button">cancella</button><br>
+                    <span id="mailError"  class="error"></span><br>
+                    <span id="objectAllert" class="error"></span>
+                </form>
     </body>
 </html>
