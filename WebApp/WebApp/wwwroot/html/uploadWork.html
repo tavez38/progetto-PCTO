@@ -7,7 +7,18 @@
     <link href="../css/style.css" rel="stylesheet" />
     <script type="module" src="../js/scriptUploadWork.js" defer></script>
 </head>
-<body class= "flex">
+<body>
+    <div class="navBar">
+        <button id="toImpostazioni"><a href="Modifica.html">E</a></button>
+        <button id="toChatBot" onclick="generateOpzionForm()">E</button>
+        <a class="logout" href="Index.html" id="linkLogOutPA">Logout</a>
+        <div class="menuButton" onclick="iconBarGenerator()">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+    </div>
+    <div class="flex">
     <div class="home">
     <a class="return" id="linkLogOutUpWork">Logout</a>
     <a class="return" href="PersonalArea.html">&larr;</a>
@@ -23,6 +34,7 @@
         <input type="time" name="ora" id="inputOra">
         <button type="button" id="btnUploadWork" class="btnSubmit" asp-controller="PersonalArea" asp-action="AddWork">Invia</button>
     </form>
+    </div>
     </div>
 </body>
 </html>
