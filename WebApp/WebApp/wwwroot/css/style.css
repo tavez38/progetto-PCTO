@@ -93,9 +93,10 @@ body{
     text-align: center;
     line-height: 60%;
 }
-.divFormMod {
+
+.menuMod{
     width: 500px;
-    height: 400px;
+    height: 300px;
     
     border-radius: 20px;
     border-style: groove;
@@ -624,3 +625,4 @@ a{
 .change .bar3 {
   transform: translate(0, -11px) rotate(45deg);
 }
+
