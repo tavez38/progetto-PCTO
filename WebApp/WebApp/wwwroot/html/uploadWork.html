@@ -20,20 +20,17 @@
         </div>
         <div class="flex">
             <div class="home">
-                <a class="return" id="linkLogOutUpWork">Logout</a>
-                <a class="return" href="PersonalArea.html">&larr;</a>
-                <h1 id="creaProgetto">CREA PROGETTO</h1>
-                <form action="/login/personalArea/uploadWork" method="post" id="progect">
-                    <label for="title" class="label"></label>
+                <h1 class="title">CREA PROGETTO</h1>
+                <div class="divUploadWork">
+                <form action="/login/personalArea/uploadWork" method="post" id="formWork">
                     <input type="text" name="title" id="inputTitle" placeholder="titolo progetto">
-                    <label for="desc" class="label"></label>
                     <input type="text" name="desc" id="inputDesc" placeholder="breve descrizione del progetto">
-                    <label for="data" class="label"></label>
                     <input type="date" name="data" id="inputData">
-                    <label for="ora" class="label"></label>
                     <input type="time" name="ora" id="inputOra">
                     <button type="button" id="btnUploadWork" class="btnSubmit" asp-controller="PersonalArea" asp-action="AddWork">Invia</button>
                 </form>
+            </div>
+            </div>
             </div>
         </div>
     </body>
