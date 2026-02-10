@@ -1,15 +1,7 @@
 ﻿export const listaCharSpec = ["!", "@", "#", "$", "%", "^", "&", "*", "-", "_", "+", "=", "?"];
 
 
-export function checkEmail(use) {
-    if(use == "r"){
-    const email = document.getElementById("inputEmail");
-    const errSpanEmail = document.getElementById("errEmailReg");
-    }
-    else{
-    const email = document.getElementById("inputMsgDest");
-    const errSpanEmail = document.getElementById("mailError");
-    }
+export function checkEmail(email, errSpanEmail) {
 
     const parts = email.value.split("@");
 
@@ -24,14 +16,13 @@ export function checkEmail(use) {
     return false;
 }
 
-export function checkPsw() {
+export function checkPsw(psw, errSpanPsw) {
 
     let number = 0;
     let charSpec = 0;
     let char = 0;
 
-    const psw = document.getElementById("inputPassword");
-    const errSpanPsw = document.getElementById("errPswReg");
+
     if (psw.value.length < 5 || psw.value.length > 10) {
         psw.style.borderColor = "red";
         errSpanPsw.innerHTML = "Lunghezza password non valida: (5-10 caratteri)";

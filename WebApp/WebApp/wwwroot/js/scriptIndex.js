@@ -16,6 +16,9 @@ import {
 } from "../js/utilities.js";
 
 document.getElementById("btnLogin").addEventListener("click", onClickLogin);
+document.getElementById("linkToRegister").addEventListener("click", () => {
+    window.location.href = '../html/Registrazione.html';
+});
 
 function onClickLogin(){ 
 

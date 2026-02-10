@@ -7,7 +7,13 @@ using WebApp.data;
 using WebApp.Models;
 
 namespace WebApp.Controllers
-{
+{ 
+
+    public class UsernameModifyRequest
+    {
+        public string usernameNew { get; set; }
+        public UsernameModifyRequest() { }
+    }
     public class MailModifyRequest
     {
         public string emailNew { get; set; }
@@ -20,7 +26,7 @@ namespace WebApp.Controllers
     public class PswModifyRequest
     {
         public string pswNew { get; set; }
-        public string pswConf { get; set; }
+        public string pswOld { get; set; }
         public PswModifyRequest() { }
     }
 
@@ -36,9 +42,22 @@ namespace WebApp.Controllers
             this.db = db;
         }
 
+        [HttpGet]
+        [Route("/api/modifyAccount/getUserInfo")]
+        public IActionResult getUserInfo()
+        {
+            var idUser = User.FindFirst(ClaimTypes.NameIdentifier)?.Value
+                ?? User.FindFirst("sub")?.Value
+                ?? User.Identity?.Name;
+            var userDb = db.dipendenti.FirstOrDefault(u => u.id == idUser);
+            
+            if (userDb == null) return NotFound(new { res = "user non trovato" });
+            return Ok(new { username = userDb.name, email = userDb.email });
+        }
+
         [HttpPut]
         [Route("/api/modifyAccount/username")]
-        public IActionResult ModifyUsername([FromBody] string request)
+        public IActionResult ModifyUsername([FromBody] UsernameModifyRequest request)
         {
             var idUser= User.FindFirst(ClaimTypes.NameIdentifier)?.Value
                 ?? User.FindFirst("sub")?.Value
@@ -50,7 +69,7 @@ namespace WebApp.Controllers
             if (userDb==null)
                 return NotFound(new { res= "Utente non trovato" });
 
-            userDb.name = request;
+            userDb.name = request.usernameNew;
             
             db.SaveChanges();
             
@@ -93,11 +112,11 @@ namespace WebApp.Controllers
 
             if (userDb == null) return NotFound(new { res = "user non trovato" });
 
-            if (!BCrypt.Net.BCrypt.Verify(request.pswConf, userDb.password))
+            if (!BCrypt.Net.BCrypt.Verify(request.pswOld, userDb.password))
             {
                 return BadRequest(new { res = "password errata" });
             }
-            userDb.password = request.pswNew;
+            userDb.password = BCrypt.Net.BCrypt.HashPassword(request.pswNew);
          
             db.SaveChanges();
             return Ok(new { res = "credenziali aggiornate" });
