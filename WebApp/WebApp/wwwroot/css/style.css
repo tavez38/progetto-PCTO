@@ -76,7 +76,7 @@ body{
 }
 .divFormRegister {
     width: 400px;
-    height: 300spx;
+    height: 300px;
     
     border-radius: 20px;
     border-style: groove;
@@ -119,7 +119,7 @@ body{
 
 .divUploadWork{
     width: 400px;
-    height: 300spx;
+    height: 300px;
     
     border-radius: 20px;
     border-style: groove;
@@ -138,16 +138,16 @@ body{
     line-height: 60%;
 }
 
-.divModUsername{
+#divModUsername{
     display: none;
+    position: absolute;
     width: 400px;
     height: 350px;
     background-repeat: no-repeat;
     border-radius: 20px;
     border-style: groove;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 37%;
+    margin-top: 15%;
     font-size: 20px;
     font-family: Tahoma, Verdana, sans-serif;
     background: rgba(255, 255, 255, 0.1);
@@ -160,16 +160,16 @@ body{
     line-height: 20%;
 }
 
-.divModEmail{
+#divModEmail{
     display: none;
+    position: absolute;
     width: 400px;
     height: 350px;
     background-repeat: no-repeat;
     border-radius: 20px;
     border-style: groove;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 37%;
+    margin-top: 15%;
     font-size: 20px;
     font-family: Tahoma, Verdana, sans-serif;
     background: rgba(255, 255, 255, 0.1);
@@ -182,16 +182,16 @@ body{
     line-height: 20%;
 }
 
-.divModPassword{
+#divModPassword{
     display: none;
+    position: absolute;
     width: 400px;
     height: 350px;
     background-repeat: no-repeat;
     border-radius: 20px;
     border-style: groove;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 37%;
+    margin-top: 15%;
     font-size: 20px;
     font-family: Tahoma, Verdana, sans-serif;
     background: rgba(255, 255, 255, 0.1);
