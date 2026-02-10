@@ -10,13 +10,17 @@ import {
     generateOpzionForm,
     sendOllamaRequest,
     menuFigo,
-    iconBarGenerator
+    iconBarGenerator,
+    revalForm,
+    hideForm
 } from "../js/utilities.js";
 let vMsg = [];
 document.addEventListener("DOMContentLoaded", loadMessages);
 document.getElementById("linkLogOutMsg").addEventListener("click", logout);
-document.getElementById("write").addEventListener("click", revalSendForm);
-document.getElementById("exit").addEventListener("click", hideSendForm);
+document.getElementById("write").addEventListener("click", function(idFormale) {
+  revalForm(idFormale)});
+document.getElementById("exit").addEventListener("click", function(idFormale) {
+  revalForm(idFormale)});
 document.getElementById("send").addEventListener("click", sendMessage);
 document.getElementById("cancell").addEventListener("click", deleteInput);
 document.getElementById("toChatBot").addEventListener("click", generateOpzionForm);
@@ -159,10 +163,10 @@ function ordinamento() {
         case "Alfabetico: Z-A":
             ordinaPerAlfabetico("Z-A");
             break;
-        case "Più recente":
+        case "Piï¿½ recente":
             ordinaPerData("recente"); 
             break;
-        case "Più vecchio":
+        case "Piï¿½ vecchio":
             ordinaPerData("vecchio");
             break;
         case "Da leggere":
