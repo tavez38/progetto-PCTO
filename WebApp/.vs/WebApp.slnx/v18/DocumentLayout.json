@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\progetto-PCTO\\WebApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|c:\\progetto-pcto\\webapp\\webapp\\controllers\\personalareacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|solutionrelative:webapp\\controllers\\personalareacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|c:\\progetto-pcto\\webapp\\webapp\\wwwroot\\js\\scriptmessaggi.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|solutionrelative:webapp\\wwwroot\\js\\scriptmessaggi.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|c:\\progetto-pcto\\webapp\\webapp\\models\\progetto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|solutionrelative:webapp\\models\\progetto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|c:\\progetto-pcto\\webapp\\webapp\\wwwroot\\js\\utilities.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|solutionrelative:webapp\\wwwroot\\js\\utilities.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|c:\\progetto-pcto\\webapp\\webapp\\wwwroot\\js\\scriptpersonalarea.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|solutionrelative:webapp\\wwwroot\\js\\scriptpersonalarea.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|c:\\progetto-pcto\\webapp\\webapp\\wwwroot\\html\\messaggi.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|solutionrelative:webapp\\wwwroot\\html\\messaggi.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|c:\\progetto-pcto\\webapp\\webapp\\controllers\\messaggicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|solutionrelative:webapp\\controllers\\messaggicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -31,41 +35,51 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Progetto.cs",
-              "DocumentMoniker": "C:\\progetto-PCTO\\WebApp\\WebApp\\Models\\Progetto.cs",
-              "RelativeDocumentMoniker": "WebApp\\Models\\Progetto.cs",
-              "ToolTip": "C:\\progetto-PCTO\\WebApp\\WebApp\\Models\\Progetto.cs",
-              "RelativeToolTip": "WebApp\\Models\\Progetto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-11T07:45:04.383Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PersonalAreaController.cs",
-              "DocumentMoniker": "C:\\progetto-PCTO\\WebApp\\WebApp\\Controllers\\PersonalAreaController.cs",
-              "RelativeDocumentMoniker": "WebApp\\Controllers\\PersonalAreaController.cs",
-              "ToolTip": "C:\\progetto-PCTO\\WebApp\\WebApp\\Controllers\\PersonalAreaController.cs",
-              "RelativeToolTip": "WebApp\\Controllers\\PersonalAreaController.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAUwD0AAABtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-10T15:54:57.735Z",
-              "EditorCaption": ""
+              "Title": "utilities.js",
+              "DocumentMoniker": "C:\\progetto-PCTO\\WebApp\\WebApp\\wwwroot\\js\\utilities.js",
+              "RelativeDocumentMoniker": "WebApp\\wwwroot\\js\\utilities.js",
+              "ToolTip": "C:\\progetto-PCTO\\WebApp\\WebApp\\wwwroot\\js\\utilities.js",
+              "RelativeToolTip": "WebApp\\wwwroot\\js\\utilities.js",
+              "ViewState": "AgIAAM4AAAAAAAAAAAAswOQAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-02-11T10:13:58.508Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "scriptPersonalArea.js",
-              "DocumentMoniker": "C:\\progetto-PCTO\\WebApp\\WebApp\\wwwroot\\js\\scriptPersonalArea.js",
-              "RelativeDocumentMoniker": "WebApp\\wwwroot\\js\\scriptPersonalArea.js",
-              "ToolTip": "C:\\progetto-PCTO\\WebApp\\WebApp\\wwwroot\\js\\scriptPersonalArea.js",
-              "RelativeToolTip": "WebApp\\wwwroot\\js\\scriptPersonalArea.js",
-              "ViewState": "AgIAAGMAAAAAAAAAAAAAAHUAAAAWAAAAAAAAAA==",
+              "Title": "Messaggi.html",
+              "DocumentMoniker": "C:\\progetto-PCTO\\WebApp\\WebApp\\wwwroot\\html\\Messaggi.html",
+              "RelativeDocumentMoniker": "WebApp\\wwwroot\\html\\Messaggi.html",
+              "ToolTip": "C:\\progetto-PCTO\\WebApp\\WebApp\\wwwroot\\html\\Messaggi.html",
+              "RelativeToolTip": "WebApp\\wwwroot\\html\\Messaggi.html",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACYAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2026-02-11T09:34:43.798Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "scriptMessaggi.js",
+              "DocumentMoniker": "C:\\progetto-PCTO\\WebApp\\WebApp\\wwwroot\\js\\scriptMessaggi.js",
+              "RelativeDocumentMoniker": "WebApp\\wwwroot\\js\\scriptMessaggi.js",
+              "ToolTip": "C:\\progetto-PCTO\\WebApp\\WebApp\\wwwroot\\js\\scriptMessaggi.js",
+              "RelativeToolTip": "WebApp\\wwwroot\\js\\scriptMessaggi.js",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAQwFkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-02-10T15:54:55.361Z",
+              "WhenOpened": "2026-02-11T08:41:19.241Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MessaggiController.cs",
+              "DocumentMoniker": "C:\\progetto-PCTO\\WebApp\\WebApp\\Controllers\\MessaggiController.cs",
+              "RelativeDocumentMoniker": "WebApp\\Controllers\\MessaggiController.cs",
+              "ToolTip": "C:\\progetto-PCTO\\WebApp\\WebApp\\Controllers\\MessaggiController.cs",
+              "RelativeToolTip": "WebApp\\Controllers\\MessaggiController.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAA5wCUAAABvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-11T09:08:38.095Z"
             }
           ]
         }

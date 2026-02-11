@@ -17,6 +17,22 @@
   },
   {
     "ContainingType": "WebApp.Controllers.MessaggiController",
+    "Method": "DeleteMsg",
+    "RelativePath": "api/messages/deleteMsg",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "WebApp.Controllers.DelRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApp.Controllers.MessaggiController",
     "Method": "GetMsg",
     "RelativePath": "api/messages/getMsg",
     "HttpMethod": "GET",

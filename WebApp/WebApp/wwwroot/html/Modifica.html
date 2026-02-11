@@ -15,7 +15,7 @@
                 <label class="label" for="username">Inserisci il nuovo username:</label><br>
                 <input type="text" id="inputUsernameMod" name="username" required placeholder="Username" maxlength="15" minlength="1" /><br>
 
-                <button class="btnSubmit" id="btnModUsername" type="button" >salva</button>
+                <button class="btnSubmit" id="btnModUsername" type="button" >SALVA</button>
                 </form>
             </div>
 
@@ -28,7 +28,7 @@
             <label class="label" for="password">Inserisci la tua password per confermare:</label><br>
             <input type="password" id="inputPswConfirmMail" name="password" required placeholder="Password" /><br>
 
-            <button class="btnSubmit"id="btnModEmail" type="button" >salva</button>
+            <button class="btnSubmit"id="btnModEmail" type="button" >SALVA</button>
         </form>
     </div>
 
@@ -45,7 +45,7 @@
             <label class="label" for="password">Conferma la nuova password:</label><br>
             <input type="password" id="inputPasswordNewConf" name="password" required placeholder="Password" /><br>
 
-            <button class="btnSubmit" id="btnModPsw" type="button">salva</button>
+            <button class="btnSubmit" id="btnModPsw" type="button">SALVA</button>
         </form>
     </div>
      <div class="opacityBox">
@@ -65,17 +65,20 @@
     <h3 class="subTitle">gestisci le tue informazioni</h3>
             <div id="menuMod">
                 <div id="idUser">
-                <p>Username:</p>
+                <p id="modInfo">Username:</p>
                 <p id="usernameUser"></p>
                 </div>
-                <button class="openForm">Modifca</button>
+                <button class="openForm">MODIFICA</button>
                 <div id="idEmail">
-                <p>Email:</p>
+                <p id="modInfo">Email:</p>
                 <p id="emailUser"></p>
                 </div>
-                <button class="openForm">Modifica</button>
-                <p id="passwordUser">Password<br>**********</p>
-                <button class="openForm">Modifica</button>
+                <button class="openForm">MODIFICA</button>
+                <div id="idPassword">
+                <p id="modInfo">Password:</p>
+                <p id="passwordUser"></p>
+                </div>
+                <button class="openForm">MODIFICA</button>
             </div>
         </div>
         </div>

@@ -10,7 +10,7 @@
     <body>
         <div class="opacityBox">
             <div class="navBar">
-                <button id="toImpostazioni"><a href="Modifica.html">E</a></button>
+                <button id="toImpostazioni"><a href="Modifica.html">&#9432;</a></button>
                 <button id="toChatBot">E</button>
                 <a class="logout" href="Index.html" id="linkLogOutMsg">Logout</a>
                 <div class="menuButton" id="btnNavBar">
@@ -21,9 +21,10 @@
             </div>
             <div class="flex">
                 <div class="home">
-                    <h1 id="casellaDiPosta" onclick="letturaMessaggio()">casella di posta</h1>
+                    <h1 id="casellaDiPosta">&#9993; casella di posta</h1>
                     <button id="write">&#9998; Scrivi</button>
                     <div id="menuOpzioni">
+                    <div id="tastiMenuOrdina">
                         <label for="ordinamento">ordina per:</label>
                         <input list="ordinamenti" name="ordinamento" id="ordina" placeholder="Selezionare una opzione">
                         <datalist id="ordinamenti">
@@ -34,14 +35,17 @@
                             <option value="Da leggere">
                             <option value="Letti">
                         </datalist>
-                        <button class="cestino">&#9773;</button>
+                        <button class="cestino" id="btnDelMsg">&#128465;</button>
+                        <button class="checkRead" id="btnSignAsReadAll">Segna come già letto &#10004;</button>
+                    </div>
                     </div>
                     <table id="messaggi">
                         <tr>
-                            <th class="tableLetto">letto</th>
+                            <th class="tableLetto">Seleziona</th>
                             <th id="tableMsgMittente">Mittente</th>
                             <th id="tableMsgOggetto">Oggetto</th>
                             <th id="tableMsgData">Data/Ora</th>
+                            
                         </tr>
                         <tbody id="tableBodyMsg">
 
@@ -54,8 +58,7 @@
                     <p class="exit">&times</p>
                     <input type="email" name="destinatario" id="inputMsgDest" placeholder="Email destinatario"><br>
                     <input type="text" name="titolo" id="inputMsgTitle" placeholder="Oggetto"><br>
-                    <label for="corpo">Messaggio</label><br>
-                    <textarea name="corpo" id="inputMsgContent"></textarea><br>
+                    <textarea name="corpo" id="inputMsgContent" placeholder="Messaggio"></textarea><br>
                     <button type="button" id="send" asp-controller="Messaggi" asp-action="SendMsg">Invia</button>
                     <button id="cancell" type="button">cancella</button><br>
                     <span id="mailError"  class="error"></span><br>

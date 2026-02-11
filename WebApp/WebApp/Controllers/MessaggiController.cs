@@ -6,6 +6,10 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace WebApp.Controllers
 {
+    public class DelRequest
+    {
+        public int idMsg { get; set; }
+    }
     public class SignedAsRead
     {
         public int id { get; set; }
@@ -70,10 +74,24 @@ namespace WebApp.Controllers
             {
                 return NotFound(new { res = "Messaggio non trovato" });
             }
-            
+
             msg.letto = request.letto;
             db.SaveChanges();
             return Ok(new { res = "Messaggio segnato come letto" });
+        }
+
+        [HttpPost]
+        [Route("/api/messages/deleteMsg")]
+        public IActionResult DeleteMsg([FromBody] DelRequest request)
+        {
+            var msg = db.messaggi.FirstOrDefault(m => m.Id == request.idMsg);
+            if (msg == null)
+            {
+                return NotFound(new { res = "Messaggio non trovato" });
+            }
+            db.messaggi.Remove(msg);
+            db.SaveChanges();
+            return Ok(new { res = "Messaggio eliminato" });
         }
     }
 }

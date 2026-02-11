@@ -15,6 +15,7 @@ import {
     hideForm
 } from "../js/utilities.js";
 let vMsg = [];
+let vMsgsigned=[];
 document.addEventListener("DOMContentLoaded", loadMessages);
 document.getElementById("linkLogOutMsg").addEventListener("click", logout);
 document.getElementById("write").addEventListener("click", function() {
@@ -26,6 +27,8 @@ document.getElementById("cancell").addEventListener("click", deleteInput);
 document.getElementById("toChatBot").addEventListener("click", generateOpzionForm);
 document.getElementById("btnNavBar").addEventListener("click", iconBarGenerator);
 document.getElementById("ordina").addEventListener("change", ordinamento);
+document.getElementById("btnDelMsg").addEventListener("click", delAllMsgSigned);
+document.getElementById("btnSignAsReadAll").addEventListener("click",signAsReadAll)
 
 async function loadMessages() {
     const token = localStorage.getItem("token");
@@ -67,6 +70,7 @@ async function loadMessages() {
 function createMsgTable() {
     const tableBody = document.getElementById("tableBodyMsg");
     const fragment = document.createDocumentFragment();
+
     vMsg.forEach(element => {
         const tr = document.createElement("tr");
         tr.className = "rows";
@@ -76,19 +80,18 @@ function createMsgTable() {
         const checkBox = document.createElement("input");
         checkBox.type = "checkbox";
         checkBox.checked = element.letto;
+        checkBox.className = "checkLettoMsg";
         checkBox.id = element.id;
         checkBox.addEventListener("change", () => {
-            var msg = vMsg.find(m => m.id == element.id);
-            segnaLetto(msg, checkBox.checked)
+            //inserimento msg nel vet msg segnati
+            vMsgsigned.push(element);
         });
         tdLetto.appendChild(checkBox);
-
 
         const tdMit = document.createElement("td");
         tdMit.className = "tableMsgMit";
         tdMit.textContent = element.mittente;
         
-
         const tdTitle = document.createElement("td");
         tdTitle.className = "tableMsgTitle";
         tdTitle.textContent = element.titolo;
@@ -142,7 +145,7 @@ async function sendMessage(){
     catch(err) {
         console.log(err);
     }
-    hideSendForm(document.getElementById("scriviMail"));
+    hideForm(document.getElementById("scriviMail"));
 }
 function ordinamento() {
     document.getElementById("tableBodyMsg").innerHTML = "";
@@ -214,6 +217,31 @@ function ordinamentoLetto(verso) {
     createMsgTable();
 }
 
+async function signAsReadAll() {
+    for(const msg of vMsgsigned){
+        const res = await segnaLetto(msg, !msg.letto);
+        if (res) {
+            console.log("success");
+        }
+        else {
+            console.log("error");
+        }
+    }
+    window.location.reload();
+}
+
+async function delAllMsgSigned(){
+   for(const msg of vMsgsigned){
+        const res = await eliminaMsg(msg);
+        if (res) {
+            console.log("success");
+        }
+        else {
+            console.log("error");
+        }
+    }
+    window.location.reload();
+}
 async function segnaLetto(msg, lettoMsg) {
     const request = {
         id: msg.id,
@@ -229,10 +257,36 @@ async function segnaLetto(msg, lettoMsg) {
     });
     if (!res.ok) {
         console.log(res.status);
-        return;
+        return false;
+    }
+    const data = await res.json();
+    console.log(data.res);  
+    return true;
+}
+
+async function eliminaMsg(msg) {
+    const request = {
+        idMsg: msg.id
+    }
+    const res = await fetch("/api/messages/deleteMsg", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${localStorage.getItem("token")}`
+        },
+        body: JSON.stringify(request)
+    });
+    if (res.status == 401) {
+        localStorage.removeItem("idUtenteLoggato");
+        localStorage.removeItem("token");
+        window.location.href = '../html/AccessoNegato.html';
+        return false;
+    }
+    if (!res.ok) {
+        console.log(res.status);
+        return false;
     }
     const data = await res.json();
     console.log(data.res);
-
-    
+    return true;
 }

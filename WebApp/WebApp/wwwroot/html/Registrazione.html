@@ -15,20 +15,11 @@
             <form class="formRegister" asp-controller="Account" action="/account/registrazione" method="post">
 
                 <h2>Crea account</h2>
-                <label class="label" for="username">
-                </label><br>
                 <input type="text" id="inputUsername" name="username" required placeholder="Username" maxlength="15" minlength="1" /><br>
-                
-
-                <label class="label" for="email">
-                </label><br>
-                <input type="email" id="inputEmail" name="email" required placeholder="Email" /><br>
+            
+                <input type="email" id="inputEmail" name="email" required placeholder="Email" />
 
                 <span id="errEmailReg" class="error"></span>
-              
-
-                <label class="label" for="password">
-                </label><br>
                 <input type="password" id="inputPassword" name="password" required placeholder="Password" /><br>
 
                 <span id="errPswReg" class="error"></span>
