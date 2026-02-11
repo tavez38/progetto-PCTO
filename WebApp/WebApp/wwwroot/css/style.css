@@ -326,7 +326,7 @@ background: #e0e0e0;
 
 
 .boxGenitore{
-    display: grid; 
+    display: flex;
     grid-template-columns: 1fr 1fr; 
     grid-gap: 50px;
     margin-left: 70px;
@@ -357,7 +357,7 @@ background: #e0e0e0;
 }
 
 .boxWorks{
-    width: 1200px;
+    width: 100%;
     height: fit-content;
     border-radius: 20px;
     border-style: groove;
@@ -564,13 +564,34 @@ a{
 }
 #menuOpzioni .cestino{
     width: 50px;
-    height: 40px;
+    height: 35px;
     border-radius: 50px;
     border-style: groove;
     margin-top: -105px;
     margin-left: auto;
     margin-right: auto;
     font-size: 20px;
+    font-family: Tahoma, Verdana, sans-serif;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: white !important;
+
+}
+
+#menuOpzioni .checkRead{
+    cursor: pointer;
+    height: 35px;
+    margin-right: 10px;
+    width: 200px;
+    height: 35px;
+    border-radius: 50px;
+    border-style: groove;
+    margin-top: -105px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 80%;
     font-family: Tahoma, Verdana, sans-serif;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(15px);
@@ -741,8 +762,20 @@ a{
     color: #93adae !important;
 }
 
+#toChatBot{
+    color: #d9d9d9;
+}
+
+#responseChatOllama{
+background-color: #353535;
+color: white;
+border-color: #93adae;
+}
+
 #divChatBot{
     width: 20%;
+    font-family: Tahoma, Verdana, sans-serif;
+    color: #353535;
 }
 #divChatName{
     color: white;
@@ -804,8 +837,12 @@ a{
   cursor: pointer;
   z-index: 1;
   margin-left: 11px;
+  color: white;
 }
 
+#btnNavBar{
+    color: white;
+}
 .bar1, .bar2, .bar3 {
   width: 35px;
   height: 5px;
