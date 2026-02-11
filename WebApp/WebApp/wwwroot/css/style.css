@@ -10,7 +10,11 @@ body{
 .bodyAccNeg{
     background-image: none;
     background-color: gray !important;
+    font-family: Tahoma, Verdana, sans-serif;
+    color: #d9d9d9;
 }
+
+
 .home{
     width: 100%;
 }
@@ -122,6 +126,7 @@ body{
     
     padding: 40px;
     text-align: center;
+    color: white;
 }
 
 .divUploadWork{
@@ -217,7 +222,9 @@ body{
 
 #inputPassword, #inputUsername, #inputUsernameMod,
 #inputEmail, #inputPswConfirmMail, #inputPasswordOld,
-#inputPasswordNew, #inputPasswordNewConf, #inputTitle, #inputDesc, #inputData, #inputOra {
+#inputPasswordNew, #inputPasswordNewConf, #inputTitle,
+#inputDesc, #inputData, #inputOra, #inputMsgDest,
+#inputMsgTitle, #inputMsgContent{
 
     width: 100%;
     padding: 12px;
@@ -228,12 +235,12 @@ body{
     color: white;
     outline: none;
     box-sizing: border-box;
+    font-family: Tahoma, Verdana, sans-serif;
 }
 
 input::placeholder {
-    color: #eee;
+    color: #eee !important;
 }
-
 
 .btnSubmit{
     width: 100%;
@@ -247,7 +254,7 @@ input::placeholder {
     transition: 0.3s;
     margin-top: 20px;
     font-style: bold;
-    margin-top: 15%;
+    margin-top: 10%;
 }
 
 button:hover {
@@ -531,9 +538,10 @@ a{
 #ordina{
     cursor: pointer;
     background-color: gainsboro;
-    border-color: gray;
+    border-color: rgb(255, 255, 255);
     height: 30px;
     margin-right: 10px;
+    color: white;
 }
 #ordina:hover{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -543,7 +551,6 @@ a{
 }
 #menuOpzioni{
     margin-top: -100px;
-
     width: 1150px;
     height: 0px;
     border-radius: 20px;
@@ -558,9 +565,11 @@ a{
     border: 1px solid rgba(255,255,255,0.1);
     padding: 30px;
     text-align: left;
+    color: white;
 }
 #menuOpzioni .cestino{
     width: 50px;
+    height: 40px;
     border-radius: 50px;
     border-style: groove;
     margin-top: -105px;
@@ -572,11 +581,16 @@ a{
     backdrop-filter: blur(15px);
     box-shadow: 0 8px 32px rgba(0,0,0,0.3);
     border: 1px solid rgba(255,255,255,0.1);
+    color: white !important;
 
 }
 
+#tastiMenuOrdina{
+    margin-top: -1%;
+}
+
 #ordina{
-    width: 150px;
+    width: 195px;
     border-radius: 50px;
     border-style: groove;
     margin-top: -105px;
@@ -594,61 +608,72 @@ a{
     width: 100%;
 }
 #scriviMail{
-    position: absolute;
-    margin-left: 33%;
-    border: 3px solid #010A26;
-    background-color: #113859;
-    width: 500px;
-    height: 350px;
-    margin-top: -110px;
-    border-radius: 10px;
     display: none;
+    position: absolute;
+    width: 400px;
+    height: 350px;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    border-style: groove;
+    margin-top: -150px;
+    margin-left: 33%;
+    margin-right: auto;
+    font-size: 20px;
+    font-family: Tahoma, Verdana, sans-serif;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.1);
+    
+    padding: 40px;
+    text-align: center;
+    line-height: 20%;
 }
-#scriviMail input, #scriviMail textarea{
-    margin-left: 100px;
-    width: 300px;
-    height: 30px;
-}
-#scriviMail label{
-    margin-left: 100px;
-    font-size: large;
-    color: #0D0000;
-}
-#inputMsgContent{
-    height: 100px !important;
-    resize: none;
-}
+
 #send{
-    margin-left: 100px;
-    margin-top: 10px;
-    width: 70px;
-    height: 40px;
-    font-size: large;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #3f5767;
     font-weight: bold;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    border-style: outset;
-    border-width: 3px;
     cursor: pointer;
+    transition: 0.3s;
+    font-style: bold;
+    margin-top: 10%;
+
 }
+
+#send:hover{
+   transform: scale(1.02);
+    background: #e0e0e0; 
+}
+
 #exit{
-    margin-left: 472px;
-    margin-bottom: 10px;
+    margin-left: 400px;
+    margin-bottom: 20px;
     margin-top: 1px;
     cursor: pointer;
     font-size: 35px;
     font-weight: bold;
+    color: #eee;
 }
 #exit:hover{
     color: red;
 }
 #cancell{
-    color: white;
-    background-color: red;
-    width: 120px;
-    height: 40px;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #ffffff;
+    color: red;
+    font-weight: bold;
     cursor: pointer;
-    margin-left: 120px;
-    font-size: 20px;
+    transition: 0.3s;
+    font-style: bold;
+    margin-top: 5%;
     font-weight: bold;
 }
 #scriviMail span{
@@ -700,10 +725,11 @@ a{
 }
 
 #lineaAccNeg{
-    margin-left: 15%;
-    border-color: black;
+    border-color: #353535;
     height: 3px;
-    background-color: black;
+    background-color: #353535;
+    color: #353535;
+    width: 80%;
 }
 #descAccNeg,#msgAccNeg{
     margin-top: 3%;
@@ -711,8 +737,14 @@ a{
 }
 #linkToLogin{
     margin-top: 5%;
-    margin-left: 70%;
+    margin-right: 70%;
+    color: #353535 !important;
 }
+
+#linkToLogin :hover{
+    color: #93adae !important;
+}
+
 #divChatBot{
     width: 20%;
 }
