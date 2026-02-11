@@ -481,11 +481,10 @@ input{
     
    
 }
-#messaggi{
+#messaggi {
     margin-top: 10px;
     position: relative;
     width: 1212px;
-    height: 0px;
     border-radius: 20px;
     border-style: groove;
     margin-left: 250px;
@@ -498,9 +497,7 @@ input{
     border: 1px solid rgba(255,255,255,0.1);
     padding: 30px;
     text-align: left;
-    z-index: -1;
-
-
+    z-index: 0;
 }
 #tableMsgData{
     width: 170px;
@@ -647,6 +644,7 @@ a{
     padding: 40px;
     text-align: center;
     line-height: 20%;
+    z-index: 100;
 }
 
 #send{
