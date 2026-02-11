@@ -154,8 +154,8 @@ export function checkCharSpec(c) {
 export function goToUploadWorkPage(){
     window.location.href = '../html/uploadWork.html';
 }
-export function deleteInput(){
-    document.getElementsByTagName("input").value = "";
+export function deleteInput(input){
+    input.getElementsByTagName("input").value = "";
 }
 export function goToMessaggiPage(){
     window.location.href = '../html/Messaggi.html';
@@ -251,12 +251,12 @@ export function iconBarGenerator(){
                 const icona2 = document.createElement("a");
                 icona2.id ="uploadIcon";
                 icona2.href ="uploadWork.html";
-                icona2.innerHTML = "E";
+                icona2.innerHTML = "&#xf093;";
                 div.appendChild(icona2);
                 const icona3 = document.createElement("a");
                 icona3.id ="messaggiIcon";
                 icona3.href = "Messaggi.html";
-                icona3.innerHTML = "E";
+                icona3.innerHTML = "&#9993;";
                 div.appendChild(icona3);
             }
             else{
@@ -288,6 +288,6 @@ export function hideForm(idFormale){
     document.body.style.overflow = "auto";
     opacityBox.style.pointerEvents = "all";
 
-    deleteInput();
+    deleteInput(idFormale);
 }
 

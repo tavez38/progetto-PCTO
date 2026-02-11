@@ -167,9 +167,10 @@ body{
     box-shadow: 0 8px 32px rgba(0,0,0,0.3);
     border: 1px solid rgba(255,255,255,0.1);
     
-    padding: 40px;
+    padding: 2%;
     text-align: center;
     line-height: 20%;
+    z-index: 1;
 }
 
 #divModEmail{
@@ -211,9 +212,14 @@ body{
     box-shadow: 0 8px 32px rgba(0,0,0,0.3);
     border: 1px solid rgba(255,255,255,0.1);
     
-    padding: 40px;
+    padding: 2%;
     text-align: center;
     line-height: 20%;
+    z-index: 1;
+}
+#divModPassword .exit, #divModEmail .exit, #divModUsername .exit{
+    margin-left: 92%;
+    margin-top: 0%;
 }
 
 .label{
@@ -493,7 +499,7 @@ input{
 #messaggi {
     margin-top: 10px;
     position: relative;
-    width: 1212px;
+    width: 77%;
     border-radius: 20px;
     border-style: groove;
     margin-left: 250px;
@@ -567,7 +573,7 @@ a{
 }
 #menuOpzioni{
     margin-top: -100px;
-    width: 1150px;
+    width: 72.5%;
     height: 0px;
     border-radius: 20px;
     border-style: groove;
@@ -655,12 +661,12 @@ a{
 #scriviMail{
     display: none;
     position: absolute;
-    width: 400px;
-    height: 350px;
+    width: 28%;
+    height: 46%;
     background-repeat: no-repeat;
     border-radius: 20px;
     border-style: groove;
-    margin-top: -150px;
+    margin-top: 150px;
     margin-left: 33%;
     margin-right: auto;
     font-size: 20px;
@@ -845,8 +851,8 @@ border-color: #93adae;
     position: relative;
     margin-left: -10px;
     margin-top: -10px;
-    height: 8%;
-    width: 95.8%;
+    height: 6%;
+    width: 97%;
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
@@ -857,7 +863,7 @@ border-color: #93adae;
     backdrop-filter: blur(15px);
     box-shadow: 0 8px 32px rgba(0,0,0,0.3);
     border: 1px solid rgba(255,255,255,0.1);
-    padding: 40px;
+    padding: 30px;
 }
 .navBar button{
     height: 50px;
@@ -886,8 +892,9 @@ border-color: #93adae;
   margin-right: auto;
   display: inline-block;
   cursor: pointer;
-  z-index: 1;
+  position: relative;
   margin-left: 11px;
+  z-index: 2;
 }
 
 .bar1, .bar2, .bar3 {
@@ -911,21 +918,24 @@ border-color: #93adae;
     position: absolute;
     display: flex;
     flex-direction: column-reverse;
-    row-gap: 20px;
-    z-index: 0.9;
-    background-color: black;
-    height: 242px;
-    width: 56px;
+    background: rgba(255, 255, 255, 0.1);
+    height: 200px;
+    width: 70px;
+    margin-left: 1%;
+    margin-top: 7.5%;
+    z-index: 1;
 }
 #iconBar a{
-    font-size: 36px;
+    font-size: 40px;
     padding: 10px;
     cursor: pointer;
-    background-color: green;
+    background-color: #3f4f5072;
+    backdrop-filter: blur(15px);
     text-align: center;
+
 }
 #iconBar a:hover{
-    background-color: rgb(0, 55, 0);
+    background-color: #10b3beaf;
 }
 .openForm{
     border: none;
