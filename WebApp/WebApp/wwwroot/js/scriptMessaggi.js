@@ -76,11 +76,11 @@ function createMsgTable() {
         tr.classList.add("rows");
 
         const tdLetto = document.createElement("td");
-        tdLetto.classList.add("tableLetto");
+        tdLetto.classList.add("selezionaMsg");
         const checkBox = document.createElement("input");
         checkBox.type = "checkbox";
         checkBox.checked = false;
-        checkBox.classList.add("checkLettoMsg");
+        checkBox.classList.add("btnSelezionaMsg");
         checkBox.id = element.id;
         checkBox.addEventListener("change", () => {
             vMsgsigned.push(element);
