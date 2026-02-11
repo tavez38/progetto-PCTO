@@ -77,13 +77,16 @@ function createMsgTable() {
     vMsg.forEach(element => {
         const tr = document.createElement("tr");
         tr.classList.add("rows");
+        tr.addEventListener("click", () => {
+            letturaMessaggio(element);
+        });
 
         const tdLetto = document.createElement("td");
-        tdLetto.classList.add("tableLetto");
+        tdLetto.classList.add("selezionaMsg");
         const checkBox = document.createElement("input");
         checkBox.type = "checkbox";
         checkBox.checked = false;
-        checkBox.classList.add("checkLettoMsg");
+        checkBox.classList.add("btnSelezionaMsg");
         checkBox.id = element.id;
         checkBox.addEventListener("change", () => {
             vMsgsigned.push(element);
@@ -114,7 +117,7 @@ function createMsgTable() {
                 eliminaMsg(element);
             }
         });
-        buttonDel.style.marginLeft = "20px";
+        //buttonDel.style.marginLeft = "20px";
 
         const buttonRead = document.createElement("button");
         buttonRead.classList.add("checkRead");
@@ -122,7 +125,7 @@ function createMsgTable() {
         buttonRead.addEventListener("click", () => {
             segnaLetto(element, !element.letto);
         });
-        buttonRead.style.marginLeft = "15px";
+        //buttonRead.style.marginLeft = "15px";
 
         tdDelSignAsRead.appendChild(buttonDel);
         tdDelSignAsRead.appendChild(buttonRead);
@@ -320,34 +323,35 @@ async function eliminaMsg(msg) {
     console.log(data.res);
     return true;
 }
-function letturaMessaggio(){
-            if(document.getElementById("formMessaggio") == null){
-                const form = document.createElement("div");
-                form.id ="formMessaggio";
-                document.body.insertBefore(form, document.body.children[0]);
-                const button = document.createElement("p");
-                button.classList = "exit";
-                button.innerHTML = "&times";
-                form.appendChild(button);
-                const data = document.createElement("h3");
-                data.id = "dataMessaggio";
-                data.innerHTML =" ciao";
-                form.appendChild(data)
-                const mittente = document.createElement("h3");
-                mittente.id ="mittenteMessaggio";
-                mittente.innerHTML =" ciao";
-                form.appendChild(mittente);
-                const titolo = document.createElement("h1");
-                titolo.id ="titoloMessaggio";
-                titolo.innerHTML =" ciao";
-                form.appendChild(titolo);
-                form.appendChild(document.createElement("hr"));
-                const corpo = document.createElement("p");
-                corpo.id ="corpoMessaggio";
-                corpo.innerHTML =" ciao";
-                form.appendChild(corpo);
-            }
-            else{
+function letturaMessaggio(msg){
+    if(document.getElementById("formMessaggio") == null){
+        const form = document.createElement("div");
+        form.id ="formMessaggio";
+        document.body.insertBefore(form, document.body.children[0]);
+        const button = document.createElement("p");
+        button.classList = "exit";
+        button.innerHTML = "&times";
+        button.addEventListener("click", () => {
             document.getElementById("formMessaggio").remove();
-            }
-        }
+        });
+        form.appendChild(button);
+        const data = document.createElement("h3");
+        data.id = "dataMessaggio";
+        data.innerText = msg.dataInvio;
+        form.appendChild(data)
+        const mittente = document.createElement("h3");
+        mittente.id ="mittenteMessaggio";
+        mittente.innerText = msg.mittente;
+        form.appendChild(mittente);
+        const titolo = document.createElement("h1");
+        titolo.id ="titoloMessaggio";
+        titolo.innerText = msg.titolo;
+        form.appendChild(titolo);
+        form.appendChild(document.createElement("hr"));
+        const corpo = document.createElement("p");
+        corpo.id ="corpoMessaggio";
+        corpo.innerText = msg.contenuto;
+        form.appendChild(corpo);
+    }
+            
+}
