@@ -153,11 +153,14 @@ export function wrongAnswordEffect(){
 }
 export function generateOpzionForm(){
         if(document.getElementById("divChatBot") == null){
-            document.getElementsByClassName("home")[0].style.width = "80%";
+            document.getElementsByClassName("home")[0].style.width = "75%";
             const div = document.createElement("div");
             div.id = "divChatBot";
             div.style.width = "20%";
             document.getElementsByClassName("flex")[0].appendChild(div);
+            const hr =document.createElement("hr");
+            hr.id = "hrChat";
+            div.appendChild(hr);
             const chatName = document.createElement("h2");
             chatName.id = "divChatName";
             chatName.textContent = "Chiedi qualsiasi cosa, sono qui per aiutarti";
