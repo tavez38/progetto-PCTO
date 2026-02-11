@@ -17,10 +17,10 @@ import {
 let vMsg = [];
 document.addEventListener("DOMContentLoaded", loadMessages);
 document.getElementById("linkLogOutMsg").addEventListener("click", logout);
-document.getElementById("write").addEventListener("click", function() {
+/*document.getElementById("write").addEventListener("click", function() {
   revalForm(document.getElementById("scriviMail"))});
 document.getElementsByClassName("exit")[0].addEventListener("click", function() {
-  hideForm(document.getElementById("scriviMail"))});
+  hideForm(document.getElementById("scriviMail"))});*/
 document.getElementById("send").addEventListener("click", sendMessage);
 document.getElementById("cancell").addEventListener("click", deleteInput);
 document.getElementById("toChatBot").addEventListener("click", generateOpzionForm);
@@ -67,6 +67,7 @@ async function loadMessages() {
 function createMsgTable() {
     const tableBody = document.getElementById("tableBodyMsg");
     const fragment = document.createDocumentFragment();
+
     vMsg.forEach(element => {
         const tr = document.createElement("tr");
         tr.className = "rows";
@@ -76,10 +77,11 @@ function createMsgTable() {
         const checkBox = document.createElement("input");
         checkBox.type = "checkbox";
         checkBox.checked = element.letto;
+        checkBox.className = "checkLettoMsg";
         checkBox.id = element.id;
-        checkBox.addEventListener("change", () => {
-            var msg = vMsg.find(m => m.id == element.id);
-            segnaLetto(msg, checkBox.checked)
+        checkBox.addEventListener("change", async () => {
+            await segnaLetto(element, checkBox.checked);
+            window.location.reload();
         });
         tdLetto.appendChild(checkBox);
 
@@ -97,10 +99,23 @@ function createMsgTable() {
         tdData.className = "tableMsgData";
         tdData.textContent = element.dataInvio;
 
+        const tdDel = document.createElement("td");
+        tdDel.className = "tableMsgDel";
+        const btnDel = document.createElement("button");
+        btnDel.className = "btnEliminaMsg";
+        btnDel.textContent = "Elimina";
+        btnDel.type = "button";
+        btnDel.addEventListener("click", async () => {
+            await eliminaMsg(element);
+            window.location.reload();
+        });
+        tdDel.appendChild(btnDel);
+
         tr.appendChild(tdLetto);
         tr.appendChild(tdMit);
         tr.appendChild(tdTitle);
         tr.appendChild(tdData);
+        tr.appendChild(tdDel);
         fragment.appendChild(tr);
     });
     tableBody.appendChild(fragment);
@@ -232,7 +247,31 @@ async function segnaLetto(msg, lettoMsg) {
         return;
     }
     const data = await res.json();
-    console.log(data.res);
+    console.log(data.res);  
+}
 
-    
+async function eliminaMsg(msg) {
+    const request = {
+        idMsg: msg.id
+    }
+    const res = await fetch("/api/messages/deleteMsg", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${localStorage.getItem("token")}`
+        },
+        body: JSON.stringify(request)
+    });
+    if (res.status == 401) {
+        localStorage.removeItem("idUtenteLoggato");
+        localStorage.removeItem("token");
+        window.location.href = '../html/AccessoNegato.html';
+        return;
+    }
+    if (!res.ok) {
+        console.log(res.status);
+        return;
+    }
+    const data = await res.json();
+    console.log(data.res);
 }
