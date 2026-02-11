@@ -21,7 +21,6 @@ body{
 
 .title,.subTitle{
     font-family: Tahoma, Verdana, sans-serif;
-    color: #353535;
     text-align: center;
     
 }
@@ -479,8 +478,14 @@ input{
     display: block;
     font-family: Tahoma, Verdana, sans-serif;
     
-   
 }
+
+#modInfo{
+    color: #d9d9d9;
+    text-shadow: 1px 0 #353535, -1px 0 #353535, 0 1px #353535, 0 -1px #353535,
+    1px 1px #353535, -1px -1px #353535, 1px -1px #353535, -1px 1px #353535;
+}
+
 #messaggi {
     margin-top: 10px;
     position: relative;
@@ -837,16 +842,12 @@ border-color: #93adae;
   cursor: pointer;
   z-index: 1;
   margin-left: 11px;
-  color: white;
 }
 
-#btnNavBar{
-    color: white;
-}
 .bar1, .bar2, .bar3 {
   width: 35px;
   height: 5px;
-  background-color: #333;
+  background-color: #d9d9d9;
   margin: 6px 0;
   transition: 0.4s;
 }
