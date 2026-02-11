@@ -696,14 +696,21 @@ a{
     background: #e0e0e0; 
 }
 
-#exit{
-    margin-left: 400px;
-    margin-bottom: 20px;
-    margin-top: 1px;
+.exit{
     cursor: pointer;
     font-size: 35px;
     font-weight: bold;
     color: #eee;
+}
+#formMessaggio .exit{
+    margin-bottom: 0px;
+    margin-left: 92%;
+    margin-top: 0%;
+}
+#scriviMail .exit{
+    margin-bottom: 20px;
+    margin-left: 94%;
+    margin-top: 0%;
 }
 .exit:hover{
     color: red;
@@ -724,6 +731,19 @@ a{
 }
 #scriviMail span{
     margin-left: 100px;
+}
+#formMessaggio{
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.1);
+    position: absolute;
+    margin-left: 33%;
+    margin-top: 15%;
+    width: 500px;
+    height: 350px;
+    border-radius: 10px;
+    z-index: 1;
 }
 #lightDotLeft{
     position: absolute;
@@ -920,4 +940,11 @@ border-color: #93adae;
     margin-left: auto;
     margin-right: auto;
     margin-top: 10%;
+}
+#dataMessaggio{
+    position: absolute;
+    margin-left: 90%;
+}
+#corpoMessaggio{
+    font-size: large;
 }
