@@ -13,22 +13,29 @@ document.getElementById("btnModUsername").addEventListener("click", modifyUserna
 document.getElementById("btnModEmail").addEventListener("click", modifyEmail);
 document.getElementById("btnModPsw").addEventListener("click", modifyPassword);
 document.getElementsByClassName("openForm")[0].addEventListener("click", function() {
-  revalForm(document.getElementById("divModUsername"))});
+    revalForm(document.getElementById("divModUsername"))
+});
 document.getElementsByClassName("openForm")[1].addEventListener("click", function() {
-  revalForm(document.getElementById("divModEmail"))});
+    revalForm(document.getElementById("divModEmail"))
+});
 document.getElementsByClassName("openForm")[2].addEventListener("click", function() {
-  revalForm(document.getElementById("divModPassword"))});
+    revalForm(document.getElementById("divModPassword"))
+});
 document.getElementsByClassName("exit")[0].addEventListener("click", function() {
-  hideForm(document.getElementById("divModUsername"))});
+    hideForm(document.getElementById("divModUsername"))
+});
 document.getElementsByClassName("exit")[1].addEventListener("click", function() {
-  hideForm(document.getElementById("divModEmail"))});
+    hideForm(document.getElementById("divModEmail"))
+});
 document.getElementsByClassName("exit")[2].addEventListener("click", function() {
-  hideForm(document.getElementById("divModPassword"))});
+    hideForm(document.getElementById("divModPassword"))
+});
 
 document.getElementById("toChatBot").addEventListener("click", generateOpzionForm);
 document.getElementById("btnNavBar").addEventListener("click", iconBarGenerator);
 document.getElementById("btnNavBar").addEventListener("click", function(){
-    menuFigo(document.getElementById(this))});
+    menuFigo(this)
+});
 
 async function getUserInfo() {
     const res = await fetch("/api/modifyAccount/getUserInfo", {

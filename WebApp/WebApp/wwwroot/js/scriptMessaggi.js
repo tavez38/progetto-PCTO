@@ -17,21 +17,36 @@ import {
 let vMsg = [];
 let vMsgsigned=[];
 document.addEventListener("DOMContentLoaded", loadMessages);
+
 document.getElementById("linkLogOutMsg").addEventListener("click", logout);
+
 document.getElementById("write").addEventListener("click", function() {
-  revalForm(document.getElementById("scriviMail"))});
+    revalForm(document.getElementById("scriviMail"))
+});
+
 document.getElementsByClassName("exit")[0].addEventListener("click", function() {
-  hideForm(document.getElementById("scriviMail"))});
+    hideForm(document.getElementById("scriviMail"))
+});
+
 document.getElementById("send").addEventListener("click", sendMessage);
+
 document.getElementById("cancell").addEventListener("click", function(){
-    deleteInput(document.getElementById("scriviMail"))});
+    deleteInput(document.getElementById("scriviMail"))
+});
+
 document.getElementById("toChatBot").addEventListener("click", generateOpzionForm);
+
 document.getElementById("btnNavBar").addEventListener("click", iconBarGenerator);
+
 document.getElementById("ordina").addEventListener("change", ordinamento);
+
 document.getElementById("btnDelMsg").addEventListener("click", delAllMsgSigned);
-document.getElementById("btnSignAsReadAll").addEventListener("click",signAsReadAll)
+
+document.getElementById("btnSignAsReadAll").addEventListener("click", signAsReadAll);
+
 document.getElementById("btnNavBar").addEventListener("click", function(){
-    menuFigo(document.getElementById(this))});
+    menuFigo(this)
+});
 
 async function loadMessages() {
     const token = localStorage.getItem("token");
@@ -172,7 +187,11 @@ async function sendMessage() {
             },
             body: JSON.stringify(messaggio)
         })
-        .then(res => {
+            .then(res => {
+                if (res.status == 404) {
+                    alert("Non esiste nessun utente associato a questa email");
+                    return;
+                }
             if (!res.ok) {
                 console.log(res.status);
             }

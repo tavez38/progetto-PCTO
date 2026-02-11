@@ -132,12 +132,15 @@ export async function sendOllamaRequest() {
             window.location.href = '../html/AccessoNegato.html';
             return;
         }
+        if (res.status == 500) {
+            textAreaResponse.value = "c'e stato un errore nel server, riprova piu tardi";
+        }
         else if (!res.ok) {
             console.log(res.status);
             return;
         }
         const data = await res.json();
-        document.getElementById("responseChatOllama").value = data.response;
+        textAreaResponse.value = data.response;
         textAreaResponse.setAttribute("readonly", "readonly");
            
     }
@@ -274,11 +277,7 @@ export function iconBarGenerator(){
             else{
             document.getElementById("iconBar").remove();
             }
-        }
-export function menuFigo(x) {
-  x.classList.toggle("change");
 }
-
 export function goToPersonalArea() {
     window.location.href = '../html/PersonalArea.html';
 }
@@ -303,3 +302,7 @@ export function hideForm(idFormale){
     deleteInput(idFormale);
 }
 
+export function menuFigo(x) {
+  if (!x || !x.classList) return; // evita eccezioni se chiamata con null
+  x.classList.toggle("change");
+}

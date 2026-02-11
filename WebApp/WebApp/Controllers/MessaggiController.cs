@@ -48,7 +48,10 @@ namespace WebApp.Controllers
             {
                 return BadRequest("Dati del messaggio non validi");
             }
-
+            if(!db.dipendenti.Any(u=> u.email == msg.destinatario))
+            {
+                return NotFound();
+            }
             msg.dataInvio = DateTime.Now;
             var mailMittente = User.FindFirst(System.Security.Claims.ClaimTypes.Email)?.Value
                               ?? User.FindFirst("email")?.Value

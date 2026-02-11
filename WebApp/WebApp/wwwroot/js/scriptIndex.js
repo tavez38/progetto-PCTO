@@ -26,8 +26,8 @@ document.getElementById("linkToRegister").addEventListener("click", () => {
 function onClickLogin(){ 
 
     
-    const usMail = document.getElementById("inputUsername").value;
-    const psw = document.getElementById("inputPassword").value;
+    const usMail = document.getElementById("inputUsername").value.trim();
+    const psw = document.getElementById("inputPassword").value.trim();
     const pswError = document.getElementById("pswError");
     const userError = document.getElementById("userError");
     if (!IsEmptyPswLogin(psw, usMail)) {

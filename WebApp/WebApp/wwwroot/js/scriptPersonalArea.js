@@ -24,7 +24,7 @@ document.getElementById("btnMsg").addEventListener("click", goToMessaggiPage);
 document.getElementById("toChatBot").addEventListener("click", generateOpzionForm);
 document.getElementById("btnNavBar").addEventListener("click", iconBarGenerator);
 document.getElementById("btnNavBar").addEventListener("click", function(){
-    menuFigo(document.getElementById(this))});
+    menuFigo(this)});
 
 
 var vWorks = [];
