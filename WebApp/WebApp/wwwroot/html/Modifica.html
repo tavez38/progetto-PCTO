@@ -9,15 +9,15 @@
     <script type="module" src="../js/scriptModify.js" defer></script>
 </head>
 <body>
-        <div id="divModUsername">
-            <p class="exit">&times</p>
-                <form class="formModUsername">
-                <label class="label" for="username">Inserisci il nuovo username:</label><br>
-                <input type="text" id="inputUsernameMod" name="username" required placeholder="Username" maxlength="15" minlength="1" /><br>
+    <div id="divModUsername">
+        <p class="exit">&times</p>
+        <form class="formModUsername">
+            <label class="label" for="username">Inserisci il nuovo username:</label><br>
+            <input type="text" id="inputUsernameMod" name="username" required placeholder="Username" maxlength="15" minlength="1" /><br>
 
-                <button class="btnSubmit" id="btnModUsername" type="button" >SALVA</button>
-                </form>
-            </div>
+            <button class="btnSubmit" id="btnModUsername" type="button">SALVA</button>
+        </form>
+    </div>
 
     <div id="divModEmail">
         <p class="exit">&times</p>
@@ -28,7 +28,7 @@
             <label class="label" for="password">Inserisci la tua password per confermare:</label><br>
             <input type="password" id="inputPswConfirmMail" name="password" required placeholder="Password" /><br>
 
-            <button class="btnSubmit"id="btnModEmail" type="button" >SALVA</button>
+            <button class="btnSubmit" id="btnModEmail" type="button">SALVA</button>
         </form>
     </div>
 
@@ -48,7 +48,7 @@
             <button class="btnSubmit" id="btnModPsw" type="button">SALVA</button>
         </form>
     </div>
-     <div class="opacityBox">
+    <div class="opacityBox">
         <div class="navBar">
         <button id="toImpostazioni"><a href="Modifica.html">&#9432</a></button>
         <button id="toChatBot">E</button>
@@ -81,17 +81,29 @@
                 <button class="openForm">MODIFICA</button>
             </div>
         </div>
+        <div class="flex">
+            <div class="home">
+                <h1 class="title">Modifica il tuo profilo</h1>
+                <h3 class="subTitle">gestisci le tue informazioni</h3>
+                <div id="menuMod">
+                    <div id="idUser">
+                        <p id="modInfo">Username:</p>
+                        <p id="usernameUser"></p>
+                    </div>
+                    <button class="openForm">MODIFICA</button>
+                    <div id="idEmail">
+                        <p id="modInfo">Email:</p>
+                        <p id="emailUser"></p>
+                    </div>
+                    <button class="openForm">MODIFICA</button>
+                    <div id="idPassword">
+                        <p id="modInfo">Password:</p>
+                        <p id="passwordUser"></p>
+                    </div>
+                    <button class="openForm">MODIFICA</button>
+                </div>
+            </div>
         </div>
     </div>
-     <script>
-        function revalForm(idFormale){
-    let opacityBox = document.getElementsByClassName("opacityBox")[0];
-    let scriviMail = document.getElementById(idFormale);
-
-   scriviMail.style.display = "block";
-   opacityBox.style.opacity = "0.4";
-   document.body.style.overflow = "hidden";
-   opacityBox.style.pointerEvents = "none";}
-     </script>
-    </body>
+</body>
 </html>

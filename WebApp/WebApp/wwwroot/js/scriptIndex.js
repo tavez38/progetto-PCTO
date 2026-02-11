@@ -73,12 +73,12 @@ function onClickLogin(){
     }
 }
 function IsEmptyPswLogin(psw, usMail) {
-    if (psw == "") {
-        alert("Inserire una password");
+    if (usMail == " " || usMail == null) {
+        alert("Inserire una mail o username");
         return false;
     }
-    else if (usMail = "") {
-        alert("Inserire una mail o username");
+    else if (psw == " " || psw==null) {
+        alert("Inserire una password");
         return false;
     }
     return true;

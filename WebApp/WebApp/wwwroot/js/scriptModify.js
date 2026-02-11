@@ -4,7 +4,8 @@
     generateOpzionForm,
     hideForm,
     iconBarGenerator,
-    menuFigo
+    menuFigo,
+    revalForm
 } from "../js/utilities.js";
 
 document.addEventListener("DOMContentLoaded", getUserInfo);

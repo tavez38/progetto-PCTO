@@ -24,8 +24,14 @@ function iscrizione() {
     const psw = document.getElementById("inputPassword");
     const errSpanPsw = document.getElementById("errPswReg");
 
+    if (checkIsEmpty(email, psw)) {
+        alert("Compilare tutti i campi");
+        return;
+    }
+
     if (!checkEmail(email,errSpanEmail) || !checkPsw(psw,errSpanPsw)) {
         console.log("false");
+        return;
     }
     else {
         richiestaIscrizione(psw,email);
@@ -61,4 +67,11 @@ async function richiestaIscrizione(psw,email) {
         console.log(error);
         return;
     }
+}
+
+function checkIsEmpty(email, psw) {
+    if (email.value == null || psw.value == null || email.value.includes(" ") || psw.value.includes(" ")) {
+        return true;
+    }
+    return false;
 }

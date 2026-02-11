@@ -103,7 +103,7 @@ function createMsgTable() {
 
         const tdData = document.createElement("td");
         tdData.classList.add("tableMsgData");
-        tdData.textContent = element.dataInvio;
+        tdData.textContent = element.dataInvio.slice(0,16).replace("T", " ");
 
         const tdDelSignAsRead = document.createElement("td");
         tdDelSignAsRead.classList.add("tableSettingMsg"); 
@@ -117,7 +117,7 @@ function createMsgTable() {
                 eliminaMsg(element);
             }
         });
-        //buttonDel.style.marginLeft = "20px";
+        buttonDel.style.marginLeft = "20px";
 
         const buttonRead = document.createElement("button");
         buttonRead.classList.add("checkRead");
@@ -125,7 +125,8 @@ function createMsgTable() {
         buttonRead.addEventListener("click", () => {
             segnaLetto(element, !element.letto);
         });
-        //buttonRead.style.marginLeft = "15px";
+        buttonRead.style.marginLeft = "15px";
+        buttonRead.style.width = "50px";
 
         tdDelSignAsRead.appendChild(buttonDel);
         tdDelSignAsRead.appendChild(buttonRead);
