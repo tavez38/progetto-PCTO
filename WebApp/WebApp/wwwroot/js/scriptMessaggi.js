@@ -100,10 +100,34 @@ function createMsgTable() {
         tdData.className = "tableMsgData";
         tdData.textContent = element.dataInvio;
 
+        const tdDelSignAsRead = document.createElement("td");
+        tdDelSignAsRead.className = "tableSettingMsg";
+        const buttonDel = document.createElement("button");
+        buttonDel.className = "cestino";
+        buttonDel.innerHTML = "&#128465;";
+        buttonDel.addEventListener("click", () => {
+            if (confirm("sei sicuro di voler eliminare il messaggio? (dopo l'eliminazione non potrai piu recuperarlo)"))
+            {
+                eliminaMsg(element);
+            }
+        });
+        buttonDel.style.marginLeft = "20px";
+        const buttonRead = document.createElement("button");
+        buttonRead.className = "checkRead";
+        buttonRead.innerHTML = "&#10004;";
+        buttonRead.addEventListener("click", () => {
+            segnaLetto(element, !element.letto);
+        });
+        buttonRead.style.marginLeft = "15px";
+
+        tdDelSignAsRead.appendChild(buttonDel);
+        tdDelSignAsRead.appendChild(buttonRead);
+
         tr.appendChild(tdLetto);
         tr.appendChild(tdMit);
         tr.appendChild(tdTitle);
         tr.appendChild(tdData);
+        tr.appendChild(tdDelSignAsRead);
         fragment.appendChild(tr);
     });
     tableBody.appendChild(fragment);
@@ -230,17 +254,19 @@ async function signAsReadAll() {
     window.location.reload();
 }
 
-async function delAllMsgSigned(){
-   for(const msg of vMsgsigned){
-        const res = await eliminaMsg(msg);
-        if (res) {
-            console.log("success");
+async function delAllMsgSigned() {
+    if (confirm("sei sicuro di voler eliminare tutti i messaggi? (dopo la cancellazione non saranno piu disponibili)")) {
+        for (const msg of vMsgsigned) {
+            const res = await eliminaMsg(msg);
+            if (res) {
+                console.log("success");
+            }
+            else {
+                console.log("error");
+            }
         }
-        else {
-            console.log("error");
-        }
+        window.location.reload();
     }
-    window.location.reload();
 }
 async function segnaLetto(msg, lettoMsg) {
     const request = {
