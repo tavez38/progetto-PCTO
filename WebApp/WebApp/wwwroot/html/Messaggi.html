@@ -21,7 +21,7 @@
             </div>
             <div class="flex">
                 <div class="home">
-                    <h1 id="casellaDiPosta">casella di posta</h1>
+                    <h1 id="casellaDiPosta" onclick="letturaMessaggio()">casella di posta</h1>
                     <button id="write">&#9998; Scrivi</button>
                     <div id="menuOpzioni">
                         <label for="ordinamento">ordina per:</label>
@@ -61,5 +61,40 @@
                     <span id="mailError"  class="error"></span><br>
                     <span id="objectAllert" class="error"></span>
                 </form>
+
+            <script>
+                function letturaMessaggio(){
+            if(document.getElementById("formMessaggio") == null){
+                const form = document.createElement("form");
+                form.id ="formMessaggio";
+                document.body.insertBefore(form, document.body.children[0]);
+                const button = document.createElement("button");
+                button.className = "exit";
+                button.type = "button";
+                button.innerHTML = "&times";
+                form.appendChild(button);
+                const data = document.createElement("h3");
+                data.id = "dataMessaggio";
+                data.innerHTML =" ciao";
+                form.appendChild(data)
+                const mittente = document.createElement("h3");
+                mittente.id ="mittenteMessaggio";
+                mittente.innerHTML =" ciao";
+                form.appendChild(mittente);
+                const titolo = document.createElement("h1");
+                titolo.id ="titoloMessaggio";
+                titolo.innerHTML =" ciao";
+                form.appendChild(titolo);
+                form.appendChild(document.createElement("hr"));
+                const corpo = document.createElement("p");
+                corpo.id ="corpoMessaggio";
+                corpo.innerHTML =" ciao";
+                form.appendChild(corpo);
+            }
+            else{
+            document.getElementById("formMessaggio").remove();
+            }
+        }
+            </script>
     </body>
 </html>

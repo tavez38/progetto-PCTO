@@ -629,13 +629,19 @@ a{
     cursor: pointer;
 }
 .exit{
-    margin-left: 98%;
-    margin-bottom: 15%;
     cursor: pointer;
     font-size: 35px;
     font-weight: bold;
     color: white;
     margin-top: -10px;
+}
+#formMessaggio .exit{
+    margin-left: 92%;
+    margin-top: 0%;
+}
+#scriviMail .exit{
+    margin-left: 94%;
+    margin-top: 0%;
 }
 .exit:hover{
     color: red;
@@ -652,6 +658,15 @@ a{
 }
 #scriviMail span{
     margin-left: 100px;
+}
+#formMessaggio{
+    background: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    margin-left: 33%;
+    margin-top: 15%;
+    width: 500px;
+    height: 350px;
+    border-radius: 10px;
 }
 #lightDotLeft{
     position: absolute;
@@ -827,4 +842,11 @@ a{
     margin-left: auto;
     margin-right: auto;
     margin-top: 10%;
+}
+#dataMessaggio{
+    position: absolute;
+    margin-left: 90%;
+}
+#corpoMessaggio{
+    font-size: large;
 }
