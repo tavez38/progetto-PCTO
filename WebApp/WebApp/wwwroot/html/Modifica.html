@@ -10,6 +10,7 @@
 </head>
 <body>
         <div id="divModUsername">
+            <p class="exit">&times</p>
                 <form class="formModUsername">
                 <label class="label" for="username">Inserisci il nuovo username:</label><br>
                 <input type="text" id="inputUsernameMod" name="username" required placeholder="Username" maxlength="15" minlength="1" /><br>
@@ -19,6 +20,7 @@
             </div>
 
     <div id="divModEmail">
+        <p class="exit">&times</p>
         <form class="formModEmail">
             <label class="label" for="email">Inserisci il nuovo indirizzo Email:</label><br>
             <input type="email" id="inputEmail" name="email" required placeholder="Email" /><br>
@@ -32,8 +34,8 @@
 
 
     <div id="divModPassword">
+        <p class="exit">&times</p>
         <form class="formModPassword">
-
             <label class="label" for="password">Inserisci la vecchia password:</label><br>
             <input type="password" id="inputPasswordOld" name="password" required placeholder="Password" /><br>
 
@@ -66,14 +68,14 @@
                 <p>Username:</p>
                 <p id="usernameUser"></p>
                 </div>
-                <button class="openForm" onclick="revalForm('divModUsername')">Modifca</button>
+                <button class="openForm">Modifca</button>
                 <div id="idEmail">
                 <p>Email:</p>
                 <p id="emailUser"></p>
                 </div>
-                <button class="openForm" onclick="revalForm('divModEmail')">Modifica</button>
+                <button class="openForm">Modifica</button>
                 <p id="passwordUser">Password<br>**********</p>
-                <button class="openForm" onclick="revalForm('divModPassword')">Modifica</button>
+                <button class="openForm">Modifica</button>
             </div>
         </div>
         </div>

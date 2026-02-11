@@ -219,7 +219,7 @@ export function goToPersonalArea() {
 }
 export function revalForm(idFormale){
     let opacityBox = document.getElementsByClassName("opacityBox")[0];
-    let scriviMail = document.getElementById(idFormale);
+    let scriviMail = idFormale;
 
    scriviMail.style.display = "block";
    opacityBox.style.opacity = "0.4";
@@ -228,7 +228,7 @@ export function revalForm(idFormale){
 }
 export function hideForm(idFormale){
     let opacityBox = document.getElementsByClassName("opacityBox")[0];
-    let scriviMail = document.getElementById(idFormale);
+    let scriviMail = idFormale;
 
     scriviMail.style.display = "none";
     opacityBox.style.opacity = "1";

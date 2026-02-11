@@ -2,6 +2,7 @@
     checkEmail,
     checkPsw,
     generateOpzionForm,
+    hideForm,
     iconBarGenerator
 } from "../js/utilities.js";
 
@@ -9,6 +10,19 @@ document.addEventListener("DOMContentLoaded", getUserInfo);
 document.getElementById("btnModUsername").addEventListener("click", modifyUsername);
 document.getElementById("btnModEmail").addEventListener("click", modifyEmail);
 document.getElementById("btnModPsw").addEventListener("click", modifyPassword);
+document.getElementsByClassName("openForm")[0].addEventListener("click", function() {
+  revalForm(document.getElementById("divModUsername"))});
+document.getElementsByClassName("openForm")[1].addEventListener("click", function() {
+  revalForm(document.getElementById("divModEmail"))});
+document.getElementsByClassName("openForm")[2].addEventListener("click", function() {
+  revalForm(document.getElementById("divModPassword"))});
+document.getElementsByClassName("exit")[0].addEventListener("click", function() {
+  hideForm(document.getElementById("divModUsername"))});
+document.getElementsByClassName("exit")[1].addEventListener("click", function() {
+  hideForm(document.getElementById("divModEmail"))});
+document.getElementsByClassName("exit")[2].addEventListener("click", function() {
+  hideForm(document.getElementById("divModPassword"))});
+
 document.getElementById("toChatBot").addEventListener("click", generateOpzionForm);
 document.getElementById("btnNavBar").addEventListener("click", iconBarGenerator);
 
