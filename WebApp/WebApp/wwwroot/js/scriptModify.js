@@ -3,7 +3,8 @@
     checkPsw,
     generateOpzionForm,
     hideForm,
-    iconBarGenerator
+    iconBarGenerator,
+    revalForm
 } from "../js/utilities.js";
 
 document.addEventListener("DOMContentLoaded", getUserInfo);

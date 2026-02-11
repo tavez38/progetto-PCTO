@@ -24,6 +24,7 @@ document.getElementById("btnMsg").addEventListener("click", goToMessaggiPage);
 document.getElementById("toChatBot").addEventListener("click", generateOpzionForm);
 document.getElementById("btnNavBar").addEventListener("click", iconBarGenerator);
 
+
 var vWorks = [];
 
 async function loadWorks() {
@@ -89,20 +90,21 @@ function createWorksTable() {
 
         const tdHour = document.createElement("td");
         tdHour.className = "tableHour";
-        tdHour.textContent = element.orarioScadenza;
+        tdHour.textContent = element.orarioScadenza.slice(0,5);
         tr.appendChild(tdHour);
 
         const tdElimina = document.createElement("td");
         tdElimina.className = "tableDel";
         const btnElimina = document.createElement("button");
-        btnElimina.className = "btnElimina";
-        btnElimina.textContent = "Elimina";
+        btnElimina.classList.add("cestino");
+        btnElimina.innerHTML = "&#128465;";
         btnElimina.type = "button";
         btnElimina.addEventListener("click", async () => {
             var conferma = confirm("Sei sicuro di voler eliminare questo progetto?");
             if (conferma) {
                 console.log(element.id);
                 eliminaProgetto(element);
+                window.location.reload();
             }
         });
         tdElimina.appendChild(btnElimina);
@@ -138,7 +140,3 @@ async function eliminaProgetto(prog) {
     console.log(data.res);
     return;
 }
-/*function myFunction() {
-document.body.style.backgroundImage ="none";
-document.getElementsByClassName("menuButton")[0].classList.toggle("change");
-}*/

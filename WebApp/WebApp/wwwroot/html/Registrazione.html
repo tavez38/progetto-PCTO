@@ -15,7 +15,7 @@
             <form class="formRegister" asp-controller="Account" action="/account/registrazione" method="post">
 
                 <h2>Crea account</h2>
-                <input type="text" id="inputUsername" name="username" required placeholder="Username" maxlength="15" minlength="1" /><br>
+                <input type="text" id="inputUsername" name="username" pattern="^\S+$" required placeholder="Username" maxlength="15" minlength="1"/><br>
             
                 <input type="email" id="inputEmail" name="email" required placeholder="Email" />
 

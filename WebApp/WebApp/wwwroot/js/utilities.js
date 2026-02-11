@@ -2,19 +2,52 @@
 
 
 export function checkEmail(email, errSpanEmail) {
+    const val = email.value.trim(); // Puliamo subito
 
-    const parts = email.value.split("@");
+    // 1. Nessun spazio consentito
+    if (val.includes(" ")) {
+        setError(email, errSpanEmail, "L'email non può contenere spazi");
+        return false;
+    }
 
-    if (parts.length == 2 && parts[1].includes(".")) {
-        errSpanEmail.innerHTML = "";
-        email.style.borderColor = "";
-        return true;
-    }     
-    errSpanEmail.innerHTML = "Email non valida; controllare la parte a destra del simbolo @";
-    email.style.borderColor = "red";
-    console.log("false");
-    return false;
+    const parts = val.split("@");
+
+    // 2. Deve esserci esattamente una @
+    if (parts.length !== 2 || parts[0] === "" || parts[1] === "") {
+        setError(email, errSpanEmail, "Formato email non valido (manca @ o nome)");
+        return false;
+    }
+
+    const domainPart = parts[1];
+
+    // 3. Il dominio deve contenere almeno un punto e non all'inizio o alla fine
+    if (!domainPart.includes(".") || domainPart.startsWith(".") || domainPart.endsWith(".")) {
+        setError(email, errSpanEmail, "Dominio non valido");
+        return false;
+    }
+
+    const domainPieces = domainPart.split(".");
+    // 4. Controlliamo che ogni pezzo del dominio (es. 'gmail', 'com') non sia vuoto
+    // Usiamo .some() che abbiamo imparato prima!
+    const haPezziVuoti = domainPieces.some(piece => piece.length === 0);
+
+    if (haPezziVuoti) {
+        setError(email, errSpanEmail, "Punti consecutivi nel dominio");
+        return false;
+    }
+
+    // Se tutto passa
+    errSpanEmail.innerHTML = "";
+    email.style.borderColor = "";
+    return true;
 }
+
+// Funzione di supporto per non ripetere codice
+function setError(el, span, msg) {
+    span.innerText = msg;
+    el.style.borderColor = "red";
+}
+
 
 export function checkPsw(psw, errSpanPsw) {
 
@@ -22,39 +55,59 @@ export function checkPsw(psw, errSpanPsw) {
     let charSpec = 0;
     let char = 0;
 
+    psw.style.borderColor = "";
+    errSpanPsw.innerHTML = "";
 
+    //caso psw vuota
+    if (psw.value.trim().length == 0) {
+        psw.style.borderColor = "red";
+        errSpanPsw.innerText = "La password non rispetta i requisiti minimi";
+        return false;
+    }
+    //caso se psw contiene spazi
+    if (psw.value.includes(" ")) {
+        psw.style.borderColor = "red";
+        errSpanPsw.innerText = "La password non può contenere spazi";
+        return false;
+    }
+    //caso lunghezza psw non negli standard
     if (psw.value.length < 5 || psw.value.length > 10) {
         psw.style.borderColor = "red";
-        errSpanPsw.innerHTML = "Lunghezza password non valida: (5-10 caratteri)";
+        errSpanPsw.innerText = "Lunghezza password non valida: (5-10 caratteri)";
         console.log("false");
         return false;
     }
 
-    else {
-        for (let i = 0; i < psw.value.length; i++) {
-            if (!isNaN(parseInt(psw.value[i]))) {
-                number++;
-            } else if (checkCharSpec(psw.value[i])) {
-                charSpec++;
-            } else {
-                char++;
-            }
+   
+    //validazione con requisiti minimi
+    for (let i = 0; i < psw.value.length; i++) {
+        //check se char = num
+        if (psw.value[i] >= "0" && psw.value[i] <= "9") {
+            number++;
         }
-
-        if (number < 2 || char < 1 || charSpec < 1) {
-            psw.style.borderColor = "red";
-            errSpanPsw.innerHTML = "La password non rispetta i requisiti minimi";
-            console.log("false");
-            return false;
+        //check se c'è char speciale
+        else if (checkCharSpec(psw.value[i])) {
+            charSpec++;
         }
-        else {
-            psw.style.borderColor = "";
-            errSpanPsw.innerHTML = "";
-            console.log("ttrue");
-            return true;
+        //check se char != da " "
+        else if (psw.value[i] != " ") {
+            char++;
         }
     }
-   
+
+    if (number < 2 || char < 1 || charSpec < 1) {
+        psw.style.borderColor = "red";
+        errSpanPsw.innerHTML = "La password non rispetta i requisiti minimi";
+        console.log("false");
+        return false;
+    }
+    else {
+        psw.style.borderColor = "";
+        errSpanPsw.innerHTML = "";
+        console.log("ttrue");
+        return true;
+    }
+    
 }
 
 export async function sendOllamaRequest() {
@@ -237,3 +290,4 @@ export function hideForm(idFormale){
 
     deleteInput();
 }
+
