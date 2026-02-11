@@ -8,6 +8,16 @@
         <script type="module" src="../js/scriptMessaggi.js" defer></script>
     </head>
     <body>
+        <form method="post" id="scriviMail">
+                    <p class="exit">&times</p>
+                    <input type="email" name="destinatario" id="inputMsgDest" placeholder="Email destinatario"><br>
+                    <input type="text" name="titolo" id="inputMsgTitle" placeholder="Oggetto"><br>
+                    <textarea name="corpo" id="inputMsgContent" placeholder="Messaggio"></textarea><br>
+                    <button type="button" id="send" asp-controller="Messaggi" asp-action="SendMsg">Invia</button>
+                    <button id="cancell" type="button">cancella</button><br>
+                    <span id="mailError"  class="error"></span><br>
+                    <span id="objectAllert" class="error"></span>
+                </form>
         <div class="opacityBox">
             <div class="navBar">
                 <button id="toImpostazioni"><a href="Modifica.html">&#9432;</a></button>
@@ -54,15 +64,5 @@
                 </div>
             </div>
         </div>
-        <form method="post" id="scriviMail">
-                    <p class="exit">&times</p>
-                    <input type="email" name="destinatario" id="inputMsgDest" placeholder="Email destinatario"><br>
-                    <input type="text" name="titolo" id="inputMsgTitle" placeholder="Oggetto"><br>
-                    <textarea name="corpo" id="inputMsgContent" placeholder="Messaggio"></textarea><br>
-                    <button type="button" id="send" asp-controller="Messaggi" asp-action="SendMsg">Invia</button>
-                    <button id="cancell" type="button">cancella</button><br>
-                    <span id="mailError"  class="error"></span><br>
-                    <span id="objectAllert" class="error"></span>
-                </form>
     </body>
 </html>

@@ -3,7 +3,8 @@
     checkPsw,
     generateOpzionForm,
     hideForm,
-    iconBarGenerator
+    iconBarGenerator,
+    menuFigo
 } from "../js/utilities.js";
 
 document.addEventListener("DOMContentLoaded", getUserInfo);
@@ -25,6 +26,8 @@ document.getElementsByClassName("exit")[2].addEventListener("click", function() 
 
 document.getElementById("toChatBot").addEventListener("click", generateOpzionForm);
 document.getElementById("btnNavBar").addEventListener("click", iconBarGenerator);
+document.getElementById("btnNavBar").addEventListener("click", function(){
+    menuFigo(document.getElementById(this))});
 
 async function getUserInfo() {
     const res = await fetch("/api/modifyAccount/getUserInfo", {
@@ -67,6 +70,7 @@ async function modifyUsername() {
     }
     const data = await res.json();
     console.log(data.res);
+    hideForm(document.getElementById("divModUsername"));
     return;
 }
 
@@ -95,6 +99,7 @@ async function modifyEmail() {
     }
     const data = await res.json();
     console.log(data.res);
+    hideForm(document.getElementById("divModEmail"));
     return; 
 }
 async function modifyPassword() {
@@ -130,6 +135,7 @@ async function modifyPassword() {
     }
     const data = await res.json();
     console.log(data.res);
+    hideForm(document.getElementById("divModPassword"));
     return;
 }
 

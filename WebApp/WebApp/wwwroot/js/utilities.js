@@ -101,8 +101,8 @@ export function checkCharSpec(c) {
 export function goToUploadWorkPage(){
     window.location.href = '../html/uploadWork.html';
 }
-export function deleteInput(){
-    document.getElementsByTagName("input").value = "";
+export function deleteInput(input){
+    input.getElementsByTagName("input").value = "";
 }
 export function goToMessaggiPage(){
     window.location.href = '../html/Messaggi.html';
@@ -235,5 +235,5 @@ export function hideForm(idFormale){
     document.body.style.overflow = "auto";
     opacityBox.style.pointerEvents = "all";
 
-    deleteInput();
+    deleteInput(idFormale);
 }
