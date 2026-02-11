@@ -73,37 +73,62 @@ function createMsgTable() {
 
     vMsg.forEach(element => {
         const tr = document.createElement("tr");
-        tr.className = "rows";
+        tr.classList.add("rows");
 
         const tdLetto = document.createElement("td");
-        tdLetto.className = "tableLetto";
+        tdLetto.classList.add("tableLetto");
         const checkBox = document.createElement("input");
         checkBox.type = "checkbox";
-        checkBox.checked = element.letto;
-        checkBox.className = "checkLettoMsg";
+        checkBox.checked = false;
+        checkBox.classList.add("checkLettoMsg");
         checkBox.id = element.id;
         checkBox.addEventListener("change", () => {
-            //inserimento msg nel vet msg segnati
             vMsgsigned.push(element);
         });
         tdLetto.appendChild(checkBox);
 
         const tdMit = document.createElement("td");
-        tdMit.className = "tableMsgMit";
+        tdMit.classList.add("tableMsgMit");
         tdMit.textContent = element.mittente;
-        
+
         const tdTitle = document.createElement("td");
-        tdTitle.className = "tableMsgTitle";
+        tdTitle.classList.add("tableMsgTitle");
         tdTitle.textContent = element.titolo;
 
         const tdData = document.createElement("td");
-        tdData.className = "tableMsgData";
+        tdData.classList.add("tableMsgData");
         tdData.textContent = element.dataInvio;
+
+        const tdDelSignAsRead = document.createElement("td");
+        tdDelSignAsRead.classList.add("tableSettingMsg"); 
+
+        const buttonDel = document.createElement("button");
+        buttonDel.classList.add("cestino");
+        buttonDel.innerHTML = "&#128465;";
+        buttonDel.addEventListener("click", () => {
+            if (confirm("sei sicuro di voler eliminare il messaggio? (dopo l'eliminazione non potrai piu recuperarlo)"))
+            {
+                eliminaMsg(element);
+            }
+        });
+        buttonDel.style.marginLeft = "20px";
+
+        const buttonRead = document.createElement("button");
+        buttonRead.classList.add("checkRead");
+        buttonRead.innerHTML = "&#10004;";
+        buttonRead.addEventListener("click", () => {
+            segnaLetto(element, !element.letto);
+        });
+        buttonRead.style.marginLeft = "15px";
+
+        tdDelSignAsRead.appendChild(buttonDel);
+        tdDelSignAsRead.appendChild(buttonRead);
 
         tr.appendChild(tdLetto);
         tr.appendChild(tdMit);
         tr.appendChild(tdTitle);
         tr.appendChild(tdData);
+        tr.appendChild(tdDelSignAsRead);
         fragment.appendChild(tr);
     });
     tableBody.appendChild(fragment);
@@ -230,17 +255,19 @@ async function signAsReadAll() {
     window.location.reload();
 }
 
-async function delAllMsgSigned(){
-   for(const msg of vMsgsigned){
-        const res = await eliminaMsg(msg);
-        if (res) {
-            console.log("success");
+async function delAllMsgSigned() {
+    if (confirm("sei sicuro di voler eliminare tutti i messaggi? (dopo la cancellazione non saranno piu disponibili)")) {
+        for (const msg of vMsgsigned) {
+            const res = await eliminaMsg(msg);
+            if (res) {
+                console.log("success");
+            }
+            else {
+                console.log("error");
+            }
         }
-        else {
-            console.log("error");
-        }
+        window.location.reload();
     }
-    window.location.reload();
 }
 async function segnaLetto(msg, lettoMsg) {
     const request = {
