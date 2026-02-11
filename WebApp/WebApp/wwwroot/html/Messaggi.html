@@ -48,21 +48,10 @@
                         </tbody>
                     </table>
                 </div>
-                <form method="post" id="scriviMail">
-                    <p id="exit">&times</p>
-                    <input type="email" name="destinatario" id="inputMsgDest" placeholder="Email destinatario"><br>
-                    <input type="text" name="titolo" id="inputMsgTitle" placeholder="Oggetto"><br>
-                    <label for="corpo">Messaggio</label><br>
-                    <textarea name="corpo" id="inputMsgContent"></textarea><br>
-                    <button type="button" id="send" asp-controller="Messaggi" asp-action="SendMsg">Invia</button>
-                    <button id="cancell" type="button">cancella</button><br>
-                    <span id="mailError"  class="error"></span><br>
-                    <span id="objectAllert" class="error"></span>
-                </form>
             </div>
         </div>
         <form method="post" id="scriviMail">
-                    <p id="exit">&times</p>
+                    <p class="exit">&times</p>
                     <input type="email" name="destinatario" id="inputMsgDest" placeholder="Email destinatario"><br>
                     <input type="text" name="titolo" id="inputMsgTitle" placeholder="Oggetto"><br>
                     <label for="corpo">Messaggio</label><br>

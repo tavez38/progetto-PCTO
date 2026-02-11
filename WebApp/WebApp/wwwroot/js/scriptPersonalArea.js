@@ -72,7 +72,6 @@ function createWorksTable() {
         const tr = document.createElement("tr");
         tr.className = "rows";
 
-        
         const tdTitle = document.createElement("td");
         tdTitle.className = "tableTitle";
         tdTitle.textContent = element.title;
