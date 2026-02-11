@@ -21,7 +21,6 @@ body{
 
 .title,.subTitle{
     font-family: Tahoma, Verdana, sans-serif;
-    color: #353535;
     text-align: center;
     
 }
@@ -479,8 +478,14 @@ input{
     display: block;
     font-family: Tahoma, Verdana, sans-serif;
     
-   
 }
+
+#modInfo{
+    color: #d9d9d9;
+    text-shadow: 1px 0 #353535, -1px 0 #353535, 0 1px #353535, 0 -1px #353535,
+    1px 1px #353535, -1px -1px #353535, 1px -1px #353535, -1px 1px #353535;
+}
+
 #messaggi {
     margin-top: 10px;
     position: relative;
@@ -676,6 +681,14 @@ a{
     font-weight: bold;
     color: #eee;
 }
+#formMessaggio .exit{
+    margin-left: 92%;
+    margin-top: 0%;
+}
+#scriviMail .exit{
+    margin-left: 94%;
+    margin-top: 0%;
+}
 .exit:hover{
     color: red;
 }
@@ -695,6 +708,15 @@ a{
 }
 #scriviMail span{
     margin-left: 100px;
+}
+#formMessaggio{
+    background: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    margin-left: 33%;
+    margin-top: 15%;
+    width: 500px;
+    height: 350px;
+    border-radius: 10px;
 }
 #lightDotLeft{
     position: absolute;
@@ -837,16 +859,12 @@ border-color: #93adae;
   cursor: pointer;
   z-index: 1;
   margin-left: 11px;
-  color: white;
 }
 
-#btnNavBar{
-    color: white;
-}
 .bar1, .bar2, .bar3 {
   width: 35px;
   height: 5px;
-  background-color: #333;
+  background-color: #d9d9d9;
   margin: 6px 0;
   transition: 0.4s;
 }
@@ -893,4 +911,11 @@ border-color: #93adae;
     margin-left: auto;
     margin-right: auto;
     margin-top: 10%;
+}
+#dataMessaggio{
+    position: absolute;
+    margin-left: 90%;
+}
+#corpoMessaggio{
+    font-size: large;
 }
