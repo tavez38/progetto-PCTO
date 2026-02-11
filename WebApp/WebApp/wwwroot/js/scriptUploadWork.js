@@ -21,7 +21,6 @@ document.getElementById("toChatBot").addEventListener("click", generateOpzionFor
 document.getElementById("btnNavBar").addEventListener("click", iconBarGenerator);
 
 async function uploadWork() {
-    const idUtenteLoggato = localStorage.getItem("idUtenteLoggato");
     let progetto ={
         
         title : document.getElementById("inputTitle").value,
@@ -30,22 +29,22 @@ async function uploadWork() {
         orarioScadenza : document.getElementById("inputOra").value
     }
     try{
-        fetch("/api/uploadWork", {
+        const res = await fetch("/api/uploadWork", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
                 "Authorization": `Bearer ${localStorage.getItem("token")}`
             },
             body: JSON.stringify(progetto)
-        })
-            .then(res => {
-                if (!res.ok) {
-                    console.log(res.status);
-                }
-                else {
-                    console.log(res.status);
-                }
-            });
+        });
+        if (!res.ok) {
+            console.log(res.status);
+        }
+        else {
+            console.log(res.status);
+        }
+             
+        window.location.href = "../html/PersonalArea.html";
     }
     catch (error){
         console.log(error)

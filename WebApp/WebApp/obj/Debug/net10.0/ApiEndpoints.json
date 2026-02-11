@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "WebApp.Controllers.PersonalAreaController",
+    "Method": "DeleteWork",
+    "RelativePath": "api/deleteWork",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "WebApp.Controllers.RequestDelProgetto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "WebApp.Controllers.MessaggiController",
     "Method": "GetMsg",
     "RelativePath": "api/messages/getMsg",

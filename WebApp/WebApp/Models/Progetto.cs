@@ -5,10 +5,10 @@ namespace WebApp.Models
 {
     public class Progetto
     {
-        [JsonIgnore]
+        
         public string? id { get;  set; }
 
-        [JsonIgnore]
+        
         public string? IdProprietario { get;  set; }
         public string title { get; set; }
         public string description { get; set; }
