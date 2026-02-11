@@ -51,6 +51,15 @@ body{
     font-family: Tahoma, Verdana, sans-serif !important;
     text-align: left;
 }
+#hrChat{
+    position: absolute;
+    width: 300px;
+    margin-left: -40px;
+    height: 620px;
+    border-right: none;
+    border-bottom: none;
+    border-top: none;
+}
 
 
 #tableMainTitle{
@@ -246,6 +255,9 @@ body{
 
 input::placeholder {
     color: #eee !important;
+}
+textarea{
+    resize: none;
 }
 
 .btnSubmit{
@@ -499,7 +511,7 @@ input{
 #messaggi {
     margin-top: 10px;
     position: relative;
-    width: 77%;
+    width: 74%;
     border-radius: 20px;
     border-style: groove;
     margin-left: 250px;
@@ -573,7 +585,7 @@ a{
 }
 #menuOpzioni{
     margin-top: -100px;
-    width: 72.5%;
+    width: 68%;
     height: 0px;
     border-radius: 20px;
     border-style: groove;
@@ -822,15 +834,17 @@ a{
 }
 
 #responseChatOllama{
-background-color: #353535;
+background-color: #93adae;
 color: white;
-border-color: #93adae;
+height: 450px;
+width: 300px;
 }
 
 #divChatBot{
-    width: 20%;
+    width: 25%;
     font-family: Tahoma, Verdana, sans-serif;
     color: #353535;
+    padding-left: 3%;
 }
 #divChatName{
     color: white;
@@ -843,9 +857,16 @@ border-color: #93adae;
 #chatBot input{
     margin-top: 15px;
 }
+#requestChatOllama{
+    position: absolute;
+    margin-top: 410px !important;
+    width: 300px;
+}
 #sendReqChatbot{
-    width: 100px;
+    position: absolute;
+    width: 308px;
     height: 30px;
+    margin-top: 430px;
 }
 .navBar{
     position: relative;
