@@ -15,17 +15,20 @@ import {
     hideForm
 } from "../js/utilities.js";
 let vMsg = [];
+let vMsgsigned=[];
 document.addEventListener("DOMContentLoaded", loadMessages);
 document.getElementById("linkLogOutMsg").addEventListener("click", logout);
-/*document.getElementById("write").addEventListener("click", function() {
+document.getElementById("write").addEventListener("click", function() {
   revalForm(document.getElementById("scriviMail"))});
 document.getElementsByClassName("exit")[0].addEventListener("click", function() {
-  hideForm(document.getElementById("scriviMail"))});*/
+  hideForm(document.getElementById("scriviMail"))});
 document.getElementById("send").addEventListener("click", sendMessage);
 document.getElementById("cancell").addEventListener("click", deleteInput);
 document.getElementById("toChatBot").addEventListener("click", generateOpzionForm);
 document.getElementById("btnNavBar").addEventListener("click", iconBarGenerator);
 document.getElementById("ordina").addEventListener("change", ordinamento);
+document.getElementById("btnDelMsg").addEventListener("click", delAllMsgSigned);
+document.getElementById("btnSignAsReadAll").addEventListener("click",signAsReadAll)
 
 async function loadMessages() {
     const token = localStorage.getItem("token");
@@ -79,18 +82,16 @@ function createMsgTable() {
         checkBox.checked = element.letto;
         checkBox.className = "checkLettoMsg";
         checkBox.id = element.id;
-        checkBox.addEventListener("change", async () => {
-            await segnaLetto(element, checkBox.checked);
-            window.location.reload();
+        checkBox.addEventListener("change", () => {
+            //inserimento msg nel vet msg segnati
+            vMsgsigned.push(element);
         });
         tdLetto.appendChild(checkBox);
-
 
         const tdMit = document.createElement("td");
         tdMit.className = "tableMsgMit";
         tdMit.textContent = element.mittente;
         
-
         const tdTitle = document.createElement("td");
         tdTitle.className = "tableMsgTitle";
         tdTitle.textContent = element.titolo;
@@ -99,23 +100,10 @@ function createMsgTable() {
         tdData.className = "tableMsgData";
         tdData.textContent = element.dataInvio;
 
-        const tdDel = document.createElement("td");
-        tdDel.className = "tableMsgDel";
-        const btnDel = document.createElement("button");
-        btnDel.className = "btnEliminaMsg";
-        btnDel.textContent = "Elimina";
-        btnDel.type = "button";
-        btnDel.addEventListener("click", async () => {
-            await eliminaMsg(element);
-            window.location.reload();
-        });
-        tdDel.appendChild(btnDel);
-
         tr.appendChild(tdLetto);
         tr.appendChild(tdMit);
         tr.appendChild(tdTitle);
         tr.appendChild(tdData);
-        tr.appendChild(tdDel);
         fragment.appendChild(tr);
     });
     tableBody.appendChild(fragment);
@@ -157,7 +145,7 @@ async function sendMessage(){
     catch(err) {
         console.log(err);
     }
-    hideSendForm(document.getElementById("scriviMail"));
+    hideForm(document.getElementById("scriviMail"));
 }
 function ordinamento() {
     document.getElementById("tableBodyMsg").innerHTML = "";
@@ -229,6 +217,31 @@ function ordinamentoLetto(verso) {
     createMsgTable();
 }
 
+async function signAsReadAll() {
+    for(const msg of vMsgsigned){
+        const res = await segnaLetto(msg, !msg.letto);
+        if (res) {
+            console.log("success");
+        }
+        else {
+            console.log("error");
+        }
+    }
+    window.location.reload();
+}
+
+async function delAllMsgSigned(){
+   for(const msg of vMsgsigned){
+        const res = await eliminaMsg(msg);
+        if (res) {
+            console.log("success");
+        }
+        else {
+            console.log("error");
+        }
+    }
+    window.location.reload();
+}
 async function segnaLetto(msg, lettoMsg) {
     const request = {
         id: msg.id,
@@ -244,10 +257,11 @@ async function segnaLetto(msg, lettoMsg) {
     });
     if (!res.ok) {
         console.log(res.status);
-        return;
+        return false;
     }
     const data = await res.json();
     console.log(data.res);  
+    return true;
 }
 
 async function eliminaMsg(msg) {
@@ -266,12 +280,13 @@ async function eliminaMsg(msg) {
         localStorage.removeItem("idUtenteLoggato");
         localStorage.removeItem("token");
         window.location.href = '../html/AccessoNegato.html';
-        return;
+        return false;
     }
     if (!res.ok) {
         console.log(res.status);
-        return;
+        return false;
     }
     const data = await res.json();
     console.log(data.res);
+    return true;
 }

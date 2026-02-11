@@ -3273,23 +3273,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ITSINCOMEV11\\.nuget\\packages\\": {},
+    "C:\\Users\\HEW16A0020NL\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ITSINCOMEV11\\Desktop\\PCTO\\progetto-PCTO\\WebApp\\WebApp\\WebApp.csproj",
+      "projectUniqueName": "C:\\progetto-PCTO\\WebApp\\WebApp\\WebApp.csproj",
       "projectName": "WebApp",
-      "projectPath": "C:\\Users\\ITSINCOMEV11\\Desktop\\PCTO\\progetto-PCTO\\WebApp\\WebApp\\WebApp.csproj",
-      "packagesPath": "C:\\Users\\ITSINCOMEV11\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ITSINCOMEV11\\Desktop\\PCTO\\progetto-PCTO\\WebApp\\WebApp\\obj\\",
+      "projectPath": "C:\\progetto-PCTO\\WebApp\\WebApp\\WebApp.csproj",
+      "packagesPath": "C:\\Users\\HEW16A0020NL\\.nuget\\packages\\",
+      "outputPath": "C:\\progetto-PCTO\\WebApp\\WebApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\ITSINCOMEV11\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\HEW16A0020NL\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
