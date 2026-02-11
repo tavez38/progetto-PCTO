@@ -12,7 +12,7 @@
         <h1 class="title">Registrati</h1>
         <h3 class="subTitle">Compila questo form per registrarti</h3>
         <div class="divFormRegister">
-            <form class="formRegister" asp-controller="Account" action="/account/registrazione" method="post">
+            <form class="formRegister">
 
                 <h2>Crea account</h2>
                 <input type="text" id="inputUsername" name="username" pattern="^\S+$" required placeholder="Username" maxlength="15" minlength="1"/><br>
@@ -23,7 +23,7 @@
                 <input type="password" id="inputPassword" name="password" required placeholder="Password" /><br>
 
                 <span id="errPswReg" class="error"></span>
-
+                <span id="errGen" class="error"></span>
                 <button class="btnSubmit" id="sendRegisterForm" type="button">REGISTRATI</button>
             </form>
         </div>

@@ -24,7 +24,7 @@ document.getElementsByClassName("exit")[0].addEventListener("click", function() 
   hideForm(document.getElementById("scriviMail"))});
 document.getElementById("send").addEventListener("click", sendMessage);
 document.getElementById("cancell").addEventListener("click", function(){
-    deleteInput(document.getElementById("ScriviMail"))});
+    deleteInput(document.getElementById("scriviMail"))});
 document.getElementById("toChatBot").addEventListener("click", generateOpzionForm);
 document.getElementById("btnNavBar").addEventListener("click", iconBarGenerator);
 document.getElementById("ordina").addEventListener("change", ordinamento);
@@ -141,7 +141,15 @@ function createMsgTable() {
     tableBody.appendChild(fragment);
 }
 
-async function sendMessage(){
+async function sendMessage() {
+    const mailDestEl = document.getElementById("inputMsgDest");
+    mailDestEl.style.border = "";
+    const mailDest = mailDestEl.value;
+    if (mailDest == "" || mailDest.includes(" ")) {
+        mailDestEl.style.border = "1px solid red";
+        alert("Impossibile inviare un messaggio al destinatario; controlla la mail del destinatario");
+        return;
+    }
     const currentDate = new Date();
    
     let titoloInput = document.getElementById("inputMsgTitle").value;
@@ -356,3 +364,5 @@ function letturaMessaggio(msg){
     }
             
 }
+
+

@@ -10,7 +10,7 @@
     <body>
         <form method="post" id="scriviMail">
                     <p class="exit">&times</p>
-                    <input type="email" name="destinatario" id="inputMsgDest" placeholder="Email destinatario"><br>
+                    <input type="email" name="destinatario" id="inputMsgDest" placeholder="Email destinatario" required><br>
                     <input type="text" name="titolo" id="inputMsgTitle" placeholder="Oggetto"><br>
                     <textarea name="corpo" id="inputMsgContent" placeholder="Messaggio"></textarea><br>
                     <button type="button" id="send" asp-controller="Messaggi" asp-action="SendMsg">Invia</button>

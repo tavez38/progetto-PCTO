@@ -45,7 +45,7 @@ export function checkEmail(email, errSpanEmail) {
 // Funzione di supporto per non ripetere codice
 function setError(el, span, msg) {
     span.innerText = msg;
-    el.style.borderColor = "red";
+    el.style.border = "1px solid red";
 }
 
 
@@ -154,8 +154,17 @@ export function checkCharSpec(c) {
 export function goToUploadWorkPage(){
     window.location.href = '../html/uploadWork.html';
 }
-export function deleteInput(input){
-    input.getElementsByTagName("input").value = "";
+
+export function deleteInput(container) {
+    if (!container) return; // gestisce chiamate con null
+    const inputs = container.getElementsByTagName("input");
+    for (let i = 0; i < inputs.length; i++) {
+        inputs[i].value = "";
+    }
+    const textareas = container.getElementsByTagName("textarea");
+    for (let i = 0; i < textareas.length; i++) {
+        textareas[i].value = "";
+    }
 }
 export function goToMessaggiPage(){
     window.location.href = '../html/Messaggi.html';

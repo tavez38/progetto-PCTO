@@ -18,19 +18,38 @@ import {
 document.getElementById("sendRegisterForm").addEventListener("click", iscrizione);
 
 function iscrizione() { 
-
+    const username = document.getElementById("inputUsername");
     const email = document.getElementById("inputEmail");
     const errSpanEmail = document.getElementById("errEmailReg");
     const psw = document.getElementById("inputPassword");
     const errSpanPsw = document.getElementById("errPswReg");
-
-    if (checkIsEmpty(email, psw)) {
-        alert("Compilare tutti i campi");
+    const errSpanGen = document.getElementById("errGen");
+    errSpanEmail.innerText = "";
+    errSpanPsw.innerText = "";
+    errSpanGen.innerText = "";
+    username.style.border = "";
+    email.style.border = "";
+    psw.style.border = "";
+    if (checkIsEmpty(username, email, psw)) {
+        errSpanGen.innerText = "Compilare tutti i campi";
+        errSpanGen.style.color = "red";
+        username.style.border = "1px solid red";
+        email.style.border = "1px solid red";
+        psw.style.border = "1px solid red";
+        return;
+    }
+    if (checkSpazi(username, email, psw)) {
+        errSpanGen.innerText = "Nessuno dei campi puo contenere spazi";
+        errSpanGen.style.color = "red";
+        username.style.border = "1px solid red";
+        email.style.border = "1px solid red";
+        psw.style.border = "1px solid red";
         return;
     }
 
     if (!checkEmail(email,errSpanEmail) || !checkPsw(psw,errSpanPsw)) {
-        console.log("false");
+        errSpanGen.innerText = "Ricompila il form e riprova";
+        errSpanGen.style.color = "red";
         return;
     }
     else {
@@ -69,8 +88,14 @@ async function richiestaIscrizione(psw,email) {
     }
 }
 
-function checkIsEmpty(email, psw) {
-    if (email.value == null || psw.value == null || email.value.includes(" ") || psw.value.includes(" ")) {
+function checkIsEmpty(username, email, psw) {
+    if (username.value=="" ||email.value == "" || psw.value == "" ) {
+        return true;
+    }
+    return false;
+}
+function checkSpazi(username, email, psw) {
+    if ( username.value.includes(" ") || email.value.includes(" ") || psw.value.includes(" ")) {
         return true;
     }
     return false;
