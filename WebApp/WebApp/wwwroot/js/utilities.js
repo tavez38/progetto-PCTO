@@ -1,6 +1,5 @@
 ﻿export const listaCharSpec = ["!", "@", "#", "$", "%", "^", "&", "*", "-", "_", "+", "=", "?"];
 
-
 export function checkEmail(email, errSpanEmail) {
     const val = email.value.trim(); // Puliamo subito
 
@@ -223,12 +222,12 @@ export function iconBarGenerator(){
                 const icona1 = document.createElement("a");
                 icona1.id ="homeIcon";
                 icona1.href = "PersonalArea.html";
-                icona1.innerHTML = "&#xf47f;";
+                icona1.className = "fas fa-id-card-alt";
                 div.appendChild(icona1);
                 const icona2 = document.createElement("a");
                 icona2.id ="uploadIcon";
                 icona2.href ="uploadWork.html";
-                icona2.innerHTML = "&#xf382;";
+                icona2.className = "fas fa-upload";
                 div.appendChild(icona2);
                 const icona3 = document.createElement("a");
                 icona3.id ="messaggiIcon";
