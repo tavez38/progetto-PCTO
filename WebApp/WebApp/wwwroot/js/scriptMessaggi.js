@@ -277,6 +277,9 @@ function ordinamentoLetto(verso) {
 }
 
 async function signAsReadAll() {
+    if (vMsgsigned.length == 0) {
+        return;
+    }
     for(const msg of vMsgsigned){
         const res = await segnaLetto(msg, !msg.letto);
         if (res) {
@@ -290,6 +293,9 @@ async function signAsReadAll() {
 }
 
 async function delAllMsgSigned() {
+    if (vMsgsigned.length == 0) {
+        return;
+    }
     if (confirm("sei sicuro di voler eliminare tutti i messaggi? (dopo la cancellazione non saranno piu disponibili)")) {
         for (const msg of vMsgsigned) {
             const res = await eliminaMsg(msg);
@@ -365,9 +371,12 @@ function letturaMessaggio(msg){
             opacityBox.style.pointerEvents = "all";
         });
         form.appendChild(button);
+        msg.dataInvio.trim();
+        const gg = msg.dataInvio.slice(0, 10).replaceAll("-", "/");
+        const ora = msg.dataInvio.slice(11, 16);
         const data = document.createElement("h3");
         data.id = "dataMessaggio";
-        data.innerText = msg.dataInvio;
+        data.innerHTML = gg+"<br>"+ora ;
         form.appendChild(data)
         const mittente = document.createElement("h3");
         mittente.id ="mittenteMessaggio";
