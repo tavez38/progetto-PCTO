@@ -1,21 +1,11 @@
-import { 
-    listaCharSpec, 
-    checkEmail, 
-    checkPsw, 
-    checkCharSpec, 
-    goToUploadWorkPage, 
-    deleteInput, 
-    goToMessaggiPage, 
+import {  
     logout, 
     generateOpzionForm,
-    sendOllamaRequest,
     menuFigo,
     iconBarGenerator,
-    revalForm,
-    hideForm
 } from "../js/utilities.js";
 
-document.getElementById("linkLogOutUpWork").addEventListener("click", logout);
+document.getElementById("linkLogOutMsg").addEventListener("click", logout);
 document.getElementById("btnUploadWork").addEventListener("click", uploadWork);
 document.getElementById("toChatBot").addEventListener("click", generateOpzionForm);
 document.getElementById("btnNavBar").addEventListener("click", iconBarGenerator);

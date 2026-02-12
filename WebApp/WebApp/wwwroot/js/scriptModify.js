@@ -1,6 +1,4 @@
 ﻿import {
-    checkEmail,
-    checkPsw,
     generateOpzionForm,
     hideForm,
     iconBarGenerator,

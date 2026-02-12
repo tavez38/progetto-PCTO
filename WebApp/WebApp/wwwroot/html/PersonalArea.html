@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Area Personale</title>
-        <link href="../css/style.css" rel="stylesheet" />
-        <script type="module" src="../js/scriptPersonalArea.js" defer></script>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area Personale</title>
+    <link href="../css/style.css" rel="stylesheet" />
+    <script type="module" src="../js/scriptPersonalArea.js" defer></script>
+    <script src="https://kit.fontawesome.com/80c8ce7817.js" crossorigin="anonymous"></script>
+</head>
     <body asp-controller="PersonalArea" asp-action="GetAllWorks">
         <div class="navBar">
            <button id="toImpostazioni"><a href="Modifica.html" class="fas fa-edit"></a></button>
-                <button id="toChatBot" class="fas fa-comment-dots"></button>
+           <button id="toChatBot" class="fas fa-robot"></button>
                 <a class="logout" href="Index.html" id="linkLogOutMsg"><i class="fas fa-door-open"></i></a>
             <div class="menuButton" id="btnNavBar">
                 <div class="bar1"></div>

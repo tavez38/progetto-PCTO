@@ -5,7 +5,6 @@ wwwroot\html\Modifica.html
 wwwroot\html\PersonalArea.html
 wwwroot\html\Registrazione.html
 wwwroot\html\uploadWork.html
-wwwroot\js\scriptImpostazioni.js
 wwwroot\js\scriptIndex.js
 wwwroot\js\scriptMessaggi.js
 wwwroot\js\scriptModify.js
@@ -21,7 +20,6 @@ C:\progetto-PCTO\WebApp\WebApp\wwwroot\html\Modifica.html
 C:\progetto-PCTO\WebApp\WebApp\wwwroot\html\PersonalArea.html
 C:\progetto-PCTO\WebApp\WebApp\wwwroot\html\Registrazione.html
 C:\progetto-PCTO\WebApp\WebApp\wwwroot\html\uploadWork.html
-C:\progetto-PCTO\WebApp\WebApp\wwwroot\js\scriptImpostazioni.js
 C:\progetto-PCTO\WebApp\WebApp\wwwroot\js\scriptIndex.js
 C:\progetto-PCTO\WebApp\WebApp\wwwroot\js\scriptMessaggi.js
 C:\progetto-PCTO\WebApp\WebApp\wwwroot\js\scriptModify.js

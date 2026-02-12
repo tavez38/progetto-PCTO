@@ -1,30 +1,23 @@
-import {
-    listaCharSpec,
-    checkEmail,
-    checkPsw,
-    checkCharSpec,
+import {  
     goToUploadWorkPage,
-    deleteInput,
     goToMessaggiPage,
     logout,
     generateOpzionForm,
-    sendOllamaRequest,
     menuFigo,
-    goToPersonalArea,
     iconBarGenerator,
-    revalForm,
-    hideForm
 } from "../js/utilities.js";
 
 
 document.addEventListener("DOMContentLoaded", loadWorks);
-document.getElementById("linkLogOutPA").addEventListener("click", logout);
+document.getElementById("linkLogOutMsg").addEventListener("click", logout);
 document.getElementById("btnAddWork").addEventListener("click", goToUploadWorkPage);
 document.getElementById("btnMsg").addEventListener("click", goToMessaggiPage);
 document.getElementById("toChatBot").addEventListener("click", generateOpzionForm);
 document.getElementById("btnNavBar").addEventListener("click", iconBarGenerator);
 document.getElementById("btnNavBar").addEventListener("click", function(){
-    menuFigo(this)});
+    menuFigo(this)
+}
+);
 
 
 var vWorks = [];

@@ -1,13 +1,15 @@
-body{
-    background-size: auto ;
+body {
+    background-size: auto;
     background: linear-gradient(45deg, #93adae 0%, #353535 100%);
     background-attachment: fixed;
 
 }
-.flex{
+
+.flex {
     display: flex;
 }
-.bodyAccNeg{
+
+.bodyAccNeg {
     background-image: none;
     background-color: gray !important;
     font-family: Tahoma, Verdana, sans-serif;
@@ -15,43 +17,47 @@ body{
 }
 
 
-.home{
+.home {
     width: 100%;
 }
 
-.title,.subTitle{
+.title,
+.subTitle {
     font-family: Tahoma, Verdana, sans-serif;
     text-align: center;
-    
+
 }
-.title{
+
+.title {
     margin-top: 10px;
     font-size: 50px;
     color: #d9d9d9;
     /*text-shadow: 1px 0 #353535, -1px 0 #353535, 0 1px #353535, 0 -1px #353535,
     1px 1px #353535, -1px -1px #353535, 1px -1px #353535, -1px 1px #353535;*/
-    
+
 }
-.subTitle{
+
+.subTitle {
     margin-top: 20px;
     font-size: 30px;
     color: #353535;
     text-align: center;
     text-shadow: 1px 0 #93adae, -1px 0 #93adae, 0 1px #93adae, 0 -1px #93adae,
-    1px 1px #93adae, -1px -1px #93adae, 1px -1px #93adae, -1px 1px #93adae;
+        1px 1px #93adae, -1px -1px #93adae, 1px -1px #93adae, -1px 1px #93adae;
 
     /*text-shadow: 1px 0 #d9d9d9, -1px 0 #d9d9d9, 0 1px #d9d9d9, 0 -1px #d9d9d9,
     1px 1px #d9d9d9, -1px -1px #d9d9d9, 1px -1px #d9d9d9, -1px 1px #d9d9d9;*/
 }
 
-#casellaDiPosta{
+#casellaDiPosta {
     margin-top: 10px;
     font-size: 50px !important;
     color: #d9d9d9 !important;
     font-family: Tahoma, Verdana, sans-serif !important;
     text-align: left;
 }
-#hrChat{
+
+#hrChat {
     position: absolute;
     width: 300px;
     margin-left: -40px;
@@ -62,7 +68,7 @@ body{
 }
 
 
-#tableMainTitle{
+#tableMainTitle {
     margin-top: 20px;
     margin-bottom: 0px;
     font-size: 20px;
@@ -70,10 +76,11 @@ body{
     font-family: Tahoma, Verdana, sans-serif;
     color: #353535;
 }
-.divFormLogin{
+
+.divFormLogin {
 
     width: 400px;
-    
+    height: max-content;
     background-repeat: no-repeat;
     border-radius: 20px;
     border-style: groove;
@@ -84,24 +91,27 @@ body{
     font-family: Tahoma, Verdana, sans-serif;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(15px);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-    border: 1px solid rgba(255,255,255,0.1);
-    
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
     padding: 40px;
     text-align: center;
     line-height: 20%;
 
 
 }
-#infoPsw{
+
+#infoPsw {
     position: absolute;
-    margin-left: 85%;
+    margin-left: 43%;
     margin-top: 40%;
+    cursor: help;
 }
+
 .divFormRegister {
     width: 400px;
-    
-    
+
+
     border-radius: 20px;
     border-style: groove;
     margin-top: 20px;
@@ -111,20 +121,20 @@ body{
     font-family: Tahoma, Verdana, sans-serif;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(15px);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-    border: 1px solid rgba(255,255,255,0.1);
-    
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
     padding: 40px;
     text-align: center;
     line-height: 60%;
 }
 
-#menuMod{
+#menuMod {
     display: grid;
     grid-template-columns: auto auto;
     width: 500px;
-    height: 300px;
-    
+    height: fit-content;
+
     border-radius: 20px;
     border-style: groove;
     margin-top: 20px;
@@ -134,19 +144,23 @@ body{
     font-family: Tahoma, Verdana, sans-serif;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(15px);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-    border: 1px solid rgba(255,255,255,0.1);
-    
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
     padding: 40px;
     text-align: center;
     color: white;
     z-index: -1;
 }
 
-.divUploadWork{
+span {
+    padding: 20px;
+}
+
+.divUploadWork {
     width: 400px;
     height: 300px;
-    
+
     border-radius: 20px;
     border-style: groove;
     margin-top: 20px;
@@ -156,15 +170,15 @@ body{
     font-family: Tahoma, Verdana, sans-serif;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(15px);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-    border: 1px solid rgba(255,255,255,0.1);
-    
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
     padding: 40px;
     text-align: center;
     line-height: 60%;
 }
 
-#divModUsername{
+#divModUsername {
     display: none;
     position: absolute;
     width: 400px;
@@ -178,16 +192,16 @@ body{
     font-family: Tahoma, Verdana, sans-serif;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(15px);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-    border: 1px solid rgba(255,255,255,0.1);
-    
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
     padding: 2%;
     text-align: center;
     line-height: 20%;
     z-index: 1;
 }
 
-#divModEmail{
+#divModEmail {
     display: none;
     position: absolute;
     width: 400px;
@@ -201,15 +215,15 @@ body{
     font-family: Tahoma, Verdana, sans-serif;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(15px);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-    border: 1px solid rgba(255,255,255,0.1);
-    
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
     padding: 2%;
     line-height: 20%;
     z-index: 1;
 }
 
-#divModPassword{
+#divModPassword {
     display: none;
     position: absolute;
     width: 400px;
@@ -223,35 +237,48 @@ body{
     font-family: Tahoma, Verdana, sans-serif;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(15px);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-    border: 1px solid rgba(255,255,255,0.1);
-    
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
     padding: 2%;
     text-align: center;
     line-height: 20%;
     z-index: 1;
 }
-#divModPassword .exit, #divModEmail .exit, #divModUsername .exit{
+
+#divModPassword .exit,
+#divModEmail .exit,
+#divModUsername .exit {
     margin-left: 92%;
     margin-top: 0%;
 }
 
-.label{
+.label {
     margin-left: 20px;
 }
 
-#inputPassword, #inputUsername, #inputUsernameMod,
-#inputEmail, #inputPswConfirmMail, #inputPasswordOld,
-#inputPasswordNew, #inputPasswordNewConf, #inputTitle,
-#inputDesc, #inputData, #inputOra, #inputMsgDest,
-#inputMsgTitle, #inputMsgContent{
+#inputPassword,
+#inputUsername,
+#inputUsernameMod,
+#inputEmail,
+#inputPswConfirmMail,
+#inputPasswordOld,
+#inputPasswordNew,
+#inputPasswordNewConf,
+#inputTitle,
+#inputDesc,
+#inputData,
+#inputOra,
+#inputMsgDest,
+#inputMsgTitle,
+#inputMsgContent {
 
     width: 100%;
     padding: 12px;
     margin: 10px 0;
     border: none;
     border-radius: 8px;
-    background: rgba(255,255,255,0.2);
+    background: rgba(255, 255, 255, 0.2);
     color: white;
     outline: none;
     box-sizing: border-box;
@@ -261,11 +288,12 @@ body{
 input::placeholder {
     color: #eee !important;
 }
-textarea{
+
+textarea {
     resize: none;
 }
 
-.btnSubmit{
+.btnSubmit {
     width: 100%;
     padding: 12px;
     border: none;
@@ -281,44 +309,45 @@ textarea{
 }
 
 button:hover {
-transform: scale(1.02);
-background: #e0e0e0;
+    transform: scale(1.02);
+    background: #e0e0e0;
 }
 
-.formLogin{
+.formLogin {
     margin-top: 30px;
     font-size: 15px;
     color: #d9d9d9;
 }
+
 .formRegister {
     margin-top: 10px;
     font-size: 15px;
     color: #d9d9d9;
 }
 
-.formWork{
+.formWork {
     margin-top: 10px;
     font-size: 15px;
     color: #d9d9d9;
 }
 
-.formMod{
+.formMod {
     margin-top: 10px;
     font-size: 15px;
     color: #d9d9d9;
 }
 
-.formModUsername{
+.formModUsername {
     font-size: 15px;
     color: #d9d9d9;
 }
 
-.formModEmail{
+.formModEmail {
     font-size: 15px;
     color: #d9d9d9;
 }
 
-.formModPassword{
+.formModPassword {
     font-size: 15px;
     color: #d9d9d9;
 }
@@ -336,49 +365,52 @@ background: #e0e0e0;
 }
 
 .linkRegister a:hover {
-  color: #3f5767;
+    color: #3f5767;
 }
 
-.linkRegister a{ 
+.linkRegister a {
     color: #353535;
 }
-.error{
+
+.error {
     color: red;
+    line-height: normal;
 }
 
 
-.boxGenitore{
+.boxGenitore {
     display: flex;
-    grid-template-columns: 1fr 1fr; 
+    grid-template-columns: 1fr 1fr;
     grid-gap: 4%;
     margin-left: 2%;
 }
-.container{
+
+.container {
     width: 100%;
     height: fit-content;
     margin-left: auto;
     margin-right: auto;
 }
 
-.boxBtn{
-    display: grid; 
-    grid-template-rows: 1fr 1fr; 
+.boxBtn {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
     grid-gap: 0%;
 }
 
-.boxAggiungiLavoro{
-    float:left;
-    position:relative;
+.boxAggiungiLavoro {
+    float: left;
+    position: relative;
     margin-top: 10px;
 }
 
-.boxInviaMessaggi{
-    float:left;
+.boxInviaMessaggi {
+    float: left;
     margin-top: 0px;
-    position:relative;
+    position: relative;
 }
 
-.boxWorks{
+.boxWorks {
     width: 100%;
     height: fit-content;
     border-radius: 20px;
@@ -390,38 +422,47 @@ background: #e0e0e0;
     font-family: Tahoma, Verdana, sans-serif;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(15px);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 30px;
     text-align: center;
 }
 
-th, tr, td{
+th,
+tr,
+td {
     height: max-content;
     font-size: 25px;
     color: #d9d9d9;
 }
-#header{
+
+#header {
     width: 1500px;
     height: 100px;
 }
-.rows{
+
+.rows {
     width: 1500px;
     height: 250px;
 }
-.tableTitle{
+
+.tableTitle {
     width: 250px;
 }
-.tableDesc{
+
+.tableDesc {
     width: 1000px;
 }
-.tableHour{
+
+.tableHour {
     width: 175px;
 }
-.tableDate{
+
+.tableDate {
     width: 175px;
 }
-#btnMsg{
+
+#btnMsg {
     border: none;
     border-radius: 8px;
     background: #ffffff;
@@ -435,15 +476,15 @@ th, tr, td{
     padding: 12px;
     font-size: 100%;
     text-align: center;
-    
+
 }
 
-#tableBodyProj{
+#tableBodyProj {
     font-family: Tahoma, Verdana, sans-serif;
     color: #353535;
 }
 
-#btnAddWork{
+#btnAddWork {
     height: 60%;
     width: 80%;
     padding: 12px;
@@ -459,58 +500,66 @@ th, tr, td{
     text-align: center;
 }
 
-#creaProgetto{
+#creaProgetto {
     text-align: center;
-    color:  #6c7a89;
+    color: #6c7a89;
     font-size: 100px;
 }
 
 
-input{
-    background-color:#818887;
+input {
+    background-color: #818887;
 }
-.rowNoProject, .rowNoMsg {
+
+.rowNoProject,
+.rowNoMsg {
     height: 100px;
 }
-#colNoProject, #colNoMsg {
+
+#colNoProject,
+#colNoMsg {
     text-align: center;
 }
-#casellaDiPosta{
+
+#casellaDiPosta {
     position: absolute;
     color: #6c7a89;
     font-size: 80px;
-    font-family:'Times New Roman', Times, serif;
+    font-family: 'Times New Roman', Times, serif;
 }
-#barra{
+
+#barra {
     height: 30px;
     padding-left: 80%;
     padding-top: 5px;
     background-color: rgb(3, 67, 3);
 }
-#dropDownMenu{
+
+#dropDownMenu {
     display: none;
     position: absolute;
     min-width: 150px;
     right: 0;
     border-style: groove;
     backdrop-filter: blur(15px);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     background: rgba(255, 255, 255, 0.651);
     z-index: 1;
-    }
-#dropDownMenu p{
+}
+
+#dropDownMenu p {
     color: black;
     text-decoration: none;
     display: block;
     font-family: Tahoma, Verdana, sans-serif;
-    
+
 }
 
-#modInfo{
+#modInfo {
     color: #d9d9d9;
     text-shadow: 1px 0 #353535, -1px 0 #353535, 0 1px #353535, 0 -1px #353535,
-    1px 1px #353535, -1px -1px #353535, 1px -1px #353535, -1px 1px #353535;
+        1px 1px #353535, -1px -1px #353535, 1px -1px #353535, -1px 1px #353535;
 }
 
 #messaggi {
@@ -525,14 +574,14 @@ input{
     font-family: Tahoma, Verdana, sans-serif;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(15px);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 30px;
     text-align: left;
     z-index: 0;
 }
 
-#tableBodyMsg{
+#tableBodyMsg {
     margin-top: 10px;
     position: relative;
     margin-left: 250px;
@@ -543,11 +592,11 @@ input{
     z-index: 0;
 }
 
-#tableMsgData{
+#tableMsgData {
     width: 170px;
 }
 
-#write{
+#write {
     width: 200px;
     height: 80px;
     font-family: Tahoma, Verdana, sans-serif;
@@ -569,12 +618,15 @@ button:hover {
     background: #e0e0e0;
 }
 
+.class {
+    color: red;
+}
 
-
-a{
+a {
     text-decoration: none;
 }
-#ordina{
+
+#ordina {
     cursor: pointer;
     background-color: gainsboro;
     border-color: rgb(255, 255, 255);
@@ -582,13 +634,16 @@ a{
     margin-right: 10px;
     color: white;
 }
-#ordina:hover{
+
+#ordina:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-#ordina:hover #dropDownMenu{
+
+#ordina:hover #dropDownMenu {
     display: block;
 }
-#menuOpzioni{
+
+#menuOpzioni {
     margin-top: -100px;
     width: 68%;
     height: 0px;
@@ -600,13 +655,14 @@ a{
     font-family: Tahoma, Verdana, sans-serif;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(15px);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 30px;
     text-align: left;
     color: white;
 }
-.cestino{
+
+.cestino {
     width: 50px;
     height: 35px;
     border-radius: 50px;
@@ -618,13 +674,13 @@ a{
     font-family: Tahoma, Verdana, sans-serif;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(15px);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     color: white !important;
 
 }
 
-.checkRead{
+.checkRead {
     cursor: pointer;
     height: 35px;
     margin-right: 10px;
@@ -639,25 +695,26 @@ a{
     font-family: Tahoma, Verdana, sans-serif;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(15px);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     color: white !important;
 
 }
 
-.btnSelezionaMsg{
+.btnSelezionaMsg {
     width: 20px;
     height: 20px;
 }
 
-.btnSelezionaMsg:checked::after{
+.btnSelezionaMsg:checked::after {
     background-color: #3f5767;
 }
-#tastiMenuOrdina{
+
+#tastiMenuOrdina {
     margin-top: -1%;
 }
 
-#ordina{
+#ordina {
     width: 195px;
     border-radius: 50px;
     border-style: groove;
@@ -668,14 +725,15 @@ a{
     font-family: Tahoma, Verdana, sans-serif;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(15px);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-#opacityBox{
+#opacityBox {
     width: 100%;
 }
-#scriviMail{
+
+#scriviMail {
     display: none;
     position: absolute;
     width: 28%;
@@ -690,16 +748,16 @@ a{
     font-family: Tahoma, Verdana, sans-serif;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(15px);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-    border: 1px solid rgba(255,255,255,0.1);
-    
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
     padding: 40px;
     text-align: center;
     line-height: 20%;
     z-index: 100;
 }
 
-#send{
+#send {
     width: 100%;
     padding: 12px;
     border: none;
@@ -713,31 +771,35 @@ a{
 
 }
 
-#send:hover{
-   transform: scale(1.02);
-    background: #e0e0e0; 
+#send:hover {
+    transform: scale(1.02);
+    background: #e0e0e0;
 }
 
-.exit{
+.exit {
     cursor: pointer;
     font-size: 35px;
     font-weight: bold;
     color: #eee;
 }
-#formMessaggio .exit{
+
+#formMessaggio .exit {
     margin-bottom: 0px;
     margin-left: 92%;
     margin-top: 0%;
 }
-#scriviMail .exit{
+
+#scriviMail .exit {
     margin-bottom: 20px;
     margin-left: 94%;
     margin-top: 0%;
 }
-.exit:hover{
+
+.exit:hover {
     color: red;
 }
-#cancell{
+
+#cancell {
     width: 100%;
     padding: 12px;
     border: none;
@@ -751,14 +813,16 @@ a{
     margin-top: 5%;
     font-weight: bold;
 }
-#scriviMail span{
+
+#scriviMail span {
     margin-left: 100px;
 }
-#formMessaggio{
+
+#formMessaggio {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(15px);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     position: absolute;
     margin-left: 33%;
     margin-top: 15%;
@@ -767,74 +831,84 @@ a{
     border-radius: 10px;
     z-index: 1;
 }
-#statusCodeAccNeg{
+
+#statusCodeAccNeg {
     font-size: 300%;
     margin-top: 5%;
     margin-left: 15%;
 }
 
-#lineaAccNeg{
+#lineaAccNeg {
     border-color: #353535;
     height: 3px;
     background-color: #353535;
     color: #353535;
     width: 80%;
 }
-#descAccNeg,#msgAccNeg{
+
+#descAccNeg,
+#msgAccNeg {
     margin-top: 3%;
     margin-left: 15%;
 }
-#linkToLogin{
+
+#linkToLogin {
     margin-top: 5%;
     margin-right: 70%;
     color: #353535 !important;
 }
 
-#linkToLogin :hover{
+#linkToLogin :hover {
     color: #93adae !important;
 }
 
-#toChatBot{
+#toChatBot {
     color: #d9d9d9;
 }
 
-#responseChatOllama{
-background-color: transparent;
-color: white;
-height: 450px;
-width: 300px;
-border: none;
+#responseChatOllama {
+    background-color: transparent;
+    color: white;
+    height: 450px;
+    width: 300px;
+    border: none;
 }
 
-#divChatBot{
+#divChatBot {
     width: 25%;
     font-family: Tahoma, Verdana, sans-serif;
     color: #353535;
     padding-left: 3%;
 }
-#divChatName{
+
+#divChatName {
     color: white;
     font-size: xx-large;
 }
-#chatBot{
+
+#chatBot {
     display: flex;
     flex-direction: column;
 }
-#chatBot input{
+
+#chatBot input {
     margin-top: 15px;
 }
-#requestChatOllama{
+
+#requestChatOllama {
     position: absolute;
     margin-top: 410px !important;
     width: 300px;
 }
-#sendReqChatbot{
+
+#sendReqChatbot {
     position: absolute;
     width: 308px;
     height: 30px;
     margin-top: 430px;
 }
-.navBar{
+
+.navBar {
     position: sticky;
     margin-left: -10px;
     margin-top: -10px;
@@ -848,11 +922,12 @@ border: none;
     font-family: Tahoma, Verdana, sans-serif;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(15px);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 30px;
 }
-.navBar button{
+
+.navBar button {
     height: 50px;
     width: 50px;
     margin-right: 15px;
@@ -862,51 +937,61 @@ border: none;
     font-size: 40PX;
     cursor: pointer;
 }
-.navBar button:hover{
+
+.navBar button:hover {
     background-color: #93adae;
 }
-.navBar a{
+
+.navBar a {
     color: #d9d9d9;
 }
-.logout{
+
+.logout {
     height: 50px;
     width: 50px;
     font-size: 40px;
     margin-right: 15px;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     color: #d9d9d9;
 }
-.logout :hover{
+
+.logout :hover {
     color: black;
 }
+
 .menuButton {
-  margin-right: auto;
-  display: inline-block;
-  cursor: pointer;
-  position: relative;
-  margin-left: 11px;
-  z-index: 2;
+    margin-right: auto;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    margin-left: 11px;
+    z-index: 2;
 }
 
-.bar1, .bar2, .bar3 {
-  width: 35px;
-  height: 5px;
-  background-color: #d9d9d9;
-  margin: 6px 0;
-  transition: 0.4s;
+.bar1,
+.bar2,
+.bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #d9d9d9;
+    margin: 6px 0;
+    transition: 0.4s;
 }
 
 .change .bar1 {
-  transform: translate(0, 11px) rotate(-45deg);
+    transform: translate(0, 11px) rotate(-45deg);
 }
 
-.change .bar2 {opacity: 0;}
+.change .bar2 {
+    opacity: 0;
+}
 
 .change .bar3 {
-  transform: translate(0, -11px) rotate(45deg);
+    transform: translate(0, -11px) rotate(45deg);
 }
-#iconBar{
+
+#iconBar {
     position: absolute;
     display: flex;
     flex-direction: column-reverse;
@@ -917,7 +1002,8 @@ border: none;
     margin-top: 7.5%;
     z-index: 1;
 }
-#iconBar a{
+
+#iconBar a {
     font-size: 40px;
     padding: 10px;
     cursor: pointer;
@@ -927,27 +1013,48 @@ border: none;
     color: #3f5767;
 
 }
-#iconBar a:hover{
+
+#iconBar a:hover {
     background-color: #10b3beaf;
 }
-.openForm{
+
+.openForm {
     border: none;
     border-radius: 8px;
     background: #ffffff;
     color: #3f5767;
     font-weight: bold;
+    font-size: 20px;
     cursor: pointer;
     transition: 0.3s;
-    width: 40%;
-    height: 30%;
+    width: fit-content;
+    height: fit-content;
     margin-left: auto;
     margin-right: auto;
     margin-top: 10%;
 }
-#dataMessaggio{
+
+#dataMessaggio {
     position: absolute;
-    margin-left: 85%;
+    margin-left: 80%;
 }
-#corpoMessaggio{
+
+#corpoMessaggio {
     font-size: large;
+}
+
+#usernameUser,
+#emailUser {
+    max-width: 14ch;
+    overflow-wrap: break-word;
+    margin-left: 25%;
+}
+
+.return {
+    font-size: 30px;
+    color: whitesmoke;
+}
+
+.return:hover {
+    color: black;
 }
