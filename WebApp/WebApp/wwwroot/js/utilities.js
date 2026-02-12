@@ -178,44 +178,6 @@ export function logout() {
     localStorage.removeItem("token");
     window.location.href = '../html/Index.html';
 }
-
-
-export function changeLightColor(){
-    const light = document.getElementsByClassName("light");
-    for(let i = 0; i < light.length; i++){
-    light[i].style.backgroundColor = "#f60404";
-    light[i].style.boxShadow ="0 0 10px #ff2525,-5px 0 15px 2px #a40000, -20px 0 20px #cc0303";
-    }
-}
-export function changeFormColor(){
-    const form = document.getElementsByClassName("divFormLogin")[0];
-    form.style.borderColor = "#f60404";
-    form.style.boxShadow = "0px 0px 15px #f60404";
-}
-export function wrongAnswordEffect(){
-    const form = document.getElementsByClassName("divFormLogin")[0];
-
-    const animazione = [
-        {transform: 'translateX(0)' },
-        { transform: 'translateX(-8px)' },
-        { transform: 'translateX(8px)' },
-        { transform: 'translateX(-8px)' },
-        { transform: 'translateX(8px)' },
-        { transform: 'translateX(-8px)' },
-        { transform: 'translateX(0)' },
-        { backgroundColor: 'red' },
-        { backgroundColor: 'blue' }
-    ];
-
-    const opzioni ={
-        duration: 200,
-    };
-
-    form.animate(animazione, opzioni);
-
-    changeLightColor();
-    changeFormColor();
-}
 export function generateOpzionForm(){
         if(document.getElementById("divChatBot") == null){
             document.getElementsByClassName("home")[0].style.width = "75%";
@@ -287,7 +249,6 @@ export function revalForm(idFormale){
 
    scriviMail.style.display = "block";
    opacityBox.style.opacity = "0.4";
-   document.body.style.overflow = "hidden";
    opacityBox.style.pointerEvents = "none";
 }
 export function hideForm(idFormale){
@@ -296,7 +257,6 @@ export function hideForm(idFormale){
 
     scriviMail.style.display = "none";
     opacityBox.style.opacity = "1";
-    document.body.style.overflow = "auto";
     opacityBox.style.pointerEvents = "all";
 
     deleteInput(idFormale);

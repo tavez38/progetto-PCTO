@@ -353,6 +353,7 @@ async function eliminaMsg(msg) {
 }
 function letturaMessaggio(msg){
     if(document.getElementById("formMessaggio") == null){
+        opacityBox.style.pointerEvents = "none";
         const form = document.createElement("div");
         form.id ="formMessaggio";
         document.body.insertBefore(form, document.body.children[0]);
@@ -361,6 +362,7 @@ function letturaMessaggio(msg){
         button.innerHTML = "&times";
         button.addEventListener("click", () => {
             document.getElementById("formMessaggio").remove();
+            opacityBox.style.pointerEvents = "all";
         });
         form.appendChild(button);
         const data = document.createElement("h3");
