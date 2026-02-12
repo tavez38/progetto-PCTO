@@ -12,6 +12,7 @@
         <h1 class="title">Registrati</h1>
         <h3 class="subTitle">Compila questo form per registrarti</h3>
         <div class="divFormRegister">
+            <p id="infoPsw"title="La password deve avere:&#10• Lunghezza minima 5 caratteri;&#10• 2 numeri;&#10• 1 carattere speciale">&#xf044;</p>
             <form class="formRegister">
 
                 <h2>Crea account</h2>
@@ -20,12 +21,16 @@
                 <input type="email" id="inputEmail" name="email" required placeholder="Email" />
 
                 <span id="errEmailReg" class="error"></span>
-                <input type="password" id="inputPassword" name="password" required placeholder="Password" /><br>
+                
+                <input type="password" id="inputPassword" name="password" required placeholder="Password" />
+                
+                <br>
 
                 <span id="errPswReg" class="error"></span>
                 <span id="errGen" class="error"></span>
                 <button class="btnSubmit" id="sendRegisterForm" type="button">REGISTRATI</button>
             </form>
+            
         </div>
     </body>
 </html>

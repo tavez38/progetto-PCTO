@@ -73,7 +73,7 @@ body{
 .divFormLogin{
 
     width: 400px;
-    height: 350px;
+    
     background-repeat: no-repeat;
     border-radius: 20px;
     border-style: groove;
@@ -93,9 +93,14 @@ body{
 
 
 }
+#infoPsw{
+    position: absolute;
+    margin-left: 85%;
+    margin-top: 40%;
+}
 .divFormRegister {
     width: 400px;
-    height: 300px;
+    
     
     border-radius: 20px;
     border-style: groove;

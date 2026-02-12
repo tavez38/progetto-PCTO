@@ -1,12 +1,12 @@
-import { 
-    listaCharSpec, 
-    checkEmail, 
-    checkPsw, 
-    checkCharSpec, 
-    goToUploadWorkPage, 
-    deleteInput, 
-    goToMessaggiPage, 
-    logout, 
+import {
+    listaCharSpec,
+    checkEmail,
+    checkPsw,
+    checkCharSpec,
+    goToUploadWorkPage,
+    deleteInput,
+    goToMessaggiPage,
+    logout,
     generateOpzionForm,
     sendOllamaRequest,
     menuFigo,
@@ -15,22 +15,22 @@ import {
     hideForm
 } from "../js/utilities.js";
 let vMsg = [];
-let vMsgsigned=[];
+let vMsgsigned = [];
 document.addEventListener("DOMContentLoaded", loadMessages);
 
 document.getElementById("linkLogOutMsg").addEventListener("click", logout);
 
-document.getElementById("write").addEventListener("click", function() {
+document.getElementById("write").addEventListener("click", function () {
     revalForm(document.getElementById("scriviMail"))
 });
 
-document.getElementsByClassName("exit")[0].addEventListener("click", function() {
+document.getElementsByClassName("exit")[0].addEventListener("click", function () {
     hideForm(document.getElementById("scriviMail"))
 });
 
 document.getElementById("send").addEventListener("click", sendMessage);
 
-document.getElementById("cancell").addEventListener("click", function(){
+document.getElementById("cancell").addEventListener("click", function () {
     deleteInput(document.getElementById("scriviMail"))
 });
 
@@ -38,13 +38,13 @@ document.getElementById("toChatBot").addEventListener("click", generateOpzionFor
 
 document.getElementById("btnNavBar").addEventListener("click", iconBarGenerator);
 
-document.getElementById("ordina").addEventListener("change", ordinamento);
+document.getElementById("ordina").addEventListener("input", ordinamento);
 
 document.getElementById("btnDelMsg").addEventListener("click", delAllMsgSigned);
 
 document.getElementById("btnSignAsReadAll").addEventListener("click", signAsReadAll);
 
-document.getElementById("btnNavBar").addEventListener("click", function(){
+document.getElementById("btnNavBar").addEventListener("click", function () {
     menuFigo(this)
 });
 
@@ -74,13 +74,13 @@ async function loadMessages() {
         document.getElementById("tableBodyMsg").innerHTML = `<tr class="rowNoMsg"><td colspan="3" id="colNoMsg">Nessun messaggio ricevuto</td></tr>`;
         return;
     }
-   
+
     data.forEach(element => {
         vMsg.push(element);
     });
     createMsgTable();
 
-    
+
 
     return;
 }
@@ -118,17 +118,16 @@ function createMsgTable() {
 
         const tdData = document.createElement("td");
         tdData.classList.add("tableMsgData");
-        tdData.textContent = element.dataInvio.slice(0,16).replace("T", " ");
+        tdData.textContent = element.dataInvio.slice(0, 16).replace("T", " ");
 
         const tdDelSignAsRead = document.createElement("td");
-        tdDelSignAsRead.classList.add("tableSettingMsg"); 
+        tdDelSignAsRead.classList.add("tableSettingMsg");
 
         const buttonDel = document.createElement("button");
         buttonDel.classList.add("cestino");
         buttonDel.innerHTML = "&#128465;";
         buttonDel.addEventListener("click", () => {
-            if (confirm("sei sicuro di voler eliminare il messaggio? (dopo l'eliminazione non potrai piu recuperarlo)"))
-            {
+            if (confirm("sei sicuro di voler eliminare il messaggio? (dopo l'eliminazione non potrai piu recuperarlo)")) {
                 eliminaMsg(element);
             }
         });
@@ -166,9 +165,9 @@ async function sendMessage() {
         return;
     }
     const currentDate = new Date();
-   
+
     let titoloInput = document.getElementById("inputMsgTitle").value;
-    if(titoloInput == null || titoloInput == "") {
+    if (titoloInput == null || titoloInput == "") {
         titoloInput = "[nessun oggetto]";
     }
     let messaggio = {
@@ -176,7 +175,7 @@ async function sendMessage() {
         contenuto: document.getElementById("inputMsgContent").value,
         dataInvio: currentDate.toISOString(),
         destinatario: document.getElementById("inputMsgDest").value,
-        letto : false
+        letto: false
     }
     try {
         fetch("/api/messages/sendMsg", {
@@ -192,16 +191,16 @@ async function sendMessage() {
                     alert("Non esiste nessun utente associato a questa email");
                     return;
                 }
-            if (!res.ok) {
-                console.log(res.status);
-            }
-            else {
-                console.log("Messaggio inviato con successo"+res.status);
-            }
-        });
+                if (!res.ok) {
+                    console.log(res.status);
+                }
+                else {
+                    console.log("Messaggio inviato con successo" + res.status);
+                }
+            });
 
     }
-    catch(err) {
+    catch (err) {
         console.log(err);
     }
     hideForm(document.getElementById("scriviMail"));
@@ -217,7 +216,7 @@ function ordinamento() {
             ordinaPerAlfabetico("Z-A");
             break;
         case "Piu recente":
-            ordinaPerData("recente"); 
+            ordinaPerData("recente");
             break;
         case "Piu vecchio":
             ordinaPerData("vecchio");
@@ -239,7 +238,7 @@ function ordinaPerData(verso) {
         const dataA = new Date(a.dataInvio);
         const dataB = new Date(b.dataInvio);
 
-        verso == "recente" ? dataB - dataA : dataA - dataB;
+        return verso == "recente" ? dataB - dataA : dataA - dataB;
     });
     createMsgTable();
 }
@@ -249,29 +248,14 @@ function ordinaPerAlfabetico(verso) {
         const titoloA = a.titolo.toLowerCase();
         const titoloB = b.titolo.toLowerCase();
 
-        verso == "A-Z" ? titoloA.localeCompare(titoloB) : titoloB.localeCompare(titoloA);
+        return verso == "A-Z" ? titoloA.localeCompare(titoloB) : titoloB.localeCompare(titoloA);
     });
     createMsgTable();
 }
 
 function ordinamentoLetto(verso) {
     vMsg.sort((a, b) => {
-        if (verso == "da") {
-            if (a.letto && !b.letto) {
-                let indexB= vMsg.indexOf(b);
-                let copia = a;
-                vMsg[vMsg.indexOf(a)] = b;
-                vMsg[indexB] = copia;
-            }
-        }
-        else {
-            if (!a.letto && b.letto) {
-                let indexB = vMsg.indexOf(b);
-                let copia = a;
-                vMsg[vMsg.indexOf(a)] = b;
-                vMsg[indexB] = copia;
-            }
-        }
+        return verso == "da" ? a.letto - b.letto : b.letto - a.letto;
     });
     createMsgTable();
 }
@@ -280,7 +264,7 @@ async function signAsReadAll() {
     if (vMsgsigned.length == 0) {
         return;
     }
-    for(const msg of vMsgsigned){
+    for (const msg of vMsgsigned) {
         const res = await segnaLetto(msg, !msg.letto);
         if (res) {
             console.log("success");
@@ -327,7 +311,7 @@ async function segnaLetto(msg, lettoMsg) {
         return false;
     }
     const data = await res.json();
-    console.log(data.res);  
+    console.log(data.res);
     return true;
 }
 
@@ -357,11 +341,12 @@ async function eliminaMsg(msg) {
     console.log(data.res);
     return true;
 }
-function letturaMessaggio(msg){
-    if(document.getElementById("formMessaggio") == null){
+function letturaMessaggio(msg) {
+    if (document.getElementById("formMessaggio") == null) {
+        const opacityBox = document.getElementsByClassName("opacityBox")[0];
         opacityBox.style.pointerEvents = "none";
         const form = document.createElement("div");
-        form.id ="formMessaggio";
+        form.id = "formMessaggio";
         document.body.insertBefore(form, document.body.children[0]);
         const button = document.createElement("p");
         button.classList = "exit";
@@ -376,23 +361,23 @@ function letturaMessaggio(msg){
         const ora = msg.dataInvio.slice(11, 16);
         const data = document.createElement("h3");
         data.id = "dataMessaggio";
-        data.innerHTML = gg+"<br>"+ora ;
+        data.innerHTML = gg + "<br>" + ora;
         form.appendChild(data)
         const mittente = document.createElement("h3");
-        mittente.id ="mittenteMessaggio";
+        mittente.id = "mittenteMessaggio";
         mittente.innerText = msg.mittente;
         form.appendChild(mittente);
         const titolo = document.createElement("h1");
-        titolo.id ="titoloMessaggio";
+        titolo.id = "titoloMessaggio";
         titolo.innerText = msg.titolo;
         form.appendChild(titolo);
         form.appendChild(document.createElement("hr"));
         const corpo = document.createElement("p");
-        corpo.id ="corpoMessaggio";
+        corpo.id = "corpoMessaggio";
         corpo.innerText = msg.contenuto;
         form.appendChild(corpo);
     }
-            
+
 }
 
 
