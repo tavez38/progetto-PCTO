@@ -834,10 +834,11 @@ a{
 }
 
 #responseChatOllama{
-background-color: #93adae;
+background-color: transparent;
 color: white;
 height: 450px;
 width: 300px;
+border: none;
 }
 
 #divChatBot{
@@ -869,7 +870,7 @@ width: 300px;
     margin-top: 430px;
 }
 .navBar{
-    position: relative;
+    position: sticky;
     margin-left: -10px;
     margin-top: -10px;
     height: 6%;
@@ -974,7 +975,7 @@ width: 300px;
 }
 #dataMessaggio{
     position: absolute;
-    margin-left: 90%;
+    margin-left: 85%;
 }
 #corpoMessaggio{
     font-size: large;

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\progetto-PCTO\\WebApp\\WebApp\\WebApp.csproj": {}
+    "C:\\Users\\ITSINCOMEV11\\Desktop\\PCTO\\progetto-PCTO\\WebApp\\WebApp\\WebApp.csproj": {}
   },
   "projects": {
-    "C:\\progetto-PCTO\\WebApp\\WebApp\\WebApp.csproj": {
+    "C:\\Users\\ITSINCOMEV11\\Desktop\\PCTO\\progetto-PCTO\\WebApp\\WebApp\\WebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\progetto-PCTO\\WebApp\\WebApp\\WebApp.csproj",
+        "projectUniqueName": "C:\\Users\\ITSINCOMEV11\\Desktop\\PCTO\\progetto-PCTO\\WebApp\\WebApp\\WebApp.csproj",
         "projectName": "WebApp",
-        "projectPath": "C:\\progetto-PCTO\\WebApp\\WebApp\\WebApp.csproj",
-        "packagesPath": "C:\\Users\\HEW16A0020NL\\.nuget\\packages\\",
-        "outputPath": "C:\\progetto-PCTO\\WebApp\\WebApp\\obj\\",
+        "projectPath": "C:\\Users\\ITSINCOMEV11\\Desktop\\PCTO\\progetto-PCTO\\WebApp\\WebApp\\WebApp.csproj",
+        "packagesPath": "C:\\Users\\ITSINCOMEV11\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ITSINCOMEV11\\Desktop\\PCTO\\progetto-PCTO\\WebApp\\WebApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\HEW16A0020NL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ITSINCOMEV11\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -100,7 +100,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.103/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.102/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",
