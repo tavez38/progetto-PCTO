@@ -261,12 +261,12 @@ export function iconBarGenerator(){
                 const icona1 = document.createElement("a");
                 icona1.id ="homeIcon";
                 icona1.href = "PersonalArea.html";
-                icona1.innerHTML = "E";
+                icona1.innerHTML = "&#xf47f;";
                 div.appendChild(icona1);
                 const icona2 = document.createElement("a");
                 icona2.id ="uploadIcon";
                 icona2.href ="uploadWork.html";
-                icona2.innerHTML = "&#xf093;";
+                icona2.innerHTML = "&#xf382;";
                 div.appendChild(icona2);
                 const icona3 = document.createElement("a");
                 icona3.id ="messaggiIcon";
