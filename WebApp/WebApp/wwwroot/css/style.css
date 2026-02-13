@@ -393,6 +393,7 @@ button:hover {
 }
 
 .boxBtn {
+    height: fit-content;
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-gap: 0%;
@@ -471,7 +472,7 @@ td {
     cursor: pointer;
     transition: 0.3s;
     margin-top: 10px;
-    height: 60%;
+    height: fit-content;
     width: 80%;
     padding: 12px;
     font-size: 100%;
@@ -485,7 +486,7 @@ td {
 }
 
 #btnAddWork {
-    height: 60%;
+    height: fit-content;
     width: 80%;
     padding: 12px;
     border: none;
@@ -499,7 +500,11 @@ td {
     font-size: 100%;
     text-align: center;
 }
-
+.titleNavBar{
+    color: white;
+    margin-right: 720px;
+    
+}
 #creaProgetto {
     text-align: center;
     color: #6c7a89;
