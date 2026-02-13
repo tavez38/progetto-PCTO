@@ -29,7 +29,10 @@ namespace WebApp.Controllers
         public string pswOld { get; set; }
         public PswModifyRequest() { }
     }
-
+    public class ReqDelAcc
+    {
+        public string pswConf {  set; get; }
+    }
 
     [Authorize]
     [Route("/api/modifyAccount")]
@@ -122,9 +125,9 @@ namespace WebApp.Controllers
             return Ok(new { res = "credenziali aggiornate" });
         }
 
-        [HttpDelete]
+        [HttpPost]
         [Route("/api/modifyAccount/deleteAccount")]
-        public IActionResult deleteAccount([FromBody] string pswConf)
+        public IActionResult deleteAccount([FromBody] ReqDelAcc request)
         {
             var idUser = User.FindFirst(ClaimTypes.NameIdentifier)?.Value
                ?? User.FindFirst("sub")?.Value
@@ -135,7 +138,7 @@ namespace WebApp.Controllers
 
             if (userDb == null ) return NotFound(new { res = "user non trovato" });
 
-            if (!BCrypt.Net.BCrypt.Verify(pswConf, userDb.password))
+            if (!BCrypt.Net.BCrypt.Verify(request.pswConf, userDb.password))
             {
                 return BadRequest(new { res = "password errata" });
             }

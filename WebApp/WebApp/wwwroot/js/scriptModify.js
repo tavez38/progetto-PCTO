@@ -35,6 +35,18 @@ document.getElementById("btnNavBar").addEventListener("click", function(){
     menuFigo(this)
 });
 
+document.getElementById("").addEventListener("click", async () => {
+    const pswConf = prompt("Inserire la password dell'account per confermare");
+    const res = await eliminaAcc(pswConf);
+    if (res) {
+        alert("account eliminato");
+        window.location.href = "../html/Index.html";
+    }
+    else {
+        alert("Errore, riprova");
+    }
+});
+
 async function getUserInfo() {
     if (localStorage.getItem("token") == null) {
         window.location.href = "../html/AccessoNegato.html";
@@ -161,4 +173,27 @@ function checkNewPsw(newPsw, pswConfirm) {
         return false;
     }
     return true;
+}
+
+async function eliminaAcc(psw) {
+    let request={
+        pswConf : psw
+    }
+
+    const res = await fetch("/api/modifyAccount/deleteAccount", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer " + localStorage.getItem("token")
+        },
+         body: JSON.stringify(request)
+    });
+
+    if (res.status == 200) {
+        localStorage.removeItem("idUtenteLoggato");
+        localStorage.removeItem("token");
+        return true;
+    }
+    console.log(res.status);
+    return false;
 }
