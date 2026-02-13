@@ -3,7 +3,7 @@ document.getElementById("linkToRegister").addEventListener("click", () => {
     window.location.href = '../html/Registrazione.html';
 });
 
-function onClickLogin(){ 
+function onClickLogin() {
     const usMail = document.getElementById("inputUsername");
     const psw = document.getElementById("inputPassword");
     const pswError = document.getElementById("pswError");
@@ -18,11 +18,11 @@ function onClickLogin(){
         return;
     }
     let utente = {
-        username : usMail.value.trim(),
+        username: usMail.value.trim(),
         password: psw.value.trim()
     };
 
-    try{
+    try {
         fetch("/index", {
             method: 'POST',
             headers: {
@@ -30,32 +30,27 @@ function onClickLogin(){
             },
             body: JSON.stringify(utente)
         })
-            .then(response => response.json())
-            .then(data => {
-                if (data.id == -1) {
-                    pswError.innerText = "Password errata";
+            .then(response => {
+                if (response.status == 401) {
+                    pswError.innerText = "Credenziali errate";
                     pswError.style.color = "red";
                     psw.style.border = "1px solid red";
                 }
-                else if (data.id == -2) {
-                    userError.innerText = "Non è stato trovato nessun utente con questa mail/username";
-                    userError.style.color = "red";
-                    usMail.style.border = "1px solid red";
-                }
-                else if (data.id == -3) {
+                else if (response.status == 400) {
                     userError.innerText = "inserire utente";
                     userError.style.color = "red";
                     usMail.style.border = "1px solid red";
                 }
-                else {
-                    localStorage.setItem("idUtenteLoggato", data.id);
-                    localStorage.setItem("token", data.token);
-                    console.log(localStorage.getItem("token"));
-                    window.location.href = '../html/PersonalArea.html';
-                }
-            });  
+            })
+            .then(a => {
+                const data = a.json();
+                localStorage.setItem("idUtenteLoggato", data.id);
+                localStorage.setItem("token", data.token);
+                console.log(localStorage.getItem("token"));
+                window.location.href = '../html/PersonalArea.html';
+            });
     }
-    catch(error){
+    catch (error) {
         alert(error);
     }
 }
@@ -64,7 +59,7 @@ function IsEmptyPswLogin(psw, usMail) {
         alert("Inserire una mail o username");
         return false;
     }
-    else if (psw == " " || psw=="") {
+    else if (psw == " " || psw == "") {
         alert("Inserire una password");
         return false;
     }

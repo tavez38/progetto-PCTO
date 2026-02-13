@@ -9,11 +9,14 @@ namespace WebApp.Controllers
     public class DelRequest
     {
         public int idMsg { get; set; }
+        public string destinatario { get; set; }
     }
     public class SignedAsRead
     {
         public int id { get; set; }
         public bool letto { get; set; }
+
+        public string destinatario { get; set; }
 
         public SignedAsRead(){}
 
@@ -72,10 +75,21 @@ namespace WebApp.Controllers
         [Route("/api/messages/markAsRead")]
         public IActionResult MarkAsRead([FromBody] SignedAsRead request)
         {
+            var mailUSLog = User.FindFirst(System.Security.Claims.ClaimTypes.Email)?.Value
+                              ?? User.FindFirst("email")?.Value
+                              ?? User.FindFirst("Email")?.Value;
+            if (request.destinatario != mailUSLog)
+            {
+                return Unauthorized();
+            }
             var msg = db.messaggi.FirstOrDefault(m => m.Id == request.id);
             if (msg == null)
             {
                 return NotFound(new { res = "Messaggio non trovato" });
+            }
+            if(msg.destinatario != mailUSLog)
+            {
+                return Unauthorized();
             }
 
             msg.letto = request.letto;
@@ -87,10 +101,21 @@ namespace WebApp.Controllers
         [Route("/api/messages/deleteMsg")]
         public IActionResult DeleteMsg([FromBody] DelRequest request)
         {
+            var mailUSLog = User.FindFirst(System.Security.Claims.ClaimTypes.Email)?.Value
+                              ?? User.FindFirst("email")?.Value
+                              ?? User.FindFirst("Email")?.Value;
+            if (request.destinatario != mailUSLog)
+            {
+                return Unauthorized();
+            }
             var msg = db.messaggi.FirstOrDefault(m => m.Id == request.idMsg);
             if (msg == null)
             {
                 return NotFound(new { res = "Messaggio non trovato" });
+            }
+            if (msg.destinatario != mailUSLog)
+            {
+                return Unauthorized();
             }
             db.messaggi.Remove(msg);
             db.SaveChanges();

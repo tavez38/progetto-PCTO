@@ -289,7 +289,8 @@ async function delAllMsgSigned() {
 async function segnaLetto(msg, lettoMsg) {
     const request = {
         id: msg.id,
-        letto: lettoMsg
+        letto: lettoMsg,
+        destinatario: msg.destinatario
     }
     const res = await fetch("/api/messages/markAsRead", {
         method: "PUT",
@@ -299,6 +300,14 @@ async function segnaLetto(msg, lettoMsg) {
         },
         body: JSON.stringify(request)
     });
+    if (res.status == 401) {
+        alert("Impossibile completare l'azione, accesso negato");
+        return false;
+    }
+    if (res.status == 404) {
+        alert("messaggio non trovato");
+        return false;
+    }
     if (!res.ok) {
         console.log(res.status);
         return false;
@@ -310,7 +319,8 @@ async function segnaLetto(msg, lettoMsg) {
 
 async function eliminaMsg(msg) {
     const request = {
-        idMsg: msg.id
+        idMsg: msg.id,
+        destinatario: msg.destinatario
     }
     const res = await fetch("/api/messages/deleteMsg", {
         method: "POST",
@@ -321,9 +331,11 @@ async function eliminaMsg(msg) {
         body: JSON.stringify(request)
     });
     if (res.status == 401) {
-        localStorage.removeItem("idUtenteLoggato");
-        localStorage.removeItem("token");
-        window.location.href = '../html/AccessoNegato.html';
+        alert("Impossibile completare l'azione, accesso negato");
+        return false;
+    }
+    if (res.status == 404) {
+        alert("messaggio non trovato");
         return false;
     }
     if (!res.ok) {

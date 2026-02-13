@@ -7,8 +7,6 @@ namespace WebApp.Models
     {
         
         public string? id { get;  set; }
-
-        
         public string? IdProprietario { get;  set; }
         public string title { get; set; }
         public string description { get; set; }
@@ -16,13 +14,7 @@ namespace WebApp.Models
         public TimeOnly orarioScadenza { get; set; }
 
         public Progetto() {
-            this.id = generateId();
-        }
-
-        private string generateId()
-        {
-            Random rnd = new Random();
-            return "P" + rnd.Next();
+            id = Guid.NewGuid().ToString();
         }
     }
 }
