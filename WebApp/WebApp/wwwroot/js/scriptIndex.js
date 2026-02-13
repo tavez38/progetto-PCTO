@@ -3,7 +3,7 @@ document.getElementById("linkToRegister").addEventListener("click", () => {
     window.location.href = '../html/Registrazione.html';
 });
 
-function onClickLogin() {
+async function onClickLogin() {
     const usMail = document.getElementById("inputUsername");
     const psw = document.getElementById("inputPassword");
     const pswError = document.getElementById("pswError");
@@ -23,32 +23,34 @@ function onClickLogin() {
     };
 
     try {
-        fetch("/index", {
+        const response = await fetch("/index", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(utente)
-        })
-            .then(response => {
-                if (response.status == 401) {
-                    pswError.innerText = "Credenziali errate";
-                    pswError.style.color = "red";
-                    psw.style.border = "1px solid red";
-                }
-                else if (response.status == 400) {
-                    userError.innerText = "inserire utente";
-                    userError.style.color = "red";
-                    usMail.style.border = "1px solid red";
-                }
-            })
-            .then(a => {
-                const data = a.json();
-                localStorage.setItem("idUtenteLoggato", data.id);
-                localStorage.setItem("token", data.token);
-                console.log(localStorage.getItem("token"));
-                window.location.href = '../html/PersonalArea.html';
-            });
+        });
+           
+        if (response.status == 401) {
+            pswError.innerText = "Credenziali errate";
+            pswError.style.color = "red";
+            psw.style.border = "1px solid red";
+            return;
+        }
+        else if (response.status == 400) {
+            userError.innerText = "inserire utente";
+            userError.style.color = "red";
+            usMail.style.border = "1px solid red";
+            return;
+        }
+            
+        const data = await response.json();
+        localStorage.setItem("idUtenteLoggato", data.id);
+        localStorage.setItem("token", data.token);
+        console.log(localStorage.getItem("token"));
+        window.location.href = '../html/PersonalArea.html';
+        return;
+           
     }
     catch (error) {
         alert(error);

@@ -10,7 +10,14 @@ document.getElementById("btnUploadWork").addEventListener("click", uploadWork);
 document.getElementById("toChatBot").addEventListener("click", generateOpzionForm);
 document.getElementById("btnNavBar").addEventListener("click", iconBarGenerator);
 document.getElementById("btnNavBar").addEventListener("click", function(){
-    menuFigo(this)});
+    menuFigo(this)
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    if (localStorage.getItem("token") == null) {
+        window.location.href="../html/AccessoNegato.html"
+    }
+});
 
 async function uploadWork() {
     let progetto ={

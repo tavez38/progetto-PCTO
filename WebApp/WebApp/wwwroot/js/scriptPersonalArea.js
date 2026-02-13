@@ -23,6 +23,10 @@ document.getElementById("btnNavBar").addEventListener("click", function(){
 var vWorks = [];
 
 async function loadWorks() {
+    if (localStorage.getItem("token") == null) {
+        window.location.href = '../html/AccessoNegato.html';
+        return;
+    }
     const token = localStorage.getItem("token");
     const tableBody = document.getElementById("tableBodyProj");
     try {
@@ -97,9 +101,15 @@ function createWorksTable() {
         btnElimina.addEventListener("click", async () => {
             var conferma = confirm("Sei sicuro di voler eliminare questo progetto?");
             if (conferma) {
-                console.log(element.id);
-                eliminaProgetto(element);
-                window.location.reload();
+               
+                const res = await eliminaProgetto(element);
+                if (!res) {
+                    alert("Errore, riprova");
+                }
+                else {
+                    alert("Progetto eliminato");
+                    window.location.reload();
+                }
             }
         });
         tdElimina.appendChild(btnElimina);
@@ -125,13 +135,13 @@ async function eliminaProgetto(prog) {
         localStorage.removeItem("idUtenteLoggato");
         localStorage.removeItem("token");
         window.location.href = '../html/AccessoNegato.html';
-        return;
+        return false;
     }
     else if (!res.ok) {
         console.log(res.status);
-        return;
+        return false;
     }
     const data = await res.json();
     console.log(data.res);
-    return;
+    return true;
 }

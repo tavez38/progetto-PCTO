@@ -42,6 +42,10 @@ document.getElementById("btnNavBar").addEventListener("click", function () {
 });
 
 async function loadMessages() {
+    if (localStorage.getItem("token") == null) {
+        window.location.href = '../html/AccessoNegato.html';
+        return;
+    }
     const token = localStorage.getItem("token");
     const response = await fetch(`/api/messages/getMsg`, {
         method: "GET",
@@ -85,9 +89,6 @@ function createMsgTable() {
     vMsg.forEach(element => {
         const tr = document.createElement("tr");
         tr.classList.add("rows");
-        tr.addEventListener("click", () => {
-            letturaMessaggio(element);
-        });
 
         const tdLetto = document.createElement("td");
         tdLetto.classList.add("selezionaMsg");
@@ -113,15 +114,32 @@ function createMsgTable() {
         tdData.classList.add("tableMsgData");
         tdData.textContent = element.dataInvio.slice(0, 16).replace("T", " ");
 
+        tdMit.addEventListener("click", () => {
+            letturaMessaggio(element);
+        });
+        tdTitle.addEventListener("click", () => {
+            letturaMessaggio(element);
+        });
+        tdData.addEventListener("click", () => {
+            letturaMessaggio(element);
+        });
+
         const tdDelSignAsRead = document.createElement("td");
         tdDelSignAsRead.classList.add("tableSettingMsg");
 
         const buttonDel = document.createElement("button");
         buttonDel.classList.add("cestino");
         buttonDel.innerHTML = "&#128465;";
-        buttonDel.addEventListener("click", () => {
+        buttonDel.addEventListener("click", async () => {
             if (confirm("sei sicuro di voler eliminare il messaggio? (dopo l'eliminazione non potrai piu recuperarlo)")) {
-                eliminaMsg(element);
+                const res = await eliminaMsg(element);
+                if (res) {
+                    alert("Messaggio eliminato");
+                    window.location.reload();
+                }
+                else {
+                    alert("Errore, riprova")
+                }
             }
         });
         buttonDel.style.marginLeft = "20px";
@@ -129,11 +147,28 @@ function createMsgTable() {
         const buttonRead = document.createElement("button");
         buttonRead.classList.add("checkRead");
         buttonRead.innerHTML = "&#10004;";
-        buttonRead.addEventListener("click", () => {
-            segnaLetto(element, !element.letto);
+        buttonRead.addEventListener("click", async () => {
+            const res = await segnaLetto(element, !element.letto);
+            if (!res) {
+                alert("Errore, riprova");
+            }
+            else {
+                window.location.reload();
+            }
         });
         buttonRead.style.marginLeft = "15px";
         buttonRead.style.width = "50px";
+
+
+        if (element.letto) {
+            tr.style.backgroundColor = "rgba(41, 41, 41, 0.3)";
+            tdLetto.style.border = "1px solid rgba(41, 41, 41, 0.3)";
+            tdMit.style.border = "1px solid rgba(41, 41, 41, 0.3)";
+            tdTitle.style.border = "1px solid rgba(41, 41, 41, 0.3)";
+            tdData.style.border = "1 px solid rgba(41, 41, 41, 0.3)";
+            tdDelSignAsRead.style.border = "1 px solid rgba(41, 41, 41, 0.3)";
+             
+        }
 
         tdDelSignAsRead.appendChild(buttonDel);
         tdDelSignAsRead.appendChild(buttonRead);
@@ -188,7 +223,7 @@ async function sendMessage() {
                     console.log(res.status);
                 }
                 else {
-                    console.log("Messaggio inviato con successo" + res.status);
+                    alert("Messaggio inviato");
                 }
             });
 
@@ -214,11 +249,8 @@ function ordinamento() {
         case "Piu vecchio":
             ordinaPerData("vecchio");
             break;
-        case "Da leggere":
-            ordinamentoLetto("da");
-            break;
-        case "Letti":
-            ordinamentoLetto("letti");
+        case "":
+            createMsgTable();
             break;
         default:
             createMsgTable();
@@ -246,27 +278,19 @@ function ordinaPerAlfabetico(verso) {
     createMsgTable();
 }
 
-function ordinamentoLetto(verso) {
-    vMsg.sort((a, b) => {
-        return verso == "da" ? a.letto - b.letto : b.letto - a.letto;
-    });
-    createMsgTable();
-}
-
 async function signAsReadAll() {
     if (vMsgsigned.length == 0) {
         return;
     }
     for (const msg of vMsgsigned) {
         const res = await segnaLetto(msg, !msg.letto);
-        if (res) {
-            console.log("success");
+        if (!res) {
+            alert("errore, riprova");
         }
-        else {
-            console.log("error");
-        }
+        
     }
     window.location.reload();
+   
 }
 
 async function delAllMsgSigned() {
@@ -277,14 +301,15 @@ async function delAllMsgSigned() {
         for (const msg of vMsgsigned) {
             const res = await eliminaMsg(msg);
             if (res) {
-                console.log("success");
+                alert("messaggio eliminato");
             }
             else {
-                console.log("error");
+                alert("errore, riprova");
             }
         }
-        window.location.reload();
+        window.location.reload(); 
     }
+    
 }
 async function segnaLetto(msg, lettoMsg) {
     const request = {
@@ -314,6 +339,7 @@ async function segnaLetto(msg, lettoMsg) {
     }
     const data = await res.json();
     console.log(data.res);
+    
     return true;
 }
 
@@ -344,6 +370,7 @@ async function eliminaMsg(msg) {
     }
     const data = await res.json();
     console.log(data.res);
+    
     return true;
 }
 function letturaMessaggio(msg) {
@@ -359,6 +386,9 @@ function letturaMessaggio(msg) {
         button.addEventListener("click", () => {
             document.getElementById("formMessaggio").remove();
             opacityBox.style.pointerEvents = "all";
+            if (!msg.letto) {
+                window.location.reload();
+            }
         });
         form.appendChild(button);
         msg.dataInvio.trim();
@@ -381,6 +411,8 @@ function letturaMessaggio(msg) {
         corpo.id = "corpoMessaggio";
         corpo.innerText = msg.contenuto;
         form.appendChild(corpo);
+        segnaLetto(msg, true);
+        
     }
 
 }

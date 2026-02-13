@@ -36,6 +36,10 @@ document.getElementById("btnNavBar").addEventListener("click", function(){
 });
 
 async function getUserInfo() {
+    if (localStorage.getItem("token") == null) {
+        window.location.href = "../html/AccessoNegato.html";
+        return;
+    }
     const res = await fetch("/api/modifyAccount/getUserInfo", {
         method: "GET",
         headers: {
