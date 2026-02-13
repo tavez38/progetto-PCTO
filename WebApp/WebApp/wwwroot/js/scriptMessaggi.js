@@ -377,6 +377,7 @@ function letturaMessaggio(msg) {
     if (document.getElementById("formMessaggio") == null) {
         const opacityBox = document.getElementsByClassName("opacityBox")[0];
         opacityBox.style.pointerEvents = "none";
+        opacityBox.style.opacity = "0.4";
         const form = document.createElement("div");
         form.id = "formMessaggio";
         document.body.insertBefore(form, document.body.children[0]);
@@ -386,6 +387,7 @@ function letturaMessaggio(msg) {
         button.addEventListener("click", () => {
             document.getElementById("formMessaggio").remove();
             opacityBox.style.pointerEvents = "all";
+            opacityBox.style.opacity = "1";
             if (!msg.letto) {
                 window.location.reload();
             }
