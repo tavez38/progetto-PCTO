@@ -328,6 +328,7 @@ background: #e0e0e0;
     font-size: 15px;
     font-family: Tahoma, Verdana, sans-serif;
     color: #d9d9d9;
+    cursor: pointer;
 }
 
 .linkRegister a:hover {
@@ -945,4 +946,15 @@ border: none;
 }
 #corpoMessaggio{
     font-size: large;
+}
+#eliminaAccount{
+    margin-left: 46%;
+    margin-top: 20px;
+    background-color: red;
+    color: white;
+    height: 30px;
+    cursor: pointer;
+}
+#eliminaAccount:hover{
+    background-color: rgb(160, 0, 0);
 }
