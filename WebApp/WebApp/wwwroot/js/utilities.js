@@ -112,6 +112,7 @@ export function checkPsw(psw, errSpanPsw) {
 export async function sendOllamaRequest() {
     const domanda = document.getElementById("requestChatOllama").value;
     const textAreaResponse = document.getElementById("responseChatOllama");
+    document.getElementById("requestChatOllama").value = "";
     textAreaResponse.removeAttribute("readonly"); 
     textAreaResponse.setAttribute("placeholder", "Caricamento...");
     

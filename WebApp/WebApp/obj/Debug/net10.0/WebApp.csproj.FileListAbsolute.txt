@@ -358,7 +358,6 @@ C:\progetto-PCTO\WebApp\WebApp\bin\Debug\net10.0\Microsoft.AspNetCore.Authentica
 C:\progetto-PCTO\WebApp\WebApp\bin\Debug\net10.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\progetto-PCTO\WebApp\WebApp\bin\Debug\net10.0\Microsoft.Extensions.AI.Abstractions.dll
 C:\progetto-PCTO\WebApp\WebApp\bin\Debug\net10.0\OllamaSharp.dll
-C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\qy8je05fdc-{0}-0tjqualqpe-0tjqualqpe.gz
 C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\g2u9jt1tff-{0}-zbdj0eqyzu-zbdj0eqyzu.gz
 C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\eoq19vsbu1-{0}-5vnqn6hznz-5vnqn6hznz.gz
 C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\yvhn8nkja9-{0}-wlgsgjski8-wlgsgjski8.gz
@@ -373,3 +372,4 @@ C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\0tw0t2udrs-{0}-tovoq
 C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\dx8wh36wkn-{0}-03u523w47u-03u523w47u.gz
 C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\f45azcki2h-{0}-69tgtbps8y-69tgtbps8y.gz
 C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\71jruzgix1-{0}-fppze4pldc-fppze4pldc.gz
+C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\qy8je05fdc-{0}-71wmwwp2nh-71wmwwp2nh.gz
