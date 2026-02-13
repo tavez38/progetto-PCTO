@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using WebApp.data;
 using WebApp.Models;
@@ -134,7 +135,11 @@ namespace WebApp.Controllers
                ?? User.Identity?.Name;
 
             var userDb = db.dipendenti.FirstOrDefault(u => u.id == idUser);
-           
+            var progEliminare = db.progetti.Where(p => p.IdProprietario == idUser).ToList();
+            var mailDel = db.messaggi.Where(m => m.destinatario == userDb.email).ToList();
+
+            
+
 
             if (userDb == null ) return NotFound(new { res = "user non trovato" });
 
@@ -142,7 +147,8 @@ namespace WebApp.Controllers
             {
                 return BadRequest(new { res = "password errata" });
             }
-           
+            db.messaggi.RemoveRange(mailDel);
+            db.progetti.RemoveRange(progEliminare);
             db.dipendenti.Remove(userDb);
             db.SaveChanges();
             return Ok(new {res="utente eliminato"});

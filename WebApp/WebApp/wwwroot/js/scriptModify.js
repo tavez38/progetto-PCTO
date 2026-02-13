@@ -35,7 +35,7 @@ document.getElementById("btnNavBar").addEventListener("click", function(){
     menuFigo(this)
 });
 
-document.getElementById("").addEventListener("click", async () => {
+document.getElementById("eliminaAccount").addEventListener("click", async () => {
     const pswConf = prompt("Inserire la password dell'account per confermare");
     const res = await eliminaAcc(pswConf);
     if (res) {

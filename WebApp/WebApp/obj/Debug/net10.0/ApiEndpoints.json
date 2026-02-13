@@ -77,13 +77,13 @@
     "ContainingType": "WebApp.Controllers.ModifyController",
     "Method": "deleteAccount",
     "RelativePath": "api/modifyAccount/deleteAccount",
-    "HttpMethod": "DELETE",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "pswConf",
-        "Type": "System.String",
+        "Name": "request",
+        "Type": "WebApp.Controllers.ReqDelAcc",
         "IsRequired": true
       }
     ],

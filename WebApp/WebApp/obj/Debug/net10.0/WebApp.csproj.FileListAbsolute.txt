@@ -362,14 +362,14 @@ C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\qy8je05fdc-{0}-0tjqu
 C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\g2u9jt1tff-{0}-zbdj0eqyzu-zbdj0eqyzu.gz
 C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\eoq19vsbu1-{0}-5vnqn6hznz-5vnqn6hznz.gz
 C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\yvhn8nkja9-{0}-wlgsgjski8-wlgsgjski8.gz
-C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\71jruzgix1-{0}-surh4735ho-surh4735ho.gz
 C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\ild2o5xlh0-{0}-om36rn0c55-om36rn0c55.gz
 C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\nr638uc7td-{0}-x4122jzvfi-x4122jzvfi.gz
 C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\n547t6838v-{0}-feemsct92a-feemsct92a.gz
 C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\4mnknta2f9-{0}-wszmyqs2f6-wszmyqs2f6.gz
 C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\rsxbyhsisf-{0}-01p6zgn6f8-01p6zgn6f8.gz
 C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\xy5h35qe0c-{0}-fyq161gww8-fyq161gww8.gz
-C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\f45azcki2h-{0}-n9cf4xtkii-n9cf4xtkii.gz
 C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\7bfgkygcp7-{0}-xpy9k2zpw1-xpy9k2zpw1.gz
 C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\0tw0t2udrs-{0}-tovoq3aym0-tovoq3aym0.gz
-C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\dx8wh36wkn-{0}-37qsph52ad-37qsph52ad.gz
+C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\dx8wh36wkn-{0}-03u523w47u-03u523w47u.gz
+C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\f45azcki2h-{0}-69tgtbps8y-69tgtbps8y.gz
+C:\progetto-PCTO\WebApp\WebApp\obj\Debug\net10.0\compressed\71jruzgix1-{0}-fppze4pldc-fppze4pldc.gz

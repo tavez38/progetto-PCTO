@@ -3,12 +3,29 @@
   "WorkspaceRootPath": "C:\\progetto-PCTO\\WebApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|c:\\progetto-pcto\\webapp\\webapp\\wwwroot\\js\\scriptmodify.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|solutionrelative:webapp\\wwwroot\\js\\scriptmodify.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|c:\\progetto-pcto\\webapp\\webapp\\wwwroot\\js\\scriptpersonalarea.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|solutionrelative:webapp\\wwwroot\\js\\scriptpersonalarea.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|c:\\progetto-pcto\\webapp\\webapp\\wwwroot\\html\\modifica.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|solutionrelative:webapp\\wwwroot\\html\\modifica.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|c:\\progetto-pcto\\webapp\\webapp\\models\\messaggio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|solutionrelative:webapp\\models\\messaggio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|c:\\progetto-pcto\\webapp\\webapp\\models\\progetto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|solutionrelative:webapp\\models\\progetto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/DipendentiDatabase/True/SqlTable/dbo.progetti.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/DipendentiDatabase/True/SqlTable/dbo.messaggi.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/DipendentiDatabase/True/SqlTable/dbo.dipendenti.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3215F6CF-A442-1C21-6AD3-94ED23F4EBA5}|WebApp\\WebApp.csproj|c:\\progetto-pcto\\webapp\\webapp\\controllers\\modifycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -22,7 +39,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,41 +47,97 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "dbo.progetti [Dati]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/DipendentiDatabase/True/SqlTable/dbo.progetti.sql",
+              "ToolTip": "dbo.progetti [Dati]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2026-02-13T12:32:58.6Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "dbo.messaggi [Dati]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/DipendentiDatabase/True/SqlTable/dbo.messaggi.sql",
+              "ToolTip": "dbo.messaggi [Dati]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2026-02-13T12:32:46.69Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "dbo.dipendenti [Dati]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/DipendentiDatabase/True/SqlTable/dbo.dipendenti.sql",
+              "ToolTip": "dbo.dipendenti [Dati]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2026-02-13T12:32:42.515Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Progetto.cs",
+              "DocumentMoniker": "C:\\progetto-PCTO\\WebApp\\WebApp\\Models\\Progetto.cs",
+              "RelativeDocumentMoniker": "WebApp\\Models\\Progetto.cs",
+              "ToolTip": "C:\\progetto-PCTO\\WebApp\\WebApp\\Models\\Progetto.cs",
+              "RelativeToolTip": "WebApp\\Models\\Progetto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-13T11:22:56.85Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Messaggio.cs",
+              "DocumentMoniker": "C:\\progetto-PCTO\\WebApp\\WebApp\\Models\\Messaggio.cs",
+              "RelativeDocumentMoniker": "WebApp\\Models\\Messaggio.cs",
+              "ToolTip": "C:\\progetto-PCTO\\WebApp\\WebApp\\Models\\Messaggio.cs",
+              "RelativeToolTip": "WebApp\\Models\\Messaggio.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-13T11:22:34.83Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Modifica.html",
+              "DocumentMoniker": "C:\\progetto-PCTO\\WebApp\\WebApp\\wwwroot\\html\\Modifica.html",
+              "RelativeDocumentMoniker": "WebApp\\wwwroot\\html\\Modifica.html",
+              "ToolTip": "C:\\progetto-PCTO\\WebApp\\WebApp\\wwwroot\\html\\Modifica.html",
+              "RelativeToolTip": "WebApp\\wwwroot\\html\\Modifica.html",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAFUAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2026-02-13T11:18:54.82Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "scriptPersonalArea.js",
               "DocumentMoniker": "C:\\progetto-PCTO\\WebApp\\WebApp\\wwwroot\\js\\scriptPersonalArea.js",
               "RelativeDocumentMoniker": "WebApp\\wwwroot\\js\\scriptPersonalArea.js",
               "ToolTip": "C:\\progetto-PCTO\\WebApp\\WebApp\\wwwroot\\js\\scriptPersonalArea.js",
               "RelativeToolTip": "WebApp\\wwwroot\\js\\scriptPersonalArea.js",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAACgAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAHEAAAAAAAAAAAAQwCgAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2026-02-13T11:11:55.838Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "ModifyController.cs",
               "DocumentMoniker": "C:\\progetto-PCTO\\WebApp\\WebApp\\Controllers\\ModifyController.cs",
               "RelativeDocumentMoniker": "WebApp\\Controllers\\ModifyController.cs",
               "ToolTip": "C:\\progetto-PCTO\\WebApp\\WebApp\\Controllers\\ModifyController.cs",
               "RelativeToolTip": "WebApp\\Controllers\\ModifyController.cs",
-              "ViewState": "AgIAAHYAAAAAAAAAAAAgwIAAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAHcAAAAAAAAAAAAgwIUAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-13T11:04:00.75Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "scriptModify.js",
-              "DocumentMoniker": "C:\\progetto-PCTO\\WebApp\\WebApp\\wwwroot\\js\\scriptModify.js",
-              "RelativeDocumentMoniker": "WebApp\\wwwroot\\js\\scriptModify.js",
-              "ToolTip": "C:\\progetto-PCTO\\WebApp\\WebApp\\wwwroot\\js\\scriptModify.js",
-              "RelativeToolTip": "WebApp\\wwwroot\\js\\scriptModify.js",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAMQAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-02-13T11:03:40.95Z",
               "EditorCaption": ""
             }
           ]
