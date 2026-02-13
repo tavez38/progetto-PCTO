@@ -1,26 +1,23 @@
-import { 
-    listaCharSpec, 
-    checkEmail, 
-    checkPsw, 
-    checkCharSpec, 
-    goToUploadWorkPage, 
-    deleteInput, 
-    goToMessaggiPage, 
+import {  
     logout, 
     generateOpzionForm,
-    sendOllamaRequest,
     menuFigo,
     iconBarGenerator,
-    revalForm,
-    hideForm
 } from "../js/utilities.js";
 
-document.getElementById("linkLogOutUpWork").addEventListener("click", logout);
+document.getElementById("linkLogOutMsg").addEventListener("click", logout);
 document.getElementById("btnUploadWork").addEventListener("click", uploadWork);
 document.getElementById("toChatBot").addEventListener("click", generateOpzionForm);
 document.getElementById("btnNavBar").addEventListener("click", iconBarGenerator);
 document.getElementById("btnNavBar").addEventListener("click", function(){
-    menuFigo(this)});
+    menuFigo(this)
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    if (localStorage.getItem("token") == null) {
+        window.location.href="../html/AccessoNegato.html"
+    }
+});
 
 async function uploadWork() {
     let progetto ={

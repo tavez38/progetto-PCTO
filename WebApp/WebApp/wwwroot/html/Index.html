@@ -1,27 +1,24 @@
 ﻿<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <title>Login - Gestionale</title>
-        <link href="../css/style.css" rel="stylesheet" />
-        <script type = "module" src="../js/scriptIndex.js" defer></script>
-    </head>
+<head>
+    <meta charset="utf-8" />
+    <title>Login - Gestionale</title>
+    <link href="../css/style.css" rel="stylesheet" />
+    <script type="module" src="../js/scriptIndex.js" defer></script>
+    <script src="https://kit.fontawesome.com/80c8ce7817.js" crossorigin="anonymous"></script>
+</head>
     <body>
-        <h1 class="title">BENVENUTI NEL GESTIONALE</h1>
-        <h3 class="subTitle">Effettuare il login per vedere i vostri lavori</h3>
+        <h1 class="title">BENVENUTI IN M.Y.T</h1>
+        <h2 class="subTitle">Connect. Organize. Achieve</h2>
+        <h4 class="subTitle">Effettuare il login per vedere i vostri lavori</h4>
         <div class="divFormLogin">
             <form class="formLogin" action="/index" method="post">
 
-                <h2>Accedi</h2>
-                <label class="label" for="username">
-                </label><br>
+                <h2>Accedi</h2><br>
                 <input type="text" id="inputUsername" name="username" required placeholder="Username/mail"/><br>
-                <span id="userError" class="error"></span><br>
-
-                <label class="label" for="password">
-                </label><br>
+                <p id="userError" class="error"></p><br>
                 <input type="password" id="inputPassword" name="password" required placeholder="Password" /><br>
-                <span id="pswError" class="error"></span><br>
+                <p id="pswError" class="error"></p><br>
 
                 <button class="btnSubmit" id="btnLogin" type="button">ENTRA</button>
             </form>

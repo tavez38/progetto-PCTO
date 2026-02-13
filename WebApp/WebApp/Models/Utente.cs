@@ -9,20 +9,8 @@
         
         public Utente()
         {
-            id = GenerateId();
-        }
-        public Utente(string name, string password, string email) {
-            Random  rnd = new Random();
-            //TODO
-            //aggiungere funz per check id exist
-            id = GenerateId();
-            this.name = name;
+            id = Guid.NewGuid().ToString();
         }
         
-        private static string GenerateId()
-        {
-            Random rnd = new Random();
-            return "D"+ rnd.Next();
-        }
     }
 }

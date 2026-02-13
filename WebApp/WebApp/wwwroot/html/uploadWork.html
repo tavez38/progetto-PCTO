@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Crea progetto</title>
-        <link href="../css/style.css" rel="stylesheet" />
-        <script type="module" src="../js/scriptUploadWork.js" defer></script>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crea progetto</title>
+    <link href="../css/style.css" rel="stylesheet" />
+    <script type="module" src="../js/scriptUploadWork.js" defer></script>
+    <script src="https://kit.fontawesome.com/80c8ce7817.js" crossorigin="anonymous"></script>
+</head>
     <body>
         <div class="navBar">
             <button id="toImpostazioni"><a href="Modifica.html" class="fas fa-edit"></a></button>
-                <button id="toChatBot" class="fas fa-comment-dots"></button>
+                <button id="toChatBot" class="fas fa-robot"></button>
                 <a class="logout" href="Index.html" id="linkLogOutMsg"><i class="fas fa-door-open"></i></a>
+                <h1 class="titleNavBar">M.Y.T.</h1>
             <div class="menuButton" id="btnNavBar">
                 <div class="bar1"></div>
                 <div class="bar2"></div>
@@ -22,16 +24,16 @@
             <div class="home">
                 <h1 class="title">Crea progetto</h1>
                 <div class="divUploadWork">
-                <form action="/login/personalArea/uploadWork" method="post" id="formWork">
-                    <input type="text" name="title" id="inputTitle" placeholder="titolo progetto">
-                    <input type="text" name="desc" id="inputDesc" placeholder="breve descrizione del progetto">
-                    <input type="date" name="data" id="inputData">
-                    <input type="time" name="ora" id="inputOra">
-                    <button type="button" id="btnUploadWork" class="btnSubmit" asp-controller="PersonalArea" asp-action="AddWork">SALVA</button>
-                </form>
-            </div>
-            </div>
+                    <form action="/login/personalArea/uploadWork" method="post" id="formWork">
+                        <input type="text" name="title" id="inputTitle" placeholder="titolo progetto">
+                        <input type="text" name="desc" id="inputDesc" placeholder="breve descrizione del progetto">
+                        <input type="date" name="data" id="inputData">
+                        <input type="time" name="ora" id="inputOra">
+                        <button type="button" id="btnUploadWork" class="btnSubmit" asp-controller="PersonalArea" asp-action="AddWork">SALVA</button>
+                    </form>
+                </div>
             </div>
         </div>
+        
     </body>
 </html>

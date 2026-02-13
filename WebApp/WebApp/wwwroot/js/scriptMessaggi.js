@@ -1,36 +1,29 @@
-import { 
-    listaCharSpec, 
-    checkEmail, 
-    checkPsw, 
-    checkCharSpec, 
-    goToUploadWorkPage, 
-    deleteInput, 
-    goToMessaggiPage, 
-    logout, 
+import {
+    deleteInput,
+    logout,
     generateOpzionForm,
-    sendOllamaRequest,
     menuFigo,
     iconBarGenerator,
     revalForm,
     hideForm
 } from "../js/utilities.js";
 let vMsg = [];
-let vMsgsigned=[];
+let vMsgsigned = [];
 document.addEventListener("DOMContentLoaded", loadMessages);
 
 document.getElementById("linkLogOutMsg").addEventListener("click", logout);
 
-document.getElementById("write").addEventListener("click", function() {
+document.getElementById("write").addEventListener("click", function () {
     revalForm(document.getElementById("scriviMail"))
 });
 
-document.getElementsByClassName("exit")[0].addEventListener("click", function() {
+document.getElementsByClassName("exit")[0].addEventListener("click", function () {
     hideForm(document.getElementById("scriviMail"))
 });
 
 document.getElementById("send").addEventListener("click", sendMessage);
 
-document.getElementById("cancell").addEventListener("click", function(){
+document.getElementById("cancell").addEventListener("click", function () {
     deleteInput(document.getElementById("scriviMail"))
 });
 
@@ -38,17 +31,21 @@ document.getElementById("toChatBot").addEventListener("click", generateOpzionFor
 
 document.getElementById("btnNavBar").addEventListener("click", iconBarGenerator);
 
-document.getElementById("ordina").addEventListener("change", ordinamento);
+document.getElementById("ordina").addEventListener("input", ordinamento);
 
 document.getElementById("btnDelMsg").addEventListener("click", delAllMsgSigned);
 
 document.getElementById("btnSignAsReadAll").addEventListener("click", signAsReadAll);
 
-document.getElementById("btnNavBar").addEventListener("click", function(){
+document.getElementById("btnNavBar").addEventListener("click", function () {
     menuFigo(this)
 });
 
 async function loadMessages() {
+    if (localStorage.getItem("token") == null) {
+        window.location.href = '../html/AccessoNegato.html';
+        return;
+    }
     const token = localStorage.getItem("token");
     const response = await fetch(`/api/messages/getMsg`, {
         method: "GET",
@@ -74,13 +71,13 @@ async function loadMessages() {
         document.getElementById("tableBodyMsg").innerHTML = `<tr class="rowNoMsg"><td colspan="3" id="colNoMsg">Nessun messaggio ricevuto</td></tr>`;
         return;
     }
-   
+
     data.forEach(element => {
         vMsg.push(element);
     });
     createMsgTable();
 
-    
+
 
     return;
 }
@@ -92,9 +89,6 @@ function createMsgTable() {
     vMsg.forEach(element => {
         const tr = document.createElement("tr");
         tr.classList.add("rows");
-        tr.addEventListener("click", () => {
-            letturaMessaggio(element);
-        });
 
         const tdLetto = document.createElement("td");
         tdLetto.classList.add("selezionaMsg");
@@ -118,18 +112,34 @@ function createMsgTable() {
 
         const tdData = document.createElement("td");
         tdData.classList.add("tableMsgData");
-        tdData.textContent = element.dataInvio.slice(0,16).replace("T", " ");
+        tdData.textContent = element.dataInvio.slice(0, 16).replace("T", " ");
+
+        tdMit.addEventListener("click", () => {
+            letturaMessaggio(element);
+        });
+        tdTitle.addEventListener("click", () => {
+            letturaMessaggio(element);
+        });
+        tdData.addEventListener("click", () => {
+            letturaMessaggio(element);
+        });
 
         const tdDelSignAsRead = document.createElement("td");
-        tdDelSignAsRead.classList.add("tableSettingMsg"); 
+        tdDelSignAsRead.classList.add("tableSettingMsg");
 
         const buttonDel = document.createElement("button");
         buttonDel.classList.add("cestino");
         buttonDel.innerHTML = "&#128465;";
-        buttonDel.addEventListener("click", () => {
-            if (confirm("sei sicuro di voler eliminare il messaggio? (dopo l'eliminazione non potrai piu recuperarlo)"))
-            {
-                eliminaMsg(element);
+        buttonDel.addEventListener("click", async () => {
+            if (confirm("sei sicuro di voler eliminare il messaggio? (dopo l'eliminazione non potrai piu recuperarlo)")) {
+                const res = await eliminaMsg(element);
+                if (res) {
+                    alert("Messaggio eliminato");
+                    window.location.reload();
+                }
+                else {
+                    alert("Errore, riprova")
+                }
             }
         });
         buttonDel.style.marginLeft = "20px";
@@ -137,11 +147,28 @@ function createMsgTable() {
         const buttonRead = document.createElement("button");
         buttonRead.classList.add("checkRead");
         buttonRead.innerHTML = "&#10004;";
-        buttonRead.addEventListener("click", () => {
-            segnaLetto(element, !element.letto);
+        buttonRead.addEventListener("click", async () => {
+            const res = await segnaLetto(element, !element.letto);
+            if (!res) {
+                alert("Errore, riprova");
+            }
+            else {
+                window.location.reload();
+            }
         });
         buttonRead.style.marginLeft = "15px";
         buttonRead.style.width = "50px";
+
+
+        if (element.letto) {
+            tr.style.backgroundColor = "rgba(41, 41, 41, 0.3)";
+            tdLetto.style.border = "1px solid rgba(41, 41, 41, 0.3)";
+            tdMit.style.border = "1px solid rgba(41, 41, 41, 0.3)";
+            tdTitle.style.border = "1px solid rgba(41, 41, 41, 0.3)";
+            tdData.style.border = "1 px solid rgba(41, 41, 41, 0.3)";
+            tdDelSignAsRead.style.border = "1 px solid rgba(41, 41, 41, 0.3)";
+             
+        }
 
         tdDelSignAsRead.appendChild(buttonDel);
         tdDelSignAsRead.appendChild(buttonRead);
@@ -166,9 +193,9 @@ async function sendMessage() {
         return;
     }
     const currentDate = new Date();
-   
+
     let titoloInput = document.getElementById("inputMsgTitle").value;
-    if(titoloInput == null || titoloInput == "") {
+    if (titoloInput == null || titoloInput == "") {
         titoloInput = "[nessun oggetto]";
     }
     let messaggio = {
@@ -176,7 +203,7 @@ async function sendMessage() {
         contenuto: document.getElementById("inputMsgContent").value,
         dataInvio: currentDate.toISOString(),
         destinatario: document.getElementById("inputMsgDest").value,
-        letto : false
+        letto: false
     }
     try {
         fetch("/api/messages/sendMsg", {
@@ -192,16 +219,16 @@ async function sendMessage() {
                     alert("Non esiste nessun utente associato a questa email");
                     return;
                 }
-            if (!res.ok) {
-                console.log(res.status);
-            }
-            else {
-                console.log("Messaggio inviato con successo"+res.status);
-            }
-        });
+                if (!res.ok) {
+                    console.log(res.status);
+                }
+                else {
+                    alert("Messaggio inviato");
+                }
+            });
 
     }
-    catch(err) {
+    catch (err) {
         console.log(err);
     }
     hideForm(document.getElementById("scriviMail"));
@@ -217,16 +244,13 @@ function ordinamento() {
             ordinaPerAlfabetico("Z-A");
             break;
         case "Piu recente":
-            ordinaPerData("recente"); 
+            ordinaPerData("recente");
             break;
         case "Piu vecchio":
             ordinaPerData("vecchio");
             break;
-        case "Da leggere":
-            ordinamentoLetto("da");
-            break;
-        case "Letti":
-            ordinamentoLetto("letti");
+        case "":
+            createMsgTable();
             break;
         default:
             createMsgTable();
@@ -239,7 +263,7 @@ function ordinaPerData(verso) {
         const dataA = new Date(a.dataInvio);
         const dataB = new Date(b.dataInvio);
 
-        verso == "recente" ? dataB - dataA : dataA - dataB;
+        return verso == "recente" ? dataB - dataA : dataA - dataB;
     });
     createMsgTable();
 }
@@ -249,29 +273,7 @@ function ordinaPerAlfabetico(verso) {
         const titoloA = a.titolo.toLowerCase();
         const titoloB = b.titolo.toLowerCase();
 
-        verso == "A-Z" ? titoloA.localeCompare(titoloB) : titoloB.localeCompare(titoloA);
-    });
-    createMsgTable();
-}
-
-function ordinamentoLetto(verso) {
-    vMsg.sort((a, b) => {
-        if (verso == "da") {
-            if (a.letto && !b.letto) {
-                let indexB= vMsg.indexOf(b);
-                let copia = a;
-                vMsg[vMsg.indexOf(a)] = b;
-                vMsg[indexB] = copia;
-            }
-        }
-        else {
-            if (!a.letto && b.letto) {
-                let indexB = vMsg.indexOf(b);
-                let copia = a;
-                vMsg[vMsg.indexOf(a)] = b;
-                vMsg[indexB] = copia;
-            }
-        }
+        return verso == "A-Z" ? titoloA.localeCompare(titoloB) : titoloB.localeCompare(titoloA);
     });
     createMsgTable();
 }
@@ -280,16 +282,15 @@ async function signAsReadAll() {
     if (vMsgsigned.length == 0) {
         return;
     }
-    for(const msg of vMsgsigned){
+    for (const msg of vMsgsigned) {
         const res = await segnaLetto(msg, !msg.letto);
-        if (res) {
-            console.log("success");
+        if (!res) {
+            alert("errore, riprova");
         }
-        else {
-            console.log("error");
-        }
+        
     }
     window.location.reload();
+   
 }
 
 async function delAllMsgSigned() {
@@ -300,19 +301,21 @@ async function delAllMsgSigned() {
         for (const msg of vMsgsigned) {
             const res = await eliminaMsg(msg);
             if (res) {
-                console.log("success");
+                alert("messaggio eliminato");
             }
             else {
-                console.log("error");
+                alert("errore, riprova");
             }
         }
-        window.location.reload();
+        window.location.reload(); 
     }
+    
 }
 async function segnaLetto(msg, lettoMsg) {
     const request = {
         id: msg.id,
-        letto: lettoMsg
+        letto: lettoMsg,
+        destinatario: msg.destinatario
     }
     const res = await fetch("/api/messages/markAsRead", {
         method: "PUT",
@@ -322,18 +325,28 @@ async function segnaLetto(msg, lettoMsg) {
         },
         body: JSON.stringify(request)
     });
+    if (res.status == 401) {
+        alert("Impossibile completare l'azione, accesso negato");
+        return false;
+    }
+    if (res.status == 404) {
+        alert("messaggio non trovato");
+        return false;
+    }
     if (!res.ok) {
         console.log(res.status);
         return false;
     }
     const data = await res.json();
-    console.log(data.res);  
+    console.log(data.res);
+    
     return true;
 }
 
 async function eliminaMsg(msg) {
     const request = {
-        idMsg: msg.id
+        idMsg: msg.id,
+        destinatario: msg.destinatario
     }
     const res = await fetch("/api/messages/deleteMsg", {
         method: "POST",
@@ -344,9 +357,11 @@ async function eliminaMsg(msg) {
         body: JSON.stringify(request)
     });
     if (res.status == 401) {
-        localStorage.removeItem("idUtenteLoggato");
-        localStorage.removeItem("token");
-        window.location.href = '../html/AccessoNegato.html';
+        alert("Impossibile completare l'azione, accesso negato");
+        return false;
+    }
+    if (res.status == 404) {
+        alert("messaggio non trovato");
         return false;
     }
     if (!res.ok) {
@@ -355,13 +370,16 @@ async function eliminaMsg(msg) {
     }
     const data = await res.json();
     console.log(data.res);
+    
     return true;
 }
-function letturaMessaggio(msg){
-    if(document.getElementById("formMessaggio") == null){
+function letturaMessaggio(msg) {
+    if (document.getElementById("formMessaggio") == null) {
+        const opacityBox = document.getElementsByClassName("opacityBox")[0];
         opacityBox.style.pointerEvents = "none";
+        opacityBox.style.opacity = "0.4";
         const form = document.createElement("div");
-        form.id ="formMessaggio";
+        form.id = "formMessaggio";
         document.body.insertBefore(form, document.body.children[0]);
         const button = document.createElement("p");
         button.classList = "exit";
@@ -369,6 +387,10 @@ function letturaMessaggio(msg){
         button.addEventListener("click", () => {
             document.getElementById("formMessaggio").remove();
             opacityBox.style.pointerEvents = "all";
+            opacityBox.style.opacity = "1";
+            if (!msg.letto) {
+                window.location.reload();
+            }
         });
         form.appendChild(button);
         msg.dataInvio.trim();
@@ -376,23 +398,25 @@ function letturaMessaggio(msg){
         const ora = msg.dataInvio.slice(11, 16);
         const data = document.createElement("h3");
         data.id = "dataMessaggio";
-        data.innerHTML = gg+"<br>"+ora ;
+        data.innerHTML = gg + "<br>" + ora;
         form.appendChild(data)
         const mittente = document.createElement("h3");
-        mittente.id ="mittenteMessaggio";
+        mittente.id = "mittenteMessaggio";
         mittente.innerText = msg.mittente;
         form.appendChild(mittente);
         const titolo = document.createElement("h1");
-        titolo.id ="titoloMessaggio";
+        titolo.id = "titoloMessaggio";
         titolo.innerText = msg.titolo;
         form.appendChild(titolo);
         form.appendChild(document.createElement("hr"));
         const corpo = document.createElement("p");
-        corpo.id ="corpoMessaggio";
+        corpo.id = "corpoMessaggio";
         corpo.innerText = msg.contenuto;
         form.appendChild(corpo);
+        segnaLetto(msg, true);
+        
     }
-            
+
 }
 
 

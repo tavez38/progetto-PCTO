@@ -1,18 +1,6 @@
-import { 
-    listaCharSpec,  
+import {  
     checkEmail, 
     checkPsw, 
-    checkCharSpec, 
-    goToUploadWorkPage, 
-    deleteInput,
-    goToMessaggiPage, 
-    logout, 
-    generateOpzionForm,
-    sendOllamaRequest,
-    menuFigo,
-    iconBarGenerator,
-    revalForm,
-    hideForm
 } from "../js/utilities.js";
 
 document.getElementById("sendRegisterForm").addEventListener("click", iscrizione);

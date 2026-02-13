@@ -40,12 +40,13 @@ namespace WebApp.Controllers
         {
            if(userLog == null)  
            {
-               return BadRequest(new {id = -3});
+               return BadRequest();
            }
+            var u = db.dipendenti.FirstOrDefault(x => x.email == userLog.username || x.name == userLog.username);
 
-            foreach (Utente u in db.dipendenti)
+            if(u != null)
             {
-                if ((userLog.username == u.name || userLog.username == u.email) && BCrypt.Net.BCrypt.Verify(userLog.password, u.password))
+                if (BCrypt.Net.BCrypt.Verify(userLog.password, u.password))
                 {
                     var infoSaveToken= new[]
                     {
@@ -68,14 +69,12 @@ namespace WebApp.Controllers
                         token = new JwtSecurityTokenHandler().WriteToken(token)
                     });
                 }
-                else if (userLog.username == u.name || userLog.username == u.email)
+                else
                 {
-                    return Unauthorized(new { id = -1 });
+                    return Unauthorized();
                 }
             }
-            return NotFound(new { id = -2 });
+            return Unauthorized();
         }
-
-
     }
 }
