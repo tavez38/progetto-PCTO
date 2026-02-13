@@ -902,9 +902,12 @@ a {
 }
 
 #requestChatOllama {
+    height: 30px;
     position: absolute;
-    margin-top: 410px !important;
+    margin-top: 390px !important;
     width: 300px;
+    border-radius: 10px;
+    background-color:#818887;
 }
 
 #sendReqChatbot {
@@ -912,6 +915,7 @@ a {
     width: 308px;
     height: 30px;
     margin-top: 430px;
+    border-radius:10px;
 }
 
 .navBar {

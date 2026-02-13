@@ -1,4 +1,3 @@
-wwwroot\css\style.css
 wwwroot\html\AccessoNegato.html
 wwwroot\html\Index.html
 wwwroot\html\Messaggi.html
@@ -13,7 +12,7 @@ wwwroot\js\scriptPersonalArea.js
 wwwroot\js\scriptRegistrazione.js
 wwwroot\js\scriptUploadWork.js
 wwwroot\js\utilities.js
-C:\progetto-PCTO\WebApp\WebApp\wwwroot\css\style.css
+wwwroot\css\style.css
 C:\progetto-PCTO\WebApp\WebApp\wwwroot\html\AccessoNegato.html
 C:\progetto-PCTO\WebApp\WebApp\wwwroot\html\Index.html
 C:\progetto-PCTO\WebApp\WebApp\wwwroot\html\Messaggi.html
@@ -28,3 +27,4 @@ C:\progetto-PCTO\WebApp\WebApp\wwwroot\js\scriptPersonalArea.js
 C:\progetto-PCTO\WebApp\WebApp\wwwroot\js\scriptRegistrazione.js
 C:\progetto-PCTO\WebApp\WebApp\wwwroot\js\scriptUploadWork.js
 C:\progetto-PCTO\WebApp\WebApp\wwwroot\js\utilities.js
+C:\progetto-PCTO\WebApp\WebApp\wwwroot\css\style.css
